@@ -5,9 +5,9 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
 
-    "gloss" : "wn:gloss",
+    "gloss" : "skos:definition",
     "iliDef": "wn:iliDef",
-    "examples": "wn:example",
+    "examples": "skos:example",
     "iliRef": { "@id": "wn:iliRef", "@type": "@id" },
     "hypernym": { "@id": "wn:hypernym", "@type": "@id" },
     "hyponym": { "@id": "wn:hyponym", "@type": "@id" },
