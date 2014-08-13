@@ -1,4 +1,6 @@
-wnlmf
-=====
+WordNet-LMF
+===========
 
 WordNet-LMF formats
+
+
