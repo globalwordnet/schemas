@@ -1,246 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lemon="http://lemon-model.net/lemon#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:voaf="http://purl.org/vocommons/voaf#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://globalwordnet.github.io/schemas/wn#">
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lemon="http://lemon-model.net/lemon#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:voaf="http://purl.org/vocommons/voaf#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://globalwordnet.github.io/schemas/wn#" xml:base="http://globalwordnet.github.io/schemas/wn">
+  <rdf:Description rdf:about="">
     <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <vann:preferredNamespacePrefix>wn</vann:preferredNamespacePrefix>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <vann:preferredNamespaceUri>http://globalwordnet.github.io/schemas/wn#</vann:preferredNamespaceUri>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:title xml:lang="en">Global Wordnet RDF Schema</dc:title>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:description xml:lang="en">TODO</dc:description>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-13</dc:issued>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-09-13</dc:modified>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:rights>Copyright Global Wordnet Association</dc:rights>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <cc:attributionName>Global Wordnet Association</cc:attributionName>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <cc:attributionURL rdf:resource="http://www.globalwordnet.org"/>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:contributor rdf:resource="http://john.mccr.ae"/>
   </rdf:Description>
-  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <rdf:Description rdf:about="">
     <dc:publisher rdf:resource="http://www.globalwordnet.org"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Synset">
+  <rdf:Description rdf:about="#Synset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Synset">
+  <rdf:Description rdf:about="#Synset">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#PartOfSpeech">
+  <rdf:Description rdf:about="#PartOfSpeech">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDef">
+  <rdf:Description rdf:about="#iliDef">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDef">
-    <rdfs:domain rdf:resource="http://globalwordnet.github.io/schemas/wn#Synset"/>
+  <rdf:Description rdf:about="#iliDef">
+    <rdfs:domain rdf:resource="#Synset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDef">
+  <rdf:Description rdf:about="#iliDef">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliRef">
+  <rdf:Description rdf:about="#iliRef">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliRef">
-    <rdfs:domain rdf:resource="http://globalwordnet.github.io/schemas/wn#Synset"/>
+  <rdf:Description rdf:about="#iliRef">
+    <rdfs:domain rdf:resource="#Synset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliRef">
-    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#Synset"/>
+  <rdf:Description rdf:about="#iliRef">
+    <rdfs:range rdf:resource="#Synset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+  <rdf:Description rdf:about="#partOfSpeech">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
-    <rdfs:domain rdf:resource="http://globalwordnet.github.io/schemas/wn#Synset"/>
+  <rdf:Description rdf:about="#partOfSpeech">
+    <rdfs:domain rdf:resource="#Synset"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
-    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#partOfSpeech">
+    <rdfs:range rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliRef">
+  <rdf:Description rdf:about="#iliRef">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hypernym">
+  <rdf:Description rdf:about="#hypernym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hyponym">
+  <rdf:Description rdf:about="#hyponym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hypernym">
+  <rdf:Description rdf:about="#instance_hypernym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hyponym">
+  <rdf:Description rdf:about="#instance_hyponym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#part_holonym">
+  <rdf:Description rdf:about="#part_holonym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#part_meronym">
+  <rdf:Description rdf:about="#part_meronym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#member_holonym">
+  <rdf:Description rdf:about="#member_holonym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#member_meronym">
+  <rdf:Description rdf:about="#member_meronym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#substance_holonym">
+  <rdf:Description rdf:about="#substance_holonym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#substance_meronym">
+  <rdf:Description rdf:about="#substance_meronym">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#entail">
+  <rdf:Description rdf:about="#entail">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#cause">
+  <rdf:Description rdf:about="#cause">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#similar">
+  <rdf:Description rdf:about="#similar">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+  <rdf:Description rdf:about="#also">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#attribute">
+  <rdf:Description rdf:about="#attribute">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#verb_group">
+  <rdf:Description rdf:about="#verb_group">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_category">
+  <rdf:Description rdf:about="#domain_category">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_category">
+  <rdf:Description rdf:about="#domain_member_category">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+  <rdf:Description rdf:about="#domain_region">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_region">
+  <rdf:Description rdf:about="#domain_member_region">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+  <rdf:Description rdf:about="#domain_usage">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_usage">
+  <rdf:Description rdf:about="#domain_member_usage">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#action">
+  <rdf:Description rdf:about="#action">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#theme">
+  <rdf:Description rdf:about="#theme">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#product">
+  <rdf:Description rdf:about="#product">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#location">
+  <rdf:Description rdf:about="#location">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#agent">
+  <rdf:Description rdf:about="#agent">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instrument">
+  <rdf:Description rdf:about="#instrument">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#result">
+  <rdf:Description rdf:about="#result">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#patient">
+  <rdf:Description rdf:about="#patient">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#beneficiary">
+  <rdf:Description rdf:about="#beneficiary">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#creator">
+  <rdf:Description rdf:about="#creator">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#goal">
+  <rdf:Description rdf:about="#goal">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#experiencer">
+  <rdf:Description rdf:about="#experiencer">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+  <rdf:Description rdf:about="#antonym">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+  <rdf:Description rdf:about="#also">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#verb_group">
+  <rdf:Description rdf:about="#verb_group">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#participle">
+  <rdf:Description rdf:about="#participle">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#pertainym">
+  <rdf:Description rdf:about="#pertainym">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#derivation">
+  <rdf:Description rdf:about="#derivation">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_category">
+  <rdf:Description rdf:about="#domain_category">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_category">
+  <rdf:Description rdf:about="#domain_member_category">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+  <rdf:Description rdf:about="#domain_region">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_region">
+  <rdf:Description rdf:about="#domain_member_region">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+  <rdf:Description rdf:about="#domain_usage">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_member_usage">
+  <rdf:Description rdf:about="#domain_member_usage">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+  <rdf:Description rdf:about="#antonym">
     <rdfs:subPropertyOf rdf:resource="http://lemon-model.net/lemon#senseRelation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#noun">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#noun">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#verb">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#verb">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#adjective">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adverb">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#adverb">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective_satellite">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#adjective_satellite">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#phrase">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#phrase">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#unknown">
-    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  <rdf:Description rdf:about="#unknown">
+    <rdf:type rdf:resource="#PartOfSpeech"/>
   </rdf:Description>
 </rdf:RDF>
