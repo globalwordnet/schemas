@@ -1,5 +1,5 @@
 {
-    "@context": [ "http://ili.globalwordnet.org/wn-context.json", { "@language": "en" } ],
+    "@context": [ "wn-json-context.json", { "@language": "en" } ],
     "@id": "pwn30",
     "label": "Princeton WordNet",
     "language": "en",
