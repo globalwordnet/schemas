@@ -1,0 +1,175 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+
+    "definitions": {
+        "synset": {
+            "allOf": [{
+                "$ref": "#/definitions/meta" 
+            },{
+                "type": "object",
+                "required": [ "@id", "gloss" ],
+                "additionalProperties": false,
+                "properties": {
+                    "@id" : { "type": "string" },
+                    "gloss" : { "type": "string" },
+                    "iliDef" : { "type": "string" },
+                    "examples": { 
+                        "type": "array",
+                        "items": {
+                            "type" : "string"
+                        }
+                    },
+                    "iliRef": { "type": "string" },
+
+                    "hypernym": { "type": "array", "items": { "type": "string" } },
+                    "hyponym": { "type": "array", "items": { "type": "string" } },
+                    "instance_hypernym": { "type": "array", "items": { "type": "string" } },
+                    "instance_hyponym": { "type": "array", "items": { "type": "string" } },
+                    "part_holonym": { "type": "array", "items": { "type": "string" } },
+                    "part_meronym": { "type": "array", "items": { "type": "string" } },
+                    "member_holonym": { "type": "array", "items": { "type": "string" } },
+                    "member_meronym": { "type": "array", "items": { "type": "string" } },
+                    "substance_holonym": { "type": "array", "items": { "type": "string" } },
+                    "substance_meronym": { "type": "array", "items": { "type": "string" } },
+                    "entail": { "type": "array", "items": { "type": "string" } },
+                    "cause": { "type": "array", "items": { "type": "string" } },
+                    "similar": { "type": "array", "items": { "type": "string" } },
+                    "also": { "type": "array", "items": { "type": "string" } },
+                    "attribute": { "type": "array", "items": { "type": "string" } },
+                    "verb_group": { "type": "array", "items": { "type": "string" } },
+                    "domain_category": { "type": "array", "items": { "type": "string" } },
+                    "domain_member_category": { "type": "array", "items": { "type": "string" } },
+                    "domain_region": { "type": "array", "items": { "type": "string" } },
+                    "domain_member_region": { "type": "array", "items": { "type": "string" } },
+                    "domain_usage": { "type": "array", "items": { "type": "string" } },
+                    "domain_member_usage": { "type": "array", "items": { "type": "string" } },
+                    "action": { "type": "array", "items": { "type": "string" } },
+                    "theme": { "type": "array", "items": { "type": "string" } },
+                    "product": { "type": "array", "items": { "type": "string" } },
+                    "location": { "type": "array", "items": { "type": "string" } },
+                    "agent": { "type": "array", "items": { "type": "string" } },
+                    "instrument": { "type": "array", "items": { "type": "string" } },
+                    "result": { "type": "array", "items": { "type": "string" } },
+                    "patient": { "type": "array", "items": { "type": "string" } },
+                    "beneficiary": { "type": "array", "items": { "type": "string" } },
+                    "creator": { "type": "array", "items": { "type": "string" } },
+                    "goal": { "type": "array", "items": { "type": "string" } },
+                    "experiencer": { "type": "array", "items": { "type": "array" } },
+
+                    "partOfSpeech": {
+                        "type": "string",
+                        "enum": [ "wn:noun", "wn:verb", "wn:adjective", "wn:adjective_satellite", "wn:adverb", "wn:phrase", "wn:unknown" ]
+                    },
+                    "senses": {
+                        "allOf": [{ 
+                            "$ref": "#/definitions/meta" 
+                        },{
+                            "type": "array",
+                            "items": {
+                                "allOf": [{
+                                    "$ref": "#/definitions/meta" 
+                                },{
+                                    "type": "object",
+                                    "properties": {
+                                        "@id": { "type": "string" },
+                                        "antonym": { "type": "array", "items": { "type": "string" } },
+                                        "also": { "type": "array", "items": { "type": "string" } },
+                                        "verb_group": { "type": "array", "items": { "type": "string" } },
+                                        "participle": { "type": "array", "items": { "type": "string" } },
+                                        "pertainym": { "type": "array", "items": { "type": "string" } },
+                                        "derivation": { "type": "array", "items": { "type": "string" } },
+                                        "domain_category": { "type": "array", "items": { "type": "string" } },
+                                        "domain_member_category": { "type": "array", "items": { "type": "string" } },
+                                        "domain_region": { "type": "array", "items": { "type": "string" } },
+                                        "domain_member_region": { "type": "array", "items": { "type": "string" } },
+                                        "domain_usage": { "type": "array", "items": { "type": "string" } },
+                                        "domain_member_usage": { "type": "array", "items": { "type": "string" } },
+                                        "antonym": { "type": "array", "items": [{ "type": "string" }] },
+                                        "entry": {
+                                            "allOf": [{
+                                                "$ref": "#/definitions/meta" 
+                                            },{
+                                                "type": "object",
+                                                "properties": {
+                                                    "@id": { "type": "string" },
+                                                    "lemma": { "type": "string" },
+                                                    "syntacticBehaviour": { "type": "array", "items": { "type": "string" } }
+                                                },
+                                                "required": [ "lemma" ],
+                                                "additionalProperties": false
+                                            }]
+                                        }
+                                    },
+                                    "required": [ "@id", "entry" ],
+                                    "additionalProperties": false
+                               }]
+                            }
+                        }]
+                    }
+                }
+            }]
+        },
+        "meta": {
+            "properties": {
+                "contributor": { "type": "string" },
+                "coverage": { "type": "string" },
+                "creator": { "type": "string" },
+                "date": { "type": "string" },
+                "description": { "type": "string" },
+                "format": { "type": "string" },
+                "identifier": { "type": "string" },
+                "language": { "type": "string" },
+                "publisher": { "type": "string" },
+                "relation": { "type": "string" },
+                "rights": { "type": "string" },
+                "source": { "type": "string" },
+                "subject": { "type": "string" },
+                "title": { "type": "string" },
+                "type": { "type": "string" },
+                "status": { "type": "string" },
+                "confidenceScore": { "type": "string" }
+            }
+        },
+        "lexicon": {
+            "type": "object", 
+        
+            "properties": {
+                "@context": {
+                    "type": "array",
+                    "items": [
+                        { "type": "string",
+                          "enum": [  "http://ili.globalwordnet.org/wn-context.json" ]
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "@language": { "type": "string" }
+                            }
+                        }
+                    ]
+                },
+                "@id": { "type": "string" },
+                "label": { "type": "string" },
+                "language": { "type": "string" },
+                "meta": { "$ref": "#/definitions/meta" },
+                "synsets": { 
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/synset" }
+                }
+            },
+
+            "required": [ "@id", "language", "synsets" ]
+        }
+    },
+
+    "oneOf": [{
+        "$ref": "#/definitions/lexicon"    
+    },{
+        "$ref": "#/definitions/synset"
+    },{
+        "type": "array",
+        "items": { "$ref": "#/definitions/lexicon" }
+    }]
+}
+
+

@@ -1,0 +1,29 @@
+{
+    "@context": [ "http://ili.globalwordnet.org/wn-context.json", { "@language": "en" } ],
+    "@id": "pwn30",
+    "label": "Princeton WordNet",
+    "language": "en",
+    "creator": "Princeton",
+    "synsets": [{    
+        "@id": "pwn-100001740-n",
+        "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)",
+        "hyponym": ["pwn-104431553-n","pwn-100002137-n","pwn-100001930-n"],
+        "partOfSpeech": "wn:noun",
+        "senses": [{
+            "@id": "pwn-100001740-n#1",
+            "entry": { "lemma": "entity" }
+        }],
+        "iliRef": "ili:s35545"
+    },{
+        "@id": "pwn-300001740-a",
+        "gloss": "(usually followed by `to') having the necessary means or skill or know-how or authority to do something",
+        "attribute": ["pwn-105624029-n","pwn-105207437-n"],
+        "partOfSpeech": "wn:adjective",
+        "senses": [{
+            "@id": "pwn-300001740-a#1",
+            "entry": { "lemma": "able" },
+            "antonym": ["pwn-300002908-a#1"]
+        }],
+        "iliRef": "ili:s1"
+    }]
+}
