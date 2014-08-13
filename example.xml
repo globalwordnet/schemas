@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE LexicalResource SYSTEM "WN-LMF-simple.dtd">
+<!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF.dtd">
 <LexicalResource>
     <Lexicon label="Princeton WordNet" language="eng">
         <LexicalEntry id="w1">

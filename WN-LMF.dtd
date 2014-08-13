@@ -22,7 +22,7 @@
     ili CDATA #REQUIRED>
 <!ELEMENT Definition (ILIDef?, Statement*)>
 <!ATTLIST Definition
-    iliDef CDATA #REQUIRED>
+    iliDef CDATA #REQUIRED
     gloss CDATA #REQUIRED>
 <!ELEMENT Statement EMPTY>
 <!ATTLIST Statement
@@ -37,7 +37,7 @@
     relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED>
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
-  subcategorizationFrames CDATA #REQUIRED>
+  subcategorizationFrame CDATA #REQUIRED>
 <!ELEMENT Meta EMPTY>
 <!ATTLIST Meta
     contributor CDATA #IMPLIED

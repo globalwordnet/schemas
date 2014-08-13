@@ -1,5 +1,5 @@
 {
-    "@context": [ "wn-json-context.json", { "@language": "en" } ],
+    "@context": [ "http://globalwordnet.github.io/schemas/wn-json-context.json", { "@language": "en" } ],
     "@id": "pwn30",
     "label": "Princeton WordNet",
     "language": "en",
@@ -11,7 +11,10 @@
         "partOfSpeech": "wn:noun",
         "senses": [{
             "@id": "pwn-100001740-n#1",
-            "entry": { "lemma": "entity" }
+            "entry": { 
+                "@id": "pwn-entity-n",
+                "lemma": "entity" 
+            }
         }],
         "iliRef": "ili:s35545"
     },{
@@ -21,7 +24,10 @@
         "partOfSpeech": "wn:adjective",
         "senses": [{
             "@id": "pwn-300001740-a#1",
-            "entry": { "lemma": "able" },
+            "entry": { 
+                "@id": "pwn-able-a",
+                "lemma": "able" 
+            },
             "antonym": ["pwn-300002908-a#1"]
         }],
         "iliRef": "ili:s1"

@@ -86,17 +86,21 @@
                                         "domain_member_usage": { "type": "array", "items": { "type": "string" } },
                                         "antonym": { "type": "array", "items": [{ "type": "string" }] },
                                         "entry": {
-                                            "allOf": [{
-                                                "$ref": "#/definitions/meta" 
-                                            },{
-                                                "type": "object",
-                                                "properties": {
-                                                    "@id": { "type": "string" },
-                                                    "lemma": { "type": "string" },
-                                                    "syntacticBehaviour": { "type": "array", "items": { "type": "string" } }
-                                                },
-                                                "required": [ "lemma" ],
-                                                "additionalProperties": false
+                                            "oneOf": [{
+                                                "type" : "string"
+                                            }, {
+                                                "allOf": [{
+                                                    "$ref": "#/definitions/meta" 
+                                                },{
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "@id": { "type": "string" },
+                                                        "lemma": { "type": "string" },
+                                                        "syntacticBehaviour": { "type": "array", "items": { "type": "string" } }
+                                                    },
+                                                    "required": [ "@id", "lemma" ],
+                                                    "additionalProperties": false
+                                                }]
                                             }]
                                         }
                                     },
@@ -138,7 +142,7 @@
                     "type": "array",
                     "items": [
                         { "type": "string",
-                          "enum": [  "http://ili.globalwordnet.org/wn-context.json" ]
+                          "enum": [  "http://globalwordnet.github.io/schemas/wn-json-context.json" ]
                         },
                         {
                             "type": "object",
