@@ -2,6 +2,7 @@
 <!ELEMENT LexicalResource (Lexicon+)>
 <!ELEMENT Lexicon (LexicalEntry+, Synset*, Meta?)>
 <!ATTLIST Lexicon
+    id ID #IMPLIED
     label CDATA #IMPLIED
     language CDATA #REQUIRED>
 <!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*, Meta?)>
