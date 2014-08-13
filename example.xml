@@ -13,13 +13,13 @@
             </Sense>
         </LexicalEntry>
         <Synset id="pwn-100001740-n" ili="s35545">
-            <Definition gloss="that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"/>
+            <Definition gloss="that which is perceived or known or inferred to have its own distinct existence (living or nonliving)" iliDef=""/>
             <SynsetRelation relType="hyponym" target="pwn-104431553-n"/>
             <SynsetRelation relType="hyponym" target="pwn-100002137-n"/>
             <SynsetRelation relType="hyponym" target="pwn-100001930-n"/>
         </Synset>
-        <Synset id="pwn-100001740-a-1" ili="s1">
-            <Definition gloss="(usually followed by `to') having the necessary means or skill or know-how or authority to do something"/>
+        <Synset id="pwn-300001740-a" ili="s1">
+            <Definition gloss="(usually followed by `to') having the necessary means or skill or know-how or authority to do something" iliDef=""/>
             <SynsetRelation relType="attribute" target="pwn-105624029-n"/>
             <SynsetRelation relType="attribute" target="pwn-105204437-n"/>
         </Synset>
