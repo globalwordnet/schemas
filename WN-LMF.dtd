@@ -20,7 +20,7 @@
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED>
-<!ELEMENT Definition (ILIDef?, Statement*)>
+<!ELEMENT Definition (Statement*)>
 <!ATTLIST Definition
     iliDef CDATA #REQUIRED
     gloss CDATA #REQUIRED>
