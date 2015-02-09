@@ -22,6 +22,7 @@
     ili CDATA #REQUIRED>
 <!ELEMENT Definition (Statement*)>
 <!ATTLIST Definition
+    language CDATA #IMPLIED
     iliDef CDATA #REQUIRED
     gloss CDATA #REQUIRED>
 <!ELEMENT Statement EMPTY>
