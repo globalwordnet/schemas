@@ -14,7 +14,7 @@
       "@id": "pwn-100001740-n-1",
       "synset": {
         "@id": "pwn-100001740-n",
-        "ili": "s35545",
+        "iliRef": "ili:i35545",
         "definition": {
           "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)" ,
           "iliDef": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
@@ -30,7 +30,7 @@
       "@id": "pwn-300001740-a-1",
       "synset": {
         "@id": "pwn-300001740-a",
-        "ili": "s1",
+        "iliRef": "ili:i1",
         "attribute": ["pwn-105624029-n", "pwn-105204437-n"]
       },
       "antonym": "pwn-300002908-a-1"
