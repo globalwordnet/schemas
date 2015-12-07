@@ -12,6 +12,7 @@ class WNLMFHandler(xml.sax.handler.ContentHandler):
     sense = {}
     synset = {}
     senses_by_synset = {}
+    CONTEXT = [ "http://globalwordnet.github.io/schemas/wn-json-context.json" ]
 
 
     def map_pos(self, pos):
@@ -31,10 +32,16 @@ class WNLMFHandler(xml.sax.handler.ContentHandler):
             return "wn:unknown"
 
 
+    def doMeta(self, name, attrs, target):
+        for meta_prop in attrs.keys():
+            target[meta_prop] = attrs[meta_prop]
+
+
+
     def startElement(self, name, attrs):
         if name == "LexicalResource":
             assert(len(self.parent) == 0)
-            self.lexicon = {}
+            self.lexicon = { "@context": self.CONTEXT }
             self.root.append(self.lexicon)
         elif name == "Lexicon":
             assert(self.parent[-1] == "LexicalResource" or len(self.parent) == 0)
@@ -43,37 +50,45 @@ class WNLMFHandler(xml.sax.handler.ContentHandler):
                 self.lexicon["label"] = attrs["label"]
             if "id" in attrs:
                 self.lexicon["@id"] = attrs["id"]
-            self.lexicon["synsets"] = []
+            self.lexicon["@type"] = "lemon:Lexicon"
+            self.lexicon["entry"] = []
         elif name == "LexicalEntry":
             assert(self.parent[-1] == "Lexicon")
             self.entry = {}
             if "id" in attrs:
                 self.entry["@id"] = attrs["id"]
+            self.lexicon["entry"].append(self.entry)
+            self.entry["sense"] = []
         elif name == "Lemma":
             assert(self.parent[-1] == "LexicalEntry")
-            self.entry["lemma"] = attrs["writtenForm"]
+            self.entry["lemma"] = { "writtenForm": attrs["writtenForm"] }
             self.entry["partOfSpeech"] = self.map_pos(attrs["partOfSpeech"])
         elif name == "Sense":
             assert(self.parent[-1] == "LexicalEntry")
             self.sense = {}
             self.sense["@id"] = attrs["id"]
-            self.sense["entry"] = self.entry
             if attrs["synset"] not in self.senses_by_synset:
                 self.senses_by_synset[attrs["synset"]] = []
+            self.entry["sense"].append(self.sense)
             self.senses_by_synset[attrs["synset"]].append(self.sense)
         elif name == "Synset":
             assert(self.parent[-1] == "Lexicon")
             self.synset = {}
             self.synset["@id"] = attrs["id"]
             self.synset["iliRef"] = "ili:" + attrs["ili"]
-            self.synset["senses"] = []
+            head = True
             for sense in self.senses_by_synset[attrs["id"]]:
-                self.synset["senses"].append(sense)
-            self.lexicon["synsets"].append(self.synset)
+                if head:
+                    sense["synset"] = self.synset
+                    head = False
+                else:
+                    sense["synset"] = {"@id": attrs["id"]}
         elif name == "Definition":
             assert(self.parent[-1] == "Synset")
-            self.synset["definition"] = attrs["gloss"]
-            self.synset["iliDef"] = attrs["iliDef"]
+            self.synset["definition"] = {
+                    "gloss": attrs["gloss"],
+                    "iliDef": attrs["iliDef"]
+                    }
         elif name == "Statement":
             assert(self.parent[-1] == "Definition")
             if "examples" not in self.synset:
@@ -96,16 +111,17 @@ class WNLMFHandler(xml.sax.handler.ContentHandler):
             self.entry["syntacticBehaviour"].append(attrs["subcategorizationFrame"])
         elif name == "Meta":
             if self.parent[-1] == "Lexicon":
-                doMeta(name, attrs, self.lexicon)
+                self.doMeta(name, attrs, self.lexicon)
             elif self.parent[-1]  == "LexicalEntry":
-                doMeta(name, attrs, self.entry)
+                self.doMeta(name, attrs, self.entry)
             elif self.parent[-1] == "Sense":
-                doMeta(name, attrs, self.sense)
+                self.doMeta(name, attrs, self.sense)
             elif self.parent[-1] == "Synset":
-                doMeta(name, attrs, self.synset)
+                self.doMeta(name, attrs, self.synset)
             else:
                 assert(False)
         else:
+            print(name)
             assert(False)
 
         self.parent.append(name)
@@ -117,5 +133,11 @@ if __name__ == "__main__":
     parser = xml.sax.make_parser()
     handler = WNLMFHandler()
     parser.setContentHandler(handler)
-    parser.parse(open(sys.argv[1],"r"))
-    print(json.dumps(handler.root))
+    if len(sys.argv) >= 2:
+        parser.parse(open(sys.argv[1],"r"))
+    else:
+        parser.parse(sys.stdin)
+    if len(handler.root) > 1:
+        print(json.dumps(handler.root, indent=4))
+    else:
+        print(json.dumps(handler.root[0], indent=4))

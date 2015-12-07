@@ -10,7 +10,7 @@ errors = 0
 # Format dependent constants
 xmlid_regex = re.compile(r'^([a-zA-Z_][\w.-]*|)$')
 meta_keys = ["contributor", "coverage", "creator", "date", "description", 
-             "format", "identifier", "language", "publisher", "relation", 
+             "format", "identifier", "publisher", "relation", 
              "rights", "source", "subject", "title", "type", "status", 
              "confidenceScore"]
 language_regex = re.compile("^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-((-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))$")
@@ -52,12 +52,12 @@ default_language = "unk"
 def warn(reason):
     global warnings
     warnings += 1
-    print("[WARNING] " + reason)
+    sys.stderr.write("[WARNING] " + reason + "\n")
 
 def fail(reason):
     global errors
     errors += 1
-    print("[ERROR  ] " + reason)
+    sys.stderr.write("[ERROR  ] " + reason + "\n")
 
 def convert_language(language):
     if type(language) is str or type(language) is unicode:
@@ -396,6 +396,8 @@ def convert_root(root, xml):
             elif key == "label":
                 convert_label(root[key])
                 lexicon.attrib["label"] = root[key]
+            elif key == "language":
+                lexicon.attrib["language"] = root[key]
             elif key in meta_keys:
                 if meta is None:
                     meta = Element("Meta")
@@ -418,5 +420,5 @@ if __name__ == "__main__":
         source = open(sys.argv[1])
     root = Element("LexicalResource")
     convert_root(json.load(source), root)
-    print("%d Errors and %d Warnings" % (errors, warnings))
+    sys.stderr.write("%d Errors and %d Warnings\n" % (errors, warnings))
     print(tostring(root, pretty_print=True))
