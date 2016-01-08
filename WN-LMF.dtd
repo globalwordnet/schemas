@@ -20,7 +20,7 @@
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED>
-<!ELEMENT Definition (Statement*)>
+<!ELEMENT Definition (Statement*, Meta?)>
 <!ATTLIST Definition
     language CDATA #IMPLIED
     iliDef CDATA #REQUIRED
@@ -28,11 +28,11 @@
 <!ELEMENT Statement EMPTY>
 <!ATTLIST Statement
     example CDATA #REQUIRED>
-<!ELEMENT SynsetRelation EMPTY>
+<!ELEMENT SynsetRelation Meta?>
 <!ATTLIST SynsetRelation
     target IDREF #REQUIRED
     relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage|action|theme|product|location|agent|instrument|result|patient|beneficiary|creator|goal|experiencer) #REQUIRED>
-<!ELEMENT SenseRelation EMPTY>
+<!ELEMENT SenseRelation Meta?>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
     relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED>
