@@ -118,6 +118,8 @@ class WNLMFHandler(xml.sax.handler.ContentHandler):
                 self.doMeta(name, attrs, self.sense)
             elif self.parent[-1] == "Synset":
                 self.doMeta(name, attrs, self.synset)
+            elif self.parent[-1] == "Definition":
+                self.doMeta(name, attrs, self.synset)
             else:
                 assert(False)
         else:

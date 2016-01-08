@@ -239,6 +239,8 @@ def convert_definition(definition, xml):
                 defn_xml.attrib["gloss"] = definition[key]
             elif key == "examples":
                 convert_examples(definition[key], defn_xml)
+            elif key in meta_keys:
+                convert_meta(key, sense[key], None)
             else:
                 warn("Non-standard key ignored: %s" % key)
     else:
