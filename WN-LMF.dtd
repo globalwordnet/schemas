@@ -16,7 +16,7 @@
 <!ATTLIST Sense
     id ID #REQUIRED
     synset IDREF #REQUIRED>
-<!ELEMENT Synset (Definition?, SynsetRelation*, Meta?)>
+<!ELEMENT Synset (Definition*, SynsetRelation*, Meta?)>
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED>
