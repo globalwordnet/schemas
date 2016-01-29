@@ -2,36 +2,44 @@
 <!ELEMENT LexicalResource (Lexicon+)>
 <!ELEMENT Lexicon (LexicalEntry+, Synset*, Meta?)>
 <!ATTLIST Lexicon
-    id ID #IMPLIED
-    label CDATA #IMPLIED
-    language CDATA #REQUIRED>
+    id ID #REQUIRED
+    label CDATA #REQUIRED
+    language CDATA #REQUIRED
+    email CDATA #REQUIRED
+    license CDATA #REQUIRED
+    version CDATA #REQUIRED
+    url CDATA #IMPLIED
+    citation CDATA #IMPLIED>
 <!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*, Meta?)>
 <!ATTLIST LexicalEntry
-    id ID #IMPLIED>
+    id ID #REQUIRED>
 <!ELEMENT Lemma EMPTY>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     partOfSpeech (n|v|a|r|s|p|u) #REQUIRED>
-<!ELEMENT Sense (SenseRelation*, Meta?)>
+<!ELEMENT Sense (SenseRelation*, SenseExample*, Meta?)>
 <!ATTLIST Sense
     id ID #REQUIRED
     synset IDREF #REQUIRED>
-<!ELEMENT Synset (Definition?, SynsetRelation*, Meta?)>
+<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Meta?)>
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED>
-<!ELEMENT Definition (ILIDef?, Statement*)>
+<!ELEMENT Definition Meta?>
 <!ATTLIST Definition
-    iliDef CDATA #REQUIRED
+    language CDATA #IMPLIED
     gloss CDATA #REQUIRED>
-<!ELEMENT Statement EMPTY>
-<!ATTLIST Statement
+<!ELEMENT ILIDefinition Meta?>
+<!ATTLIST ILIDefinition
+    gloss CDATA #REQUIRED>
+<!ELEMENT SenseExample Meta?>
+<!ATTLIST SenseExample
     example CDATA #REQUIRED>
-<!ELEMENT SynsetRelation EMPTY>
+<!ELEMENT SynsetRelation Meta?>
 <!ATTLIST SynsetRelation
     target IDREF #REQUIRED
     relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage|action|theme|product|location|agent|instrument|result|patient|beneficiary|creator|goal|experiencer) #REQUIRED>
-<!ELEMENT SenseRelation EMPTY>
+<!ELEMENT SenseRelation Meta?>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
     relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED>
