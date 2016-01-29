@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF.dtd">
+<!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd">
 <LexicalResource>
-    <Lexicon label="Princeton WordNet" language="eng">
+    <Lexicon id="example" label="Princeton WordNet" language="en" 
+             email="fellbaum@princeton.edu" 
+             license="http://princeton.wordnet.edu/wordnet/license/" 
+             version="example"
+             url="http://princeton.wordnet.edu/"
+             citation="WordNet, C. Fellbaum (1998)">
         <LexicalEntry id="w1">
             <Lemma writtenForm="entity" partOfSpeech="n"/>
             <Sense id="pwn-100001740-n-1" synset="pwn-100001740-n"/>
@@ -10,16 +15,18 @@
             <Lemma writtenForm="able" partOfSpeech="a"/>
             <Sense id="pwn-300001740-a-1" synset="pwn-300001740-a">
                 <SenseRelation relType="antonym" target="pwn-300002908-a-1"/>
+                <SenseExample example="I am able to make an example here"/>
             </Sense>
         </LexicalEntry>
         <Synset id="pwn-100001740-n" ili="i35545">
-            <Definition gloss="that which is perceived or known or inferred to have its own distinct existence (living or nonliving)" iliDef=""/>
+            <Definition gloss="that which is perceived or known or inferred to have its own distinct existence (living or nonliving)">
             <SynsetRelation relType="hyponym" target="pwn-104431553-n"/>
             <SynsetRelation relType="hyponym" target="pwn-100002137-n"/>
             <SynsetRelation relType="hyponym" target="pwn-100001930-n"/>
         </Synset>
-        <Synset id="pwn-300001740-a" ili="i1">
-            <Definition gloss="(usually followed by `to') having the necessary means or skill or know-how or authority to do something" iliDef=""/>
+        <Synset id="pwn-300001740-a" ili="in">
+            <Definition gloss="(usually followed by `to') having the necessary means or skill or know-how or authority to do something"/>
+            <ILIDefinition gloss="This is a new concept to be inserted into the ILI"/>
             <SynsetRelation relType="attribute" target="pwn-105624029-n"/>
             <SynsetRelation relType="attribute" target="pwn-105204437-n"/>
         </Synset>
