@@ -42,7 +42,7 @@
                  p: Adpoisiton (Preposition, postposition, etc.)
                  x: Other (inc. particle, classifier, bound morphemes, determiners)
                  u: Unknown -->
-            <Lemma writtenForm="father" partOfSpeech="n"/>
+            <Lemma writtenForm="grandfather" partOfSpeech="n"/>
             <Sense id="example-10161911-n-1" synset="example-10161911-n"/>
         </LexicalEntry>
         <LexicalEntry id="w2">
@@ -107,6 +107,7 @@
         <Synset id="example-1-n" ili="in">
             <Definition>A father's father; a paternal grandfather</Definition>
             <!-- You can include metadata (such as source) at many points -->
+            <!-- The ILI Definition must be at least 20 characters or five words -->
             <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">
                 A father's father; a paternal grandfather
             </ILIDefinition>

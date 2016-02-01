@@ -7,10 +7,11 @@
     "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
     "cc": "http://creativecommons.org/ns#",
     "ili": "http://ili.globalwordnet.org/ili/",
+    "owl": "http://www.w3.org/2002/07/owl#",
 
-    "gloss" : "skos:definition",
+    "gloss" : "lemon:definition",
     "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
-    "examples": "skos:example",
+    "example": "wn:senseExample",
     "ili": { "@id": "wn:iliRef", "@type": "@id" },
     "hypernym": { "@id": "wn:hypernym", "@type": "@id" },
     "hyponym": { "@id": "wn:hyponym", "@type": "@id" },
@@ -34,25 +35,12 @@
     "domain_member_region": { "@id": "wn:domain_member_region", "@type": "@id" },
     "domain_usage": { "@id": "wn:domain_usage", "@type": "@id" },
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
-    "action": { "@id": "wn:action", "@type": "@id" },
-    "theme": { "@id": "wn:theme", "@type": "@id" },
-    "product": { "@id": "wn:product", "@type": "@id" },
-    "location": { "@id": "wn:location", "@type": "@id" },
-    "agent": { "@id": "wn:agent", "@type": "@id" },
-    "instrument": { "@id": "wn:instrument", "@type": "@id" },
-    "result": { "@id": "wn:result", "@type": "@id" },
-    "patient": { "@id": "wn:patient", "@type": "@id" },
-    "beneficiary": { "@id": "wn:beneficiary", "@type": "@id" },
-    "creator": { "@id": "wn:creator", "@type": "@id" },
-    "goal": { "@id": "wn:goal", "@type": "@id" },
-    "experiencer": { "@id": "wn:experiencer", "@type": "@id" },
-
     "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@id" },
 
-    "isSenseOf": { "@reverse": "lemon:reference", "@type": "@id" },
     "sense": { "@id": "lemon:sense", "@type": "@id"},
     "synset": { "@id": "lemon:reference", "@type": "@id" },
     "definition": { "@id": "lemon:definition", "@type": "@id" },
+    "iliDefintion": { "@id": "wn:iliDefinition", "@type": "@id" },
 
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
@@ -76,6 +64,11 @@
     "label": { "@id": "rdfs:label", "type": "string" },
 
     "syntacticBehaviour": { "@id": "lemon:syntacticBehavior", "@type": "@id" },
+
+    "email": { "@id": "http://schema.org/email", "type": "string" },
+    "version": { "@id": "owl:versionInfo", "type": "string" },
+    "citation": "http://schema.org/citation",
+    "url": { "@id": "http://schema.org/url", "@type": "@id" },
 
     "contributor": { "@id": "dc:contributor", "type": "string" },
     "coverage": { "@id": "dc:coverage", "type": "string" },
