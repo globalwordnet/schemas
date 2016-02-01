@@ -1,8 +1,164 @@
-<html>
-  <head>
-    <title>Test</tile>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="global-wordnet-formats">Global Wordnet Formats</h1>
+<p>The Global WordNet Association provides three formats for which WordNets can be published and submitted to the ILI. These are as follows:</p>
+<ul>
+<li><a href="#xml">Lexical Markup Framework compatible XML</a></li>
+<li><a href="#json">JSON-LD using the lemon Vocabulary</a></li>
+<li><a href="#rdf">lemon-based RDF</a></li>
+</ul>
+<p>All of these formats are considered equivalent and a converter between them can be used at.</p>
+<h2 id="xml">XML</h2>
+<p>The XML is specified by the following <a href="WN-LMF-1.0.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
+<p>The first three lines must always be as follows:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd&quot;&gt;
+&lt;LexicalResource xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;</code></pre>
+<p>A file may contain multiple WordNets in different languages:</p>
+<p>The following information is required:</p>
+<ul>
+<li>id: A short name for the resource</li>
+<li>label: The full name for the resources</li>
+<li>language: Please follow BCP-47, i.e., use a two-letter code if available else a three-letter code</li>
+<li>email: Please give a contact email address</li>
+<li>license: The license of your resource (please provide URL)</li>
+<li>version: A string identifying this version (preferably follow major.minor format)</li>
+<li>url: A URL for your project homepage</li>
+<li>citation: The paper to cite for this resource</li>
+</ul>
+<p>Extra properties may be included from Dublin core and in addition</p>
+<ul>
+<li>status: The status of the resource, e.g., &quot;valid&quot;, &quot;checked&quot;, &quot;unchecked&quot;</li>
+<li><p>confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of the element.</p>
+<pre><code>&lt;Lexicon id=&quot;example-en&quot;
+         label=&quot;Example wordnet (English)&quot;
+         language=&quot;en&quot; 
+         email=&quot;john@mccr.ae&quot;
+         license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
+         version=&quot;1.0&quot;
+         citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
+         url=&quot;http://globalwordnet.github.io/schemas/&quot;
+         dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre></li>
+</ul>
+<p>Each word (lexical entry) must have a unique id:</p>
+<pre><code>        &lt;LexicalEntry id=&quot;w1&quot;&gt;</code></pre>
+<p>The part of speech values are as follows:</p>
+<ul>
+<li>n: Noun</li>
+<li>v: Verb</li>
+<li>a: Adjective</li>
+<li>r: Adverb</li>
+<li>s: Adjective Satellite</li>
+<li>z: Multiword expression (inc. phrase, idiom)</li>
+<li>c: Conjunction</li>
+<li>p: Adpoisiton (Preposition, postposition, etc.)</li>
+<li>x: Other (inc. particle, classifier, bound morphemes, determiners)</li>
+<li><p>u: Unknown</p>
+<pre><code>        &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
+        &lt;Sense id=&quot;example-10161911-n-1&quot; synset=&quot;example-10161911-n&quot;/&gt;
+    &lt;/LexicalEntry&gt;
+    &lt;LexicalEntry id=&quot;w2&quot;&gt;
+        &lt;Lemma writtenForm=&quot;paternal grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
+        &lt;Sense id=&quot;example-1-n-1&quot; synset=&quot;example-1-n&quot;&gt;</code></pre></li>
+</ul>
+<p>The set of relations between senses is limited to the following</p>
+<ul>
+<li>antonym: An opposite and inherently incompatible word</li>
+<li>also: See also, a reference of weak meaning</li>
+<li>verb_group: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li>participle: An adjective that is a participle form a verb</li>
+<li>pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as &quot;of or pertaining to&quot; and do not have antonyms. A pertainym can point to a noun or another pertainym</li>
+<li>derivation: A word that is derived from some other word</li>
+<li>domain_category: Indicates the category of this word</li>
+<li>domain_member_category: Indicates a word involved in this category described by this word</li>
+<li>domain_region: Indicates the region of this word</li>
+<li>domain_member_region: Indicates a word involved in the region described by this word</li>
+<li>domain_usage: Indicates the usage of this word</li>
+<li><p>domain_member_usage: Indicates a word involved in the usage described by this word</p>
+<pre><code>            &lt;SenseRelation relType=&quot;derivation&quot; target=&quot;example-10161911-n-1&quot;/&gt;
+        &lt;/Sense&gt;
+    &lt;/LexicalEntry&gt;
+    &lt;LexicalEntry id=&quot;w3&quot;&gt;
+        &lt;Lemma writtenForm=&quot;pay&quot; partOfSpeech=&quot;v&quot;/&gt;</code></pre></li>
+</ul>
+<p>Syntactic Behaviour is given as in Princeton WordNet</p>
+<pre><code>            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Sam cannot %s Sue &quot;/&gt;
+            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Sam and Sue %s&quot;/&gt;
+            &lt;SyntacticBehaviour subcategorizationFrame=&quot;The banks %s the check&quot;/&gt;
+        &lt;/LexicalEntry&gt;</code></pre>
+<p>If a synset is already mapped to the ILI please give the ID here</p>
+<pre><code>        &lt;Synset id=&quot;example-10161911-n&quot; ili=&quot;i90287&quot;&gt;
+            &lt;Definition&gt;
+                the father of your father or mother
+            &lt;/Definition&gt;</code></pre>
+<p>The set of relations between synsets is limited to the following:</p>
+<ul>
+<li>hypernym: A concept with a broader meaning</li>
+<li>hyponym: A concept with a narrower meaning</li>
+<li>instance_hypernym: The class of objects to which this instance belongs</li>
+<li>instance_hyponym: An individual instance of this class</li>
+<li>part_holonym: A larger whole that this concept is part of</li>
+<li>part_meronym: A part of this concept</li>
+<li>member_holonym: A group that this concept is a member of</li>
+<li>member_meronym: A member of this concept</li>
+<li>substance_holonym: Something where a constituent material is this concept</li>
+<li>substance_meronym: A constituent material of this concept</li>
+<li>entail: A verb X entails Y if X cannot be done unless Y is, or has been, done.</li>
+<li>cause: A verb that causes another</li>
+<li>similar: Similar, though not necessarily interchangeable</li>
+<li>also: See also, a reference of weak meaning</li>
+<li>attribute: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.</li>
+<li>verb_group: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li>domain_category: Indicates the category of this word</li>
+<li>domain_member_category: Indicates a word involved in this category described by this word</li>
+<li>domain_region: Indicates the region of this word</li>
+<li>domain_member_region: Indicates a word involved in the region described by this word</li>
+<li>domain_usage: Indicates the usage of this word</li>
+<li><p>domain_member_usage: Indicates a word involved in the usage described by this word</p>
+<pre><code>        &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-10162692-n&quot;/&gt;
+    &lt;/Synset&gt;</code></pre></li>
+</ul>
+<p>If you wish to define a new concept call the concept &quot;in&quot; (ILI New)</p>
+<pre><code>        &lt;Synset id=&quot;example-1-n&quot; ili=&quot;in&quot;&gt;
+            &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
+<p>You can include metadata (such as source) at many points The ILI Definition must be at least 20 characters or five words</p>
+<pre><code>            &lt;ILIDefinition dc:source=&quot;https://en.wiktionary.org/wiki/farfar&quot;&gt;
+                A father&#39;s father; a paternal grandfather
+            &lt;/ILIDefinition&gt;
+        &lt;/Synset&gt;</code></pre>
+<p>You must include all targets of relations</p>
+<pre><code>        &lt;Synset id=&quot;example-10162692-n&quot; ili=&quot;i90292&quot;/&gt;
+    &lt;/Lexicon&gt;
+    &lt;Lexicon id=&quot;example-sv&quot;
+             label=&quot;Example wordnet (Swedish)&quot;
+             language=&quot;sv&quot; 
+             email=&quot;john@mccr.ae&quot;
+             license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
+             version=&quot;1.0&quot;
+             citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
+             url=&quot;http://globalwordnet.github.io/schemas/&quot;
+             dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre>
+<p>The list of lexical entries (words) in your wordnet</p>
+<pre><code>        &lt;LexicalEntry id=&quot;w4&quot;&gt;
+            &lt;Lemma writtenForm=&quot;farfar&quot; partOfSpeech=&quot;n&quot;/&gt;</code></pre>
+<p>Synsets need not be language-specific but senses must be</p>
+<pre><code>            &lt;Sense id=&quot;example-2-n-1&quot; synset=&quot;example-1-n&quot;&gt;
+                &lt;SenseExample dc:source=&quot;Europarl Corpus&quot;&gt;
+                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
+                &lt;/SenseExample&gt;
+            &lt;/Sense&gt;
+        &lt;/LexicalEntry&gt;
+    &lt;/Lexicon&gt;
+&lt;/LexicalResource&gt;</code></pre>
+<h2 id="json">JSON</h2>
+<h2 id="ttl">TTL</h2>
+</body>
 </html>
