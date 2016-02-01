@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!ELEMENT LexicalResource (Lexicon+)>
-<!ELEMENT Lexicon (LexicalEntry+, Synset*, Meta?)>
+<!ATTLIST LexicalResource
+    xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
+<!ELEMENT Lexicon (LexicalEntry+, Synset*)>
 <!ATTLIST Lexicon
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -9,60 +11,183 @@
     license CDATA #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED
-    citation CDATA #IMPLIED>
-<!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*, Meta?)>
+    citation CDATA #IMPLIED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*)>
 <!ATTLIST LexicalEntry
-    id ID #REQUIRED>
+    id ID #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
 <!ELEMENT Lemma EMPTY>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     partOfSpeech (n|v|a|r|s|p|u) #REQUIRED>
-<!ELEMENT Sense (SenseRelation*, SenseExample*, Meta?)>
+<!ELEMENT Sense (SenseRelation*, SenseExample*)>
 <!ATTLIST Sense
     id ID #REQUIRED
-    synset IDREF #REQUIRED>
-<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Meta?)>
+    synset IDREF #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*)>
 <!ATTLIST Synset
     id ID #REQUIRED
-    ili CDATA #REQUIRED>
-<!ELEMENT Definition Meta?>
+    ili CDATA #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
     language CDATA #IMPLIED
-    gloss CDATA #REQUIRED>
-<!ELEMENT ILIDefinition Meta?>
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT ILIDefinition (#PCDATA)>
 <!ATTLIST ILIDefinition
-    gloss CDATA #REQUIRED>
-<!ELEMENT SenseExample Meta?>
+    gloss CDATA #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT SenseExample (#PCDATA)>
 <!ATTLIST SenseExample
-    example CDATA #REQUIRED>
-<!ELEMENT SynsetRelation Meta?>
+    example CDATA #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT SynsetRelation EMPTY>
 <!ATTLIST SynsetRelation
     target IDREF #REQUIRED
-    relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage|action|theme|product|location|agent|instrument|result|patient|beneficiary|creator|goal|experiencer) #REQUIRED>
-<!ELEMENT SenseRelation Meta?>
+    relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage|action|theme|product|location|agent|instrument|result|patient|beneficiary|creator|goal|experiencer) #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
+<!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
-    relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED>
+    relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    confidenceScore CDATA #IMPLIED>
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
   subcategorizationFrame CDATA #REQUIRED>
-<!ELEMENT Meta EMPTY>
-<!ATTLIST Meta
-    contributor CDATA #IMPLIED
-    coverage CDATA #IMPLIED
-    creator CDATA #IMPLIED
-    date CDATA #IMPLIED
-    description CDATA #IMPLIED
-    format CDATA #IMPLIED
-    identifier CDATA #IMPLIED
-    language CDATA #IMPLIED
-    publisher CDATA #IMPLIED
-    relation CDATA #IMPLIED
-    rights CDATA #IMPLIED
-    source CDATA #IMPLIED
-    subject CDATA #IMPLIED
-    title CDATA #IMPLIED
-    type CDATA #IMPLIED
-    status CDATA #IMPLIED
-    confidenceScore CDATA #IMPLIED>
-
