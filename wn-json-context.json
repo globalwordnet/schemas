@@ -1,14 +1,15 @@
 {
-    "wn": "http://wordnet-rdf.princeton.edu/ontology#",
-    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
     "dc": "http://purl.org/dc/terms/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
-    "cc": "http://creativecommons.org/ns#",
     "ili": "http://ili.globalwordnet.org/ili/",
+    "lime": "http://www.w3.org/ns/lemon/lime#",
+    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "schema": "http://schema.org"/
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/"
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "synsem": "http://www.w3.org/ns/lemon/synsem#",
+    "wn": "http://wordnet-rdf.princeton.edu/ontology#",
+    "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
 
     "gloss" : "rdf:value",
     "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
@@ -37,11 +38,11 @@
     "domain_usage": { "@id": "wn:domain_usage", "@type": "@id" },
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
     "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@id" },
-    "value": { "@id": "lemon:value", "type": "string" },
+    "value": { "@id": "rdf:value", "type": "string" },
 
-    "sense": { "@id": "lemon:sense", "@type": "@id"},
-    "synset": { "@id": "lemon:reference", "@type": "@id" },
-    "definition": { "@id": "lemon:definition", "@type": "@id" },
+    "sense": { "@id": "ontolex:sense", "@type": "@id"},
+    "synset": { "@id": "ontolex:reference", "@type": "@id" },
+    "definition": { "@id": "skos:definition", "@type": "@id" },
     "iliDefintion": { "@id": "wn:iliDefinition", "@type": "@id" },
 
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
@@ -58,19 +59,17 @@
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
 
-    "isEntryOf": { "@reverse": "lemon:sense", "@type": "@id" },
-    
-    "lemma": "lemon:canonicalForm",
-    "writtenForm": "lemon:writtenRep",
+    "lemma": "ontolex:canonicalForm",
+    "writtenForm": "ontolex:writtenRep",
 
     "label": { "@id": "rdfs:label", "type": "string" },
 
-    "synBehaviour": { "@id": "lemon:synBehavior", "@type": "@id" },
+    "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
 
-    "email": { "@id": "http://schema.org/email", "type": "string" },
+    "email": { "@id": "schema:email", "type": "string" },
     "version": { "@id": "owl:versionInfo", "type": "string" },
-    "citation": "http://schema.org/citation",
-    "url": { "@id": "http://schema.org/url", "@type": "@id" },
+    "citation": "schema:citation",
+    "url": { "@id": "schema:url", "@type": "@id" },
 
     "contributor": { "@id": "dc:contributor", "type": "string" },
     "coverage": { "@id": "dc:coverage", "type": "string" },
@@ -88,10 +87,10 @@
     "title": { "@id": "dc:title", "type": "string" },
     "type": { "@id": "dc:type", "type": "string" },
     "status": { "@id": "dc:status", "type": "string" },
-    "confidenceScore": { "@id": "dc:confidenceScore", "type": "string" },
+    "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
 
     "entry" : {
-        "@id": "lemon:entry",
+        "@id": "lime:entry",
         "@container": "@index"
     }
 }

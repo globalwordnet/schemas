@@ -1,13 +1,14 @@
-@prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
-@prefix lemon: <http://lemon-model.net/lemon#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
-@prefix cc: <http://creativecommons.org/ns#> .
 @prefix ili: <http://ili.globalwordnet.org/ili/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
+@prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
 
 <#example-en> a lemon:Lexicon ;
   rdfs:label "Example wordnet"@en ;
@@ -18,54 +19,51 @@
   schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."@en ;
   schema:url <http://globalwordnet.github.io/schemas/> ;
   dc:publisher "Global Wordnet Association"@en ;
-  lemon:entry <#w1>, <#w2>, <#w3> .
+  lime:entry <#w1>, <#w2>, <#w3> .
         
-<#w1> a lemon:LexicalEntry ;
-  lemon:canonicalForm [ lemon:writtenRep "grandfather"@en ] ;
+<#w1> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep "grandfather"@en ] ;
   wn:partOfSpeech wn:noun ;
-  lemon:sense <#example-10161911-n-1> .
+  ontolex:sense <#example-10161911-n-1> .
 
-<#example-10161911-n-1> a lemon:LexicalSense ;
-  lemon:reference <example-10161911-n> .
+<#example-10161911-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <example-10161911-n> .
 
-<#w2> a lemon:LexicalEntry ;
-  lemon:canonicalForm [ lemon:writtenRep "paternal grandfather"@en ] ;
+<#w2> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep "paternal grandfather"@en ] ;
   wn:partOfSpeech wn:noun ;
-  lemon:sense <#example-1-n-1> .
+  ontolex:sense <#example-1-n-1> .
 
-<#example-1-n-1> a lemon:LexicalSense ;
-  lemon:reference <#example-1-n> ;
+<#example-1-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-1-n> ;
   wn:derivation <example-10161911-n-1> .
 
-<#w3> a lemon:LexicalEntry ;
-  lemon:canonicalForm [ lemon:writtenRep "pay"@en ] ;
+<#w3> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep "pay"@en ] ;
 // Be careful with spelling here:
-  lemon:synBehavior 
+  synsem:synBehavior 
     [ rdfs:label "Sam cannot %s Sue" ] ,
     [ rdfs:label "Sam and Sue %s" ] ,
     [ rdfs:label "The banks %s the check" ] .
 
-<#example-10161911-n> a skos:Concept ;
+<#example-10161911-n> a ontolex:LexicalConcept ;
   owl:sameAs ili:i90287 ;
-  lemon:definition [
-    lemon:value "the father of your father or mother"@en 
-  ] ;
+// Definitions can also be given directly
+  skos:definition "the father of your father or mother"@en ;
   wn:hypernym <#example-10162692-n> .
 
-<#example-1-n> a skos:Concept ;
-// This is for proposing a new synset! Do not publish with this annotation.
-  owl:sameAs ili:in ;
-  lemon:definition [
-    lemon:value "A father's father; a paternal grandfather"@en ;
+<#example-1-n> a ontolex:LexicalConcept ;
+  skos:definition [
+    rdf:value "A father's father; a paternal grandfather"@en ;
   ] ,
   wn:iliDefinition [
     dc:source <https://en.wiktionary.org/wiki/farfar> ;
-    lemon:value "A father's father; a paternal grandfather"@ en
+    rdf:value "A father's father; a paternal grandfather"@ en
   ] .
         
 <#example-10162692-n> owl:sameAs ili:i90292" .
     
-<#example-sv> a lemon:Lexicon ;
+<#example-sv> a ontolex:Lexicon ;
   rdfs:label "Example wordnet (Swedish)"@en ;
   dc:languager "sv" ;
   schema:email "john@mccr.ae" ;
@@ -73,16 +71,17 @@
   owl:versionInfo <1.0> ;
   schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."@en ;
   schema:url <http://globalwordnet.github.io/schemas/> ;
-  dc:publisher <Global Wordnet Association> .
+  dc:publisher <Global Wordnet Association> ;
+  lime:entry <#w4> .
 
-<#w4> a lemon:LexicalEntry ;
-  lemon:canonicalForm [ lemon:writtenRep "farfar"@en ] ;
+<#w4> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep "farfar"@en ] ;
   wn:partOfSpeech wn:noun ;
-  lemon:sense <#example-2-n-1> .
+  ontolex:sense <#example-2-n-1> .
 
-<#example-2-n-1> a lemon:LexicalSense ;
-  lemon:reference <#example-1-n> ;
-  wn:senseExample [
-   dc:source "Europarl Corpus"@en ;
-   lemon:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv
+<#example-2-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-1-n> ;
+  skos:example [
+    dc:source "Europarl Corpus"@en ;
+    rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv
   ] .
