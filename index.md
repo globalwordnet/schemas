@@ -5,8 +5,14 @@ The Global WordNet Association provides three formats for which WordNets can be
 published and submitted to the ILI. These are as follows:
 
 * [Lexical Markup Framework compatible XML](#xml)
+    * [Example](http://github.com/globalwordnet/schemas/blob/master/example.xml)
+    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd)
 * [JSON-LD using the lemon Vocabulary](#json)
+    * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
+    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.0.json)
+    * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
 * [lemon-based RDF](#rdf)
+    * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
 
 All of these formats are considered equivalent and a converter between them can 
 be used at.
@@ -199,7 +205,7 @@ Collaborative Interlingual Index, but web services may of course return shorter
 fragments of the structure.
 
     { 
-      "@context": "http://globalwordnet.github.io/schemas/wn-json-context.json",
+      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.0.json",
       "@graph": [{
 
 The following are required properties of every WordNet (note the language

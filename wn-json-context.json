@@ -1,16 +1,19 @@
 {
-    "wn": "http://wordnet-rdf.princeton.edu/ontology#",
-    "lemon": "http://lemon-model.net/lemon#",
     "dc": "http://purl.org/dc/terms/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
-    "cc": "http://creativecommons.org/ns#",
     "ili": "http://ili.globalwordnet.org/ili/",
+    "lime": "http://www.w3.org/ns/lemon/lime#",
+    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/"
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "synsem": "http://www.w3.org/ns/lemon/synsem#",
+    "wn": "http://wordnet-rdf.princeton.edu/ontology#",
+    "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
 
-    "gloss" : "skos:definition",
+    "gloss" : "rdf:value",
     "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
-    "examples": "skos:example",
+    "example": "skos:example",
     "ili": { "@id": "wn:iliRef", "@type": "@id" },
     "hypernym": { "@id": "wn:hypernym", "@type": "@id" },
     "hyponym": { "@id": "wn:hyponym", "@type": "@id" },
@@ -34,25 +37,13 @@
     "domain_member_region": { "@id": "wn:domain_member_region", "@type": "@id" },
     "domain_usage": { "@id": "wn:domain_usage", "@type": "@id" },
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
-    "action": { "@id": "wn:action", "@type": "@id" },
-    "theme": { "@id": "wn:theme", "@type": "@id" },
-    "product": { "@id": "wn:product", "@type": "@id" },
-    "location": { "@id": "wn:location", "@type": "@id" },
-    "agent": { "@id": "wn:agent", "@type": "@id" },
-    "instrument": { "@id": "wn:instrument", "@type": "@id" },
-    "result": { "@id": "wn:result", "@type": "@id" },
-    "patient": { "@id": "wn:patient", "@type": "@id" },
-    "beneficiary": { "@id": "wn:beneficiary", "@type": "@id" },
-    "creator": { "@id": "wn:creator", "@type": "@id" },
-    "goal": { "@id": "wn:goal", "@type": "@id" },
-    "experiencer": { "@id": "wn:experiencer", "@type": "@id" },
-
     "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@id" },
+    "value": { "@id": "rdf:value", "type": "string" },
 
-    "isSenseOf": { "@reverse": "lemon:reference", "@type": "@id" },
-    "sense": { "@id": "lemon:sense", "@type": "@id"},
-    "synset": { "@id": "lemon:reference", "@type": "@id" },
-    "definition": { "@id": "lemon:definition", "@type": "@id" },
+    "sense": { "@id": "ontolex:sense", "@type": "@id"},
+    "synset": { "@id": "ontolex:reference", "@type": "@id" },
+    "definition": { "@id": "skos:definition", "@type": "@id" },
+    "iliDefintion": { "@id": "wn:iliDefinition", "@type": "@id" },
 
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
@@ -68,14 +59,17 @@
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
 
-    "isEntryOf": { "@reverse": "lemon:sense", "@type": "@id" },
-    
-    "lemma": "lemon:canonicalForm",
-    "writtenForm": "lemon:writtenRep",
+    "lemma": "ontolex:canonicalForm",
+    "writtenForm": "ontolex:writtenRep",
 
     "label": { "@id": "rdfs:label", "type": "string" },
 
-    "syntacticBehaviour": { "@id": "lemon:syntacticBehavior", "@type": "@id" },
+    "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
+
+    "email": { "@id": "schema:email", "type": "string" },
+    "version": { "@id": "owl:versionInfo", "type": "string" },
+    "citation": "schema:citation",
+    "url": { "@id": "schema:url", "@type": "@id" },
 
     "contributor": { "@id": "dc:contributor", "type": "string" },
     "coverage": { "@id": "dc:coverage", "type": "string" },
@@ -93,10 +87,10 @@
     "title": { "@id": "dc:title", "type": "string" },
     "type": { "@id": "dc:type", "type": "string" },
     "status": { "@id": "dc:status", "type": "string" },
-    "confidenceScore": { "@id": "dc:confidenceScore", "type": "string" },
+    "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
 
     "entry" : {
-        "@id": "lemon:entry",
+        "@id": "lime:entry",
         "@container": "@index"
     }
 }
