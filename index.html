@@ -1,13 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-</head>
-<body>
 <h1 id="global-wordnet-formats">Global Wordnet Formats</h1>
 <p>The Global WordNet Association provides three formats for which WordNets can be published and submitted to the ILI. These are as follows:</p>
 <ul>
@@ -59,7 +49,7 @@
 <li>s: Adjective Satellite</li>
 <li>z: Multiword expression (inc. phrase, idiom)</li>
 <li>c: Conjunction</li>
-<li>p: Adpoisiton (Preposition, postposition, etc.)</li>
+<li>p: Adposition (Preposition, postposition, etc.)</li>
 <li>x: Other (inc. particle, classifier, bound morphemes, determiners)</li>
 <li><p>u: Unknown</p>
 <pre><code>        &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
@@ -126,7 +116,7 @@
 <pre><code>        &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-10162692-n&quot;/&gt;
     &lt;/Synset&gt;</code></pre></li>
 </ul>
-<p>If you wish to define a new concept call the concept &quot;in&quot; (ILI New)</p>
+<p>If you wish to define a new concept call the concept &quot;in&quot; (ILI New). If there is no mapping to the ILI leave this field empty (it is required).</p>
 <pre><code>        &lt;Synset id=&quot;example-1-n&quot; ili=&quot;in&quot;&gt;
             &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
 <p>You can include metadata (such as source) at many points The ILI Definition must be at least 20 characters or five words</p>
@@ -159,6 +149,251 @@
     &lt;/Lexicon&gt;
 &lt;/LexicalResource&gt;</code></pre>
 <h2 id="json">JSON</h2>
-<h2 id="ttl">TTL</h2>
-</body>
-</html>
+<p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
+<p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
+<pre><code>{ 
+  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context.json&quot;,
+  &quot;@graph&quot;: [{</code></pre>
+<p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>ontolex:Lexicon</code>.</p>
+<pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
+      &quot;@id&quot;: &quot;example-en&quot;,
+      &quot;@type&quot;: &quot;ontolex:Lexicon&quot;, 
+      &quot;label&quot;: &quot;Example wordnet (English)&quot;,
+      &quot;language&quot;: &quot;en&quot;,
+      &quot;email&quot;: &quot;john@mccr.ae&quot;,
+      &quot;rights&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
+      &quot;version&quot;: &quot;1.0&quot;,</code></pre>
+<p>In addition the properties <code>citation</code>, <code>url</code>, <code>status</code>, <code>confidenceScore</code> and any property from <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements">Dublin Core Elements 1.1</a> May be used</p>
+<pre><code>      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
+      &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
+      &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,</code></pre>
+<p>The entries are given as a list under the <code>entry</code> property it requires an <code>@id</code> <code>partOfSpeech</code> and <code>lemma</code> and may have <code>sense</code>, <code>synBehavior</code>, <code>status</code>, <code>confidence</code> and Dublin Core properties. The lemma has only a single value <code>writtenForm</code> and the <code>partOfSpeech</code> must be one of the following: [ <code>wn:noun</code>, <code>wn:verb</code>, <code>wn:adjective</code>, <code>wn:adverb</code>, <code>wn:adjective_satellite</code>, <code>wn:phrase</code>, <code>wn:conjunction</code>, <code>wn:adposition</code>, <code>wn:other</code>, <code>wn:unknown</code> ]. The <code>@id</code> must be unique in the document, it is not the same as the <code>@id</code> of the wordnet or any other entry.</p>
+<pre><code>      &quot;entry&quot;: [{
+          &quot;@id&quot; : &quot;w1&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
+          &quot;partOfSpeech&quot;: &quot;wn:noun&quot;,</code></pre>
+<p>The Sense requires only an <code>@id</code> and a <code>synset</code> and may take <code>status</code>, <code>confidenceScore</code>, Dublin Core properties, an <code>example</code> and any number of sense relations as follows:</p>
+<ul>
+<li><code>antonym</code>: An opposite and inherently incompatible word</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>verb_group</code>: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li><code>participle</code>: An adjective that is a participle form a verb</li>
+<li><code>pertainym</code>: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as &quot;of or pertaining to&quot; and do not have antonyms. A pertainym can point to a noun or another pertainym</li>
+<li><code>derivation</code>: A word that is derived from some other word</li>
+<li><code>domain_category</code>: Indicates the category of this word</li>
+<li><code>domain_member_category</code>: Indicates a word involved in this category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the region described by this word</li>
+<li><code>domain_usage</code>: Indicates the usage of this word</li>
+<li><p><code>domain_member_usage</code>: Indicates a word involved in the usage described by this word</p>
+<pre><code>      &quot;sense&quot;: [{
+          &quot;@id&quot;: &quot;example-10161911-n-1&quot;,</code></pre></li>
+</ul>
+<p>A synset requires only an <code>@id</code>. It may take an <code>ili</code> which is a code from the CILI (starting with <code>ili:i</code>), a <code>definition</code>, an <code>iliDefinition</code> (which must be given in English), <code>status</code>, <code>confidenceScore</code>, Dublin Core properties and any relations from the following list:</p>
+<ul>
+<li><code>hypernym</code>: A concept with a broader meaning</li>
+<li><code>hyponym</code>: A concept with a narrower meaning</li>
+<li><code>instance_hypernym</code>: The class of objects to which this instance belongs</li>
+<li><code>instance_hyponym</code>: An individual instance of this class</li>
+<li><code>part_holonym</code>: A larger whole that this concept is part of</li>
+<li><code>part_meronym</code>: A part of this concept</li>
+<li><code>member_holonym</code>: A group that this concept is a member of</li>
+<li><code>member_meronym</code>: A member of this concept</li>
+<li><code>substance_holonym</code>: Something where a constituent material is this concept</li>
+<li><code>substance_meronym</code>: A constituent material of this concept</li>
+<li><code>entail</code>: A verb X entails Y if X cannot be done unless Y is, or has been, done.</li>
+<li><code>cause</code>: A verb that causes another</li>
+<li><code>similar</code>: Similar, though not necessarily interchangeable</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>attribute</code>: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.</li>
+<li><code>verb_group</code>: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li><code>domain_category</code>: Indicates the category of this word</li>
+<li><code>domain_member_category</code>: Indicates a word involved in this category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the region described by this word</li>
+<li><code>domain_usage</code>: Indicates the usage of this word</li>
+<li><code>domain_member_usage</code>: Indicates a word involved in the usage described by this word</li>
+</ul>
+<p>In contrast to the XML form the <code>ili</code> is optional. If there is no match omit this tag, if you wish to propose a new synset add only a <code>iliDefinition</code>.</p>
+<pre><code>               &quot;synset&quot;: {
+                  &quot;@id&quot;: &quot;example-10161911-n&quot;,
+                  &quot;ili&quot;: &quot;ili:i90287&quot;,</code></pre>
+<p>Definitions must have a <code>gloss</code> and may be have a <code>language</code>, in addition, <code>status</code>, <code>confidenceScore</code> and Dublin Core properties may be added. An <code>iliDefinition</code> is the same but may not have a language.</p>
+<pre><code>                  &quot;definition&quot;: {
+                      &quot;gloss&quot;: &quot;that which is perceived or known or inferred to have its own distinct existence (living or nonliving)&quot;
+                  },</code></pre>
+<p>Relations (on senses or synsets) are given as an array of references to <code>@id</code> values (these must correspond to elements at the same level with that <code>@id</code>).</p>
+<pre><code>                  &quot;hyponym&quot;: [&quot;example-10162692-n&quot;]
+              }
+          }]
+      }, {
+          &quot;@id&quot; : &quot;w2&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;paternal grandfather&quot; }, 
+          &quot;partOfSpeech&quot;: &quot;wn:noun&quot;,
+          &quot;sense&quot;: [{
+              &quot;@id&quot;: &quot;example-1-n-1&quot;,
+              &quot;synset&quot;: {
+                  &quot;@id&quot;: &quot;example-1-n&quot;,
+                  &quot;definition&quot;: {
+                      &quot;gloss&quot;: &quot;the father of your father or mother&quot;
+                  },
+                  &quot;iliDefinition&quot;: {
+                      &quot;gloss&quot;: &quot;the father of your father or mother&quot;,
+                      &quot;source&quot;: &quot;https://en.wiktionary.org/wiki/farfar&quot;
+                  },
+                  &quot;hypernym&quot;: [&quot;example-10162692-n&quot;]
+              },</code></pre>
+<p>Relations may also be stated in full form, in which case the <code>status</code>, <code>confidenceScore</code> and Dublin Core properties may be stated.</p>
+<pre><code>              &quot;relations&quot;: [
+                {
+                  &quot;category&quot;: &quot;wn:derivation&quot;,
+                  &quot;target&quot;: &quot;example-10161911-n&quot;,
+                  &quot;creator&quot;: &quot;John McCrae&quot;
+                }
+              ]
+          }]
+      }, {
+          &quot;@id&quot;: &quot;w3&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;pay&quot; },
+          &quot;partOfSpeech&quot;: &quot;wn:verb&quot;,</code></pre>
+<p>The syntactic behavior is given here as follows:</p>
+<pre><code>          &quot;synBehavior&quot;: [{
+             {&quot;label&quot;: &quot;Sam cannot %s Sue&quot;}, 
+             {&quot;label&quot;: &quot;Sam and Sue %s&quot;},
+             {&quot;label&quot;: &quot;The banks %s the check&quot;}
+          }]
+      }]
+  }, {
+      &quot;@context&quot;: { &quot;@language&quot;: &quot;sv&quot; },
+      &quot;@id&quot;: &quot;example-sv&quot;,
+      &quot;@type&quot;: &quot;ontolex:Lexicon&quot;, 
+      &quot;label&quot;: &quot;Example wordnet (Swedish)&quot;,
+      &quot;language&quot;: &quot;sv&quot;,
+      &quot;email&quot;: &quot;john@mccr.ae&quot;,
+      &quot;rights&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
+      &quot;version&quot;: &quot;1.0&quot;,
+      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
+      &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
+      &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,
+      &quot;entry&quot;: [{
+          &quot;@id&quot; : &quot;w4&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;farfar&quot; }, 
+          &quot;partOfSpeech&quot;: &quot;wn:noun&quot;,
+          &quot;sense&quot;: [{
+              &quot;@id&quot;: &quot;example-2-n-1&quot;,
+              &quot;synset&quot;: &quot;example-1-n&quot;,</code></pre>
+<p>Any examples should be given on the sense as follows:</p>
+<pre><code>              &quot;example&quot;: {
+                  &quot;value&quot;: &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;,
+                  &quot;source&quot;: &quot;Europarl Corpus&quot;
+              }
+          }]
+      }]
+  }]
+}</code></pre>
+<p>In addition, the JSON format can be validated by the <a href="http://json-schema.org">JSON Schema</a> provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
+<h2 id="rdf">RDF</h2>
+<p>The RDF schema is significantly more flexible and builds principally on the <a href="http://cimiano.github.io/ontolex/specification.html">W3C OntoLex Model</a>. The details of the RDF serialization are principally built on those of the JSON-LD model. We include a separate tutorial here for the benefit of those who wish to create their resource natively in RDF.</p>
+<p>The standard namespaces are</p>
+<pre><code>@prefix dc: &lt;http://purl.org/dc/terms/&gt; .
+@prefix ili: &lt;http://ili.globalwordnet.org/ili/&gt; .
+@prefix lime: &lt;http://www.w3.org/ns/lemon/lime#&gt; .
+@prefix ontolex: &lt;http://www.w3.org/ns/lemon/ontolex#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix schema: &lt;http://schema.org/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix synsem: &lt;http://www.w3.org/ns/lemon/synsem#&gt; .
+@prefix wn: &lt;http://wordnet-rdf.princeton.edu/ontology#&gt; .
+@prefix wordnetlicense: &lt;http://wordnet.princeton.edu/wordnet/license/&gt; .</code></pre>
+<p>Each wordnet is an instance of the class <code>ontolex:Lexicon</code> and must have the following properties</p>
+<ul>
+<li><code>rdfs:label</code>: A name for the wordnet.</li>
+<li><code>dc:language</code>: The BCP 47 identifier for your language (usually a two letter code)</li>
+<li><code>schema:email</code>: An email address for the owner of the wordnet</li>
+<li><code>dc:rights</code>: A link to the license of the resource</li>
+<li><code>owl:versionInfo</code>: The version number of this resource</li>
+</ul>
+<p>The mapping to the Lemon-OntoLex model is as follows:</p>
+<ul>
+<li>Words are <code>ontolex:LexicalEntry</code>, they must have a <code>ontolex:canonicalForm</code> and a <code>wn:partOfSpeech</code>.</li>
+<li>Senses are <code>ontolex:LexicalSense</code>, they must have a <code>ontolex:reference</code></li>
+<li>Synsets are <code>ontolex:LexicalConept</code>.</li>
+<li>Definitions and examples are given by <code>skos:definition</code> and <code>skos:example</code> optionally with a <code>rdf:value</code>.</li>
+</ul>
+<p>A more extended example is given here:</p>
+<pre><code>&lt;#example-en&gt; a lemon:Lexicon ;
+  rdfs:label &quot;Example wordnet&quot;@en ;
+  dc:language &quot;en&quot;@en ;
+  schema:email &quot;john@mccr.ae&quot; ;
+  dc:rights &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  owl:versionInfo &quot;1.0&quot; ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;@en ;
+  schema:url &lt;http://globalwordnet.github.io/schemas/&gt; ;
+  dc:publisher &quot;Global Wordnet Association&quot;@en ;
+  lime:entry &lt;#w1&gt;, &lt;#w2&gt;, &lt;#w3&gt; .
+        
+&lt;#w1&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep &quot;grandfather&quot;@en ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense &lt;#example-10161911-n-1&gt; .
+
+&lt;#example-10161911-n-1&gt; a ontolex:LexicalSense ;
+  ontolex:reference &lt;example-10161911-n&gt; .
+
+&lt;#w2&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep &quot;paternal grandfather&quot;@en ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense &lt;#example-1-n-1&gt; .
+
+&lt;#example-1-n-1&gt; a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-1-n&gt; ;
+  wn:derivation &lt;example-10161911-n-1&gt; .
+
+&lt;#w3&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep &quot;pay&quot;@en ] ;
+// Be careful with spelling here:
+  synsem:synBehavior 
+    [ rdfs:label &quot;Sam cannot %s Sue&quot; ] ,
+    [ rdfs:label &quot;Sam and Sue %s&quot; ] ,
+    [ rdfs:label &quot;The banks %s the check&quot; ] .
+
+&lt;#example-10161911-n&gt; a ontolex:LexicalConcept ;
+  owl:sameAs ili:i90287 ;
+  // Definitions can also be given directly
+  skos:definition &quot;the father of your father or mother&quot;@en ;
+  wn:hypernym &lt;#example-10162692-n&gt; .
+
+&lt;#example-1-n&gt; a ontolex:LexicalConcept ;
+  skos:definition [
+    rdf:value &quot;A father&#39;s father; a paternal grandfather&quot;@en ;
+  ] ,
+  wn:iliDefinition [
+    dc:source &lt;https://en.wiktionary.org/wiki/farfar&gt; ;
+    rdf:value &quot;A father&#39;s father; a paternal grandfather&quot;@ en
+  ] .
+        
+&lt;#example-10162692-n&gt; owl:sameAs ili:i90292&quot; .
+    
+&lt;#example-sv&gt; a ontolex:Lexicon ;
+  rdfs:label &quot;Example wordnet (Swedish)&quot;@en ;
+  dc:languager &quot;sv&quot; ;
+  schema:email &quot;john@mccr.ae&quot; ;
+  dc:rights &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  owl:versionInfo &lt;1.0&gt; ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;@en ;
+  schema:url &lt;http://globalwordnet.github.io/schemas/&gt; ;
+  dc:publisher &lt;Global Wordnet Association&gt; ;
+  lime:entry &lt;#w4&gt; .
+
+&lt;#w4&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [ ontolex:writtenRep &quot;farfar&quot;@en ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense &lt;#example-2-n-1&gt; .
+
+&lt;#example-2-n-1&gt; a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-1-n&gt; ;
+  skos:example [
+    dc:source &quot;Europarl Corpus&quot;@en ;
+    rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv
+  ] .</code></pre>
