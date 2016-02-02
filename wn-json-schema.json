@@ -1,179 +1,361 @@
 {
     "$schema": "http://json-schema.org/schema#",
-
-    "definitions": {
-        "synset": {
-            "allOf": [{
-                "$ref": "#/definitions/meta" 
-            },{
+    "type": "object",
+    "required": ["@context", "@graph"],
+    "additionalProperties": false,
+    "properties": {
+        "@context": { "enum": ["http://globalwordnet.github.io/schemas/wn-json-context.json"]},
+        "@graph": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
                 "type": "object",
-                "required": [ "@id", "gloss" ],
+                "required": ["@context", "@id", "@type", "label", "language",
+                             "email", "rights", "version"],
                 "additionalProperties": false,
                 "properties": {
-                    "@id" : { "type": "string" },
-                    "gloss" : { "type": "string" },
-                    "iliDef" : { "type": "string" },
-                    "examples": { 
-                        "type": "array",
-                        "items": {
-                            "type" : "string"
+                    "@context" : {
+                        "type": "object",
+                        "required": ["@language"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "@language" : {"type": "string"}
                         }
                     },
-                    "iliRef": { "type": "string" },
-
-                    "hypernym": { "type": "array", "items": { "type": "string" } },
-                    "hyponym": { "type": "array", "items": { "type": "string" } },
-                    "instance_hypernym": { "type": "array", "items": { "type": "string" } },
-                    "instance_hyponym": { "type": "array", "items": { "type": "string" } },
-                    "part_holonym": { "type": "array", "items": { "type": "string" } },
-                    "part_meronym": { "type": "array", "items": { "type": "string" } },
-                    "member_holonym": { "type": "array", "items": { "type": "string" } },
-                    "member_meronym": { "type": "array", "items": { "type": "string" } },
-                    "substance_holonym": { "type": "array", "items": { "type": "string" } },
-                    "substance_meronym": { "type": "array", "items": { "type": "string" } },
-                    "entail": { "type": "array", "items": { "type": "string" } },
-                    "cause": { "type": "array", "items": { "type": "string" } },
-                    "similar": { "type": "array", "items": { "type": "string" } },
-                    "also": { "type": "array", "items": { "type": "string" } },
-                    "attribute": { "type": "array", "items": { "type": "string" } },
-                    "verb_group": { "type": "array", "items": { "type": "string" } },
-                    "domain_category": { "type": "array", "items": { "type": "string" } },
-                    "domain_member_category": { "type": "array", "items": { "type": "string" } },
-                    "domain_region": { "type": "array", "items": { "type": "string" } },
-                    "domain_member_region": { "type": "array", "items": { "type": "string" } },
-                    "domain_usage": { "type": "array", "items": { "type": "string" } },
-                    "domain_member_usage": { "type": "array", "items": { "type": "string" } },
-                    "action": { "type": "array", "items": { "type": "string" } },
-                    "theme": { "type": "array", "items": { "type": "string" } },
-                    "product": { "type": "array", "items": { "type": "string" } },
-                    "location": { "type": "array", "items": { "type": "string" } },
-                    "agent": { "type": "array", "items": { "type": "string" } },
-                    "instrument": { "type": "array", "items": { "type": "string" } },
-                    "result": { "type": "array", "items": { "type": "string" } },
-                    "patient": { "type": "array", "items": { "type": "string" } },
-                    "beneficiary": { "type": "array", "items": { "type": "string" } },
-                    "creator": { "type": "array", "items": { "type": "string" } },
-                    "goal": { "type": "array", "items": { "type": "string" } },
-                    "experiencer": { "type": "array", "items": { "type": "array" } },
-
-                    "partOfSpeech": {
-                        "type": "string",
-                        "enum": [ "wn:noun", "wn:verb", "wn:adjective", "wn:adjective_satellite", "wn:adverb", "wn:phrase", "wn:unknown" ]
-                    },
-                    "senses": {
-                        "allOf": [{ 
-                            "$ref": "#/definitions/meta" 
-                        },{
-                            "type": "array",
-                            "items": {
-                                "allOf": [{
-                                    "$ref": "#/definitions/meta" 
-                                },{
-                                    "type": "object",
-                                    "properties": {
-                                        "@id": { "type": "string" },
-                                        "antonym": { "type": "array", "items": { "type": "string" } },
-                                        "also": { "type": "array", "items": { "type": "string" } },
-                                        "verb_group": { "type": "array", "items": { "type": "string" } },
-                                        "participle": { "type": "array", "items": { "type": "string" } },
-                                        "pertainym": { "type": "array", "items": { "type": "string" } },
-                                        "derivation": { "type": "array", "items": { "type": "string" } },
-                                        "domain_category": { "type": "array", "items": { "type": "string" } },
-                                        "domain_member_category": { "type": "array", "items": { "type": "string" } },
-                                        "domain_region": { "type": "array", "items": { "type": "string" } },
-                                        "domain_member_region": { "type": "array", "items": { "type": "string" } },
-                                        "domain_usage": { "type": "array", "items": { "type": "string" } },
-                                        "domain_member_usage": { "type": "array", "items": { "type": "string" } },
-                                        "antonym": { "type": "array", "items": [{ "type": "string" }] },
-                                        "entry": {
-                                            "oneOf": [{
-                                                "type" : "string"
-                                            }, {
-                                                "allOf": [{
-                                                    "$ref": "#/definitions/meta" 
-                                                },{
+                    "@id": { "type": "string" },
+                    "@type": { "enum": ["ontolex:Lexicon"] },
+                    "label": { "type": "string" },
+                    "language": { "language": "string" },
+                    "email": { "type": "string" },
+                    "rights": { "type": "string" },
+                    "version": { "type": "string" },
+                    "citation": { "type": "string" }, 
+                    "url": { "type": "string" }, 
+                    "status": { "type": "string" }, 
+                    "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                    "contributor": { "type": "string" },
+                    "coverage": { "type": "string" },
+                    "creator": { "type": "string" },
+                    "date": { "type": "string" },
+                    "description": { "type": "string" },
+                    "format": { "type": "string" },
+                    "identifier": { "type": "string" },
+                    "publisher": { "type": "string" },
+                    "relation": { "type": "string" },
+                    "source": { "type": "string" },
+                    "subject": { "type": "string" },
+                    "title": { "type": "string" },
+                    "type": { "type": "string" },
+                    "entry": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": ["@id","lemma","partOfSpeech"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "@id": { "type": "string" },
+                                "lemma": {
+                                   "type": "object",
+                                   "required": ["writtenForm"],
+                                   "additionalProperties": false,
+                                   "properties": {
+                                      "writtenForm": { "type": "string" }
+                                   }
+                                },
+                                "partOfSpeech": {
+                                    "enum": [
+                                        "wn:noun",
+                                        "wn:verb",
+                                        "wn:adjective",
+                                        "wn:adverb",
+                                        "wn:adjective_satellite",
+                                        "wn:phrase",
+                                        "wn:conjunction",
+                                        "wn:adposition",
+                                        "wn:other",
+                                        "wn:unknown" ]
+                                },
+                                "status": { "type": "string" }, 
+                                "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                "contributor": { "type": "string" },
+                                "coverage": { "type": "string" },
+                                "creator": { "type": "string" },
+                                "date": { "type": "string" },
+                                "description": { "type": "string" },
+                                "format": { "type": "string" },
+                                "identifier": { "type": "string" },
+                                "publisher": { "type": "string" },
+                                "relation": { "type": "string" },
+                                "source": { "type": "string" },
+                                "subject": { "type": "string" },
+                                "title": { "type": "string" },
+                                "type": { "type": "string" },
+                                "sense": { 
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "required":  ["@id", "synset"],
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "@id": { "type": "string" },
+                                            "status": { "type": "string" }, 
+                                            "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                            "contributor": { "type": "string" },
+                                            "coverage": { "type": "string" },
+                                            "creator": { "type": "string" },
+                                            "date": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "format": { "type": "string" },
+                                            "identifier": { "type": "string" },
+                                            "publisher": { "type": "string" },
+                                            "relation": { "type": "string" },
+                                            "source": { "type": "string" },
+                                            "subject": { "type": "string" },
+                                            "title": { "type": "string" },
+                                            "type": { "type": "string" },
+                                            "antonym": { "type": "array", "items": { "type" : "string" }, "minItems": 1 },
+                                            "also": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                            "verb_group": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "participle": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "pertainym": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "derivation": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_category": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_member_category": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_region": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_member_region": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_usage": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "domain_member_usage": { "type": "array", "items": { "type": "string" }, "minItems": 1},
+                                            "relations": {
+                                                "type": "array",
+                                                "minItems": 1,
+                                                "items": {
                                                     "type": "object",
+                                                    "required": ["category","target"],
+                                                    "additionalProperties": false,
+                                                    "properties": {
+                                                        "category": {
+                                                            "enum": [
+                                                                "wn:antonym",
+                                                                "wn:also",
+                                                                "wn:verb_group",
+                                                                "wn:participle",
+                                                                "wn:pertainym",
+                                                                "wn:derivation",
+                                                                "wn:domain_category",
+                                                                "wn:domain_member_category",
+                                                                "wn:domain_region",
+                                                                "wn:domain_member_region",
+                                                                "wn:domain_usage",
+                                                                "wn:domain_member_usage"]
+                                                        },
+                                                        "target": { "type": "string" },
+                                                        "status": { "type": "string" }, 
+                                                        "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                        "contributor": { "type": "string" },
+                                                        "coverage": { "type": "string" },
+                                                        "creator": { "type": "string" },
+                                                        "date": { "type": "string" },
+                                                        "description": { "type": "string" },
+                                                        "format": { "type": "string" },
+                                                        "identifier": { "type": "string" },
+                                                        "publisher": { "type": "string" },
+                                                        "relation": { "type": "string" },
+                                                        "source": { "type": "string" },
+                                                        "subject": { "type": "string" },
+                                                        "title": { "type": "string" },
+                                                        "type": { "type": "string" }
+                                                    }
+                                                }
+                                            },
+                                            "example": {
+                                                "type": "object",
+                                                "required": ["value"],
+                                                "additionalProperties": false,
+                                                "properties": {
+                                                    "value": { "type": "string" }, 
+                                                    "status": { "type": "string" }, 
+                                                    "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                    "contributor": { "type": "string" },
+                                                    "coverage": { "type": "string" },
+                                                    "creator": { "type": "string" },
+                                                    "date": { "type": "string" },
+                                                    "description": { "type": "string" },
+                                                    "format": { "type": "string" },
+                                                    "identifier": { "type": "string" },
+                                                    "publisher": { "type": "string" },
+                                                    "relation": { "type": "string" },
+                                                    "source": { "type": "string" },
+                                                    "subject": { "type": "string" },
+                                                    "title": { "type": "string" },
+                                                    "type": { "type": "string" }
+                                                }
+                                            },
+                                            "synset": {
+                                                "oneOf": [{
+                                                    "type": "string"
+                                                }, {
+                                                    "type": "object",
+                                                    "required": ["@id"],
+                                                    "additionalProperties": false,
                                                     "properties": {
                                                         "@id": { "type": "string" },
-                                                        "lemma": { "type": "string" },
-                                                        "syntacticBehaviour": { "type": "array", "items": { "type": "string" } }
-                                                    },
-                                                    "required": [ "@id", "lemma" ],
-                                                    "additionalProperties": false
+                                                         "ili": { "type": "string" },
+                                                         "value": { "type": "string" }, 
+                                                         "status": { "type": "string" }, 
+                                                         "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                         "contributor": { "type": "string" },
+                                                         "coverage": { "type": "string" },
+                                                         "creator": { "type": "string" },
+                                                         "date": { "type": "string" },
+                                                         "description": { "type": "string" },
+                                                         "format": { "type": "string" },
+                                                         "identifier": { "type": "string" },
+                                                         "publisher": { "type": "string" },
+                                                         "relation": { "type": "string" },
+                                                         "source": { "type": "string" },
+                                                         "subject": { "type": "string" },
+                                                         "title": { "type": "string" },
+                                                         "type": { "type": "string" },
+                                                         "definition": {
+                                                             "type": "object",
+                                                             "required": ["gloss"],
+                                                             "additionalProperties": false,
+                                                             "properties": {
+                                                                 "gloss": { "type": "string" },
+                                                                 "language": { "type": "string" },
+                                                                 "status": { "type": "string" }, 
+                                                                 "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                                 "contributor": { "type": "string" },
+                                                                 "coverage": { "type": "string" },
+                                                                 "creator": { "type": "string" },
+                                                                 "date": { "type": "string" },
+                                                                 "description": { "type": "string" },
+                                                                 "format": { "type": "string" },
+                                                                 "identifier": { "type": "string" },
+                                                                 "publisher": { "type": "string" },
+                                                                 "relation": { "type": "string" },
+                                                                 "source": { "type": "string" },
+                                                                 "subject": { "type": "string" },
+                                                                 "title": { "type": "string" },
+                                                                 "type": { "type": "string" }
+                                                             }
+                                                         },
+                                                         "iliDefinition": {
+                                                             "type": "object",
+                                                             "required": ["gloss"],
+                                                             "additionalProperties": false,
+                                                             "properties": {
+                                                                 "gloss": { "type": "string" },
+                                                                 "status": { "type": "string" }, 
+                                                                 "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                                 "contributor": { "type": "string" },
+                                                                 "coverage": { "type": "string" },
+                                                                 "creator": { "type": "string" },
+                                                                 "date": { "type": "string" },
+                                                                 "description": { "type": "string" },
+                                                                 "format": { "type": "string" },
+                                                                 "identifier": { "type": "string" },
+                                                                 "publisher": { "type": "string" },
+                                                                 "relation": { "type": "string" },
+                                                                 "source": { "type": "string" },
+                                                                 "subject": { "type": "string" },
+                                                                 "title": { "type": "string" },
+                                                                 "type": { "type": "string" }
+                                                             }
+                                                         },
+                                                         "hypernym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "hyponym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "instance_hypernym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "instance_hyponym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "part_holonym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "part_meronym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "member_holonym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "member_meronym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "substance_holonym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "substance_meronym": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "entail": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "cause": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "similar": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "also": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "attribute": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "verb_group": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_category": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_member_category": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_region": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_member_region": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_usage": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "domain_member_usage": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+                                                         "relations": {
+                                                            "type": "array",
+                                                            "minItems": 1,
+                                                            "items": {
+                                                                "type": "object",
+                                                                "required": ["category","target"],
+                                                                "additionalProperties": false,
+                                                                "properties": {
+                                                                    "category": {
+                                                                        "enum": ["wn:hypernym","wn:hyponym","wn:instance_hypernym","wn:instance_hyponym","wn:part_holonym","wn:part_meronym","wn:member_holonym","wn:member_meronym","wn:substance_holonym","wn:substance_meronym","wn:entail","wn:cause","wn:similar","wn:also","wn:attribute","wn:verb_group","wn:domain_category","wn:domain_member_category","wn:domain_region","wn:domain_member_region","wn:domain_usage","wn:domain_member_usage"]
+                                                                    },
+                                                                    "target": { "type": "string" },
+                                                                    "status": { "type": "string" }, 
+                                                                    "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                                    "contributor": { "type": "string" },
+                                                                    "coverage": { "type": "string" },
+                                                                    "creator": { "type": "string" },
+                                                                    "date": { "type": "string" },
+                                                                    "description": { "type": "string" },
+                                                                    "format": { "type": "string" },
+                                                                    "identifier": { "type": "string" },
+                                                                    "publisher": { "type": "string" },
+                                                                    "relation": { "type": "string" },
+                                                                    "source": { "type": "string" },
+                                                                    "subject": { "type": "string" },
+                                                                    "title": { "type": "string" },
+                                                                    "type": { "type": "string" }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }]
-                                            }]
+                                            }
                                         }
-                                    },
-                                    "required": [ "@id", "entry" ],
-                                    "additionalProperties": false
-                               }]
-                            }
-                        }]
-                    }
-                }
-            }]
-        },
-        "meta": {
-            "properties": {
-                "contributor": { "type": "string" },
-                "coverage": { "type": "string" },
-                "creator": { "type": "string" },
-                "date": { "type": "string" },
-                "description": { "type": "string" },
-                "format": { "type": "string" },
-                "identifier": { "type": "string" },
-                "language": { "type": "string" },
-                "publisher": { "type": "string" },
-                "relation": { "type": "string" },
-                "rights": { "type": "string" },
-                "source": { "type": "string" },
-                "subject": { "type": "string" },
-                "title": { "type": "string" },
-                "type": { "type": "string" },
-                "status": { "type": "string" },
-                "confidenceScore": { "type": "string" }
-            }
-        },
-        "lexicon": {
-            "type": "object", 
-        
-            "properties": {
-                "@context": {
-                    "type": "array",
-                    "items": [
-                        { "type": "string",
-                          "enum": [  "http://globalwordnet.github.io/schemas/wn-json-context.json" ]
-                        },
-                        {
-                            "type": "object",
-                            "properties": {
-                                "@language": { "type": "string" }
+                                    }
+                                },
+                                "synBehavior": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "required": ["label"],
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "label": { "type": "string" }, 
+                                            "status": { "type": "string" }, 
+                                            "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                            "contributor": { "type": "string" },
+                                            "coverage": { "type": "string" },
+                                            "creator": { "type": "string" },
+                                            "date": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "format": { "type": "string" },
+                                            "identifier": { "type": "string" },
+                                            "publisher": { "type": "string" },
+                                            "relation": { "type": "string" },
+                                            "source": { "type": "string" },
+                                            "subject": { "type": "string" },
+                                            "title": { "type": "string" },
+                                            "type": { "type": "string" }
+                                        }
+                                    }
+                                }
                             }
                         }
-                    ]
-                },
-                "@id": { "type": "string" },
-                "label": { "type": "string" },
-                "language": { "type": "string" },
-                "meta": { "$ref": "#/definitions/meta" },
-                "synsets": { 
-                    "type": "array",
-                    "items": { "$ref": "#/definitions/synset" }
+                    }
                 }
-            },
-
-            "required": [ "@id", "language", "synsets" ]
+            }
         }
-    },
-
-    "oneOf": [{
-        "$ref": "#/definitions/lexicon"    
-    },{
-        "$ref": "#/definitions/synset"
-    },{
-        "type": "array",
-        "items": { "$ref": "#/definitions/lexicon" }
-    }]
+    }
 }
-
 

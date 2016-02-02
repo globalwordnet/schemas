@@ -3,7 +3,7 @@
   "@graph": [{
       "@context": { "@language": "en" },
       "@id": "example-en",
-      "@type": "lemon:Lexicon", 
+      "@type": "ontolex:Lexicon", 
       "label": "Example wordnet (English)",
       "language": "en",
       "email": "john@mccr.ae",
@@ -44,20 +44,28 @@
                   },
                   "hypernym": ["example-10162692-n"]
               },
-              "derivation": ["example-10161911-n"]
+              "relations": [
+                {
+                  "category": "wn:derivation",
+                  "target": "example-10161911-n",
+                  "creator": "John McCrae"
+                }
+              ]
           }]
       }, {
           "@id": "w3",
           "lemma": { "writtenForm": "pay" },
           "partOfSpeech": "wn:verb",
-          "syntaticticBehaviour": [{
-              "label": ["Sam cannot %s Sue", "Sam and Sue %s", "The banks %s the check"]
-          }]
+          "synBehavior": [
+             {"label": "Sam cannot %s Sue"}, 
+             {"label": "Sam and Sue %s"},
+             {"label": "The banks %s the check"}
+           ]
       }]
   }, {
       "@context": { "@language": "sv" },
       "@id": "example-sv",
-      "@type": "lemon:Lexicon", 
+      "@type": "ontolex:Lexicon", 
       "label": "Example wordnet (Swedish)",
       "language": "sv",
       "email": "john@mccr.ae",
@@ -70,14 +78,14 @@
           "@id" : "w4",
           "lemma": { "writtenForm": "farfar" }, 
           "partOfSpeech": "wn:noun",
-          "sense": {
+          "sense": [{
               "@id": "example-2-n-1",
               "synset": "example-1-n",
               "example": {
-                  "gloss": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
+                  "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                   "source": "Europarl Corpus"
               }
-          }
+          }]
       }]
   }]
 }

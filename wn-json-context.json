@@ -1,6 +1,6 @@
 {
     "wn": "http://wordnet-rdf.princeton.edu/ontology#",
-    "lemon": "http://lemon-model.net/lemon#",
+    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
     "dc": "http://purl.org/dc/terms/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -8,10 +8,11 @@
     "cc": "http://creativecommons.org/ns#",
     "ili": "http://ili.globalwordnet.org/ili/",
     "owl": "http://www.w3.org/2002/07/owl#",
+    "schema": "http://schema.org"/
 
-    "gloss" : "lemon:definition",
+    "gloss" : "rdf:value",
     "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
-    "example": "wn:senseExample",
+    "example": "skos:example",
     "ili": { "@id": "wn:iliRef", "@type": "@id" },
     "hypernym": { "@id": "wn:hypernym", "@type": "@id" },
     "hyponym": { "@id": "wn:hyponym", "@type": "@id" },
@@ -36,6 +37,7 @@
     "domain_usage": { "@id": "wn:domain_usage", "@type": "@id" },
     "domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
     "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@id" },
+    "value": { "@id": "lemon:value", "type": "string" },
 
     "sense": { "@id": "lemon:sense", "@type": "@id"},
     "synset": { "@id": "lemon:reference", "@type": "@id" },
@@ -63,7 +65,7 @@
 
     "label": { "@id": "rdfs:label", "type": "string" },
 
-    "syntacticBehaviour": { "@id": "lemon:syntacticBehavior", "@type": "@id" },
+    "synBehaviour": { "@id": "lemon:synBehavior", "@type": "@id" },
 
     "email": { "@id": "http://schema.org/email", "type": "string" },
     "version": { "@id": "owl:versionInfo", "type": "string" },
