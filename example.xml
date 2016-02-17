@@ -127,6 +127,7 @@
         <!-- The list of lexical entries (words) in your wordnet -->
         <LexicalEntry id="w4">
             <Lemma writtenForm="farfar" partOfSpeech="n"/>
+            <Form  writtenForm="farfäder" tag="NNS"/>
             <!-- Synsets need not be language-specific but senses must be -->
             <Sense id="example-2-n-1" synset="example-1-n">
                 <SenseExample dc:source="Europarl Corpus">

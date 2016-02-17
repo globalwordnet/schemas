@@ -8,6 +8,7 @@
     "schema": "http://schema.org/"
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "synsem": "http://www.w3.org/ns/lemon/synsem#",
+    "vartrans": "http://www.w3.org/ns/lemon/vartrans#",
     "wn": "http://wordnet-rdf.princeton.edu/ontology#",
     "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
 
@@ -60,6 +61,8 @@
     "antonym": { "@id": "wn:antonym", "@type": "@id" },
 
     "lemma": "ontolex:canonicalForm",
+    "form": "ontolex:otherForm",
+    "tag": { "@id": "wn:tag", "@type": "string" },
     "writtenForm": "ontolex:writtenRep",
 
     "label": { "@id": "rdfs:label", "type": "string" },
@@ -70,6 +73,11 @@
     "version": { "@id": "owl:versionInfo", "type": "string" },
     "citation": "schema:citation",
     "url": { "@id": "schema:url", "@type": "@id" },
+
+    "relations": { "@id": "vartrans:source", "@type": "@id },
+    "category": { "@id": "vartrans:category", "@type": "@id },
+    "target": { "@id": "vartrans:target", "@type": "@id },
+    
 
     "contributor": { "@id": "dc:contributor", "type": "string" },
     "coverage": { "@id": "dc:coverage", "type": "string" },

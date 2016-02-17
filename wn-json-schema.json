@@ -63,6 +63,19 @@
                                       "writtenForm": { "type": "string" }
                                    }
                                 },
+                                "form": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                       "type": "object",
+                                       "required": ["writtenForm"],
+                                       "additionalProperties": false,
+                                       "properties": {
+                                          "writtenForm": { "type": "string" },
+                                          "tag": { "type": "string" }
+                                       }
+                                    }
+                                },
                                 "partOfSpeech": {
                                     "enum": [
                                         "wn:noun",

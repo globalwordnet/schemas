@@ -28,7 +28,7 @@
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*)>
+<!ELEMENT LexicalEntry (Lemma, Form*, Sense*, SyntacticBehaviour*)>
 <!ATTLIST LexicalEntry
     id ID #REQUIRED
     dc:contributor CDATA #IMPLIED
@@ -51,6 +51,10 @@
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     partOfSpeech (n|v|a|r|s|z|c|p|x|u) #REQUIRED>
+<!ELEMENT Form EMPTY>
+<!ATTLIST Form
+    writtenForm CDATA #REQUIRED
+    tag CDATA #IMPLIED>
 <!ELEMENT Sense (SenseRelation*, SenseExample*)>
 <!ATTLIST Sense
     id ID #REQUIRED
@@ -75,6 +79,7 @@
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED
+    count CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -149,7 +154,7 @@
 <!ELEMENT SynsetRelation EMPTY>
 <!ATTLIST SynsetRelation
     target IDREF #REQUIRED
-    relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
+    relType (near_synonym|near_antonym|hypernym|hyponym|role|role_agent|role_patient|role_result|role_instrument|role_location|role_direction|role_target_direction|role_source_direction|involved|involved_agent|involved_patient|involved_result|involved_instrument|involved_location|involved_direction|involved_target_direction|involved_source_direction|co_role|co_agent_patient|co_agent_instrument|co_agent_result|co_patient_agent|co_patient_instrument|co_result_agent|co_result_instrument|co_instrument_agent|co_instrument_patient|co_instrument_result|state_of|be_in_state|causes|is_caused_by|subevent|is_subevent_of|in_manner|manner_of|meronym|holonym|mero_part|holo_part|mero_member|holo_member|mero_madeof|holo_madeof|mero_location|holo_location|mero_portion|holo_portion|fuzzynym|eq_synonym|instance|has_instance|exemplifies|exemplified_by|domain_category|has_domain_category|domain_region|has_domain_region|atrribute|restricts|restricted_by|classifies|classified_by|also|verb_group) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -169,7 +174,7 @@
 <!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
-    relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
+    relType (antonym|near_antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

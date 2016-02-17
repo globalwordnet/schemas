@@ -75,7 +75,8 @@
   lime:entry <#w4> .
 
 <#w4> a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [ ontolex:writtenRep "farfar"@en ] ;
+  ontolex:canonicalForm [ ontolex:writtenRep "farfar"@sv ] ;
+  ontolex:otherForm [ ontolex:writtenRep "farfäder"@sv ; wordnet:tag "NNS" ] ;
   wn:partOfSpeech wn:noun ;
   ontolex:sense <#example-2-n-1> .
 
