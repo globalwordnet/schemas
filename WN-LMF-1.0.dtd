@@ -28,7 +28,7 @@
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT LexicalEntry (Lemma, Sense*, SyntacticBehaviour*)>
+<!ELEMENT LexicalEntry (Lemma, Form*, Sense*, SyntacticBehaviour*)>
 <!ATTLIST LexicalEntry
     id ID #REQUIRED
     dc:contributor CDATA #IMPLIED
@@ -51,6 +51,10 @@
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     partOfSpeech (n|v|a|r|s|z|c|p|x|u) #REQUIRED>
+<!ELEMENT Form EMPTY>
+<!ATTLIST Form
+    writtenForm CDATA #REQUIRED
+    tag CDATA #IMPLIED>
 <!ELEMENT Sense (SenseRelation*, SenseExample*)>
 <!ATTLIST Sense
     id ID #REQUIRED
@@ -75,6 +79,7 @@
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED
+    count CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -149,7 +154,7 @@
 <!ELEMENT SynsetRelation EMPTY>
 <!ATTLIST SynsetRelation
     target IDREF #REQUIRED
-    relType (hypernym|hyponym|instance_hypernym|instance_hyponym|part_holonym|part_meronym|member_holonym|member_meronym|substance_holonym|substance_meronym|entail|cause|similar|also|attribute|verb_group|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
+    relType (agent|also|attribute|be_in_state|causes|classified_by|classifies|co_agent_instrument|co_agent_patient|co_agent_result|co_instrument_agent|co_instrument_patient|co_instrument_result|co_patient_agent|co_patient_instrument|co_result_agent|co_result_instrument|co_role|derivation|direction|domain_region|domain_topic|domain_usage|entails|eq_synonym|fuzzynym|has_domain_region|has_domain_topic|has_domain_usage|holo_location|holo_member|holo_part|holo_portion|holo_substance|holonym|hypernym|hyponym|in_manner|instance_hypernym|instance_hyponym|instrument|involved|involved_agent|involved_direction|involved_instrument|involved_location|involved_patient|involved_result|involved_source_direction|involved_target_direction|is_caused_by|is_entailed_by|location|manner_of|mero_location|mero_member|mero_part|mero_portion|mero_substance|meronym|near_synonym|other|patient|restricted_by|restricts|result|role|source_direction|state_of|synonym|target_direction) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -169,7 +174,7 @@
 <!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
-    relType (antonym|also|verb_group|participle|pertainym|derivation|domain_category|domain_member_category|domain_region|domain_member_region|domain_usage|domain_member_usage) #REQUIRED
+    relType (antonym|near_antonym|also|participle|pertainym|derivation|domain_topic|has_domain_category|domain_region|has_domain_region|domain_usage|has_domain_usage|other) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
