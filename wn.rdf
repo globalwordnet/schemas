@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ontolex="http://www.w3.org/ns/lemon/ontolex#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:vann="http://purl.org/vocab/vann/" xmlns:voaf="http://purl.org/vocommons/voaf#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://globalwordnet.github.io/schemas/wn#">
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <rdf:type rdf:resource="http://purl.org/vocommons/voaf#Vocabulary"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <vann:preferredNamespacePrefix>wn</vann:preferredNamespacePrefix>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <vann:preferredNamespaceUri>http://globalwordnet.github.io/schemas/wn#</vann:preferredNamespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:title xml:lang="en">Global Wordnet RDF Schema</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:description xml:lang="en">TODO</dc:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-13</dc:issued>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-09-13</dc:modified>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:rights>Copyright Global Wordnet Association</dc:rights>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <cc:attributionName>Global Wordnet Association</cc:attributionName>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <cc:attributionURL rdf:resource="http://www.globalwordnet.org"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:contributor rdf:resource="http://john.mccr.ae"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+    <dc:publisher rdf:resource="http://www.globalwordnet.org"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#status">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#status">
+    <rdfs:comment xml:lang="en">A status string such as, 'finalized', 'checked' or 'to check'</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#status">
+    <rdfs:label xml:lang="en">status</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#confidenceScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#confidenceScore">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#confidenceScore">
+    <rdfs:comment xml:lang="en">A confidence score, usually assigned by an algorithm, with a value between 0 and 1</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#confidenceScore">
+    <rdfs:label xml:lang="en">confidence score</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+    <rdfs:label xml:lang="en">part of speech</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#partOfSpeech">
+    <rdfs:comment xml:lang="en">The syntactic class of the entry, e.g., noun, verb</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#unknown_pos"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#other_pos"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:rest rdf:nodeID="genid1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#adposition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:rest rdf:nodeID="genid2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#conjunction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:rest rdf:nodeID="genid3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid5">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#multiword_expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid5">
+    <rdf:rest rdf:nodeID="genid4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid6">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#adjective_satellite"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid6">
+    <rdf:rest rdf:nodeID="genid5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid7">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#adverb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid7">
+    <rdf:rest rdf:nodeID="genid6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid8">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#adjective"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid8">
+    <rdf:rest rdf:nodeID="genid7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid9">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#verb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid9">
+    <rdf:rest rdf:nodeID="genid8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid10">
+    <rdf:first rdf:resource="http://globalwordnet.github.io/schemas/wn#noun"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid10">
+    <rdf:rest rdf:nodeID="genid9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#PartOfSpeech">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#PartOfSpeech">
+    <rdfs:label xml:lang="en">part of speech</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#PartOfSpeech">
+    <rdfs:comment xml:lang="en">The syntactic class of the entry, e.g., noun, verb</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#PartOfSpeech">
+    <owl:oneOf rdf:nodeID="genid10"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#noun">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#noun">
+    <rdfs:label xml:lang="en">noun</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#verb">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#verb">
+    <rdfs:label xml:lang="en">verb</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective">
+    <rdfs:label xml:lang="en">adjective</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adverb">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adverb">
+    <rdfs:label xml:lang="en">adverb</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective_satellite">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adjective_satellite">
+    <rdfs:label xml:lang="en">adjective satellite</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#multiword_expression">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#multiword_expression">
+    <rdfs:label xml:lang="en">multiword expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#conjunction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#conjunction">
+    <rdfs:label xml:lang="en">conjunction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adposition">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#adposition">
+    <rdfs:label xml:lang="en">adposition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other_pos">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other_pos">
+    <rdfs:label xml:lang="en">other pos</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#unknown_pos">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#unknown_pos">
+    <rdfs:label xml:lang="en">unknown pos</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#tag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#tag">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#tag">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#tag">
+    <rdfs:label xml:lang="en">tag</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#tag">
+    <rdfs:comment xml:lang="en">A tag describing an inflected form. There are no specific guidelines about the form of this element</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid11">
+    <rdf:first rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid11">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid12">
+    <rdf:first rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid12">
+    <rdf:rest rdf:nodeID="genid11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid13">
+    <owl:unionOf rdf:nodeID="genid12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#example">
+    <rdfs:domain rdf:nodeID="genid13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#example">
+    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#Example"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#example">
+    <rdfs:label xml:lang="en">example</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#example">
+    <rdfs:comment xml:lang="en">An example usage of a sense or synset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Example">
+    <rdfs:label xml:lang="en">example</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#count">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#count">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#count">
+    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#Count"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#count">
+    <rdfs:comment xml:lang="en">The count of usages of a sense in some corpus</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#count">
+    <rdfs:label xml:lang="en">count</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Count">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Count">
+    <rdf:label xml:lang="en">count</rdf:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#definition">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#definition">
+    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#definition">
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#definition">
+    <rdfs:comment xml:lang="en">A definition of the synset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
+    <rdfs:range rdf:resource="http://globalwordnet.github.io/schemas/wn#ILIDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
+    <rdfs:label xml:lang="en">ILI definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
+    <rdfs:comment xml:lang="en">The English standard definition of the synset in the ILI</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Definition">
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#ILIDefinition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#ILIDefinition">
+    <rdfs:label xml:lang="en">ILI definition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#SynsetRelType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#SynsetRelType">
+    <rdfs:label xml:lang="en">synset relation type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#SenseRelType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#SenseRelType">
+    <rdfs:label xml:lang="en">sense relation type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#agent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#agent">
+    <rdfs:label xml:lang="en">agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#agent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is typically the agent of the action expressed by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+    <rdfs:label xml:lang="en">also</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#also">
+    <rdfs:comment xml:lang="en">A relation giving further information of an unspecified type</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+    <rdfs:label xml:lang="en">antonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#antonym">
+    <rdfs:comment xml:lang="en">Indicates that the two terms have opposite meanings</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#attribute">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#attribute">
+    <rdfs:label xml:lang="en">attribute</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#attribute">
+    <rdfs:comment xml:lang="en">A relation between nominal and adjectival concepts where the concept A is an attribute of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#be_in_state">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#be_in_state">
+    <rdfs:label xml:lang="en">be in state</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#be_in_state">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is qualified by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#causes">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#causes">
+    <rdfs:label xml:lang="en">causes</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#causes">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B comes into existence as a result of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classified_by">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classified_by">
+    <rdfs:label xml:lang="en">classified_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classified_by">
+    <rdfs:comment xml:lang="en">A relation between concept B and a classifier concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classifies">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classifies">
+    <rdfs:label xml:lang="en">classifies</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#classifies">
+    <rdfs:comment xml:lang="en">A relation between a classifier concept A and concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_instrument">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_instrument">
+    <rdfs:label xml:lang="en">co-agent instrument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_instrument">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the instrument used by concept A in a certain action</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_patient">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_patient">
+    <rdfs:label xml:lang="en">co_agent_patient</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_patient">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the patient undergoing an action carried out by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_result">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_result">
+    <rdfs:label xml:lang="en">co_agent_result</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_agent_result">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the result of an action carried out by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_agent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_agent">
+    <rdfs:label xml:lang="en">co_instrument_agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_agent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the instrument used by concept B for a certain action</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_patient">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_patient">
+    <rdfs:label xml:lang="en">co_instrument_patient</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_patient">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B undergoes an action for which the instrument expressed by concept A is used</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_result">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_result">
+    <rdfs:label xml:lang="en">co_instrument_result</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_instrument_result">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the result of an action carried out by the instrument expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_agent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_agent">
+    <rdfs:label xml:lang="en">co_patient_agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_agent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B undergoes an action carried out by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_instrument">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_instrument">
+    <rdfs:label xml:lang="en">co_patient_instrument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_patient_instrument">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A undergoes an action for which the instrument expressed by concept A is used</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_agent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_agent">
+    <rdfs:label xml:lang="en">co_result_agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_agent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the result of an action carried out by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_instrument">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_instrument">
+    <rdfs:label xml:lang="en">co_result_instrument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_result_instrument">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_role">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_role">
+    <rdfs:label xml:lang="en">co_role</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#co_role">
+    <rdfs:comment xml:lang="en">A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#derivation">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#derivation">
+    <rdfs:label xml:lang="en">derivation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#derivation">
+    <rdfs:comment xml:lang="en">Indicates a syntactic derivation from one term to another</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#direction">
+    <rdfs:label xml:lang="en">direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+    <rdfs:label xml:lang="en">domain_region</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_region">
+    <rdfs:comment xml:lang="en">A relation between two concepts where B is a geographical / cultural domain of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_topic">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_topic">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_topic">
+    <rdfs:label xml:lang="en">domain_topic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_topic">
+    <rdfs:comment xml:lang="en">A relation between two concepts where B is a a scientific domain (e</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+    <rdfs:label xml:lang="en">domain_usage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#domain_usage">
+    <rdfs:comment xml:lang="en">A relation between two concepts where B is a type of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#entails">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#entails">
+    <rdfs:label xml:lang="en">entails</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#entails">
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#eq_synonym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#eq_synonym">
+    <rdfs:label xml:lang="en">eq_synonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#eq_synonym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_region">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_region">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_region">
+    <rdfs:label xml:lang="en">has_domain_region</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_region">
+    <rdfs:comment xml:lang="en">A relation between two concepts where A is a geographical / cultural domain of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_topic">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_topic">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_topic">
+    <rdfs:label xml:lang="en">has_domain_topic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_topic">
+    <rdfs:comment xml:lang="en">A relation between two concepts where A is a a scientific domain (e</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_usage">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_usage">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_usage">
+    <rdfs:label xml:lang="en">has_domain_usage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#has_domain_usage">
+    <rdfs:comment xml:lang="en">A relation between two concepts where A an example of the type B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_location">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_location">
+    <rdfs:label xml:lang="en">holo_location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_location">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a place located in concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_member">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_member">
+    <rdfs:label xml:lang="en">holo_member</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_member">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a member/ element of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_part">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_part">
+    <rdfs:label xml:lang="en">holo_part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_part">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a component of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_portion">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_portion">
+    <rdfs:label xml:lang="en">holo_portion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_portion">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is an amount/piece/portion of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_substance">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_substance">
+    <rdfs:label xml:lang="en">holo_substance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holo_substance">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is made of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holonym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holonym">
+    <rdfs:label xml:lang="en">holonym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#holonym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A makes up a part of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hypernym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hypernym">
+    <rdfs:label xml:lang="en">hypernym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hypernym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a type of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hyponym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hyponym">
+    <rdfs:label xml:lang="en">hyponym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#hyponym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a type of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#in_manner">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#in_manner">
+    <rdfs:label xml:lang="en">in_manner</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#in_manner">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B qualifies the manner in which an action or event expressed by concept A takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hypernym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hypernym">
+    <rdfs:label xml:lang="en">instance_hypernym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hypernym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hyponym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hyponym">
+    <rdfs:label xml:lang="en">instance_hyponym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instance_hyponym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instrument">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instrument">
+    <rdfs:label xml:lang="en">instrument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#instrument">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the instrument necessary for the action or event expressed by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved">
+    <rdfs:label xml:lang="en">involved</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically involved in the action or event expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_agent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_agent">
+    <rdfs:label xml:lang="en">involved_agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_agent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically the agent of the action expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_direction">
+    <rdfs:label xml:lang="en">involved_direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically the direction or location of the action or event expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_instrument">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_instrument">
+    <rdfs:label xml:lang="en">involved_instrument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_instrument">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically the instrument necessary for the action or event expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_location">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_location">
+    <rdfs:label xml:lang="en">involved_location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_location">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically the location where the action or event expressed by concept A takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_patient">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_patient">
+    <rdfs:label xml:lang="en">involved_patient</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_patient">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is typically the patient un-dergoing an action or event expressed by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_result">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_result">
+    <rdfs:label xml:lang="en">involved_result</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_result">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B comes into existence as a result of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_source_direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_source_direction">
+    <rdfs:label xml:lang="en">involved_source_direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_source_direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the place from where the action or event expressed by concept A begins/starts/happens</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_target_direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_target_direction">
+    <rdfs:label xml:lang="en">involved_target_direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#involved_target_direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_caused_by">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_caused_by">
+    <rdfs:label xml:lang="en">is_caused_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_caused_by">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A comes into existence as a result of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_entailed_by">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_entailed_by">
+    <rdfs:label xml:lang="en">is_entailed_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_entailed_by">
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_subevent_of">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_subevent_of">
+    <rdfs:label xml:lang="en">is_subevent_of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#is_subevent_of">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#location">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#location">
+    <rdfs:label xml:lang="en">location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#location">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#manner_of">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#manner_of">
+    <rdfs:label xml:lang="en">manner_of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#manner_of">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_location">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_location">
+    <rdfs:label xml:lang="en">mero_location</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_location">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a place located in concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_member">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_member">
+    <rdfs:label xml:lang="en">mero_member</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_member">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a member/ element of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_part">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_part">
+    <rdfs:label xml:lang="en">mero_part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_part">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a component of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_portion">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_portion">
+    <rdfs:label xml:lang="en">mero_portion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_portion">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is an amount/piece/portion of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_substance">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_substance">
+    <rdfs:label xml:lang="en">mero_substance</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#mero_substance">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is made of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#meronym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#meronym">
+    <rdfs:label xml:lang="en">meronym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#meronym">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B makes up a part of concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other">
+    <rdfs:label xml:lang="en">other</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#other">
+    <rdfs:comment xml:lang="en">An unspecified relation type (normally given by `dc:type`)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#participle">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#participle">
+    <rdfs:label xml:lang="en">participle</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#participle">
+    <rdfs:comment xml:lang="en">Indicates a participle form of a verb</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#patient">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#patient">
+    <rdfs:label xml:lang="en">patient</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#patient">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#pertainym">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#pertainym">
+    <rdfs:label xml:lang="en">pertainym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#pertainym">
+    <rdfs:comment xml:lang="en">Indicates a noun that pertains to this word</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricted_by">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricted_by">
+    <rdfs:label xml:lang="en">restricted_by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricted_by">
+    <rdfs:comment xml:lang="en">A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricts">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricts">
+    <rdfs:label xml:lang="en">restricts</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#restricts">
+    <rdfs:comment xml:lang="en">A relation between an adjectival concept A (quantifier/determiner) and a nominal (pronominal) concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#result">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#result">
+    <rdfs:label xml:lang="en">result</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#result">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A comes into existence as a result of concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#role">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#role">
+    <rdfs:label xml:lang="en">role</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#role">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is typically involved in the action or event expressed by concept B</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#similar">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#similar">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SenseRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#similar">
+    <rdfs:label xml:lang="en">similar</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#similar">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#source_direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#source_direction">
+    <rdfs:label xml:lang="en">source_direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#source_direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#state_of">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#state_of">
+    <rdfs:label xml:lang="en">state_of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#state_of">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B is qualified by concept A</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#subevent">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#subevent">
+    <rdfs:label xml:lang="en">subevent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#subevent">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#target_direction">
+    <rdf:type rdf:resource="http://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#target_direction">
+    <rdfs:label xml:lang="en">target_direction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#target_direction">
+    <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>
