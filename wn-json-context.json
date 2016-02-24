@@ -1,4 +1,5 @@
 {
+    "cc": "http://creativecommons.org/ns#",
     "dc": "http://purl.org/dc/terms/",
     "ili": "http://ili.globalwordnet.org/ili/",
     "lime": "http://www.w3.org/ns/lemon/lime#",
@@ -14,11 +15,10 @@
 
     "gloss" : "rdf:value",
     "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
-    "example": "skos:example",
+    "example": { "@id": "wn:example", "@type": "@id" },
     "ili": { "@id": "wn:iliRef", "@type": "@id" },
-    //"domain_member_usage": { "@id": "wn:domain_member_usage", "@type": "@id" },
     "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@id" },
-    "value": { "@id": "rdf:value", "type": "string" },
+    "value": "rdf:value",
     "sense": { "@id": "ontolex:sense", "@type": "@id"},
     "synset": { "@id": "ontolex:reference", "@type": "@id" },
     "definition": { "@id": "skos:definition", "@type": "@id" },
@@ -29,6 +29,9 @@
     "writtenForm": "ontolex:writtenRep",
     "label": { "@id": "rdfs:label", "type": "string" },
     "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
+    "license": { "@id": "cc:license", "@type": "@id" },
+    "link": { "@reverse": "vartrans:source", "@type": "@id" },
+
     "agent": { "@id": "wn:agent", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
     "attribute": { "@id": "wn:attribute", "@type": "@id" },
@@ -54,7 +57,6 @@
     "domain_usage": { "@id": "wn:domain_usage", "@type": "@id" },
     "entails": { "@id": "wn:entails", "@type": "@id" },
     "eq_synonym": { "@id": "wn:eq_synonym", "@type": "@id" },
-    "fuzzynym": { "@id": "wn:fuzzynym", "@type": "@id" },
     "has_domain_region": { "@id": "wn:has_domain_region", "@type": "@id" },
     "has_domain_topic": { "@id": "wn:has_domain_topic", "@type": "@id" },
     "has_domain_usage": { "@id": "wn:has_domain_usage", "@type": "@id" },
@@ -95,7 +97,10 @@
     "restricts": { "@id": "wn:restricts", "@type": "@id" },
     "result": { "@id": "wn:result", "@type": "@id" },
     "role": { "@id": "wn:role", "@type": "@id" },
+    "similar": { "@id": "wn:similar", "@type": "@id" },
     "source_direction": { "@id": "wn:source_direction", "@type": "@id" },
+    "subevent": { "@id": "wn:subevent", "@type": "@id" },
+    "is_subevent_of": { "@id": "wn:is_subevent_of", "@type": "@id" },
     "state_of": { "@id": "wn:state_of", "@type": "@id" },
     "target_direction|antonym": { "@id": "wn:antonym", "@type": "@id" },
     "near_antonym": { "@id": "wn:near_antonym", "@type": "@id" },
@@ -111,6 +116,7 @@
     "category": { "@id": "vartrans:category", "@type": "@id" },
     "target": { "@id": "vartrans:target", "@type": "@id" },
     
+    "count": { "@id": "wn:count", "@type": "@id" },
 
     "contributor": { "@id": "dc:contributor", "type": "string" },
     "coverage": { "@id": "dc:coverage", "type": "string" },
@@ -127,16 +133,16 @@
     "subject": { "@id": "dc:subject", "type": "string" },
     "title": { "@id": "dc:title", "type": "string" },
     "type": { "@id": "dc:type", "type": "string" },
-    "status": { "@id": "dc:status", "type": "string" },
+    "status": { "@id": "wn:status", "type": "string" },
     "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
 
     "entry" : {
         "@id": "lime:entry",
-        "@container": "@index"
+        "@type": "@id"
     },
 
     "synset": {
-        "@id": "skos:inConceptScheme",
-        "@container": "@index"
+        "@reverse": "skos:inConceptScheme",
+        "@type": "@id"
     }
 }
