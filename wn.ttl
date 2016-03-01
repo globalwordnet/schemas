@@ -47,7 +47,7 @@
   rdfs:label "part of speech"@en ;
   rdfs:comment "The syntactic class of the entry, e.g., noun, verb"@en ;
   owl:oneOf (
-    :noun :verb :adjective :adverb :adjective_satellite :multiword_expression 
+    :noun :verb :adjective :adverb :adjective_satellite :named_entity 
     :conjunction :adposition :other_pos :unknown_pos ) .
 
 
@@ -61,8 +61,8 @@
   rdfs:label "adverb"@en .
 :adjective_satellite a :PartOfSpeech ;
   rdfs:label "adjective satellite"@en .
-:multiword_expression a :PartOfSpeech ;
-  rdfs:label "multiword expression"@en .
+:named_entity a :PartOfSpeech ;
+  rdfs:label "named entity"@en .
 :conjunction a :PartOfSpeech ;
   rdfs:label "conjunction"@en .
 :adposition a :PartOfSpeech ;
