@@ -39,11 +39,12 @@
                  s: Adjective Satellite
                  z: Multiword expression (inc. phrase, idiom)
                  c: Conjunction
-                 p: Adpoisiton (Preposition, postposition, etc.)
+                 p: Adposition (Preposition, postposition, etc.)
                  x: Other (inc. particle, classifier, bound morphemes, determiners)
                  u: Unknown -->
             <Lemma writtenForm="grandfather" partOfSpeech="n"/>
-            <Sense id="example-10161911-n-1" synset="example-10161911-n"/>
+            <Sense id="example-10161911-n-1" synset="example-10161911-n">
+            </Sense>
         </LexicalEntry>
         <LexicalEntry id="w2">
             <Lemma writtenForm="paternal grandfather" partOfSpeech="n"/>
@@ -74,9 +75,7 @@
         </LexicalEntry>
         <!-- If a synset is already mapped to the ILI please give the ID here -->
         <Synset id="example-10161911-n" ili="i90287">
-            <Definition>
-                the father of your father or mother
-            </Definition>
+            <Definition>the father of your father or mother</Definition>
             <!-- The set of relations between synsets is limited to the following:
                     hypernym: A concept with a broader meaning
                     hyponym: A concept with a narrower meaning
@@ -105,15 +104,14 @@
         </Synset>
         <!-- If you wish to define a new concept call the concept "in" (ILI New) -->
         <Synset id="example-1-n" ili="in">
-            <Definition>A father's father; a paternal grandfather</Definition>
+            <Definition>A father&apos;s father; a paternal grandfather</Definition>
             <!-- You can include metadata (such as source) at many points -->
             <!-- The ILI Definition must be at least 20 characters or five words -->
-            <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">
-                A father's father; a paternal grandfather
-            </ILIDefinition>
+            <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">A father&apos;s father; a paternal grandfather</ILIDefinition>
         </Synset>
         <!-- You must include all targets of relations -->
-        <Synset id="example-10162692-n" ili="i90292"/>
+        <Synset id="example-10162692-n" ili="i90292">
+        </Synset>
     </Lexicon>
     <Lexicon id="example-sv"
              label="Example wordnet (Swedish)"
@@ -130,11 +128,8 @@
             <Form  writtenForm="farfäder" tag="NNS"/>
             <!-- Synsets need not be language-specific but senses must be -->
             <Sense id="example-2-n-1" synset="example-1-n">
-                <SenseExample dc:source="Europarl Corpus">
-                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
-                </SenseExample>
+                <Example dc:source="Europarl Corpus">Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför</Example>
             </Sense>
         </LexicalEntry>
     </Lexicon>
 </LexicalResource>
-        

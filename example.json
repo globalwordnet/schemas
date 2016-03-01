@@ -7,25 +7,19 @@
       "label": "Example wordnet (English)",
       "language": "en",
       "email": "john@mccr.ae",
-      "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+      /* This is partial quote */
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/", // This is a line quote
       "version": "1.0",
       "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
-      "url": "http://globalwordnet.github.io/schemas",
+      "url": "http://globalwordnet.github.io/schemas/",
       "publisher": "Global Wordnet Association",
       "entry": [{
           "@id" : "w1",
-          "lemma": { "writtenForm": "father" }, 
+          "lemma": { "writtenForm": "grandfather" }, 
           "partOfSpeech": "wn:noun",
           "sense": [{
               "@id": "example-10161911-n-1",
-              "synset": {
-                  "@id": "example-10161911-n",
-                  "ili": "ili:i90287",
-                  "definition": {
-                      "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
-                  },
-                  "hyponym": ["example-10162692-n"]
-              }
+              "synset": "example-10161911-n"
           }]
       }, {
           "@id" : "w2",
@@ -33,24 +27,12 @@
           "partOfSpeech": "wn:noun",
           "sense": [{
               "@id": "example-1-n-1",
-              "synset": {
-                  "@id": "example-1-n",
-                  "definition": {
-                      "gloss": "the father of your father or mother"
-                  },
-                  "iliDefinition": {
-                      "gloss": "the father of your father or mother",
-                      "source": "https://en.wiktionary.org/wiki/farfar"
-                  },
-                  "hypernym": ["example-10162692-n"]
-              },
-              "relations": [
-                {
+              "synset": "example-1-n",
+              "link": [{
                   "category": "wn:derivation",
-                  "target": "example-10161911-n",
+                  "target": "example-10161911-n-1",
                   "creator": "John McCrae"
-                }
-              ]
+              }]
           }]
       }, {
           "@id": "w3",
@@ -61,6 +43,28 @@
              {"label": "Sam and Sue %s"},
              {"label": "The banks %s the check"}
            ]
+      }],
+      "synset": [{
+          "@id": "example-10161911-n",
+          "ili": "ili:i90287",
+          "definition": [{
+              "gloss": "the father of your father or mother"
+          }],
+          "link": [{
+              "category": "wn:hypernym", "target": "example-10162692-n"
+          }]
+      }, {
+          "@id": "example-1-n",
+          "definition": [{
+              "gloss": "the father of your father or mother"
+          }],
+          "iliDefinition": {
+              "gloss": "the father of your father or mother",
+              "source": "https://en.wiktionary.org/wiki/farfar"
+          },
+          "link": [
+            { "category": "wn:hypernym", "target": "example-10162692-n" }
+          ]
       }]
   }, {
       "@context": { "@language": "sv" },
@@ -69,7 +73,7 @@
       "label": "Example wordnet (Swedish)",
       "language": "sv",
       "email": "john@mccr.ae",
-      "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
       "version": "1.0",
       "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
       "url": "http://globalwordnet.github.io/schemas",
@@ -82,10 +86,10 @@
           "sense": [{
               "@id": "example-2-n-1",
               "synset": "example-1-n",
-              "example": {
+              "example": [{
                   "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                   "source": "Europarl Corpus"
-              }
+              }]
           }]
       }]
   }]
