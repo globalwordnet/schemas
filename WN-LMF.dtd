@@ -59,7 +59,7 @@
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
     tag CDATA #IMPLIED>
-<!ELEMENT Sense (SenseRelation*, Example*)>
+<!ELEMENT Sense (SenseRelation*, Example*, Count*)>
 <!ATTLIST Sense
     id ID #REQUIRED
     synset IDREF #REQUIRED
@@ -80,7 +80,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Count*, Example*)>
+<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED
@@ -184,7 +184,7 @@
 <!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
     target IDREF #REQUIRED
-    relType (antonym|near_antonym|also|participle|pertainym|derivation|domain_topic|has_domain_topic|domain_region|has_domain_region|domain_usage|has_domain_usage|similar|other) #REQUIRED
+    relType (antonym|also|participle|pertainym|derivation|domain_topic|has_domain_topic|domain_region|has_domain_region|domain_usage|has_domain_usage|similar|other) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
