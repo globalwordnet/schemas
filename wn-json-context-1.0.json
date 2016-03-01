@@ -31,6 +31,8 @@
     "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
     "license": { "@id": "cc:license", "@type": "@id" },
     "link": { "@reverse": "vartrans:source", "@type": "@id" },
+    "script": { "@id": "wn:script", "type": "string" },
+    "note": { "@id": "wn:note", "type": "string" },
 
     "agent": { "@id": "wn:agent", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
