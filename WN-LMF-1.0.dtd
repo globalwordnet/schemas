@@ -58,8 +58,7 @@
 <!ATTLIST Form
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
-    tag CDATA #IMPLIED
-    partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
+    tag CDATA #IMPLIED>
 <!ELEMENT Sense (SenseRelation*, Example*)>
 <!ATTLIST Sense
     id ID #REQUIRED
