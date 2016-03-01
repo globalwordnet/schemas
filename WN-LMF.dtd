@@ -27,6 +27,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT LexicalEntry (Lemma, Form*, Sense*, SyntacticBehaviour*)>
 <!ATTLIST LexicalEntry
@@ -46,15 +47,19 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Lemma EMPTY>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
-    partOfSpeech (n|v|a|r|s|z|c|p|x|u) #REQUIRED>
+    script CDATA #IMPLIED
+    partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
 <!ELEMENT Form EMPTY>
 <!ATTLIST Form
     writtenForm CDATA #REQUIRED
+    script CDATA #IMPLIED
     tag CDATA #IMPLIED>
+    partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
 <!ELEMENT Sense (SenseRelation*, Example*)>
 <!ATTLIST Sense
     id ID #REQUIRED
@@ -74,6 +79,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Count*, Example*)>
 <!ATTLIST Synset
@@ -94,6 +100,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
@@ -113,6 +120,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT ILIDefinition (#PCDATA)>
 <!ATTLIST ILIDefinition
@@ -131,9 +139,11 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Example (#PCDATA)>
 <!ATTLIST Example
+    language CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -149,6 +159,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT SynsetRelation EMPTY>
 <!ATTLIST SynsetRelation
@@ -169,6 +180,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
@@ -189,6 +201,7 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
@@ -210,4 +223,5 @@
     dc:title CDATA #IMPLIED
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
+    note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>

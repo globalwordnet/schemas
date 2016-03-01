@@ -27,12 +27,12 @@
 
 ##
 
-:status a owl:DatatypeProperty ;
+:status a owl:AnnotationProperty ;
   rdfs:range xsd:string ;
   rdfs:comment "A status string such as, 'finalized', 'checked' or 'to check'"@en ;
   rdfs:label "status"@en .
 
-:confidenceScore a owl:DatatypeProperty ;
+:confidenceScore a owl:AnnotationProperty ;
   rdfs:range xsd:decimal ;
   rdfs:comment "A confidence score, usually assigned by an algorithm, with a value between 0 and 1"@en ;
   rdfs:label "confidence score"@en .
@@ -114,6 +114,17 @@
 
 :ILIDefinition a owl:Class ;
   rdfs:label "ILI definition"@en .
+
+:script a owl:DatatypeProperty ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range xsd:string ;
+  rdfs:label "script"@en ;
+  rdfs:comment "The script as a 4 letter ISO 15924 code"@en .
+
+:note a owl:AnnotationPropety ;
+  rdfs:range xsd:string ;
+  rdfs:label "note"@en ;
+  rdfs:comment "Any extra notes made by a WordNet creator"@en .
 
 :SynsetRelType a owl:Class ;
   rdfs:label "synset relation type"@en .
