@@ -109,6 +109,12 @@
   rdfs:label "ILI definition"@en ;
   rdfs:comment "The English standard definition of the synset in the ILI"@en .
 
+:sourceSense a owl:ObjectProperty ;
+  rdfs:domain :Definition ;
+  rdfs:range ontolex:LexicalSense ;
+  rdfs:label "source sense"@en ;
+  rdfs:comment "The sense that was originally used to define the concept"@en .
+
 :Definition a owl:Class ;
   rdfs:label "definition"@en .
 

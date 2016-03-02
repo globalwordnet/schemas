@@ -33,6 +33,7 @@
     "link": { "@reverse": "vartrans:source", "@type": "@id" },
     "script": { "@id": "wn:script", "type": "string" },
     "note": { "@id": "wn:note", "type": "string" },
+    "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
 
     "agent": { "@id": "wn:agent", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
