@@ -315,6 +315,21 @@
   <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
     <rdfs:comment xml:lang="en">The English standard definition of the synset in the ILI</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#sourceSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#sourceSense">
+    <rdfs:domain rdf:resource="http://globalwordnet.github.io/schemas/wn#Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#sourceSense">
+    <rdfs:range rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#sourceSense">
+    <rdfs:label xml:lang="en">source sense</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#sourceSense">
+    <rdfs:comment xml:lang="en">The sense that was originally used to define the concept</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="http://globalwordnet.github.io/schemas/wn#Definition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
