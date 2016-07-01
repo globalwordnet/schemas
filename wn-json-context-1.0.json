@@ -25,15 +25,16 @@
     "iliDefintion": { "@id": "wn:iliDefinition", "@type": "@id" },
     "lemma": "ontolex:canonicalForm",
     "form": "ontolex:otherForm",
-    "tag": { "@id": "wn:tag", "@type": "string" },
+    "tag": { "@id": "wn:tag", "@type": "@id" },
     "writtenForm": "ontolex:writtenRep",
     "label": { "@id": "rdfs:label", "type": "string" },
     "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
     "license": { "@id": "cc:license", "@type": "@id" },
-    "link": { "@reverse": "vartrans:source", "@type": "@id" },
+    "relations": { "@reverse": "vartrans:source", "@type": "@id" },
     "script": { "@id": "wn:script", "type": "string" },
     "note": { "@id": "wn:note", "type": "string" },
     "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
+    "category": { "@id": "wn:category", "type": "string" },
 
     "agent": { "@id": "wn:agent", "@type": "@id" },
     "also": { "@id": "wn:also", "@type": "@id" },
@@ -115,8 +116,7 @@
     "citation": "schema:citation",
     "url": { "@id": "schema:url", "@type": "@id" },
 
-    "relations": { "@id": "vartrans:source", "@type": "@id" },
-    "category": { "@id": "vartrans:category", "@type": "@id" },
+    "relType": { "@id": "vartrans:category", "@type": "@id" },
     "target": { "@id": "vartrans:target", "@type": "@id" },
     
     "count": { "@id": "wn:count", "@type": "@id" },

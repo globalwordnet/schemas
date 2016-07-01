@@ -185,7 +185,7 @@
 <p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
 <p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
 <pre><code>{ 
-  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context.json&quot;,
+  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.0.json&quot;,
   &quot;@graph&quot;: [{</code></pre>
 <p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>ontolex:Lexicon</code>.</p>
 <pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },

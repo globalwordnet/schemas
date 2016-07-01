@@ -49,16 +49,18 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT Lemma EMPTY>
+<!ELEMENT Lemma (Tag*)>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
-<!ELEMENT Form EMPTY>
+<!ELEMENT Form (Tag*)>
 <!ATTLIST Form
     writtenForm CDATA #REQUIRED
-    script CDATA #IMPLIED
-    tag CDATA #IMPLIED>
+    script CDATA #IMPLIED>
+<!ELEMENT Tag (#PCDATA)>
+<!ATTLIST Tag
+    category CDATA #REQUIRED>
 <!ELEMENT Sense (SenseRelation*, Example*, Count*)>
 <!ATTLIST Sense
     id ID #REQUIRED

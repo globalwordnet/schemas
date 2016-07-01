@@ -71,7 +71,6 @@ The part of speech values are as follows:
 * a: Adjective
 * r: Adverb
 * s: Adjective Satellite
-* z: Multiword expression (inc. phrase, idiom)
 * c: Conjunction
 * p: Adposition (Preposition, postposition, etc.)
 * x: Other (inc. particle, classifier, bound morphemes, determiners)
