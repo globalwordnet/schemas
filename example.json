@@ -7,8 +7,7 @@
       "label": "Example wordnet (English)",
       "language": "en",
       "email": "john@mccr.ae",
-      /* This is partial quote */
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/", // This is a line quote
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/", 
       "version": "1.0",
       "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
       "url": "http://globalwordnet.github.io/schemas/",
@@ -28,8 +27,8 @@
           "sense": [{
               "@id": "example-1-n-1",
               "synset": "example-1-n",
-              "link": [{
-                  "category": "wn:derivation",
+              "relations": [{
+                  "relType": "wn:derivation",
                   "target": "example-10161911-n-1",
                   "creator": "John McCrae"
               }]
@@ -50,8 +49,8 @@
           "definition": [{
               "gloss": "the father of your father or mother"
           }],
-          "link": [{
-              "category": "wn:hypernym", "target": "example-10162692-n"
+          "relations": [{
+              "relType": "wn:hypernym", "target": "example-10162692-n"
           }]
       }, {
           "@id": "example-1-n",
@@ -62,8 +61,8 @@
               "gloss": "the father of your father or mother",
               "source": "https://en.wiktionary.org/wiki/farfar"
           },
-          "link": [
-            { "category": "wn:hypernym", "target": "example-10162692-n" }
+          "relations": [
+            { "relType": "wn:hypernym", "target": "example-10162692-n" }
           ]
       }]
   }, {
@@ -81,7 +80,7 @@
       "entry": [{
           "@id" : "w4",
           "lemma": { "writtenForm": "farfar" }, 
-          "form": [{ "writtenForm": "farfäder", "tag": "NNS" }],
+          "form": [{ "writtenForm": "farfäder", "tag": [{ "category": "penn", "value": "NNS" }] }],
           "partOfSpeech": "wn:noun",
           "sense": [{
               "@id": "example-2-n-1",

@@ -72,11 +72,21 @@
 :unknown_pos a :PartOfSpeech ;
   rdfs:label "unknown pos"@en .
 
-:tag a owl:DatatypeProperty ;
+:tag a owl:ObjectProperty ;
   rdfs:domain ontolex:Form ;
-  rdfs:range  xsd:string ;
+  rdfs:range  :Tag ;
   rdfs:label "tag"@en ;
   rdfs:comment "A tag describing an inflected form. There are no specific guidelines about the form of this element"@en .
+
+:Tag a owl:Class ;
+  rdfs:comment "The tag describing the category of a form"@en ;
+  rdfs:label "tag"@en .
+
+:category a owl:DatatypeProperty ;
+  rdfs:domain :Tag ;
+  rdfs:range xsd:string ;
+  rdfs:label "category"@en ;
+  rdfs:comment "The data category of a tag"@en .
 
 :example a owl:ObjectProperty ;
   rdfs:domain [

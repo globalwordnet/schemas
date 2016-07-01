@@ -106,7 +106,10 @@
   ] ;
   ontolex:otherForm [
     ontolex:writtenRep "farfäder"@sv ;
-    wn:tag "NNS" 
+    wn:tag [
+        wn:category "penn" ;
+        rdf:value "NNS" 
+    ]
   ] ;
   wn:partOfSpeech wn:noun ;
   wn:sense <#example-2-n-1> .
