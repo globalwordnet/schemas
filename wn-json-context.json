@@ -10,7 +10,7 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "synsem": "http://www.w3.org/ns/lemon/synsem#",
     "vartrans": "http://www.w3.org/ns/lemon/vartrans#",
-    "wn": "http://wordnet-rdf.princeton.edu/ontology#",
+    "wn": "http://globalwordnet.github.io/schemas/wn#",
     "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
 
     "gloss" : "rdf:value",
