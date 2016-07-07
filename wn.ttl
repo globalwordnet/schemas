@@ -173,7 +173,7 @@
   rdfs:comment "A relation between two concepts where concept B comes into existence as a result of concept A"@en .
 
 :classified_by a :SynsetRelType ;
-  rdfs:label "classified_by"@en ;
+  rdfs:label "classified by"@en ;
   rdfs:comment "A relation between concept B and a classifier concept A"@en .
 
 :classifies a :SynsetRelType ;
@@ -185,43 +185,43 @@
   rdfs:comment "A relation between two concepts where concept B is the instrument used by concept A in a certain action"@en .
 
 :co_agent_patient a :SynsetRelType ;
-  rdfs:label "co_agent_patient"@en ;
+  rdfs:label "co-agent patient"@en ;
   rdfs:comment "A relation between two concepts where concept B is the patient undergoing an action carried out by concept A"@en .
 
 :co_agent_result a :SynsetRelType ;
-  rdfs:label "co_agent_result"@en ;
+  rdfs:label "co-agent result"@en ;
   rdfs:comment "A relation between two concepts where concept B is the result of an action carried out by concept A"@en .
 
 :co_instrument_agent a :SynsetRelType ;
-  rdfs:label "co_instrument_agent"@en ;
+  rdfs:label "co-instrument agent"@en ;
   rdfs:comment "A relation between two concepts where concept A is the instrument used by concept B for a certain action"@en .
 
 :co_instrument_patient a :SynsetRelType ;
-  rdfs:label "co_instrument_patient"@en ;
+  rdfs:label "co-instrument patient"@en ;
   rdfs:comment "A relation between two concepts where concept B undergoes an action for which the instrument expressed by concept A is used"@en .
 
 :co_instrument_result a :SynsetRelType ;
-  rdfs:label "co_instrument_result"@en ;
+  rdfs:label "co-instrument result"@en ;
   rdfs:comment "A relation between two concepts where concept B is the result of an action carried out by the instrument expressed by concept A"@en .
 
 :co_patient_agent a :SynsetRelType ;
-  rdfs:label "co_patient_agent"@en ;
+  rdfs:label "co-patient agent"@en ;
   rdfs:comment "A relation between two concepts where concept B undergoes an action carried out by concept A"@en .
 
 :co_patient_instrument a :SynsetRelType ;
-  rdfs:label "co_patient_instrument"@en ;
+  rdfs:label "co-patient instrument"@en ;
   rdfs:comment "A relation between two concepts where concept A undergoes an action for which the instrument expressed by concept A is used"@en .
 
 :co_result_agent a :SynsetRelType ;
-  rdfs:label "co_result_agent"@en ;
+  rdfs:label "co-result agent"@en ;
   rdfs:comment "A relation between two concepts where concept A is the result of an action carried out by concept B"@en .
 
 :co_result_instrument a :SynsetRelType ;
-  rdfs:label "co_result_instrument"@en ;
+  rdfs:label "co-result instrument"@en ;
   rdfs:comment "A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used"@en .
 
 :co_role a :SynsetRelType ;
-  rdfs:label "co_role"@en ;
+  rdfs:label "co-role"@en ;
   rdfs:comment "A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional)"@en .
 
 :derivation a :SenseRelType ;
@@ -233,15 +233,15 @@
   rdfs:comment "A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B"@en .
 
 :domain_region a :SynsetRelType, :SenseRelType ;
-  rdfs:label "domain_region"@en ;
+  rdfs:label "domain region"@en ;
   rdfs:comment "A relation between two concepts where B is a geographical / cultural domain of concept A"@en .
 
 :domain_topic a :SynsetRelType, :SenseRelType ;
-  rdfs:label "domain_topic"@en ;
+  rdfs:label "domain topic"@en ;
   rdfs:comment "A relation between two concepts where B is a a scientific domain (e"@en .
 
-:domain_usage a :SynsetRelType, :SenseRelType ;
-  rdfs:label "domain_usage"@en ;
+:exemplifies a :SynsetRelType, :SenseRelType ;
+  rdfs:label "exemplifies"@en ;
   rdfs:comment "A relation between two concepts where B is a type of concept A"@en .
 
 :entails a :SynsetRelType ;
@@ -249,39 +249,39 @@
   rdfs:comment ""@en .
 
 :eq_synonym a :SynsetRelType ;
-  rdfs:label "eq_synonym"@en ;
+  rdfs:label "eq synonym"@en ;
   rdfs:comment "A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e"@en .
 
 :has_domain_region a :SynsetRelType, :SenseRelType ;
-  rdfs:label "has_domain_region"@en ;
+  rdfs:label "has domain region"@en ;
   rdfs:comment "A relation between two concepts where A is a geographical / cultural domain of concept B"@en .
 
 :has_domain_topic a :SynsetRelType, :SenseRelType ;
-  rdfs:label "has_domain_topic"@en ;
+  rdfs:label "has domain topic"@en ;
   rdfs:comment "A relation between two concepts where A is a a scientific domain (e"@en .
 
-:has_domain_usage a :SynsetRelType, :SenseRelType ;
-  rdfs:label "has_domain_usage"@en ;
+:is_exemplified_by a :SynsetRelType, :SenseRelType ;
+  rdfs:label "is exemplified by"@en ;
   rdfs:comment "A relation between two concepts where A an example of the type B"@en .
 
 :holo_location a :SynsetRelType ;
-  rdfs:label "holo_location"@en ;
+  rdfs:label "holonym location"@en ;
   rdfs:comment "A relation between two concepts where concept B is a place located in concept A"@en .
 
 :holo_member a :SynsetRelType ;
-  rdfs:label "holo_member"@en ;
+  rdfs:label "holonym member"@en ;
   rdfs:comment "A relation between two concepts where concept A is a member/ element of concept B"@en .
 
 :holo_part a :SynsetRelType ;
-  rdfs:label "holo_part"@en ;
+  rdfs:label "holonym part"@en ;
   rdfs:comment "A relation between two concepts where concept A is a component of concept B"@en .
 
 :holo_portion a :SynsetRelType ;
-  rdfs:label "holo_portion"@en ;
+  rdfs:label "holonym portion"@en ;
   rdfs:comment "A relation between two concepts where concept B is an amount/piece/portion of concept A"@en .
 
 :holo_substance a :SynsetRelType ;
-  rdfs:label "holo_substance"@en ;
+  rdfs:label "holonym substance"@en ;
   rdfs:comment "A relation between two concepts where concept B is made of concept A"@en .
 
 :holonym a :SynsetRelType ;
@@ -297,15 +297,15 @@
   rdfs:comment "A relation between two concepts where concept B is a type of concept A"@en .
 
 :in_manner a :SynsetRelType ;
-  rdfs:label "in_manner"@en ;
+  rdfs:label "in manner"@en ;
   rdfs:comment "A relation between two concepts where concept B qualifies the manner in which an action or event expressed by concept A takes place"@en .
 
 :instance_hypernym a :SynsetRelType ;
-  rdfs:label "instance_hypernym"@en ;
+  rdfs:label "instance hypernym"@en ;
   rdfs:comment "A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy"@en .
 
 :instance_hyponym a :SynsetRelType ;
-  rdfs:label "instance_hyponym"@en ;
+  rdfs:label "instance hyponym"@en ;
   rdfs:comment "A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy"@en .
 
 :instrument a :SynsetRelType ;
@@ -317,47 +317,47 @@
   rdfs:comment "A relation between two concepts where concept B is typically involved in the action or event expressed by concept A"@en .
 
 :involved_agent a :SynsetRelType ;
-  rdfs:label "involved_agent"@en ;
+  rdfs:label "involved agent"@en ;
   rdfs:comment "A relation between two concepts where concept B is typically the agent of the action expressed by concept A"@en .
 
 :involved_direction a :SynsetRelType ;
-  rdfs:label "involved_direction"@en ;
+  rdfs:label "involved direction"@en ;
   rdfs:comment "A relation between two concepts where concept B is typically the direction or location of the action or event expressed by concept A"@en .
 
 :involved_instrument a :SynsetRelType ;
-  rdfs:label "involved_instrument"@en ;
+  rdfs:label "involved instrument"@en ;
   rdfs:comment "A relation between two concepts where concept B is typically the instrument necessary for the action or event expressed by concept A"@en .
 
 :involved_location a :SynsetRelType ;
-  rdfs:label "involved_location"@en ;
+  rdfs:label "involved location"@en ;
   rdfs:comment "A relation between two concepts where concept B is typically the location where the action or event expressed by concept A takes place"@en .
 
 :involved_patient a :SynsetRelType ;
-  rdfs:label "involved_patient"@en ;
+  rdfs:label "involved patient"@en ;
   rdfs:comment "A relation between two concepts where concept B is typically the patient un-dergoing an action or event expressed by concept A"@en .
 
 :involved_result a :SynsetRelType ;
-  rdfs:label "involved_result"@en ;
+  rdfs:label "involved result"@en ;
   rdfs:comment "A relation between two concepts where concept B comes into existence as a result of concept A"@en .
 
 :involved_source_direction a :SynsetRelType ;
-  rdfs:label "involved_source_direction"@en ;
+  rdfs:label "involved source direction"@en ;
   rdfs:comment "A relation between two concepts where concept B is the place from where the action or event expressed by concept A begins/starts/happens"@en .
 
 :involved_target_direction a :SynsetRelType ;
-  rdfs:label "involved_target_direction"@en ;
+  rdfs:label "involved target direction"@en ;
   rdfs:comment "A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to"@en .
 
 :is_caused_by a :SynsetRelType ;
-  rdfs:label "is_caused_by"@en ;
+  rdfs:label "is caused by"@en ;
   rdfs:comment "A relation between two concepts where concept A comes into existence as a result of concept B"@en .
 
 :is_entailed_by a :SynsetRelType ;
-  rdfs:label "is_entailed_by"@en ;
+  rdfs:label "is entailed by"@en ;
   rdfs:comment ""@en .
 
 :is_subevent_of a :SynsetRelType ;
-  rdfs:label "is_subevent_of"@en ;
+  rdfs:label "is subevent of"@en ;
   rdfs:comment "A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place"@en .
 
 :location a :SynsetRelType ;
@@ -365,27 +365,27 @@
   rdfs:comment "A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place"@en .
 
 :manner_of a :SynsetRelType ;
-  rdfs:label "manner_of"@en ;
+  rdfs:label "manner of"@en ;
   rdfs:comment "A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place"@en .
 
 :mero_location a :SynsetRelType ;
-  rdfs:label "mero_location"@en ;
+  rdfs:label "meronym location"@en ;
   rdfs:comment "A relation between two concepts where concept A is a place located in concept B"@en .
 
 :mero_member a :SynsetRelType ;
-  rdfs:label "mero_member"@en ;
+  rdfs:label "meronym member"@en ;
   rdfs:comment "A relation between two concepts where concept B is a member/ element of concept A"@en .
 
 :mero_part a :SynsetRelType ;
-  rdfs:label "mero_part"@en ;
+  rdfs:label "meronym part"@en ;
   rdfs:comment "A relation between two concepts where concept B is a component of concept A"@en .
 
 :mero_portion a :SynsetRelType ;
-  rdfs:label "mero_portion"@en ;
+  rdfs:label "meronym portion"@en ;
   rdfs:comment "A relation between two concepts where concept A is an amount/piece/portion of concept B"@en .
 
 :mero_substance a :SynsetRelType ;
-  rdfs:label "mero_substance"@en ;
+  rdfs:label "meronym substance"@en ;
   rdfs:comment "A relation between two concepts where concept A is made of concept B"@en .
 
 :meronym a :SynsetRelType ;
@@ -409,7 +409,7 @@
   rdfs:comment "Indicates a noun that pertains to this word"@en .
 
 :restricted_by a :SynsetRelType ;
-  rdfs:label "restricted_by"@en ;
+  rdfs:label "restricted by"@en ;
   rdfs:comment "A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner)"@en .
 
 :restricts a :SynsetRelType ;
@@ -429,11 +429,11 @@
   rdfs:comment "A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset"@en .
 
 :source_direction a :SynsetRelType ;
-  rdfs:label "source_direction"@en ;
+  rdfs:label "source direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens"@en .
 
 :state_of a :SynsetRelType ;
-  rdfs:label "state_of"@en ;
+  rdfs:label "state of"@en ;
   rdfs:comment "A relation between two concepts where concept B is qualified by concept A"@en .
 
 :subevent a :SynsetRelType ;
@@ -441,5 +441,5 @@
   rdfs:comment "A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place"@en .
 
 :target_direction a :SynsetRelType ;
-  rdfs:label "target_direction"@en ;
+  rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .

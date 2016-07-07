@@ -154,7 +154,7 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#causes> <http://www.w3.org/2000/01/rdf-schema#label> "causes"@en .
 <http://globalwordnet.github.io/schemas/wn#causes> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B comes into existence as a result of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#classified_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#classified_by> <http://www.w3.org/2000/01/rdf-schema#label> "classified_by"@en .
+<http://globalwordnet.github.io/schemas/wn#classified_by> <http://www.w3.org/2000/01/rdf-schema#label> "classified by"@en .
 <http://globalwordnet.github.io/schemas/wn#classified_by> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between concept B and a classifier concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#classifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#classifies> <http://www.w3.org/2000/01/rdf-schema#label> "classifies"@en .
@@ -163,34 +163,34 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#co_agent_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "co-agent instrument"@en .
 <http://globalwordnet.github.io/schemas/wn#co_agent_instrument> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the instrument used by concept A in a certain action"@en .
 <http://globalwordnet.github.io/schemas/wn#co_agent_patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_agent_patient> <http://www.w3.org/2000/01/rdf-schema#label> "co_agent_patient"@en .
+<http://globalwordnet.github.io/schemas/wn#co_agent_patient> <http://www.w3.org/2000/01/rdf-schema#label> "co-agent patient"@en .
 <http://globalwordnet.github.io/schemas/wn#co_agent_patient> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the patient undergoing an action carried out by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#co_agent_result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_agent_result> <http://www.w3.org/2000/01/rdf-schema#label> "co_agent_result"@en .
+<http://globalwordnet.github.io/schemas/wn#co_agent_result> <http://www.w3.org/2000/01/rdf-schema#label> "co-agent result"@en .
 <http://globalwordnet.github.io/schemas/wn#co_agent_result> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the result of an action carried out by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_instrument_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co_instrument_agent"@en .
+<http://globalwordnet.github.io/schemas/wn#co_instrument_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co-instrument agent"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the instrument used by concept B for a certain action"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_instrument_patient> <http://www.w3.org/2000/01/rdf-schema#label> "co_instrument_patient"@en .
+<http://globalwordnet.github.io/schemas/wn#co_instrument_patient> <http://www.w3.org/2000/01/rdf-schema#label> "co-instrument patient"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_patient> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B undergoes an action for which the instrument expressed by concept A is used"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_instrument_result> <http://www.w3.org/2000/01/rdf-schema#label> "co_instrument_result"@en .
+<http://globalwordnet.github.io/schemas/wn#co_instrument_result> <http://www.w3.org/2000/01/rdf-schema#label> "co-instrument result"@en .
 <http://globalwordnet.github.io/schemas/wn#co_instrument_result> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the result of an action carried out by the instrument expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#co_patient_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_patient_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co_patient_agent"@en .
+<http://globalwordnet.github.io/schemas/wn#co_patient_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co-patient agent"@en .
 <http://globalwordnet.github.io/schemas/wn#co_patient_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B undergoes an action carried out by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#co_patient_instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_patient_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "co_patient_instrument"@en .
+<http://globalwordnet.github.io/schemas/wn#co_patient_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "co-patient instrument"@en .
 <http://globalwordnet.github.io/schemas/wn#co_patient_instrument> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A undergoes an action for which the instrument expressed by concept A is used"@en .
 <http://globalwordnet.github.io/schemas/wn#co_result_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_result_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co_result_agent"@en .
+<http://globalwordnet.github.io/schemas/wn#co_result_agent> <http://www.w3.org/2000/01/rdf-schema#label> "co-result agent"@en .
 <http://globalwordnet.github.io/schemas/wn#co_result_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the result of an action carried out by concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#co_result_instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_result_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "co_result_instrument"@en .
+<http://globalwordnet.github.io/schemas/wn#co_result_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "co-result instrument"@en .
 <http://globalwordnet.github.io/schemas/wn#co_result_instrument> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used"@en .
 <http://globalwordnet.github.io/schemas/wn#co_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#co_role> <http://www.w3.org/2000/01/rdf-schema#label> "co_role"@en .
+<http://globalwordnet.github.io/schemas/wn#co_role> <http://www.w3.org/2000/01/rdf-schema#label> "co-role"@en .
 <http://globalwordnet.github.io/schemas/wn#co_role> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional)"@en .
 <http://globalwordnet.github.io/schemas/wn#derivation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
 <http://globalwordnet.github.io/schemas/wn#derivation> <http://www.w3.org/2000/01/rdf-schema#label> "derivation"@en .
@@ -200,48 +200,48 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#domain_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#domain_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#domain_region> <http://www.w3.org/2000/01/rdf-schema#label> "domain_region"@en .
+<http://globalwordnet.github.io/schemas/wn#domain_region> <http://www.w3.org/2000/01/rdf-schema#label> "domain region"@en .
 <http://globalwordnet.github.io/schemas/wn#domain_region> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where B is a geographical / cultural domain of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#domain_topic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#domain_topic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#domain_topic> <http://www.w3.org/2000/01/rdf-schema#label> "domain_topic"@en .
+<http://globalwordnet.github.io/schemas/wn#domain_topic> <http://www.w3.org/2000/01/rdf-schema#label> "domain topic"@en .
 <http://globalwordnet.github.io/schemas/wn#domain_topic> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where B is a a scientific domain (e"@en .
-<http://globalwordnet.github.io/schemas/wn#domain_usage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#domain_usage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#domain_usage> <http://www.w3.org/2000/01/rdf-schema#label> "domain_usage"@en .
-<http://globalwordnet.github.io/schemas/wn#domain_usage> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where B is a type of concept A"@en .
+<http://globalwordnet.github.io/schemas/wn#exemplifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
+<http://globalwordnet.github.io/schemas/wn#exemplifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
+<http://globalwordnet.github.io/schemas/wn#exemplifies> <http://www.w3.org/2000/01/rdf-schema#label> "exemplifies"@en .
+<http://globalwordnet.github.io/schemas/wn#exemplifies> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where B is a type of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#entails> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#entails> <http://www.w3.org/2000/01/rdf-schema#label> "entails"@en .
 <http://globalwordnet.github.io/schemas/wn#entails> <http://www.w3.org/2000/01/rdf-schema#comment> ""@en .
 <http://globalwordnet.github.io/schemas/wn#eq_synonym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#eq_synonym> <http://www.w3.org/2000/01/rdf-schema#label> "eq_synonym"@en .
+<http://globalwordnet.github.io/schemas/wn#eq_synonym> <http://www.w3.org/2000/01/rdf-schema#label> "eq synonym"@en .
 <http://globalwordnet.github.io/schemas/wn#eq_synonym> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e"@en .
 <http://globalwordnet.github.io/schemas/wn#has_domain_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#has_domain_region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#has_domain_region> <http://www.w3.org/2000/01/rdf-schema#label> "has_domain_region"@en .
+<http://globalwordnet.github.io/schemas/wn#has_domain_region> <http://www.w3.org/2000/01/rdf-schema#label> "has domain region"@en .
 <http://globalwordnet.github.io/schemas/wn#has_domain_region> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where A is a geographical / cultural domain of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#has_domain_topic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#has_domain_topic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#has_domain_topic> <http://www.w3.org/2000/01/rdf-schema#label> "has_domain_topic"@en .
+<http://globalwordnet.github.io/schemas/wn#has_domain_topic> <http://www.w3.org/2000/01/rdf-schema#label> "has domain topic"@en .
 <http://globalwordnet.github.io/schemas/wn#has_domain_topic> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where A is a a scientific domain (e"@en .
-<http://globalwordnet.github.io/schemas/wn#has_domain_usage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#has_domain_usage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
-<http://globalwordnet.github.io/schemas/wn#has_domain_usage> <http://www.w3.org/2000/01/rdf-schema#label> "has_domain_usage"@en .
-<http://globalwordnet.github.io/schemas/wn#has_domain_usage> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where A an example of the type B"@en .
+<http://globalwordnet.github.io/schemas/wn#is_exemplified_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
+<http://globalwordnet.github.io/schemas/wn#is_exemplified_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SenseRelType> .
+<http://globalwordnet.github.io/schemas/wn#is_exemplified_by> <http://www.w3.org/2000/01/rdf-schema#label> "is exemplified by"@en .
+<http://globalwordnet.github.io/schemas/wn#is_exemplified_by> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where A an example of the type B"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#holo_location> <http://www.w3.org/2000/01/rdf-schema#label> "holo_location"@en .
+<http://globalwordnet.github.io/schemas/wn#holo_location> <http://www.w3.org/2000/01/rdf-schema#label> "holonym location"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_location> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is a place located in concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#holo_member> <http://www.w3.org/2000/01/rdf-schema#label> "holo_member"@en .
+<http://globalwordnet.github.io/schemas/wn#holo_member> <http://www.w3.org/2000/01/rdf-schema#label> "holonym member"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_member> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is a member/ element of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#holo_part> <http://www.w3.org/2000/01/rdf-schema#label> "holo_part"@en .
+<http://globalwordnet.github.io/schemas/wn#holo_part> <http://www.w3.org/2000/01/rdf-schema#label> "holonym part"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_part> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is a component of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_portion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#holo_portion> <http://www.w3.org/2000/01/rdf-schema#label> "holo_portion"@en .
+<http://globalwordnet.github.io/schemas/wn#holo_portion> <http://www.w3.org/2000/01/rdf-schema#label> "holonym portion"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_portion> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is an amount/piece/portion of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_substance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#holo_substance> <http://www.w3.org/2000/01/rdf-schema#label> "holo_substance"@en .
+<http://globalwordnet.github.io/schemas/wn#holo_substance> <http://www.w3.org/2000/01/rdf-schema#label> "holonym substance"@en .
 <http://globalwordnet.github.io/schemas/wn#holo_substance> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is made of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#holonym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#holonym> <http://www.w3.org/2000/01/rdf-schema#label> "holonym"@en .
@@ -253,13 +253,13 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#hyponym> <http://www.w3.org/2000/01/rdf-schema#label> "hyponym"@en .
 <http://globalwordnet.github.io/schemas/wn#hyponym> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is a type of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#in_manner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#in_manner> <http://www.w3.org/2000/01/rdf-schema#label> "in_manner"@en .
+<http://globalwordnet.github.io/schemas/wn#in_manner> <http://www.w3.org/2000/01/rdf-schema#label> "in manner"@en .
 <http://globalwordnet.github.io/schemas/wn#in_manner> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B qualifies the manner in which an action or event expressed by concept A takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#instance_hypernym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#instance_hypernym> <http://www.w3.org/2000/01/rdf-schema#label> "instance_hypernym"@en .
+<http://globalwordnet.github.io/schemas/wn#instance_hypernym> <http://www.w3.org/2000/01/rdf-schema#label> "instance hypernym"@en .
 <http://globalwordnet.github.io/schemas/wn#instance_hypernym> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy"@en .
 <http://globalwordnet.github.io/schemas/wn#instance_hyponym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#instance_hyponym> <http://www.w3.org/2000/01/rdf-schema#label> "instance_hyponym"@en .
+<http://globalwordnet.github.io/schemas/wn#instance_hyponym> <http://www.w3.org/2000/01/rdf-schema#label> "instance hyponym"@en .
 <http://globalwordnet.github.io/schemas/wn#instance_hyponym> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy"@en .
 <http://globalwordnet.github.io/schemas/wn#instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#instrument> <http://www.w3.org/2000/01/rdf-schema#label> "instrument"@en .
@@ -268,58 +268,58 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#involved> <http://www.w3.org/2000/01/rdf-schema#label> "involved"@en .
 <http://globalwordnet.github.io/schemas/wn#involved> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically involved in the action or event expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_agent> <http://www.w3.org/2000/01/rdf-schema#label> "involved_agent"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_agent> <http://www.w3.org/2000/01/rdf-schema#label> "involved agent"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_agent> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically the agent of the action expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved_direction"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved direction"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically the direction or location of the action or event expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_instrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "involved_instrument"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_instrument> <http://www.w3.org/2000/01/rdf-schema#label> "involved instrument"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_instrument> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically the instrument necessary for the action or event expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_location> <http://www.w3.org/2000/01/rdf-schema#label> "involved_location"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_location> <http://www.w3.org/2000/01/rdf-schema#label> "involved location"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_location> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically the location where the action or event expressed by concept A takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_patient> <http://www.w3.org/2000/01/rdf-schema#label> "involved_patient"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_patient> <http://www.w3.org/2000/01/rdf-schema#label> "involved patient"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_patient> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is typically the patient un-dergoing an action or event expressed by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_result> <http://www.w3.org/2000/01/rdf-schema#label> "involved_result"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_result> <http://www.w3.org/2000/01/rdf-schema#label> "involved result"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_result> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B comes into existence as a result of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_source_direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_source_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved_source_direction"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_source_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved source direction"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_source_direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the place from where the action or event expressed by concept A begins/starts/happens"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_target_direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#involved_target_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved_target_direction"@en .
+<http://globalwordnet.github.io/schemas/wn#involved_target_direction> <http://www.w3.org/2000/01/rdf-schema#label> "involved target direction"@en .
 <http://globalwordnet.github.io/schemas/wn#involved_target_direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to"@en .
 <http://globalwordnet.github.io/schemas/wn#is_caused_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#is_caused_by> <http://www.w3.org/2000/01/rdf-schema#label> "is_caused_by"@en .
+<http://globalwordnet.github.io/schemas/wn#is_caused_by> <http://www.w3.org/2000/01/rdf-schema#label> "is caused by"@en .
 <http://globalwordnet.github.io/schemas/wn#is_caused_by> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A comes into existence as a result of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#is_entailed_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#is_entailed_by> <http://www.w3.org/2000/01/rdf-schema#label> "is_entailed_by"@en .
+<http://globalwordnet.github.io/schemas/wn#is_entailed_by> <http://www.w3.org/2000/01/rdf-schema#label> "is entailed by"@en .
 <http://globalwordnet.github.io/schemas/wn#is_entailed_by> <http://www.w3.org/2000/01/rdf-schema#comment> ""@en .
 <http://globalwordnet.github.io/schemas/wn#is_subevent_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#is_subevent_of> <http://www.w3.org/2000/01/rdf-schema#label> "is_subevent_of"@en .
+<http://globalwordnet.github.io/schemas/wn#is_subevent_of> <http://www.w3.org/2000/01/rdf-schema#label> "is subevent of"@en .
 <http://globalwordnet.github.io/schemas/wn#is_subevent_of> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#location> <http://www.w3.org/2000/01/rdf-schema#label> "location"@en .
 <http://globalwordnet.github.io/schemas/wn#location> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#manner_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#manner_of> <http://www.w3.org/2000/01/rdf-schema#label> "manner_of"@en .
+<http://globalwordnet.github.io/schemas/wn#manner_of> <http://www.w3.org/2000/01/rdf-schema#label> "manner of"@en .
 <http://globalwordnet.github.io/schemas/wn#manner_of> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#mero_location> <http://www.w3.org/2000/01/rdf-schema#label> "mero_location"@en .
+<http://globalwordnet.github.io/schemas/wn#mero_location> <http://www.w3.org/2000/01/rdf-schema#label> "meronym location"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_location> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is a place located in concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#mero_member> <http://www.w3.org/2000/01/rdf-schema#label> "mero_member"@en .
+<http://globalwordnet.github.io/schemas/wn#mero_member> <http://www.w3.org/2000/01/rdf-schema#label> "meronym member"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_member> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is a member/ element of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#mero_part> <http://www.w3.org/2000/01/rdf-schema#label> "mero_part"@en .
+<http://globalwordnet.github.io/schemas/wn#mero_part> <http://www.w3.org/2000/01/rdf-schema#label> "meronym part"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_part> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is a component of concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_portion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#mero_portion> <http://www.w3.org/2000/01/rdf-schema#label> "mero_portion"@en .
+<http://globalwordnet.github.io/schemas/wn#mero_portion> <http://www.w3.org/2000/01/rdf-schema#label> "meronym portion"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_portion> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is an amount/piece/portion of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_substance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#mero_substance> <http://www.w3.org/2000/01/rdf-schema#label> "mero_substance"@en .
+<http://globalwordnet.github.io/schemas/wn#mero_substance> <http://www.w3.org/2000/01/rdf-schema#label> "meronym substance"@en .
 <http://globalwordnet.github.io/schemas/wn#mero_substance> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is made of concept B"@en .
 <http://globalwordnet.github.io/schemas/wn#meronym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#meronym> <http://www.w3.org/2000/01/rdf-schema#label> "meronym"@en .
@@ -338,7 +338,7 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#pertainym> <http://www.w3.org/2000/01/rdf-schema#label> "pertainym"@en .
 <http://globalwordnet.github.io/schemas/wn#pertainym> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a noun that pertains to this word"@en .
 <http://globalwordnet.github.io/schemas/wn#restricted_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#restricted_by> <http://www.w3.org/2000/01/rdf-schema#label> "restricted_by"@en .
+<http://globalwordnet.github.io/schemas/wn#restricted_by> <http://www.w3.org/2000/01/rdf-schema#label> "restricted by"@en .
 <http://globalwordnet.github.io/schemas/wn#restricted_by> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner)"@en .
 <http://globalwordnet.github.io/schemas/wn#restricts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#restricts> <http://www.w3.org/2000/01/rdf-schema#label> "restricts"@en .
@@ -354,14 +354,14 @@ _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
 <http://globalwordnet.github.io/schemas/wn#similar> <http://www.w3.org/2000/01/rdf-schema#label> "similar"@en .
 <http://globalwordnet.github.io/schemas/wn#similar> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset"@en .
 <http://globalwordnet.github.io/schemas/wn#source_direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#source_direction> <http://www.w3.org/2000/01/rdf-schema#label> "source_direction"@en .
+<http://globalwordnet.github.io/schemas/wn#source_direction> <http://www.w3.org/2000/01/rdf-schema#label> "source direction"@en .
 <http://globalwordnet.github.io/schemas/wn#source_direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens"@en .
 <http://globalwordnet.github.io/schemas/wn#state_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#state_of> <http://www.w3.org/2000/01/rdf-schema#label> "state_of"@en .
+<http://globalwordnet.github.io/schemas/wn#state_of> <http://www.w3.org/2000/01/rdf-schema#label> "state of"@en .
 <http://globalwordnet.github.io/schemas/wn#state_of> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B is qualified by concept A"@en .
 <http://globalwordnet.github.io/schemas/wn#subevent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
 <http://globalwordnet.github.io/schemas/wn#subevent> <http://www.w3.org/2000/01/rdf-schema#label> "subevent"@en .
 <http://globalwordnet.github.io/schemas/wn#subevent> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place"@en .
 <http://globalwordnet.github.io/schemas/wn#target_direction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://globalwordnet.github.io/schemas/wn#SynsetRelType> .
-<http://globalwordnet.github.io/schemas/wn#target_direction> <http://www.w3.org/2000/01/rdf-schema#label> "target_direction"@en .
+<http://globalwordnet.github.io/schemas/wn#target_direction> <http://www.w3.org/2000/01/rdf-schema#label> "target direction"@en .
 <http://globalwordnet.github.io/schemas/wn#target_direction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
