@@ -95,7 +95,7 @@ The set of relations between senses is limited to the following
 * domain_member_category: Indicates a word involved in this category described by this word
 * domain_region: Indicates the region of this word
 * domain_member_region: Indicates a word involved in the region described by this word
-* domain_usage: Indicates the usage of this word
+* exemplifies: Indicates the usage of this word
 * domain_member_usage: Indicates a word involved in the usage described by this word
 
                     <SenseRelation relType="derivation" target="example-10161911-n-1"/>
@@ -139,7 +139,7 @@ The set of relations between synsets is limited to the following:
 * domain_member_category: Indicates a word involved in this category described by this word
 * domain_region: Indicates the region of this word
 * domain_member_region: Indicates a word involved in the region described by this word
-* domain_usage: Indicates the usage of this word
+* exemplifies: Indicates the usage of this word
 * domain_member_usage: Indicates a word involved in the usage described by this word
 
                 <SynsetRelation relType="hypernym" target="example-10162692-n"/>
@@ -254,7 +254,7 @@ sense relations as follows:
 * `domain_member_category`: Indicates a word involved in this category described by this word
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
-* `domain_usage`: Indicates the usage of this word
+* `exemplifies`: Indicates the usage of this word
 * `domain_member_usage`: Indicates a word involved in the usage described by this word
 
               "sense": [{
@@ -285,7 +285,7 @@ any relations from the following list:
 * `domain_member_category`: Indicates a word involved in this category described by this word
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
-* `domain_usage`: Indicates the usage of this word
+* `exemplifies`: Indicates the usage of this word
 * `domain_member_usage`: Indicates a word involved in the usage described by this word
 
 In contrast to the XML form the `ili` is optional. If there is no match omit this
