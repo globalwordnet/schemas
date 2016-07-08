@@ -354,7 +354,7 @@ Synset relations are given as for sense relations except the `target` must be th
                 { "relType": "hypernym", "target": "example-10162692-n" }
               ]
           }]
-      }, {
+        }, {
           "@context": { "@language": "sv" },
           "@id": "example-sv",
           "@type": "ontolex:Lexicon", 
