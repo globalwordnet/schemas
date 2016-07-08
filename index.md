@@ -232,17 +232,32 @@ The entries are given as a list under the `entry` property it requires an `@id`
 `partOfSpeech` and `lemma` and may have `sense`, `synBehavior`, `status`, 
 `confidence` and Dublin Core properties. The lemma has only a single value 
 `writtenForm` and the `partOfSpeech` must be one of the following:
-[ `wn:noun`, `wn:verb`, `wn:adjective`, `wn:adverb`, `wn:adjective_satellite`, `wn:phrase`, `wn:conjunction`, `wn:adposition`, `wn:other`, `wn:unknown` ]. The `@id` must be unique in the
+[ `noun`, `verb`, `adjective`, `adverb`, `adjective_satellite`, `phrase`, `conjunction`, `adposition`, `other`, `unknown` ]. The `@id` must be unique in the
 document, it is not the same as the `@id` of the wordnet or any other entry.
 
           "entry": [{
               "@id" : "w1",
               "lemma": { "writtenForm": "father" }, 
-              "partOfSpeech": "wn:noun",
+              "partOfSpeech": "noun",
 
 The Sense requires only an `@id` and a `synset` and may take `status`, 
-`confidenceScore`, Dublin Core properties, an `example` and any number of 
-sense relations as follows:
+`confidenceScore`, Dublin Core properties, an `example`.
+
+
+              "sense": [{
+                  "@id": "example-10161911-n-1",
+                  "synset": "example-10161911-n"
+              }]
+          }, {
+              "@id" : "w2",
+              "lemma": { "writtenForm": "paternal grandfather" }, 
+              "partOfSpeech": "noun",
+              "sense": [{
+                  "@id": "example-1-n-1",
+                  "synset": "example-1-n",
+
+A sense may also have any number of `relations` which have a `relType` from the
+list below and a `target` and may have Dublin Core properties
 
 * `antonym`: An opposite and inherently incompatible word
 * `also`: See also, a reference of weak meaning
@@ -257,13 +272,48 @@ sense relations as follows:
 * `exemplifies`: Indicates the usage of this word
 * `domain_member_usage`: Indicates a word involved in the usage described by this word
 
-              "sense": [{
-                  "@id": "example-10161911-n-1",
+                  "relations": [{
+                      "relType": "derivation",
+                      "target": "example-10161911-n-1",
+                      "creator": "John McCrae"
+                  }]
+              }]
+          }, {
+              "@id": "w3",
+              "lemma": { "writtenForm": "pay" },
+              "partOfSpeech": "verb",
 
+The syntactic behavior is given here as follows:
+
+              "synBehavior": [
+                 {"label": "Sam cannot %s Sue"}, 
+                 {"label": "Sam and Sue %s"},
+                 {"label": "The banks %s the check"}
+               ]
+          }],
+ 
+Synsets are listed under the `synset` property.
 A synset requires only an `@id`. It may take an `ili` which is a code from the 
 CILI (starting with `ili:i`), a `definition`, an `iliDefinition` (which must 
-be given in English), `status`, `confidenceScore`, Dublin Core properties and
-any relations from the following list:
+be given in English), `status`, `confidenceScore`, `relations` and Dublin Core properties.
+
+In contrast to the XML form the `ili` is optional. If there is no match omit this
+tag, if you wish to propose a new synset add only a `iliDefinition`.
+
+          "synset": [{
+              "@id": "example-10161911-n",
+              "ili": "ili:i90287",
+
+Definitions must have a `gloss` and may be have a `language`, in addition, 
+`status`, `confidenceScore` and Dublin Core properties may be added. An 
+`iliDefinition` is the same but may not have a language.
+
+              "definition": [{
+                "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
+               }],
+
+Synset relations are given as for sense relations except the `target` must be the
+`@id` of another synset not a sense. The following properties can be used:
 
 * `hypernym`: A concept with a broader meaning
 * `hyponym`: A concept with a narrower meaning
@@ -288,68 +338,21 @@ any relations from the following list:
 * `exemplifies`: Indicates the usage of this word
 * `domain_member_usage`: Indicates a word involved in the usage described by this word
 
-In contrast to the XML form the `ili` is optional. If there is no match omit this
-tag, if you wish to propose a new synset add only a `iliDefinition`.
-
-                   "synset": {
-                      "@id": "example-10161911-n",
-                      "ili": "ili:i90287",
-
-Definitions must have a `gloss` and may be have a `language`, in addition, 
-`status`, `confidenceScore` and Dublin Core properties may be added. An 
-`iliDefinition` is the same but may not have a language.
-
-                      "definition": {
-                          "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
-                      },
-
-Relations (on senses or synsets) are given as an array of references to `@id` 
-values (these must correspond to elements at the same level with that `@id`).
-
-                      "hyponym": ["example-10162692-n"]
-                  }
+              "relations": [{
+                  "relType": "hypernym", "target": "example-10162692-n"
               }]
           }, {
-              "@id" : "w2",
-              "lemma": { "writtenForm": "paternal grandfather" }, 
-              "partOfSpeech": "wn:noun",
-              "sense": [{
-                  "@id": "example-1-n-1",
-                  "synset": {
-                      "@id": "example-1-n",
-                      "definition": {
-                          "gloss": "the father of your father or mother"
-                      },
-                      "iliDefinition": {
-                          "gloss": "the father of your father or mother",
-                          "source": "https://en.wiktionary.org/wiki/farfar"
-                      },
-                      "hypernym": ["example-10162692-n"]
-                  },
-
-Relations may also be stated in full form, in which case the `status`, 
-`confidenceScore` and Dublin Core properties may be stated.
-
-                  "relations": [
-                    {
-                      "category": "wn:derivation",
-                      "target": "example-10161911-n",
-                      "creator": "John McCrae"
-                    }
-                  ]
-              }]
-          }, {
-              "@id": "w3",
-              "lemma": { "writtenForm": "pay" },
-              "partOfSpeech": "wn:verb",
-
-The syntactic behavior is given here as follows:
-
-              "synBehavior": [{
-                 {"label": "Sam cannot %s Sue"}, 
-                 {"label": "Sam and Sue %s"},
-                 {"label": "The banks %s the check"}
-              }]
+              "@id": "example-1-n",
+              "definition": [{
+                  "gloss": "the father of your father or mother"
+              }],
+              "iliDefinition": {
+                  "gloss": "the father of your father or mother",
+                  "source": "https://en.wiktionary.org/wiki/farfar"
+              },
+              "relations": [
+                { "relType": "hypernym", "target": "example-10162692-n" }
+              ]
           }]
       }, {
           "@context": { "@language": "sv" },
@@ -358,7 +361,7 @@ The syntactic behavior is given here as follows:
           "label": "Example wordnet (Swedish)",
           "language": "sv",
           "email": "john@mccr.ae",
-          "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "license": "https://creativecommons.org/publicdomain/zero/1.0/",
           "version": "1.0",
           "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
           "url": "http://globalwordnet.github.io/schemas",
@@ -366,23 +369,25 @@ The syntactic behavior is given here as follows:
           "entry": [{
               "@id" : "w4",
               "lemma": { "writtenForm": "farfar" }, 
-              "partOfSpeech": "wn:noun",
-              "sense": [{
-                  "@id": "example-2-n-1",
-                  "synset": "example-1-n",
+              "form": [{ "writtenForm": "farfäder", "tag": [{ "category": "penn", "value": "NNS" }] }],
+              "partOfSpeech": "noun",
 
 Any examples should be given on the sense as follows:
 
-                  "example": {
+              "sense": [{
+                  "@id": "example-2-n-1",
+                  "synset": "example-1-n",
+                  "example": [{
                       "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                       "source": "Europarl Corpus"
-                  }
+                  }]
               }]
           }]
       }]
     }
 
-In addition, the JSON format can be validated by the [JSON Schema](http://json-schema.org)
+
+The JSON format can be validated by the [JSON Schema](http://json-schema.org)
 provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json
 
 RDF
