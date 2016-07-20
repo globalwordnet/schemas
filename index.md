@@ -113,7 +113,7 @@ Syntactic Behaviour is given as in Princeton WordNet
 
 If a synset is already mapped to the ILI please give the ID here
 
-            <Synset id="example-10161911-n" ili="i90287">
+            <Synset id="example-10161911-n" ili="i90287" partOfSpeech="n">
                 <Definition>
                     the father of your father or mother
                 </Definition>
@@ -148,7 +148,7 @@ The set of relations between synsets is limited to the following:
 If you wish to define a new concept call the concept "in" (ILI New). If there is
 no mapping to the ILI leave this field empty (it is required).
 
-            <Synset id="example-1-n" ili="in">
+            <Synset id="example-1-n" ili="in" partOfSpeech="n">
                 <Definition>A father's father; a paternal grandfather</Definition>
 
 You can include metadata (such as source) at many points
@@ -161,7 +161,7 @@ The ILI Definition must be at least 20 characters or five words
 
 You must include all targets of relations
 
-            <Synset id="example-10162692-n" ili="i90292"/>
+            <Synset id="example-10162692-n" ili="i90292" partOfSpeech="n"/>
         </Lexicon>
         <Lexicon id="example-sv"
                  label="Example wordnet (Swedish)"
@@ -302,6 +302,7 @@ tag, if you wish to propose a new synset add only a `iliDefinition`.
 
           "synset": [{
               "@id": "example-10161911-n",
+              "partOfSpeech": "noun",
               "ili": "ili:i90287",
 
 Definitions must have a `gloss` and may be have a `language`, in addition, 
@@ -343,6 +344,7 @@ Synset relations are given as for sense relations except the `target` must be th
               }]
           }, {
               "@id": "example-1-n",
+              "partOfSpeech": "noun",
               "definition": [{
                   "gloss": "the father of your father or mother"
               }],
@@ -433,79 +435,113 @@ The mapping to the Lemon-OntoLex model is as follows:
 
 A more extended example is given here:
 
-    <#example-en> a lemon:Lexicon ;
-      rdfs:label "Example wordnet"@en ;
-      dc:language "en"@en ;
+    <#example-en> a lime:Lexicon ;
+      rdfs:label "Example wordnet (English)"@en ;
+      dc:language "en" ;
       schema:email "john@mccr.ae" ;
-      dc:rights <https://creativecommons.org/publicdomain/zero/1.0/> ;
+      cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
       owl:versionInfo "1.0" ;
-      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."@en ;
-      schema:url <http://globalwordnet.github.io/schemas/> ;
-      dc:publisher "Global Wordnet Association"@en ;
+      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
+      schema:url "http://globalwordnet.github.io/schemas/" ;
+      dc:publisher "Global Wordnet Association" ;
       lime:entry <#w1>, <#w2>, <#w3> .
-            
+    
     <#w1> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [ ontolex:writtenRep "grandfather"@en ] ;
+      ontolex:canonicalForm [
+        ontolex:writtenRep "grandfather"@en 
+      ] ;
       wn:partOfSpeech wn:noun ;
       ontolex:sense <#example-10161911-n-1> .
     
-    <#example-10161911-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <example-10161911-n> .
+    <#example-10161911-n-1>  a ontolex:LexicalSense ;
+      ontolex:reference <#example-10161911-n> .
     
     <#w2> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [ ontolex:writtenRep "paternal grandfather"@en ] ;
+      ontolex:canonicalForm [
+        ontolex:writtenRep "paternal grandfather"@en 
+      ] ;
       wn:partOfSpeech wn:noun ;
       ontolex:sense <#example-1-n-1> .
     
     <#example-1-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <#example-1-n> ;
-      wn:derivation <example-10161911-n-1> .
+      ontolex:reference <#example-1-n> .
     
+    [] a ontolex:Sense ;
+      vartrans:source <#example-1-n-1> ;
+      vartrans:category wn:derivation ;
+      vartrans:target <#example-10161911-n-1> ;
+      dc:creator "John McCrae"@en .
+              
     <#w3> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [ ontolex:writtenRep "pay"@en ] ;
-    // Be careful with spelling here:
-      synsem:synBehavior 
-        [ rdfs:label "Sam cannot %s Sue" ] ,
-        [ rdfs:label "Sam and Sue %s" ] ,
-        [ rdfs:label "The banks %s the check" ] .
+      ontolex:canonicalForm [
+        ontolex:writtenRep "pay"@en
+      ] ;
+      wn:partOfSpeech wn:verb ;
+      synsem:synBehavior [
+        rdfs:label "Sam cannot %s Sue" @en
+      ], [
+        rdfs:label "Sam and Sue %s"@en
+      ], [
+        rdfs:label "The banks %s the check"@en
+      ] .
     
     <#example-10161911-n> a ontolex:LexicalConcept ;
-      owl:sameAs ili:i90287 ;
-      // Definitions can also be given directly
-      skos:definition "the father of your father or mother"@en ;
-      wn:hypernym <#example-10162692-n> .
-    
-    <#example-1-n> a ontolex:LexicalConcept ;
-      skos:definition [
-        rdf:value "A father's father; a paternal grandfather"@en ;
-      ] ,
-      wn:iliDefinition [
-        dc:source <https://en.wiktionary.org/wiki/farfar> ;
-        rdf:value "A father's father; a paternal grandfather"@ en
+      wn:partOfSpeech wn:noun ;
+      skos:inScheme <#example-en> ;
+      wn:ili ili:i90287 ;
+      wn:definition [
+        rdf:value "the father of your father or mother"@en
       ] .
-            
-    <#example-10162692-n> owl:sameAs ili:i90292" .
-        
-    <#example-sv> a ontolex:Lexicon ;
-      rdfs:label "Example wordnet (Swedish)"@en ;
-      dc:languager "sv" ;
+    
+    [] 
+      vartrans:source <#example-10161911-n> ;
+      vartrans:category wn:hypernym ; 
+      vartrans:target <#example-10162692-n> .
+              
+    <#example-1-n> a ontolex:LexicalConcept ;
+      wn:partOfSpeech wn:noun ;
+      skos:inScheme <#example-en> ;
+      wn:definition [
+        rdf:value "the father of your father or mother"@en 
+      ] ;
+      wn:iliDefinition [
+        rdf:value "the father of your father or mother"@en ;
+        dc:source "https://en.wiktionary.org/wiki/farfar"
+      ] .
+    
+    []
+      vartrans:source <#example-1-n> ;
+      vartrans:category wn:hypernym ;
+      vartrans:target <#example-10162692-n> .
+    
+    <#example-sv> a lime:Lexicon ;
+      rdfs:label "Example wordnet (Swedish)"@sv ;
+      dc:language "sv" ;
       schema:email "john@mccr.ae" ;
-      dc:rights <https://creativecommons.org/publicdomain/zero/1.0/> ;
-      owl:versionInfo <1.0> ;
-      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."@en ;
-      schema:url <http://globalwordnet.github.io/schemas/> ;
-      dc:publisher <Global Wordnet Association> ;
+      cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+      owl:versionInfo "1.0" ;
+      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
+      schema:url "http://globalwordnet.github.io/schemas" ;
+      dc:publisher "Global Wordnet Association" ;
       lime:entry <#w4> .
     
     <#w4> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [ ontolex:writtenRep "farfar"@en ] ;
+      ontolex:canonicalForm [
+        ontolex:writtenRep "farfar"@sv 
+      ] ;
+      ontolex:otherForm [
+        ontolex:writtenRep "farfäder"@sv ;
+        wn:tag [
+            wn:category "penn" ;
+            rdf:value "NNS" 
+        ]
+      ] ;
       wn:partOfSpeech wn:noun ;
-      ontolex:sense <#example-2-n-1> .
+      wn:sense <#example-2-n-1> .
     
     <#example-2-n-1> a ontolex:LexicalSense ;
       ontolex:reference <#example-1-n> ;
-      skos:example [
-        dc:source "Europarl Corpus"@en ;
-        rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv
+      wn:example [
+        rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
+        dc:source "Europarl Corpus"
       ] .
-

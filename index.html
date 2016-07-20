@@ -118,7 +118,7 @@
             &lt;SyntacticBehaviour subcategorizationFrame=&quot;The banks %s the check&quot;/&gt;
         &lt;/LexicalEntry&gt;</code></pre>
 <p>If a synset is already mapped to the ILI please give the ID here</p>
-<pre><code>        &lt;Synset id=&quot;example-10161911-n&quot; ili=&quot;i90287&quot;&gt;
+<pre><code>        &lt;Synset id=&quot;example-10161911-n&quot; ili=&quot;i90287&quot; partOfSpeech=&quot;n&quot;&gt;
             &lt;Definition&gt;
                 the father of your father or mother
             &lt;/Definition&gt;</code></pre>
@@ -150,7 +150,7 @@
     &lt;/Synset&gt;</code></pre></li>
 </ul>
 <p>If you wish to define a new concept call the concept &quot;in&quot; (ILI New). If there is no mapping to the ILI leave this field empty (it is required).</p>
-<pre><code>        &lt;Synset id=&quot;example-1-n&quot; ili=&quot;in&quot;&gt;
+<pre><code>        &lt;Synset id=&quot;example-1-n&quot; ili=&quot;in&quot; partOfSpeech=&quot;n&quot;&gt;
             &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
 <p>You can include metadata (such as source) at many points The ILI Definition must be at least 20 characters or five words</p>
 <pre><code>            &lt;ILIDefinition dc:source=&quot;https://en.wiktionary.org/wiki/farfar&quot;&gt;
@@ -158,7 +158,7 @@
             &lt;/ILIDefinition&gt;
         &lt;/Synset&gt;</code></pre>
 <p>You must include all targets of relations</p>
-<pre><code>        &lt;Synset id=&quot;example-10162692-n&quot; ili=&quot;i90292&quot;/&gt;
+<pre><code>        &lt;Synset id=&quot;example-10162692-n&quot; ili=&quot;i90292&quot; partOfSpeech=&quot;n&quot;/&gt;
     &lt;/Lexicon&gt;
     &lt;Lexicon id=&quot;example-sv&quot;
              label=&quot;Example wordnet (Swedish)&quot;
@@ -253,6 +253,7 @@
 <p>In contrast to the XML form the <code>ili</code> is optional. If there is no match omit this tag, if you wish to propose a new synset add only a <code>iliDefinition</code>.</p>
 <pre><code>      &quot;synset&quot;: [{
           &quot;@id&quot;: &quot;example-10161911-n&quot;,
+          &quot;partOfSpeech&quot;: &quot;noun&quot;,
           &quot;ili&quot;: &quot;ili:i90287&quot;,</code></pre>
 <p>Definitions must have a <code>gloss</code> and may be have a <code>language</code>, in addition, <code>status</code>, <code>confidenceScore</code> and Dublin Core properties may be added. An <code>iliDefinition</code> is the same but may not have a language.</p>
 <pre><code>          &quot;definition&quot;: [{
@@ -287,6 +288,7 @@
       }]
   }, {
       &quot;@id&quot;: &quot;example-1-n&quot;,
+      &quot;partOfSpeech&quot;: &quot;noun&quot;,
       &quot;definition&quot;: [{
           &quot;gloss&quot;: &quot;the father of your father or mother&quot;
       }],
@@ -359,80 +361,115 @@
 <li>Definitions and examples are given by <code>skos:definition</code> and <code>skos:example</code> optionally with a <code>rdf:value</code>.</li>
 </ul>
 <p>A more extended example is given here:</p>
-<pre><code>&lt;#example-en&gt; a lemon:Lexicon ;
-  rdfs:label &quot;Example wordnet&quot;@en ;
-  dc:language &quot;en&quot;@en ;
+<pre><code>&lt;#example-en&gt; a lime:Lexicon ;
+  rdfs:label &quot;Example wordnet (English)&quot;@en ;
+  dc:language &quot;en&quot; ;
   schema:email &quot;john@mccr.ae&quot; ;
-  dc:rights &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
   owl:versionInfo &quot;1.0&quot; ;
-  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;@en ;
-  schema:url &lt;http://globalwordnet.github.io/schemas/&gt; ;
-  dc:publisher &quot;Global Wordnet Association&quot;@en ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
+  schema:url &quot;http://globalwordnet.github.io/schemas/&quot; ;
+  dc:publisher &quot;Global Wordnet Association&quot; ;
   lime:entry &lt;#w1&gt;, &lt;#w2&gt;, &lt;#w3&gt; .
-        
+
 &lt;#w1&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [ ontolex:writtenRep &quot;grandfather&quot;@en ] ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;grandfather&quot;@en 
+  ] ;
   wn:partOfSpeech wn:noun ;
   ontolex:sense &lt;#example-10161911-n-1&gt; .
 
-&lt;#example-10161911-n-1&gt; a ontolex:LexicalSense ;
-  ontolex:reference &lt;example-10161911-n&gt; .
+&lt;#example-10161911-n-1&gt;  a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-10161911-n&gt; .
 
 &lt;#w2&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [ ontolex:writtenRep &quot;paternal grandfather&quot;@en ] ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;paternal grandfather&quot;@en 
+  ] ;
   wn:partOfSpeech wn:noun ;
   ontolex:sense &lt;#example-1-n-1&gt; .
 
 &lt;#example-1-n-1&gt; a ontolex:LexicalSense ;
-  ontolex:reference &lt;#example-1-n&gt; ;
-  wn:derivation &lt;example-10161911-n-1&gt; .
+  ontolex:reference &lt;#example-1-n&gt; .
 
+[] a ontolex:Sense ;
+  vartrans:source &lt;#example-1-n-1&gt; ;
+  vartrans:category wn:derivation ;
+  vartrans:target &lt;#example-10161911-n-1&gt; ;
+  dc:creator &quot;John McCrae&quot;@en .
+          
 &lt;#w3&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [ ontolex:writtenRep &quot;pay&quot;@en ] ;
-// Be careful with spelling here:
-  synsem:synBehavior 
-    [ rdfs:label &quot;Sam cannot %s Sue&quot; ] ,
-    [ rdfs:label &quot;Sam and Sue %s&quot; ] ,
-    [ rdfs:label &quot;The banks %s the check&quot; ] .
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;pay&quot;@en
+  ] ;
+  wn:partOfSpeech wn:verb ;
+  synsem:synBehavior [
+    rdfs:label &quot;Sam cannot %s Sue&quot; @en
+  ], [
+    rdfs:label &quot;Sam and Sue %s&quot;@en
+  ], [
+    rdfs:label &quot;The banks %s the check&quot;@en
+  ] .
 
 &lt;#example-10161911-n&gt; a ontolex:LexicalConcept ;
-  owl:sameAs ili:i90287 ;
-  // Definitions can also be given directly
-  skos:definition &quot;the father of your father or mother&quot;@en ;
-  wn:hypernym &lt;#example-10162692-n&gt; .
-
-&lt;#example-1-n&gt; a ontolex:LexicalConcept ;
-  skos:definition [
-    rdf:value &quot;A father&#39;s father; a paternal grandfather&quot;@en ;
-  ] ,
-  wn:iliDefinition [
-    dc:source &lt;https://en.wiktionary.org/wiki/farfar&gt; ;
-    rdf:value &quot;A father&#39;s father; a paternal grandfather&quot;@ en
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme &lt;#example-en&gt; ;
+  wn:ili ili:i90287 ;
+  wn:definition [
+    rdf:value &quot;the father of your father or mother&quot;@en
   ] .
-        
-&lt;#example-10162692-n&gt; owl:sameAs ili:i90292&quot; .
-    
-&lt;#example-sv&gt; a ontolex:Lexicon ;
-  rdfs:label &quot;Example wordnet (Swedish)&quot;@en ;
-  dc:languager &quot;sv&quot; ;
+
+[] 
+  vartrans:source &lt;#example-10161911-n&gt; ;
+  vartrans:category wn:hypernym ; 
+  vartrans:target &lt;#example-10162692-n&gt; .
+          
+&lt;#example-1-n&gt; a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme &lt;#example-en&gt; ;
+  wn:definition [
+    rdf:value &quot;the father of your father or mother&quot;@en 
+  ] ;
+  wn:iliDefinition [
+    rdf:value &quot;the father of your father or mother&quot;@en ;
+    dc:source &quot;https://en.wiktionary.org/wiki/farfar&quot;
+  ] .
+
+[]
+  vartrans:source &lt;#example-1-n&gt; ;
+  vartrans:category wn:hypernym ;
+  vartrans:target &lt;#example-10162692-n&gt; .
+
+&lt;#example-sv&gt; a lime:Lexicon ;
+  rdfs:label &quot;Example wordnet (Swedish)&quot;@sv ;
+  dc:language &quot;sv&quot; ;
   schema:email &quot;john@mccr.ae&quot; ;
-  dc:rights &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
-  owl:versionInfo &lt;1.0&gt; ;
-  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;@en ;
-  schema:url &lt;http://globalwordnet.github.io/schemas/&gt; ;
-  dc:publisher &lt;Global Wordnet Association&gt; ;
+  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  owl:versionInfo &quot;1.0&quot; ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
+  schema:url &quot;http://globalwordnet.github.io/schemas&quot; ;
+  dc:publisher &quot;Global Wordnet Association&quot; ;
   lime:entry &lt;#w4&gt; .
 
 &lt;#w4&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [ ontolex:writtenRep &quot;farfar&quot;@en ] ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;farfar&quot;@sv 
+  ] ;
+  ontolex:otherForm [
+    ontolex:writtenRep &quot;farfäder&quot;@sv ;
+    wn:tag [
+        wn:category &quot;penn&quot; ;
+        rdf:value &quot;NNS&quot; 
+    ]
+  ] ;
   wn:partOfSpeech wn:noun ;
-  ontolex:sense &lt;#example-2-n-1&gt; .
+  wn:sense &lt;#example-2-n-1&gt; .
 
 &lt;#example-2-n-1&gt; a ontolex:LexicalSense ;
   ontolex:reference &lt;#example-1-n&gt; ;
-  skos:example [
-    dc:source &quot;Europarl Corpus&quot;@en ;
-    rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv
+  wn:example [
+    rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv ;
+    dc:source &quot;Europarl Corpus&quot;
   ] .</code></pre>
 </div>
 </body>
