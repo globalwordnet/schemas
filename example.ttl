@@ -63,6 +63,7 @@
   ] .
 
 <#example-10161911-n> a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
   skos:inScheme <#example-en> ;
   wn:ili ili:i90287 ;
   wn:definition [
@@ -75,6 +76,7 @@
   vartrans:target <#example-10162692-n> .
           
 <#example-1-n> a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
   skos:inScheme <#example-en> ;
   wn:definition [
     rdf:value "the father of your father or mother"@en 

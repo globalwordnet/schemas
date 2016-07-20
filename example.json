@@ -46,6 +46,7 @@
       "synset": [{
           "@id": "example-10161911-n",
           "ili": "ili:i90287",
+          "partOfSpeech": "noun",
           "definition": [{
               "gloss": "the father of your father or mother"
           }],
@@ -54,6 +55,7 @@
           }]
       }, {
           "@id": "example-1-n",
+          "partOfSpeech": "noun",
           "definition": [{
               "gloss": "the father of your father or mother"
           }],

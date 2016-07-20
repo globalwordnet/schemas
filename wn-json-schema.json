@@ -287,9 +287,22 @@
                         "minItems": 1,
                         "items": {
                             "type": "object",
-                            "required": ["@id"],
+                            "required": ["@id","partOfSpeech"],
                             "additionalProperties": false,
                             "properties": {
+                                "partOfSpeech": {
+                                    "enum": [
+                                        "noun",
+                                        "verb",
+                                        "adjective",
+                                        "adverb",
+                                        "adjective_satellite",
+                                        "phrase",
+                                        "conjunction",
+                                        "adposition",
+                                        "other",
+                                        "unknown" ]
+                                },
                                 "@id": { "type": "string" },
                                 "ili": { "type": "string" },
                                 "value": { "type": "string" }, 

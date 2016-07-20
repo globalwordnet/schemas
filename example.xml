@@ -74,7 +74,7 @@
             <SyntacticBehaviour subcategorizationFrame="The banks %s the check"/>
         </LexicalEntry>
         <!-- If a synset is already mapped to the ILI please give the ID here -->
-        <Synset id="example-10161911-n" ili="i90287">
+        <Synset id="example-10161911-n" ili="i90287" partOfSpeech="n">
             <Definition>the father of your father or mother</Definition>
             <!-- The set of relations between synsets is limited to the following:
                     hypernym: A concept with a broader meaning
@@ -103,14 +103,14 @@
             <SynsetRelation relType="hypernym" target="example-10162692-n"/>
         </Synset>
         <!-- If you wish to define a new concept call the concept "in" (ILI New) -->
-        <Synset id="example-1-n" ili="in">
+        <Synset id="example-1-n" ili="in" partOfSpeech="n">
             <Definition>A father&apos;s father; a paternal grandfather</Definition>
             <!-- You can include metadata (such as source) at many points -->
             <!-- The ILI Definition must be at least 20 characters or five words -->
             <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">A father&apos;s father; a paternal grandfather</ILIDefinition>
         </Synset>
         <!-- You must include all targets of relations -->
-        <Synset id="example-10162692-n" ili="i90292">
+        <Synset id="example-10162692-n" ili="i90292" partOfSpeech="n">
         </Synset>
     </Lexicon>
     <Lexicon id="example-sv"
