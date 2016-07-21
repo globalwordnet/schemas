@@ -28,25 +28,25 @@
     ontolex:writtenRep "grandfather"@en 
   ] ;
   wn:partOfSpeech wn:noun ;
-  ontolex:sense <#example-10161911-n-1> .
+  ontolex:sense <#example-en-10161911-n-1> .
 
-<#example-10161911-n-1>  a ontolex:LexicalSense ;
-  ontolex:reference <#example-10161911-n> .
+<#example-en-10161911-n-1>  a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-10161911-n> .
 
 <#w2> a ontolex:LexicalEntry ;
   ontolex:canonicalForm [
     ontolex:writtenRep "paternal grandfather"@en 
   ] ;
   wn:partOfSpeech wn:noun ;
-  ontolex:sense <#example-1-n-1> .
+  ontolex:sense <#example-en-1-n-1> .
 
-<#example-1-n-1> a ontolex:LexicalSense ;
-  ontolex:reference <#example-1-n> .
+<#example-en-1-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-1-n> .
 
 [] a ontolex:Sense ;
-  vartrans:source <#example-1-n-1> ;
+  vartrans:source <#example-en-1-n-1> ;
   vartrans:category wn:derivation ;
-  vartrans:target <#example-10161911-n-1> ;
+  vartrans:target <#example-en-10161911-n-1> ;
   dc:creator "John McCrae"@en .
           
 <#w3> a ontolex:LexicalEntry ;
@@ -62,7 +62,7 @@
     rdfs:label "The banks %s the check"@en
   ] .
 
-<#example-10161911-n> a ontolex:LexicalConcept ;
+<#example-en-10161911-n> a ontolex:LexicalConcept ;
   wn:partOfSpeech wn:noun ;
   skos:inScheme <#example-en> ;
   wn:ili ili:i90287 ;
@@ -71,11 +71,11 @@
   ] .
 
 [] 
-  vartrans:source <#example-10161911-n> ;
+  vartrans:source <#example-en-10161911-n> ;
   vartrans:category wn:hypernym ; 
-  vartrans:target <#example-10162692-n> .
+  vartrans:target <#example-en-10162692-n> .
           
-<#example-1-n> a ontolex:LexicalConcept ;
+<#example-en-1-n> a ontolex:LexicalConcept ;
   wn:partOfSpeech wn:noun ;
   skos:inScheme <#example-en> ;
   wn:definition [
@@ -87,9 +87,9 @@
   ] .
 
 []
-  vartrans:source <#example-1-n> ;
+  vartrans:source <#example-en-1-n> ;
   vartrans:category wn:hypernym ;
-  vartrans:target <#example-10162692-n> .
+  vartrans:target <#example-en-10162692-n> .
 
 <#example-sv> a lime:Lexicon ;
   rdfs:label "Example wordnet (Swedish)"@sv ;
@@ -114,10 +114,10 @@
     ]
   ] ;
   wn:partOfSpeech wn:noun ;
-  wn:sense <#example-2-n-1> .
+  wn:sense <#example-sv-2-n-1> .
 
-<#example-2-n-1> a ontolex:LexicalSense ;
-  ontolex:reference <#example-1-n> ;
+<#example-sv-2-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-1-n> ;
   wn:example [
     rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
     dc:source "Europarl Corpus"

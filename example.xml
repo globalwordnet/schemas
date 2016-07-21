@@ -43,12 +43,12 @@
                  x: Other (inc. particle, classifier, bound morphemes, determiners)
                  u: Unknown -->
             <Lemma writtenForm="grandfather" partOfSpeech="n"/>
-            <Sense id="example-10161911-n-1" synset="example-10161911-n">
+            <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n">
             </Sense>
         </LexicalEntry>
         <LexicalEntry id="w2">
             <Lemma writtenForm="paternal grandfather" partOfSpeech="n"/>
-            <Sense id="example-1-n-1" synset="example-1-n">
+            <Sense id="example-en-1-n-1" synset="example-en-1-n">
                 <!-- The set of relations between senses is limited to the following
                      antonym: An opposite and inherently incompatible word
                      also: See also, a reference of weak meaning
@@ -63,7 +63,7 @@
                      exemplifies: Indicates the usage of this word
                      domain_member_usage: Indicates a word involved in the usage described by this word
                 -->
-                <SenseRelation relType="derivation" target="example-10161911-n-1"/>
+                <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
             </Sense>
         </LexicalEntry>
         <LexicalEntry id="w3">
@@ -74,7 +74,7 @@
             <SyntacticBehaviour subcategorizationFrame="The banks %s the check"/>
         </LexicalEntry>
         <!-- If a synset is already mapped to the ILI please give the ID here -->
-        <Synset id="example-10161911-n" ili="i90287" partOfSpeech="n">
+        <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n">
             <Definition>the father of your father or mother</Definition>
             <!-- The set of relations between synsets is limited to the following:
                     hypernym: A concept with a broader meaning
@@ -100,17 +100,17 @@
                     exemplifies: Indicates the usage of this word
                     domain_member_usage: Indicates a word involved in the usage described by this word
                 -->
-            <SynsetRelation relType="hypernym" target="example-10162692-n"/>
+            <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
         </Synset>
         <!-- If you wish to define a new concept call the concept "in" (ILI New) -->
-        <Synset id="example-1-n" ili="in" partOfSpeech="n">
+        <Synset id="example-en-1-n" ili="in" partOfSpeech="n">
             <Definition>A father&apos;s father; a paternal grandfather</Definition>
             <!-- You can include metadata (such as source) at many points -->
             <!-- The ILI Definition must be at least 20 characters or five words -->
             <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">A father&apos;s father; a paternal grandfather</ILIDefinition>
         </Synset>
         <!-- You must include all targets of relations -->
-        <Synset id="example-10162692-n" ili="i90292" partOfSpeech="n">
+        <Synset id="example-en-10162692-n" ili="i90292" partOfSpeech="n">
         </Synset>
     </Lexicon>
     <Lexicon id="example-sv"
@@ -129,7 +129,7 @@
                 <Tag category="penn">NNS</Tag>
             </Form>
             <!-- Synsets need not be language-specific but senses must be -->
-            <Sense id="example-2-n-1" synset="example-1-n">
+            <Sense id="example-sv-2-n-1" synset="example-en-1-n">
                 <Example dc:source="Europarl Corpus">Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför</Example>
             </Sense>
         </LexicalEntry>

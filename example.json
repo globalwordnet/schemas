@@ -17,19 +17,19 @@
           "lemma": { "writtenForm": "grandfather" }, 
           "partOfSpeech": "noun",
           "sense": [{
-              "@id": "example-10161911-n-1",
-              "synset": "example-10161911-n"
+              "@id": "example-en-10161911-n-1",
+              "synset": "example-en-10161911-n"
           }]
       }, {
           "@id" : "w2",
           "lemma": { "writtenForm": "paternal grandfather" }, 
           "partOfSpeech": "noun",
           "sense": [{
-              "@id": "example-1-n-1",
-              "synset": "example-1-n",
+              "@id": "example-en-1-n-1",
+              "synset": "example-en-1-n",
               "relations": [{
                   "relType": "derivation",
-                  "target": "example-10161911-n-1",
+                  "target": "example-en-10161911-n-1",
                   "creator": "John McCrae"
               }]
           }]
@@ -44,17 +44,17 @@
            ]
       }],
       "synset": [{
-          "@id": "example-10161911-n",
+          "@id": "example-en-10161911-n",
           "ili": "ili:i90287",
           "partOfSpeech": "noun",
           "definition": [{
               "gloss": "the father of your father or mother"
           }],
           "relations": [{
-              "relType": "hypernym", "target": "example-10162692-n"
+              "relType": "hypernym", "target": "example-en-10162692-n"
           }]
       }, {
-          "@id": "example-1-n",
+          "@id": "example-en-1-n",
           "partOfSpeech": "noun",
           "definition": [{
               "gloss": "the father of your father or mother"
@@ -64,7 +64,7 @@
               "source": "https://en.wiktionary.org/wiki/farfar"
           },
           "relations": [
-            { "relType": "hypernym", "target": "example-10162692-n" }
+            { "relType": "hypernym", "target": "example-en-10162692-n" }
           ]
       }]
   }, {
@@ -85,8 +85,8 @@
           "form": [{ "writtenForm": "farfäder", "tag": [{ "category": "penn", "value": "NNS" }] }],
           "partOfSpeech": "noun",
           "sense": [{
-              "@id": "example-2-n-1",
-              "synset": "example-1-n",
+              "@id": "example-sv-2-n-1",
+              "synset": "example-en-1-n",
               "example": [{
                   "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                   "source": "Europarl Corpus"
