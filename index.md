@@ -77,11 +77,11 @@ The part of speech values are as follows:
 * u: Unknown
 
                 <Lemma writtenForm="grandfather" partOfSpeech="n"/>
-                <Sense id="example-10161911-n-1" synset="example-10161911-n"/>
+                <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n"/>
             </LexicalEntry>
             <LexicalEntry id="w2">
                 <Lemma writtenForm="paternal grandfather" partOfSpeech="n"/>
-                <Sense id="example-1-n-1" synset="example-1-n">
+                <Sense id="example-en-1-n-1" synset="example-en-1-n">
 
 The set of relations between senses is limited to the following
 
@@ -98,7 +98,7 @@ The set of relations between senses is limited to the following
 * exemplifies: Indicates the usage of this word
 * domain_member_usage: Indicates a word involved in the usage described by this word
 
-                    <SenseRelation relType="derivation" target="example-10161911-n-1"/>
+                    <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
                 </Sense>
             </LexicalEntry>
             <LexicalEntry id="w3">
@@ -111,9 +111,10 @@ Syntactic Behaviour is given as in Princeton WordNet
                 <SyntacticBehaviour subcategorizationFrame="The banks %s the check"/>
             </LexicalEntry>
 
-If a synset is already mapped to the ILI please give the ID here
+If a synset is already mapped to the ILI please give the ID here. __All synsets must
+have an ID that starts with ID of the lexicon followed by a dash, e.g., `example-en` + `-` + `local_synset_id`__.
 
-            <Synset id="example-10161911-n" ili="i90287" partOfSpeech="n">
+            <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n">
                 <Definition>
                     the father of your father or mother
                 </Definition>
@@ -142,13 +143,13 @@ The set of relations between synsets is limited to the following:
 * exemplifies: Indicates the usage of this word
 * domain_member_usage: Indicates a word involved in the usage described by this word
 
-                <SynsetRelation relType="hypernym" target="example-10162692-n"/>
+                <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
             </Synset>
 
 If you wish to define a new concept call the concept "in" (ILI New). If there is
 no mapping to the ILI leave this field empty (it is required).
 
-            <Synset id="example-1-n" ili="in" partOfSpeech="n">
+            <Synset id="example-en-1-n" ili="in" partOfSpeech="n">
                 <Definition>A father's father; a paternal grandfather</Definition>
 
 You can include metadata (such as source) at many points
@@ -161,7 +162,7 @@ The ILI Definition must be at least 20 characters or five words
 
 You must include all targets of relations
 
-            <Synset id="example-10162692-n" ili="i90292" partOfSpeech="n"/>
+            <Synset id="example-en-10162692-n" ili="i90292" partOfSpeech="n"/>
         </Lexicon>
         <Lexicon id="example-sv"
                  label="Example wordnet (Swedish)"
@@ -180,7 +181,7 @@ The list of lexical entries (words) in your wordnet
 
 Synsets need not be language-specific but senses must be
 
-                <Sense id="example-2-n-1" synset="example-1-n">
+                <Sense id="example-sv-2-n-1" synset="example-en-1-n">
                     <SenseExample dc:source="Europarl Corpus">
                         Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
                     </SenseExample>
@@ -245,16 +246,16 @@ The Sense requires only an `@id` and a `synset` and may take `status`,
 
 
               "sense": [{
-                  "@id": "example-10161911-n-1",
-                  "synset": "example-10161911-n"
+                  "@id": "example-en-10161911-n-1",
+                  "synset": "example-en-10161911-n"
               }]
           }, {
               "@id" : "w2",
               "lemma": { "writtenForm": "paternal grandfather" }, 
               "partOfSpeech": "noun",
               "sense": [{
-                  "@id": "example-1-n-1",
-                  "synset": "example-1-n",
+                  "@id": "example-en-1-n-1",
+                  "synset": "example-en-1-n",
 
 A sense may also have any number of `relations` which have a `relType` from the
 list below and a `target` and may have Dublin Core properties
@@ -274,7 +275,7 @@ list below and a `target` and may have Dublin Core properties
 
                   "relations": [{
                       "relType": "derivation",
-                      "target": "example-10161911-n-1",
+                      "target": "example-en-10161911-n-1",
                       "creator": "John McCrae"
                   }]
               }]
@@ -301,7 +302,7 @@ In contrast to the XML form the `ili` is optional. If there is no match omit thi
 tag, if you wish to propose a new synset add only a `iliDefinition`.
 
           "synset": [{
-              "@id": "example-10161911-n",
+              "@id": "example-en-10161911-n",
               "partOfSpeech": "noun",
               "ili": "ili:i90287",
 
@@ -340,10 +341,10 @@ Synset relations are given as for sense relations except the `target` must be th
 * `domain_member_usage`: Indicates a word involved in the usage described by this word
 
               "relations": [{
-                  "relType": "hypernym", "target": "example-10162692-n"
+                  "relType": "hypernym", "target": "example-en-10162692-n"
               }]
           }, {
-              "@id": "example-1-n",
+              "@id": "example-en-1-n",
               "partOfSpeech": "noun",
               "definition": [{
                   "gloss": "the father of your father or mother"
@@ -353,7 +354,7 @@ Synset relations are given as for sense relations except the `target` must be th
                   "source": "https://en.wiktionary.org/wiki/farfar"
               },
               "relations": [
-                { "relType": "hypernym", "target": "example-10162692-n" }
+                { "relType": "hypernym", "target": "example-en-10162692-n" }
               ]
           }]
         }, {
@@ -377,8 +378,8 @@ Synset relations are given as for sense relations except the `target` must be th
 Any examples should be given on the sense as follows:
 
               "sense": [{
-                  "@id": "example-2-n-1",
-                  "synset": "example-1-n",
+                  "@id": "example-sv-2-n-1",
+                  "synset": "example-en-1-n",
                   "example": [{
                       "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                       "source": "Europarl Corpus"
@@ -451,25 +452,25 @@ A more extended example is given here:
         ontolex:writtenRep "grandfather"@en 
       ] ;
       wn:partOfSpeech wn:noun ;
-      ontolex:sense <#example-10161911-n-1> .
+      ontolex:sense <#example-en-10161911-n-1> .
     
-    <#example-10161911-n-1>  a ontolex:LexicalSense ;
-      ontolex:reference <#example-10161911-n> .
+    <#example-en-10161911-n-1>  a ontolex:LexicalSense ;
+      ontolex:reference <#example-en-10161911-n> .
     
     <#w2> a ontolex:LexicalEntry ;
       ontolex:canonicalForm [
         ontolex:writtenRep "paternal grandfather"@en 
       ] ;
       wn:partOfSpeech wn:noun ;
-      ontolex:sense <#example-1-n-1> .
+      ontolex:sense <#example-en-1-n-1> .
     
-    <#example-1-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <#example-1-n> .
+    <#example-en-1-n-1> a ontolex:LexicalSense ;
+      ontolex:reference <#example-en-1-n> .
     
     [] a ontolex:Sense ;
-      vartrans:source <#example-1-n-1> ;
+      vartrans:source <#example-en-1-n-1> ;
       vartrans:category wn:derivation ;
-      vartrans:target <#example-10161911-n-1> ;
+      vartrans:target <#example-en-10161911-n-1> ;
       dc:creator "John McCrae"@en .
               
     <#w3> a ontolex:LexicalEntry ;
@@ -485,7 +486,7 @@ A more extended example is given here:
         rdfs:label "The banks %s the check"@en
       ] .
     
-    <#example-10161911-n> a ontolex:LexicalConcept ;
+    <#example-en-10161911-n> a ontolex:LexicalConcept ;
       wn:partOfSpeech wn:noun ;
       skos:inScheme <#example-en> ;
       wn:ili ili:i90287 ;
@@ -494,11 +495,11 @@ A more extended example is given here:
       ] .
     
     [] 
-      vartrans:source <#example-10161911-n> ;
+      vartrans:source <#example-en-10161911-n> ;
       vartrans:category wn:hypernym ; 
-      vartrans:target <#example-10162692-n> .
+      vartrans:target <#example-en-10162692-n> .
               
-    <#example-1-n> a ontolex:LexicalConcept ;
+    <#example-en-1-n> a ontolex:LexicalConcept ;
       wn:partOfSpeech wn:noun ;
       skos:inScheme <#example-en> ;
       wn:definition [
@@ -510,9 +511,9 @@ A more extended example is given here:
       ] .
     
     []
-      vartrans:source <#example-1-n> ;
+      vartrans:source <#example-en-1-n> ;
       vartrans:category wn:hypernym ;
-      vartrans:target <#example-10162692-n> .
+      vartrans:target <#example-en-10162692-n> .
     
     <#example-sv> a lime:Lexicon ;
       rdfs:label "Example wordnet (Swedish)"@sv ;
@@ -537,10 +538,10 @@ A more extended example is given here:
         ]
       ] ;
       wn:partOfSpeech wn:noun ;
-      wn:sense <#example-2-n-1> .
+      wn:sense <#example-sv-2-n-1> .
     
-    <#example-2-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <#example-1-n> ;
+    <#example-sv-2-n-1> a ontolex:LexicalSense ;
+      ontolex:reference <#example-en-1-n> ;
       wn:example [
         rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
         dc:source "Europarl Corpus"
