@@ -21,7 +21,6 @@
         "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@vocab" },
         "value": "rdf:value",
         "sense": { "@id": "ontolex:sense", "@type": "@id"},
-        "synset": { "@id": "ontolex:reference", "@type": "@id" },
         "definition": { "@id": "skos:definition", "@type": "@id" },
         "iliDefintion": { "@id": "wn:iliDefinition", "@type": "@id" },
         "lemma": "ontolex:canonicalForm",
