@@ -139,7 +139,7 @@
         "type": { "@id": "dc:type", "type": "string" },
         "status": { "@id": "wn:status", "type": "string" },
         "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
-        "seeAlso": { "@id": "rdfs:seeAlso", "@type": "@id" },
+        "seeAlso": { "@id": "rdfs:seeAlso", "type": "@id" },
 
         "entry" : {
             "@id": "lime:entry",
@@ -147,7 +147,7 @@
         },
 
         "synset": {
-            "@reverse": "skos:inConceptScheme",
+            "@id": "ontolex:isLexicalizedSenseOf",
             "@type": "@id"
         },
         "noun": { "@id": "wn:noun" },
