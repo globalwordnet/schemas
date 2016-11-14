@@ -147,7 +147,7 @@
         },
 
         "synset": {
-            "@reverse": "skos:inConceptScheme",
+            "@id": "ontolex:isLexicalizedSenseOf",
             "@type": "@id"
         },
         "noun": { "@id": "wn:noun" },
