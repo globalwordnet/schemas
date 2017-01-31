@@ -121,82 +121,81 @@ have an ID that starts with ID of the lexicon followed by a dash, e.g., `example
 The set of relations between synsets is limited to the following:
 
 
-* agent
-* also: See also, a reference of weak meaning
-* antonym
-* attribute: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.
-* be_in_state
-* causes: A verb that causes another
-* classified_by
-* classifies
-* co_agent_instrument
-* co_agent_patient
-* co_agent_result
-* co_instrument_agent
-* co_instrument_patient
-* co_instrument_result
-* co_patient_agent
-* co_patient_instrument
-* co_result_agent
-* co_result_instrument
-* co_role
-* direction
-* domain_category: Indicates the category of this word
-* domain_member_category: Indicates a word involved in this category described by this word
-* domain_member_region: Indicates a word involved in the region described by this word
-* domain_region: Indicates the region of this word
-* domain_topic
-* entails: A verb X entails Y if X cannot be done unless Y is, or has been, done.
-* eq_synonym
-* exemplifies: Indicates the usage of this word
-* has_domain_region
-* has_domain_topic
-* holo_location
-* holo_member: A group that this concept is a member of
-* holo_part: A larger whole that this concept is part of
-* holo_portion
-* holo_substance: Something where a constituent material is this concept
-* holonym
-* hypernym: A concept with a broader meaning
-* hyponym: A concept with a narrower meaning
-* in_manner
-* instance_hypernym: The class of objects to which this instance belongs
-* instance_hyponym: An individual instance of this class
-* instrument
-* involved
-* involved_agent
-* involved_direction
-* involved_instrument
-* involved_location
-* involved_patient
-* involved_result
-* involved_source_direction
-* involved_target_direction
-* is_caused_by
-* is_entailed_by
-* is_exemplified_by: Indicates a word involved in the usage described by this word
-* is_subevent_of
-* location
-* manner_of
-* mero_location
-* mero_member: A member of this concept
-* mero_part: A part of this concept
-* mero_portion
-* mero_substance: A constituent material of this concept
-* meronym
-* other
-* patient
-* restricted_by
-* restricts
-* result
-* role
-* similar
-* similar: Similar, though not necessarily interchangeable
-* source_direction
-* state_of
-* subevent
-* target_direction
-* verb_group: Verb senses that similar in meaning and have been manually grouped together.
+* `agent`:
+* `also`: See also, a reference of weak meaning
+* `antonym`:
+* `attribute`: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.
+* `be_in_state`:
+* `causes`: A verb that causes another
+* `classified_by`:
+* `classifies`:
+* `co_agent_instrument`:
+* `co_agent_patient`:
+* `co_agent_result`:
+* `co_instrument_agent`:
+* `co_instrument_patient`:
+* `co_instrument_result`:
+* `co_patient_agent`:
+* `co_patient_instrument`:
+* `co_result_agent`:
+* `co_result_instrument`:
+* `co_role`:
+* `direction`:
+* `domain_category`: Indicates the category of this word
+* `domain_member_category`: Indicates a word involved in this category described by this word
+* `domain_member_region`: Indicates a word involved in the region described by this word
+* `domain_region`: Indicates the region of this word
+* `domain_topic`:
+* `entails`: A verb X entails Y if X cannot be done unless Y is, or has been, done.
+* `eq_synonym`:
+* `exemplifies`: Indicates the usage of this word
+* `has_domain_region`:
+* `has_domain_topic`:
+* `holo_location`:
+* `holo_member`: A group that this concept is a member of
+* `holo_part`: A larger whole that this concept is part of
+* `holo_portion`:
+* `holo_substance`: Something where a constituent material is this concept
+* `holonym`:
+* `hypernym`: A concept with a broader meaning
+* `hyponym`: A concept with a narrower meaning
+* `in_manner`:
+* `instance_hypernym`: The class of objects to which this instance belongs
+* `instance_hyponym`: An individual instance of this class
+* `instrument`:
+* `involved`:
+* `involved_agent`:
+* `involved_direction`:
+* `involved_instrument`:
+* `involved_location`:
+* `involved_patient`:
+* `involved_result`:
+* `involved_source_direction`:
+* `involved_target_direction`:
+* `is_caused_by`:
+* `is_entailed_by`:
+* `is_exemplified_by`: Indicates a word involved in the usage described by this word
+* `is_subevent_of`:
+* `location`:
+* `manner_of`:
+* `mero_location`:
+* `mero_member`: A member of this concept
+* `mero_part`: A part of this concept
+* `mero_portion`:
+* `mero_substance`: A constituent material of this concept
+* `meronym`:
+* `other`:
+* `patient`:
+* `restricted_by`:
+* `restricts`:
+* `result`:
+* `role`:
+* `similar`: Similar, though not necessarily interchangeable
+* `source_direction`:
+* `state_of`:
+* `subevent`:
+* `target_direction`:
+* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 
                 <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
             </Synset>
