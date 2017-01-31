@@ -122,30 +122,32 @@ The set of relations between synsets is limited to the following:
 
 **Princeton WordNet Properties**
 
-* `attribute`: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B. 
-* `causes`: A relation between two concepts where concept B comes into existence as a result of concept A.
-* `domain_topic`: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.
-* `domain_region`: A relation between two concepts where B is a geographical / cultural domain of concept A.
-* `has_domain_topic`: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.
-* `has_domain_region`: A relation between two concepts where A is a geographical / cultural domain of concept B.
-* `instance_hyponym`: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.
-* `holo_member`: A relation between two concepts where concept A is a member/ element of concept B.
-* `holo_part`: A relation between two concepts where concept A is a component of concept B.
-* `holo_substance`: A relation between two concepts where concept B is made of concept A.
 * `hypernym`: A relation between two concepts where concept A is a type of concept B.
 * `hyponym`: A relation between two concepts where concept B is a type of concept A.
+* `instance_hyponym`: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.
 * `instance_hypernym`: A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy.
 * `mero_member`: A relation between two concepts where concept B is a member/ element of concept A.
+* `holo_member`: A relation between two concepts where concept A is a member/ element of concept B.
 * `mero_part`: A relation between two concepts where concept B is a component of concept A.
+* `holo_part`: A relation between two concepts where concept A is a component of concept B.
 * `mero_substance`: A relation between two concepts where concept A is made of concept B.
+* `holo_substance`: A relation between two concepts where concept B is made of concept A.
+* `entails`: A verb X entails Y if X cannot be done unles Y is, or has been done.
+* `causes`: A relation between two concepts where concept B comes into existence as a result of concept A.
 * `similar`: A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset. 
+* `also`: See also, a reference of weak meaning
+* `attribute`: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B. 
+* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
+* `domain_topic`: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.
+* `has_domain_topic`: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.
+* `domain_region`: A relation between two concepts where B is a geographical / cultural domain of concept A.
+* `has_domain_region`: A relation between two concepts where A is a geographical / cultural domain of concept B.
 * `exemplifies`: Indicates the usage of this word
 * `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
 **Non-Princeton WordNet Relations**
 
 * `agent`: A relation between two concepts where concept A is typically the agent of the action expressed by concept B.
-* `also`: See also, a reference of weak meaning
 * `antonym`: An opposite and inherently incompatible word
 * `be_in_state`: A relation between two concepts where concept A is qualified by concept B.
 * `classified_by`: A relation between concept B and a classifier concept A.
@@ -162,7 +164,6 @@ The set of relations between synsets is limited to the following:
 * `co_result_instrument`: A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used.
 * `co_role`: A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional).
 * `direction`: A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B.
-* `entails`:
 * `eq_synonym`: A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)
 * `holo_location`: A relation between two concepts where concept B is a place located in concept A.
 * `holo_portion`: A relation between two concepts where concept B is an amount/piece/portion of concept A.
@@ -197,7 +198,6 @@ The set of relations between synsets is limited to the following:
 * `state_of`: A relation between two concepts where concept B is qualified by concept A.
 * `subevent`: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.
 * `target_direction`: A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to.
-* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 
                 <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
             </Synset>
