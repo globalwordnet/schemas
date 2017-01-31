@@ -121,20 +121,21 @@ have an ID that starts with ID of the lexicon followed by a dash, e.g., `example
 The set of relations between synsets is limited to the following:
 
 **Princeton WordNet Properties**
+
 * `attribute`: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B. 
 * `causes`: A relation between two concepts where concept B comes into existence as a result of concept A.
-* `domain_topic`: "A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A."
+* `domain_topic`: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.
 * `domain_region`: A relation between two concepts where B is a geographical / cultural domain of concept A.
-* `has_domain_topic`: "A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B."
+* `has_domain_topic`: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.
 * `has_domain_region`: A relation between two concepts where A is a geographical / cultural domain of concept B.
-* `subevent`: "A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place."
-* `instance_hyponym`: "A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy."
+* `subevent`: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.
+* `instance_hyponym`: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.
 * `holo_member`: A relation between two concepts where concept A is a member/ element of concept B.
 * `holo_part`: A relation between two concepts where concept A is a component of concept B.
 * `holo_substance`: A relation between two concepts where concept B is made of concept A.
 * `hypernym`: A relation between two concepts where concept A is a type of concept B.
 * `hyponym`: A relation between two concepts where concept B is a type of concept A.
-* `instance_hypernym`: "A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy."
+* `instance_hypernym`: A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy.
 * `mero_member`: A relation between two concepts where concept B is a member/ element of concept A.
 * `mero_part`: A relation between two concepts where concept B is a component of concept A.
 * `mero_substance`: A relation between two concepts where concept A is made of concept B.
@@ -143,6 +144,7 @@ The set of relations between synsets is limited to the following:
 * `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
 **Non-Princeton WordNet Relations**
+
 * `agent`: A relation between two concepts where concept A is typically the agent of the action expressed by concept B.
 * `also`: See also, a reference of weak meaning
 * `antonym`: An opposite and inherently incompatible word
@@ -179,7 +181,7 @@ The set of relations between synsets is limited to the following:
 * `involved`: A relation between two concepts where concept B is typically involved in the action or event expressed by concept A.
 * `is_caused_by`: A relation between two concepts where concept A comes into existence as a result of concept B.
 * `is_entailed_by`:
-* `is_subevent_of`: "A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place."
+* `is_subevent_of`: A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place.
 * `location`: A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place.
 * `manner_of`: A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place.
 * `mero_location`: A relation between two concepts where concept A is a place located in concept B.
@@ -187,14 +189,14 @@ The set of relations between synsets is limited to the following:
 * `meronym`: A relation between two concepts where concept B makes up a part of concept A.
 * `other`:
 * `patient`: A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B.
-* `pertainym`: "usually an adjective, which can be defined as ""of or pertaining to"" another word."
+* `pertainym`: usually an adjective, which can be defined as "of or pertaining to" another word.
 * `restricted_by`: A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner).
 * `restricts`: A relation between an adjectival concept A (quantifier/determiner) and a nominal (pronominal) concept B.
 * `result`: A relation between two concepts where concept A comes into existence as a result of concept B.
 * `role`: A relation between two concepts where concept A is typically involved in the action or event expressed by concept B.
 * `source_direction`: A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens.
 * `state_of`: A relation between two concepts where concept B is qualified by concept A.
-* `subevent`: "A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place."
+* `subevent`: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.
 * `target_direction`: A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to.
 * `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 
