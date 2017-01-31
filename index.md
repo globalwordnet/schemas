@@ -128,7 +128,6 @@ The set of relations between synsets is limited to the following:
 * `domain_region`: A relation between two concepts where B is a geographical / cultural domain of concept A.
 * `has_domain_topic`: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.
 * `has_domain_region`: A relation between two concepts where A is a geographical / cultural domain of concept B.
-* `subevent`: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.
 * `instance_hyponym`: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.
 * `holo_member`: A relation between two concepts where concept A is a member/ element of concept B.
 * `holo_part`: A relation between two concepts where concept A is a component of concept B.
