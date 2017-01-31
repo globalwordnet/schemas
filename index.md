@@ -180,14 +180,14 @@ The set of relations between synsets is limited to the following:
 * `involved_target_direction`: A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to.
 * `involved`: A relation between two concepts where concept B is typically involved in the action or event expressed by concept A.
 * `is_caused_by`: A relation between two concepts where concept A comes into existence as a result of concept B.
-* `is_entailed_by`:
+* `is_entailed_by`: Opposite of `entails`
 * `is_subevent_of`: A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place.
 * `location`: A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place.
 * `manner_of`: A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place.
 * `mero_location`: A relation between two concepts where concept A is a place located in concept B.
 * `mero_portion`: A relation between two concepts where concept A is an amount/piece/portion of concept B.
 * `meronym`: A relation between two concepts where concept B makes up a part of concept A.
-* `other`:
+* `other`: Any relation not otherwise specified, please use `dc:type` attribute to give the name of exact property.
 * `patient`: A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B.
 * `pertainym`: usually an adjective, which can be defined as "of or pertaining to" another word.
 * `restricted_by`: A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner).
