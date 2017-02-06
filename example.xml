@@ -40,7 +40,7 @@
                  z: Multiword expression (inc. phrase, idiom)
                  c: Conjunction
                  p: Adposition (Preposition, postposition, etc.)
-                 x: Other (inc. particle, classifier, bound morphemes, determiners)
+                 x: Other (inc. particle, classifier, bound morpheme, determiner)
                  u: Unknown -->
             <Lemma writtenForm="grandfather" partOfSpeech="n"/>
             <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n">
