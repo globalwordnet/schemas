@@ -96,7 +96,7 @@ The set of relations between senses is limited to the following
 * domain_region: Indicates the region of this word
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
-* domain_member_usage: Indicates a word involved in the usage described by this word
+* is_exemplified_by: Indicates a word involved in the usage described by this word
 
                     <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
                 </Sense>
@@ -141,7 +141,7 @@ The set of relations between synsets is limited to the following:
 * domain_region: Indicates the region of this word
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
-* domain_member_usage: Indicates a word involved in the usage described by this word
+* is_exemplified_by: Indicates a word involved in the usage described by this word
 
                 <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
             </Synset>
@@ -271,7 +271,7 @@ list below and a `target` and may have Dublin Core properties
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
 * `exemplifies`: Indicates the usage of this word
-* `domain_member_usage`: Indicates a word involved in the usage described by this word
+* `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
                   "relations": [{
                       "relType": "derivation",
@@ -338,7 +338,7 @@ Synset relations are given as for sense relations except the `target` must be th
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
 * `exemplifies`: Indicates the usage of this word
-* `domain_member_usage`: Indicates a word involved in the usage described by this word
+* `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
               "relations": [{
                   "relType": "hypernym", "target": "example-en-10162692-n"
