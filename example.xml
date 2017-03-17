@@ -61,7 +61,7 @@
                      domain_region: Indicates the region of this word
                      domain_member_region: Indicates a word involved in the region described by this word
                      exemplifies: Indicates the usage of this word
-                     domain_member_usage: Indicates a word involved in the usage described by this word
+                     is_exemplified_by: Indicates a word involved in the usage described by this word
                 -->
                 <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
             </Sense>
@@ -98,7 +98,7 @@
                     domain_region: Indicates the region of this word
                     domain_member_region: Indicates a word involved in the region described by this word
                     exemplifies: Indicates the usage of this word
-                    domain_member_usage: Indicates a word involved in the usage described by this word
+                    is_exemplified_by: Indicates a word involved in the usage described by this word
                 -->
             <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
         </Synset>
