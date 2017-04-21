@@ -266,11 +266,11 @@ fragments of the structure.
 
 The following are required properties of every WordNet (note the language
 must be given twice). `@id` gives the identifier of this wordnet (should be
-unique in this document) and `@type` must be `ontolex:Lexicon`.
+unique in this document) and `@type` must be `lime:Lexicon`.
 
           "@context": { "@language": "en" },
           "@id": "example-en",
-          "@type": "ontolex:Lexicon", 
+          "@type": "lime:Lexicon", 
           "label": "Example wordnet (English)",
           "language": "en",
           "email": "john@mccr.ae",
@@ -416,7 +416,7 @@ Synset relations are given as for sense relations except the `target` must be th
         }, {
           "@context": { "@language": "sv" },
           "@id": "example-sv",
-          "@type": "ontolex:Lexicon", 
+          "@type": "lime:Lexicon", 
           "label": "Example wordnet (Swedish)",
           "language": "sv",
           "email": "john@mccr.ae",
@@ -472,7 +472,7 @@ The standard namespaces are
     @prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
     @prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
 
-Each wordnet is an instance of the class `ontolex:Lexicon` and must have the
+Each wordnet is an instance of the class `lime:Lexicon` and must have the
 following properties
 
 * `rdfs:label`: A name for the wordnet.

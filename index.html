@@ -242,10 +242,10 @@
 <pre><code>{ 
   &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.0.json&quot;,
   &quot;@graph&quot;: [{</code></pre>
-<p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>ontolex:Lexicon</code>.</p>
+<p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>lime:Lexicon</code>.</p>
 <pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
       &quot;@id&quot;: &quot;example-en&quot;,
-      &quot;@type&quot;: &quot;ontolex:Lexicon&quot;, 
+      &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
       &quot;label&quot;: &quot;Example wordnet (English)&quot;,
       &quot;language&quot;: &quot;en&quot;,
       &quot;email&quot;: &quot;john@mccr.ae&quot;,
@@ -358,7 +358,7 @@
 }, {
   &quot;@context&quot;: { &quot;@language&quot;: &quot;sv&quot; },
   &quot;@id&quot;: &quot;example-sv&quot;,
-  &quot;@type&quot;: &quot;ontolex:Lexicon&quot;, 
+  &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
   &quot;label&quot;: &quot;Example wordnet (Swedish)&quot;,
   &quot;language&quot;: &quot;sv&quot;,
   &quot;email&quot;: &quot;john@mccr.ae&quot;,
@@ -400,7 +400,7 @@
 @prefix synsem: &lt;http://www.w3.org/ns/lemon/synsem#&gt; .
 @prefix wn: &lt;http://wordnet-rdf.princeton.edu/ontology#&gt; .
 @prefix wordnetlicense: &lt;http://wordnet.princeton.edu/wordnet/license/&gt; .</code></pre>
-<p>Each wordnet is an instance of the class <code>ontolex:Lexicon</code> and must have the following properties</p>
+<p>Each wordnet is an instance of the class <code>lime:Lexicon</code> and must have the following properties</p>
 <ul>
 <li><code>rdfs:label</code>: A name for the wordnet.</li>
 <li><code>dc:language</code>: The BCP 47 identifier for your language (usually a two letter code)</li>
