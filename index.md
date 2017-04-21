@@ -297,13 +297,13 @@ document, it is not the same as the `@id` of the wordnet or any other entry.
               "lemma": { "writtenForm": "father" }, 
               "partOfSpeech": "noun",
 
-The Sense requires only an `@id` and a `synset` and may take `status`, 
+The Sense requires only an `@id` and a `synsetRef` and may take `status`, 
 `confidenceScore`, Dublin Core properties, an `example`.
 
 
               "sense": [{
                   "@id": "example-en-10161911-n-1",
-                  "synset": "example-en-10161911-n"
+                  "synsetRef": "example-en-10161911-n"
               }]
           }, {
               "@id" : "w2",
@@ -311,7 +311,7 @@ The Sense requires only an `@id` and a `synset` and may take `status`,
               "partOfSpeech": "noun",
               "sense": [{
                   "@id": "example-en-1-n-1",
-                  "synset": "example-en-1-n",
+                  "synsetRef": "example-en-1-n",
 
 A sense may also have any number of `relations` which have a `relType` from the
 list below and a `target` and may have Dublin Core properties
@@ -435,7 +435,7 @@ Any examples should be given on the sense as follows:
 
               "sense": [{
                   "@id": "example-sv-2-n-1",
-                  "synset": "example-en-1-n",
+                  "synsetRef": "example-en-1-n",
                   "example": [{
                       "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                       "source": "Europarl Corpus"

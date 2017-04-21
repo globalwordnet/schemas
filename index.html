@@ -260,10 +260,10 @@
           &quot;@id&quot; : &quot;w1&quot;,
           &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
           &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre>
-<p>The Sense requires only an <code>@id</code> and a <code>synset</code> and may take <code>status</code>, <code>confidenceScore</code>, Dublin Core properties, an <code>example</code>.</p>
+<p>The Sense requires only an <code>@id</code> and a <code>synsetRef</code> and may take <code>status</code>, <code>confidenceScore</code>, Dublin Core properties, an <code>example</code>.</p>
 <pre><code>          &quot;sense&quot;: [{
               &quot;@id&quot;: &quot;example-en-10161911-n-1&quot;,
-              &quot;synset&quot;: &quot;example-en-10161911-n&quot;
+              &quot;synsetRef&quot;: &quot;example-en-10161911-n&quot;
           }]
       }, {
           &quot;@id&quot; : &quot;w2&quot;,
@@ -271,7 +271,7 @@
           &quot;partOfSpeech&quot;: &quot;noun&quot;,
           &quot;sense&quot;: [{
               &quot;@id&quot;: &quot;example-en-1-n-1&quot;,
-              &quot;synset&quot;: &quot;example-en-1-n&quot;,</code></pre>
+              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,</code></pre>
 <p>A sense may also have any number of <code>relations</code> which have a <code>relType</code> from the list below and a <code>target</code> and may have Dublin Core properties</p>
 <ul>
 <li><code>antonym</code>: An opposite and inherently incompatible word</li>
@@ -376,7 +376,7 @@
 <p>Any examples should be given on the sense as follows:</p>
 <pre><code>          &quot;sense&quot;: [{
               &quot;@id&quot;: &quot;example-sv-2-n-1&quot;,
-              &quot;synset&quot;: &quot;example-en-1-n&quot;,
+              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,
               &quot;example&quot;: [{
                   &quot;value&quot;: &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;,
                   &quot;source&quot;: &quot;Europarl Corpus&quot;
