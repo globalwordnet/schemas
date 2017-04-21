@@ -18,7 +18,7 @@
           "partOfSpeech": "noun",
           "sense": [{
               "@id": "example-en-10161911-n-1",
-              "synset": "example-en-10161911-n"
+              "synsetRef": "example-en-10161911-n"
           }]
       }, {
           "@id" : "w2",
@@ -26,7 +26,7 @@
           "partOfSpeech": "noun",
           "sense": [{
               "@id": "example-en-1-n-1",
-              "synset": "example-en-1-n",
+              "synsetRef": "example-en-1-n",
               "relations": [{
                   "relType": "derivation",
                   "target": "example-en-10161911-n-1",
@@ -86,7 +86,7 @@
           "partOfSpeech": "noun",
           "sense": [{
               "@id": "example-sv-2-n-1",
-              "synset": "example-en-1-n",
+              "synsetRef": "example-en-1-n",
               "example": [{
                   "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
                   "source": "Europarl Corpus"

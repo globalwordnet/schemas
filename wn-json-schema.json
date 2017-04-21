@@ -135,7 +135,7 @@
                                     "minItems": 1,
                                     "items": {
                                         "type": "object",
-                                        "required":  ["@id", "synset"],
+                                        "required":  ["@id", "synsetRef"],
                                         "additionalProperties": false,
                                         "properties": {
                                             "@id": { "type": "string" },
@@ -248,7 +248,7 @@
                                                     "type": { "type": "string" }
                                                 }
                                             },
-                                            "synset": { "type": "string" }
+                                            "synsetRef": { "type": "string" }
                                         }
                                     }
                                 },

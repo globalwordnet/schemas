@@ -146,6 +146,10 @@
         },
 
         "synset": {
+            "@id": "skos:member",
+            "@type": "@id"
+        },
+        "synsetRef": {
             "@id": "ontolex:isLexicalizedSenseOf",
             "@type": "@id"
         },
