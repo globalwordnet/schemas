@@ -23,7 +23,7 @@
                         }
                     },
                     "@id": { "type": "string" },
-                    "@type": { "enum": ["ontolex:Lexicon"] },
+                    "@type": { "enum": ["lime:Lexicon"] },
                     "label": { "type": "string" },
                     "language": { "language": "string" },
                     "email": { "type": "string" },
