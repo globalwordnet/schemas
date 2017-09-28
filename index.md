@@ -523,7 +523,7 @@ A more extended example is given here:
     <#example-en-1-n-1> a ontolex:LexicalSense ;
       ontolex:reference <#example-en-1-n> .
     
-    [] a ontolex:Sense ;
+    [] a ontolex:SenseRelation ;
       vartrans:source <#example-en-1-n-1> ;
       vartrans:category wn:derivation ;
       vartrans:target <#example-en-10161911-n-1> ;
