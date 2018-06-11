@@ -206,6 +206,12 @@
   <PartOfSpeech rdf:about="http://globalwordnet.github.io/schemas/wn#conjunction">
     <rdfs:label xml:lang="en">conjunction</rdfs:label>
   </PartOfSpeech>
+  <owl:ObjectProperty rdf:about="http://globalwordnet.github.io/schemas/wn#senses">
+      <rdfs:comment xml:lang="en">The senses that can use a particular syntactic frame</rdfs:comment>
+      <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/synsem#SyntacticFrame"/>
+      <rdfs:range rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense" />
+      <rdfs:label xml:lang="en">senses</rdfs:label>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://globalwordnet.github.io/schemas/wn#count">
     <rdfs:comment xml:lang="en">The count of usages of a sense in some corpus</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>

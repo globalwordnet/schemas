@@ -139,6 +139,7 @@
         "status": { "@id": "wn:status", "type": "string" },
         "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
         "seeAlso": { "@id": "rdfs:seeAlso", "type": "@id" },
+        "senses": { "@id": "rdf:senses", "type": "@id" },
 
         "entry" : {
             "@id": "lime:entry",
