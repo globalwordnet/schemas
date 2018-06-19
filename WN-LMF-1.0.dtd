@@ -82,7 +82,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
-    lexicalized (true|false) "false">
+    lexicalized (true|false) "true">
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
     id ID #REQUIRED
@@ -105,7 +105,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
-    lexicalized (true|false) "false">
+    lexicalized (true|false) "true">
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
     language CDATA #IMPLIED
