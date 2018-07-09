@@ -13,6 +13,7 @@
         "vartrans": "http://www.w3.org/ns/lemon/vartrans#",
         "wn": "http://globalwordnet.github.io/schemas/wn#",
         "wordnetlicense": "http://wordnet.princeton.edu/wordnet/license/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
 
         "gloss" : "rdf:value",
         "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
@@ -115,6 +116,7 @@
         "version": { "@id": "owl:versionInfo", "type": "string" },
         "citation": "schema:citation",
         "url": { "@id": "schema:url", "@type": "@id" },
+        "lexicalized": { "@id": "wn:lexicalized", "@type": "xsd:boolean" },
 
         "relType": { "@id": "vartrans:category", "@type": "@vocab" },
         "target": { "@id": "vartrans:target", "@type": "@id" },
@@ -139,6 +141,7 @@
         "status": { "@id": "wn:status", "type": "string" },
         "confidenceScore": { "@id": "wn:confidenceScore", "type": "string" },
         "seeAlso": { "@id": "rdfs:seeAlso", "type": "@id" },
+        "senses": { "@id": "rdf:senses", "type": "@id" },
 
         "entry" : {
             "@id": "lime:entry",
@@ -146,6 +149,10 @@
         },
 
         "synset": {
+            "@id": "skos:member",
+            "@type": "@id"
+        },
+        "synsetRef": {
             "@id": "ontolex:isLexicalizedSenseOf",
             "@type": "@id"
         },
