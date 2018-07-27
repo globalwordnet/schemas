@@ -17,7 +17,7 @@ published and submitted to the ILI. These are as follows:
 All of these formats are considered equivalent and a converter between them can 
 be used at.
 
-A converter and validator is available at [http://server1.nlp.insight-centre.org:8080/gwn-converter/](http://server1.nlp.insight-centre.org:8080/gwn-converter/)
+A converter and validator is available at [http://server1.nlp.insight-centre.org/gwn-converter/](http://server1.nlp.insight-centre.org/gwn-converter/)
 
 XML
 ---
