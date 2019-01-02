@@ -82,6 +82,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
+    n CDATA #IMPLIED
     lexicalized (true|false) "true">
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
