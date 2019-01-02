@@ -212,7 +212,7 @@
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
   subcategorizationFrame CDATA #REQUIRED
-  senses IDREFS #IMPLIED>
+  senses CDATA #IMPLIED>
 <!ELEMENT Count (#PCDATA)>
 <!ATTLIST Count
     dc:contributor CDATA #IMPLIED
