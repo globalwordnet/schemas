@@ -20,7 +20,7 @@
             confidenceScore: A numeric value between 0 and 1 giving the 
                              confidence in the correctness of the element.                             
     -->
-    <Lexicon id="example-en"
+    <Lexicon id="example_en"
              label="Example wordnet (English)"
              language="en" 
              email="john@mccr.ae"
@@ -113,7 +113,7 @@
         <Synset id="example-en-10162692-n" ili="i90292" partOfSpeech="n">
         </Synset>
     </Lexicon>
-    <Lexicon id="example-sv"
+    <Lexicon id="example_sv"
              label="Example wordnet (Swedish)"
              language="sv" 
              email="john@mccr.ae"
