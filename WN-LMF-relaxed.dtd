@@ -83,7 +83,7 @@
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
     lexicalized (true|false) "true"
-    adjposition CDATA #IMPLIED>
+    adjposition (|a|ip|p) #IMPLIED>
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
     id ID #REQUIRED
