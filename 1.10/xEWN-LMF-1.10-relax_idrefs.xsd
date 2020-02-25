@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+	<xsd:include schemaLocation='ewn-idtypes-relax_idrefs.xsd' />
+	<xsd:include schemaLocation='ewn-idtypes-1.10-relax_idrefs.xsd' />
+	<xsd:include schemaLocation='ewn-wordtypes.xsd' />
+	<xsd:include schemaLocation='types.xsd' />
+	<xsd:include schemaLocation='types-1.10.xsd' />
+	<xsd:include schemaLocation='core-1.10.xsd' />
+
+</xsd:schema>

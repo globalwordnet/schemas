@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY sklemma "[a-zA-Z0-9_\-\.,!/'#]+">
+<!ENTITY lexsense_sstype "\d">
+<!ENTITY lexsense_lexfile "\d\d">
+<!ENTITY lexsense_lexid "\d\d">
+<!ENTITY nullable_lemma "[a-zA-Z0-9_'/\-\.]*">
+<!ENTITY nullable_lexsense_lexid "(\d\d)?">
+]>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	>
+
+	<!-- lex types -->
+
+	<xsd:simpleType name='LexIdType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='\d+' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='SenseIdxType'>
+		<xsd:restriction base='xsd:integer'>
+			<xsd:minInclusive value='0' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- sensekey type -->
+
+	<xsd:simpleType name='SensekeyType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&sklemma;\%&lexsense_sstype;:&lexsense_lexfile;:&lexsense_lexid;:&nullable_lemma;:&nullable_lexsense_lexid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
