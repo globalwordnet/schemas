@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+]>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:meta='https://github.com/globalwordnet/schemas/meta/'
+	targetNamespace='https://github.com/globalwordnet/schemas/meta/'
+	>
+
+	<!-- T Y P E S  -->
+
+	<xsd:simpleType name='ConfidenceScoreType'>
+		<xsd:restriction base='xsd:float'>
+			<xsd:minInclusive value='0.0' />
+			<xsd:maxInclusive value='1.0' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- A T T R I B U T E S -->
+
+	<xsd:attribute name='contributor' type='xsd:string' />
+	<xsd:attribute name='coverage' type='xsd:string' />
+	<xsd:attribute name='creator' type='xsd:string' />
+	<xsd:attribute name='date' type='xsd:string' />
+	<xsd:attribute name='description' type='xsd:string' />
+	<xsd:attribute name='format' type='xsd:string' />
+	<xsd:attribute name='publisher' type='xsd:string' />
+	<xsd:attribute name='relation' type='xsd:string' />
+	<xsd:attribute name='rights' type='xsd:string' />
+	<xsd:attribute name='source' type='xsd:string' />
+	<xsd:attribute name='title' type='xsd:string' />
+	<xsd:attribute name='type' type='xsd:string' />
+	<xsd:attribute name='status' type='xsd:string' />
+	<xsd:attribute name='note' type='xsd:string' />
+	<xsd:attribute name='confidenceScore' type='meta:ConfidenceScoreType' default='1.0' />
+
+	<!-- G R O U P S  -->
+
+	<xsd:attributeGroup name='Meta'>
+		<xsd:attribute ref='meta:contributor' use='optional' />
+		<xsd:attribute ref='meta:coverage' use='optional' />
+		<xsd:attribute ref='meta:creator' use='optional' />
+		<xsd:attribute ref='meta:date' use='optional' />
+		<xsd:attribute ref='meta:description' use='optional' />
+		<xsd:attribute ref='meta:format' use='optional' />
+		<xsd:attribute ref='meta:publisher' use='optional' />
+		<xsd:attribute ref='meta:relation' use='optional' />
+		<xsd:attribute ref='meta:rights' use='optional' />
+		<xsd:attribute ref='meta:source' use='optional' />
+		<xsd:attribute ref='meta:title' use='optional' />
+		<xsd:attribute ref='meta:type' use='optional' />
+		<xsd:attribute ref='meta:status' use='optional' />
+		<xsd:attribute ref='meta:note' use='optional' />
+		<xsd:attribute ref='meta:confidenceScore' use='optional' />
+	</xsd:attributeGroup>
+
+</xsd:schema>
