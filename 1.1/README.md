@@ -16,7 +16,7 @@ Namespaces are left unchanged. Beyond the current namespace, the only namespace 
  The design is modular:
  
 ***dc.xsd*** for dc: namespace.
-***(ewn-)idtypes(-relax_idrefs).xsd*** for id types (it defines ID policy).
+***(ewn-)idtypes(-relax_idrefs).xsd*** for core id types (it defines ID policy).
 ***(ewn-)wordtypes.xsd*** for word types (it defines word form policy).
 ***types.xsd*** for core data types.
 ***pwn.xsd*** for PWN types.
@@ -26,19 +26,19 @@ Namespaces are left unchanged. Beyond the current namespace, the only namespace 
 
 This allows for different levels of validation to be performed. 
 
-This makes it possible to bring stricter constraints to bear on the same data. But it does not mean the previous level is incompatible with the next. For example the data that satisfies EWN-LMF-1.1.xsd is a subset of data validated by WN-LMF-1.1.xsd (or  WN-LMF-1.1 is a superset of EWN-LMF-1.1). 
+This makes it possible to bring stricter constraints to bear on the same data. But it does not mean the previous level is incompatible with the next. For example the data that satisfies EWN-LMF-1.1.xsd is a subset of data validated by WN-LMF-1.1.xsd (or WN-LMF-1.1 is a superset of EWN-LMF-1.1). 
 
 Another use is different IDREF validation depending on whether you are attempting at validating merged files or not.
 
 ####id types
 
-idtypes-1.1.xsd and ewn-idtypes-1.1.xsd differ in that the latter imposes extra constraints on the **well-formedness** of EWN ids.
+idtypes.xsd and ewn-idtypes.xsd differ in that the latter imposes extra constraints on the **well-formedness** of EWN ids.
 
 ####relaxed id types vs strict
 
 This deals with **id reference** validation.
 
-*(ewn-)idtypes-1.1.xsd* and *(ewn-)idtypes-1.1-relax_idrefs.xsd* differ in that the latter allows some **non-local references not to have their target in the same file**. This is necessary in the case of part-of-speech cross-references such as the ones found in derivation relations (adj derived from noun, etc...) or maybe other cases (seealso, etc). The target then resides in a different file. This is useful to validate **pre-merging lexicographer files** while the strict mode must be used **to validate the merged file**, to make sure references are not left dangling.
+*(ewn-)idtypes.xsd* and *(ewn-)idtypes-relax_idrefs.xsd* differ in that the latter allows some **non-local references not to have their target in the same file**. This is necessary in the case of part-of-speech cross-references such as the ones found in derivation relations (adj derived from noun, etc...) or maybe other cases (seealso, etc). The target then resides in a different file. This is useful to validate **pre-merging lexicographer files** while the strict mode must be used **to validate the merged file**, to make sure references are not left dangling.
 
 ####some resulting combinations:
 
