@@ -146,9 +146,7 @@
 	<xsd:element name='SyntacticBehaviour'>
 		<xsd:complexType>
 			<xsd:attribute name='subcategorizationFrame' type='xsd:string' use='required' />
-			<xsd:attribute name='senses' type='SenseIDREFSType' use='optional' />
-			<!-- FAILS -->
-			<!-- <xsd:attribute name='senses' type='LocalSenseIDREFSType' use='optional' /> -->
+			<xsd:attribute name='senses' type='LocalSenseIDREFSType' use='optional' />
 		</xsd:complexType>
 	</xsd:element>
 
