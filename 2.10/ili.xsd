@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY ili "i\d+|in">
+]>
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+	xmlns:meta='https://github.com/globalwordnet/schemas/meta/'
+	xmlns:ili='http://ili.org/ili/'
+	targetNamespace='http://ili.org/ili/'
+	>
+
+	<xsd:import namespace='https://github.com/globalwordnet/schemas/meta/'	schemaLocation='meta.xsd' />
+
+	<!-- T Y P E S  -->
+
+	<xsd:simpleType name='IDType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&ili;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- A T T R I B U T E S -->
+
+	<xsd:attribute name='id' type='ili:IDType' />
+
+	<!-- E L E M E N T S -->
+
+	<xsd:element name='Definition'>
+		<xsd:complexType mixed='true'>
+			<xsd:attributeGroup ref='meta:Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+
+
+
