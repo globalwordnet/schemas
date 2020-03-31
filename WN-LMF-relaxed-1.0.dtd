@@ -82,8 +82,8 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
-    n CDATA #IMPLIED
-    lexicalized (true|false) "true">
+    lexicalized (true|false) "true"
+    adjposition (|a|ip|p) #IMPLIED>
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
     id ID #REQUIRED
@@ -212,7 +212,7 @@
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
   subcategorizationFrame CDATA #REQUIRED
-  senses CDATA #IMPLIED>
+  senses IDREFS #IMPLIED>
 <!ELEMENT Count (#PCDATA)>
 <!ATTLIST Count
     dc:contributor CDATA #IMPLIED
