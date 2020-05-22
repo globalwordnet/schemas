@@ -246,7 +246,7 @@
 
 :entails a :SynsetRelType ;
   rdfs:label "entails"@en ;
-  rdfs:comment ""@en .
+  rdfs:comment "impose, involve, or imply as a necessary accompaniment or result"@en .
 
 :eq_synonym a :SynsetRelType ;
   rdfs:label "eq synonym"@en ;
@@ -354,7 +354,7 @@
 
 :is_entailed_by a :SynsetRelType ;
   rdfs:label "is entailed by"@en ;
-  rdfs:comment ""@en .
+  rdfs:comment "Opposite of entails"@en .
 
 :is_subevent_of a :SynsetRelType ;
   rdfs:label "is subevent of"@en ;
