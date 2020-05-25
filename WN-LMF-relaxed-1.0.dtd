@@ -65,6 +65,7 @@
 <!ATTLIST Sense
     id ID #REQUIRED
     synset IDREF #REQUIRED
+    n CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <meta charset="utf-8">                                                      
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">                       
+  <meta name="viewport" content="width=device-width, initial-scale=1">        
+  <meta name="description" content="">                                        
+  <meta name="author" content="">                                             
+                                                                                  
+  <!-- Bootstrap Core CSS -->                                                 
+  <link href="css/bootstrap.min.css" rel="stylesheet">                        
+  
+  <!-- Custom CSS -->                                                         
+  <link href="css/one-page-wonder.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1 id="global-wordnet-formats">Global Wordnet Formats</h1>
+<p>The Global WordNet Association provides three formats for which WordNets can be published and submitted to the ILI. These are as follows:</p>
+<ul>
+<li><a href="#xml">Lexical Markup Framework compatible XML</a>
+<ul>
+<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.xml">Example</a></li>
+<li><a href="http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd">DTD</a></li>
+</ul></li>
+<li><a href="#json">JSON-LD using the lemon Vocabulary</a>
+<ul>
+<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.json">Example</a></li>
+<li><a href="http://globalwordnet.github.io/schemas/wn-json-context-1.0.json">JSON-LD Context</a></li>
+<li><a href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">Schema</a></li>
+</ul></li>
+<li><a href="#rdf">lemon-based RDF</a>
+<ul>
+<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.ttl">Example</a></li>
+</ul></li>
+</ul>
+<p>All of these formats are considered equivalent and a converter between them can be used at.</p>
+<p>A converter and validator is available at <a href="http://server1.nlp.insight-centre.org/gwn-converter/" class="uri">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
+<h2 id="xml">XML</h2>
+<p>The XML is specified by the following <a href="WN-LMF-1.0.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
+<p>The first three lines must always be as follows:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd&quot;&gt;
+&lt;LexicalResource xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;</code></pre>
+<p>A file may contain multiple WordNets in different languages:</p>
+<p>The following information is required:</p>
+<ul>
+<li>id: A short name for the resource</li>
+<li>label: The full name for the resources</li>
+<li>language: Please follow BCP-47, i.e., use a two-letter code if available else a three-letter code</li>
+<li>email: Please give a contact email address</li>
+<li>license: The license of your resource (please provide URL)</li>
+<li>version: A string identifying this version (preferably follow major.minor format)</li>
+<li>url: A URL for your project homepage</li>
+<li>citation: The paper to cite for this resource</li>
+</ul>
+<p>Extra properties may be included from Dublin core and in addition</p>
+<ul>
+<li>status: The status of the resource, e.g., &quot;valid&quot;, &quot;checked&quot;, &quot;unchecked&quot;</li>
+<li><p>confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of the element.</p>
+<pre><code>&lt;Lexicon id=&quot;example-en&quot;
+         label=&quot;Example wordnet (English)&quot;
+         language=&quot;en&quot; 
+         email=&quot;john@mccr.ae&quot;
+         license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
+         version=&quot;1.0&quot;
+         citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
+         url=&quot;http://globalwordnet.github.io/schemas/&quot;
+         dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre></li>
+</ul>
+<p>Each word (lexical entry) must have a unique id:</p>
+<pre><code>        &lt;LexicalEntry id=&quot;w1&quot;&gt;</code></pre>
+<p>The part of speech values are as follows:</p>
+<ul>
+<li>n: Noun</li>
+<li>v: Verb</li>
+<li>a: Adjective</li>
+<li>r: Adverb</li>
+<li>s: Adjective Satellite</li>
+<li>c: Conjunction</li>
+<li>p: Adposition (Preposition, postposition, etc.)</li>
+<li>x: Other (inc. particle, classifier, bound morphemes, determiners)</li>
+<li><p>u: Unknown</p>
+<pre><code>        &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
+        &lt;Sense id=&quot;example-en-10161911-n-1&quot; synset=&quot;example-en-10161911-n&quot;/&gt;
+    &lt;/LexicalEntry&gt;
+    &lt;LexicalEntry id=&quot;w2&quot;&gt;
+        &lt;Lemma writtenForm=&quot;paternal grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
+        &lt;Sense id=&quot;example-en-1-n-1&quot; synset=&quot;example-en-1-n&quot;&gt;</code></pre></li>
+</ul>
+<p>The set of relations between senses is limited to the following</p>
+<ul>
+<li>antonym: An opposite and inherently incompatible word</li>
+<li>also: See also, a reference of weak meaning</li>
+<li>verb_group: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li>participle: An adjective that is a participle form a verb</li>
+<li>pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as &quot;of or pertaining to&quot; and do not have antonyms. A pertainym can point to a noun or another pertainym</li>
+<li>derivation: A word that is derived from some other word</li>
+<li>domain_category: Indicates the category of this word</li>
+<li>domain_member_category: Indicates a word involved in this category described by this word</li>
+<li>domain_region: Indicates the region of this word</li>
+<li>domain_member_region: Indicates a word involved in the region described by this word</li>
+<li>exemplifies: Indicates the usage of this word</li>
+<li><p>is_exemplified_by: Indicates a word involved in the usage described by this word</p>
+<pre><code>            &lt;SenseRelation relType=&quot;derivation&quot; target=&quot;example-en-10161911-n-1&quot;/&gt;
+        &lt;/Sense&gt;
+    &lt;/LexicalEntry&gt;
+    &lt;LexicalEntry id=&quot;w3&quot;&gt;
+        &lt;Lemma writtenForm=&quot;pay&quot; partOfSpeech=&quot;v&quot;/&gt;</code></pre></li>
+</ul>
+<p>Syntactic Behaviour is given as in Princeton WordNet</p>
+<pre><code>            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Sam cannot %s Sue &quot;/&gt;
+            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Sam and Sue %s&quot;/&gt;
+            &lt;SyntacticBehaviour subcategorizationFrame=&quot;The banks %s the check&quot;/&gt;
+        &lt;/LexicalEntry&gt;</code></pre>
+<p>If a synset is already mapped to the ILI please give the ID here. <strong>All synsets must have an ID that starts with ID of the lexicon followed by a dash, e.g., <code>example-en</code> + <code>-</code> + <code>local_synset_id</code></strong>.</p>
+<pre><code>        &lt;Synset id=&quot;example-en-10161911-n&quot; ili=&quot;i90287&quot; partOfSpeech=&quot;n&quot;&gt;
+            &lt;Definition&gt;
+                the father of your father or mother
+            &lt;/Definition&gt;</code></pre>
+<p>The set of relations between synsets is limited to the following:</p>
+<p><strong>Princeton WordNet Properties</strong></p>
+<ul>
+<li><code>hypernym</code>: A relation between two concepts where concept A is a type of concept B.</li>
+<li><code>hyponym</code>: A relation between two concepts where concept B is a type of concept A.</li>
+<li><code>instance_hyponym</code>: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.</li>
+<li><code>instance_hypernym</code>: A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy.</li>
+<li><code>mero_member</code>: A relation between two concepts where concept B is a member/ element of concept A.</li>
+<li><code>holo_member</code>: A relation between two concepts where concept A is a member/ element of concept B.</li>
+<li><code>mero_part</code>: A relation between two concepts where concept B is a component of concept A.</li>
+<li><code>holo_part</code>: A relation between two concepts where concept A is a component of concept B.</li>
+<li><code>mero_substance</code>: A relation between two concepts where concept A is made of concept B.</li>
+<li><code>holo_substance</code>: A relation between two concepts where concept B is made of concept A.</li>
+<li><code>entails</code>: A verb X entails Y if X cannot be done unles Y is, or has been done.</li>
+<li><code>causes</code>: A relation between two concepts where concept B comes into existence as a result of concept A.</li>
+<li><code>similar</code>: A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset.</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>attribute</code>: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B.</li>
+<li><code>verb_group</code>: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li><code>domain_topic</code>: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.</li>
+<li><code>has_domain_topic</code>: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.</li>
+<li><code>domain_region</code>: A relation between two concepts where B is a geographical / cultural domain of concept A.</li>
+<li><code>has_domain_region</code>: A relation between two concepts where A is a geographical / cultural domain of concept B.</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</li>
+</ul>
+<p><strong>Non-Princeton WordNet Relations</strong></p>
+<ul>
+<li><code>agent</code>: A relation between two concepts where concept A is typically the agent of the action expressed by concept B.</li>
+<li><code>antonym</code>: An opposite and inherently incompatible word</li>
+<li><code>be_in_state</code>: A relation between two concepts where concept A is qualified by concept B.</li>
+<li><code>classified_by</code>: A relation between concept B and a classifier concept A.</li>
+<li><code>classifies</code>: A relation between a classifier concept A and concept B.</li>
+<li><code>co_agent_instrument</code>: A relation between two concepts where concept B is the instrument used by concept A in a certain action.</li>
+<li><code>co_agent_patient</code>: A relation between two concepts where concept B is the patient undergoing an action carried out by concept A.</li>
+<li><code>co_agent_result</code>: A relation between two concepts where concept B is the result of an action carried out by concept A.</li>
+<li><code>co_instrument_agent</code>: A relation between two concepts where concept A is the instrument used by concept B for a certain action.</li>
+<li><code>co_instrument_patient</code>: A relation between two concepts where concept B undergoes an action for which the instrument expressed by concept A is used.</li>
+<li><code>co_instrument_result</code>: A relation between two concepts where concept B is the result of an action carried out by the instrument expressed by concept A.</li>
+<li><code>co_patient_agent</code>: A relation between two concepts where concept B undergoes an action carried out by concept A.</li>
+<li><code>co_patient_instrument</code>: A relation between two concepts where concept A undergoes an action for which the instrument expressed by concept A is used.</li>
+<li><code>co_result_agent</code>: A relation between two concepts where concept A is the result of an action carried out by concept B.</li>
+<li><code>co_result_instrument</code>: A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used.</li>
+<li><code>co_role</code>: A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional).</li>
+<li><code>direction</code>: A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B.</li>
+<li><code>eq_synonym</code>: A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)</li>
+<li><code>holo_location</code>: A relation between two concepts where concept B is a place located in concept A.</li>
+<li><code>holo_portion</code>: A relation between two concepts where concept B is an amount/piece/portion of concept A.</li>
+<li><code>holonym</code>: A relation between two concepts where concept A makes up a part of concept B.</li>
+<li><code>in_manner</code>: A relation between two concepts where concept B qualifies the manner in which an action or event expressed by concept A takes place.</li>
+<li><code>instrument</code>: A relation between two concepts where concept A is the instrument necessary for the action or event expressed by concept B.</li>
+<li><code>involved_agent</code>: A relation between two concepts where concept B is typically the agent of the action expressed by concept A.</li>
+<li><code>involved_direction</code>: A relation between two concepts where concept B is typically the direction or location of the action or event expressed by concept A.</li>
+<li><code>involved_instrument</code>: A relation between two concepts where concept B is typically the instrument necessary for the action or event expressed by concept A.</li>
+<li><code>involved_location</code>: A relation between two concepts where concept B is typically the location where the action or event expressed by concept A takes place.</li>
+<li><code>involved_patient</code>: A relation between two concepts where concept B is typically the patient un-dergoing an action or event expressed by concept A.</li>
+<li><code>involved_result</code>: A relation between two concepts where concept B comes into existence as a result of concept A.</li>
+<li><code>involved_source_direction</code>: A relation between two concepts where concept B is the place from where the action or event expressed by concept A begins/starts/happens.</li>
+<li><code>involved_target_direction</code>: A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to.</li>
+<li><code>involved</code>: A relation between two concepts where concept B is typically involved in the action or event expressed by concept A.</li>
+<li><code>is_caused_by</code>: A relation between two concepts where concept A comes into existence as a result of concept B.</li>
+<li><code>is_entailed_by</code>: Opposite of <code>entails</code></li>
+<li><code>is_subevent_of</code>: A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place.</li>
+<li><code>location</code>: A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place.</li>
+<li><code>manner_of</code>: A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place.</li>
+<li><code>mero_location</code>: A relation between two concepts where concept A is a place located in concept B.</li>
+<li><code>mero_portion</code>: A relation between two concepts where concept A is an amount/piece/portion of concept B.</li>
+<li><code>meronym</code>: A relation between two concepts where concept B makes up a part of concept A.</li>
+<li><code>other</code>: Any relation not otherwise specified, please use <code>dc:type</code> attribute to give the name of exact property.</li>
+<li><code>patient</code>: A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B.</li>
+<li><code>pertainym</code>: usually an adjective, which can be defined as &quot;of or pertaining to&quot; another word.</li>
+<li><code>restricted_by</code>: A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner).</li>
+<li><code>restricts</code>: A relation between an adjectival concept A (quantifier/determiner) and a nominal (pronominal) concept B.</li>
+<li><code>result</code>: A relation between two concepts where concept A comes into existence as a result of concept B.</li>
+<li><code>role</code>: A relation between two concepts where concept A is typically involved in the action or event expressed by concept B.</li>
+<li><code>source_direction</code>: A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens.</li>
+<li><code>state_of</code>: A relation between two concepts where concept B is qualified by concept A.</li>
+<li><code>subevent</code>: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.</li>
+<li><p><code>target_direction</code>: A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to.</p>
+<pre><code>        &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-en-10162692-n&quot;/&gt;
+    &lt;/Synset&gt;</code></pre></li>
+</ul>
+<p>If you wish to define a new concept call the concept &quot;in&quot; (ILI New). If there is no mapping to the ILI leave this field empty (it is required).</p>
+<pre><code>        &lt;Synset id=&quot;example-en-1-n&quot; ili=&quot;in&quot; partOfSpeech=&quot;n&quot;&gt;
+            &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
+<p>You can include metadata (such as source) at many points The ILI Definition must be at least 20 characters or five words</p>
+<pre><code>            &lt;ILIDefinition dc:source=&quot;https://en.wiktionary.org/wiki/farfar&quot;&gt;
+                A father&#39;s father; a paternal grandfather
+            &lt;/ILIDefinition&gt;
+        &lt;/Synset&gt;</code></pre>
+<p>You must include all targets of relations</p>
+<pre><code>        &lt;Synset id=&quot;example-en-10162692-n&quot; ili=&quot;i90292&quot; partOfSpeech=&quot;n&quot;/&gt;
+    &lt;/Lexicon&gt;
+    &lt;Lexicon id=&quot;example-sv&quot;
+             label=&quot;Example wordnet (Swedish)&quot;
+             language=&quot;sv&quot; 
+             email=&quot;john@mccr.ae&quot;
+             license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
+             version=&quot;1.0&quot;
+             citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
+             url=&quot;http://globalwordnet.github.io/schemas/&quot;
+             dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre>
+<p>The list of lexical entries (words) in your wordnet</p>
+<pre><code>        &lt;LexicalEntry id=&quot;w4&quot;&gt;
+            &lt;Lemma writtenForm=&quot;farfar&quot; partOfSpeech=&quot;n&quot;/&gt;</code></pre>
+<p>Synsets need not be language-specific but senses must be</p>
+<pre><code>            &lt;Sense id=&quot;example-sv-2-n-1&quot; synset=&quot;example-en-1-n&quot;&gt;
+                &lt;SenseExample dc:source=&quot;Europarl Corpus&quot;&gt;
+                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
+                &lt;/SenseExample&gt;
+            &lt;/Sense&gt;
+        &lt;/LexicalEntry&gt;
+    &lt;/Lexicon&gt;
+&lt;/LexicalResource&gt;</code></pre>
+<h2 id="json">JSON</h2>
+<p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
+<p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
+<pre><code>{ 
+  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.0.json&quot;,
+  &quot;@graph&quot;: [{</code></pre>
+<p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>lime:Lexicon</code>.</p>
+<pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
+      &quot;@id&quot;: &quot;example-en&quot;,
+      &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
+      &quot;label&quot;: &quot;Example wordnet (English)&quot;,
+      &quot;language&quot;: &quot;en&quot;,
+      &quot;email&quot;: &quot;john@mccr.ae&quot;,
+      &quot;rights&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
+      &quot;version&quot;: &quot;1.0&quot;,</code></pre>
+<p>In addition the properties <code>citation</code>, <code>url</code>, <code>status</code>, <code>confidenceScore</code> and any property from <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements">Dublin Core Elements 1.1</a> May be used</p>
+<pre><code>      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
+      &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
+      &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,</code></pre>
+<p>The entries are given as a list under the <code>entry</code> property it requires an <code>@id</code> <code>partOfSpeech</code> and <code>lemma</code> and may have <code>sense</code>, <code>synBehavior</code>, <code>status</code>, <code>confidence</code> and Dublin Core properties. The lemma has only a single value <code>writtenForm</code> and the <code>partOfSpeech</code> must be one of the following: [ <code>noun</code>, <code>verb</code>, <code>adjective</code>, <code>adverb</code>, <code>adjective_satellite</code>, <code>phrase</code>, <code>conjunction</code>, <code>adposition</code>, <code>other</code>, <code>unknown</code> ]. The <code>@id</code> must be unique in the document, it is not the same as the <code>@id</code> of the wordnet or any other entry.</p>
+<pre><code>      &quot;entry&quot;: [{
+          &quot;@id&quot; : &quot;w1&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
+          &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre>
+<p>The Sense requires only an <code>@id</code> and a <code>synsetRef</code> and may take <code>status</code>, <code>confidenceScore</code>, Dublin Core properties, an <code>example</code>.</p>
+<pre><code>          &quot;sense&quot;: [{
+              &quot;@id&quot;: &quot;example-en-10161911-n-1&quot;,
+              &quot;synsetRef&quot;: &quot;example-en-10161911-n&quot;
+          }]
+      }, {
+          &quot;@id&quot; : &quot;w2&quot;,
+          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;paternal grandfather&quot; }, 
+          &quot;partOfSpeech&quot;: &quot;noun&quot;,
+          &quot;sense&quot;: [{
+              &quot;@id&quot;: &quot;example-en-1-n-1&quot;,
+              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,</code></pre>
+<p>A sense may also have any number of <code>relations</code> which have a <code>relType</code> from the list below and a <code>target</code> and may have Dublin Core properties</p>
+<ul>
+<li><code>antonym</code>: An opposite and inherently incompatible word</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>verb_group</code>: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li><code>participle</code>: An adjective that is a participle form a verb</li>
+<li><code>pertainym</code>: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as &quot;of or pertaining to&quot; and do not have antonyms. A pertainym can point to a noun or another pertainym</li>
+<li><code>derivation</code>: A word that is derived from some other word</li>
+<li><code>domain_category</code>: Indicates the category of this word</li>
+<li><code>domain_member_category</code>: Indicates a word involved in this category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the region described by this word</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><p><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</p>
+<pre><code>          &quot;relations&quot;: [{
+              &quot;relType&quot;: &quot;derivation&quot;,
+              &quot;target&quot;: &quot;example-en-10161911-n-1&quot;,
+              &quot;creator&quot;: &quot;John McCrae&quot;
+          }]
+      }]
+  }, {
+      &quot;@id&quot;: &quot;w3&quot;,
+      &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;pay&quot; },
+      &quot;partOfSpeech&quot;: &quot;verb&quot;,</code></pre></li>
+</ul>
+<p>The syntactic behavior is given here as follows:</p>
+<pre><code>          &quot;synBehavior&quot;: [
+             {&quot;label&quot;: &quot;Sam cannot %s Sue&quot;}, 
+             {&quot;label&quot;: &quot;Sam and Sue %s&quot;},
+             {&quot;label&quot;: &quot;The banks %s the check&quot;}
+           ]
+      }],</code></pre>
+<p>Synsets are listed under the <code>synset</code> property. A synset requires only an <code>@id</code>. It may take an <code>ili</code> which is a code from the CILI (starting with <code>ili:i</code>), a <code>definition</code>, an <code>iliDefinition</code> (which must be given in English), <code>status</code>, <code>confidenceScore</code>, <code>relations</code> and Dublin Core properties.</p>
+<p>In contrast to the XML form the <code>ili</code> is optional. If there is no match omit this tag, if you wish to propose a new synset add only a <code>iliDefinition</code>.</p>
+<pre><code>      &quot;synset&quot;: [{
+          &quot;@id&quot;: &quot;example-en-10161911-n&quot;,
+          &quot;partOfSpeech&quot;: &quot;noun&quot;,
+          &quot;ili&quot;: &quot;ili:i90287&quot;,</code></pre>
+<p>Definitions must have a <code>gloss</code> and may be have a <code>language</code>, in addition, <code>status</code>, <code>confidenceScore</code> and Dublin Core properties may be added. An <code>iliDefinition</code> is the same but may not have a language.</p>
+<pre><code>          &quot;definition&quot;: [{
+            &quot;gloss&quot;: &quot;that which is perceived or known or inferred to have its own distinct existence (living or nonliving)&quot;
+           }],</code></pre>
+<p>Synset relations are given as for sense relations except the <code>target</code> must be the <code>@id</code> of another synset not a sense. The following properties can be used:</p>
+<ul>
+<li><code>hypernym</code>: A concept with a broader meaning</li>
+<li><code>hyponym</code>: A concept with a narrower meaning</li>
+<li><code>instance_hypernym</code>: The class of objects to which this instance belongs</li>
+<li><code>instance_hyponym</code>: An individual instance of this class</li>
+<li><code>part_holonym</code>: A larger whole that this concept is part of</li>
+<li><code>part_meronym</code>: A part of this concept</li>
+<li><code>member_holonym</code>: A group that this concept is a member of</li>
+<li><code>member_meronym</code>: A member of this concept</li>
+<li><code>substance_holonym</code>: Something where a constituent material is this concept</li>
+<li><code>substance_meronym</code>: A constituent material of this concept</li>
+<li><code>entail</code>: A verb X entails Y if X cannot be done unless Y is, or has been, done.</li>
+<li><code>cause</code>: A verb that causes another</li>
+<li><code>similar</code>: Similar, though not necessarily interchangeable</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>attribute</code>: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.</li>
+<li><code>verb_group</code>: Verb senses that similar in meaning and have been manually grouped together.</li>
+<li><code>domain_category</code>: Indicates the category of this word</li>
+<li><code>domain_member_category</code>: Indicates a word involved in this category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the region described by this word</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><p><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</p>
+<pre><code>      &quot;relations&quot;: [{
+          &quot;relType&quot;: &quot;hypernym&quot;, &quot;target&quot;: &quot;example-en-10162692-n&quot;
+      }]
+  }, {
+      &quot;@id&quot;: &quot;example-en-1-n&quot;,
+      &quot;partOfSpeech&quot;: &quot;noun&quot;,
+      &quot;definition&quot;: [{
+          &quot;gloss&quot;: &quot;the father of your father or mother&quot;
+      }],
+      &quot;iliDefinition&quot;: {
+          &quot;gloss&quot;: &quot;the father of your father or mother&quot;,
+          &quot;source&quot;: &quot;https://en.wiktionary.org/wiki/farfar&quot;
+      },
+      &quot;relations&quot;: [
+        { &quot;relType&quot;: &quot;hypernym&quot;, &quot;target&quot;: &quot;example-en-10162692-n&quot; }
+      ]
+  }]
+}, {
+  &quot;@context&quot;: { &quot;@language&quot;: &quot;sv&quot; },
+  &quot;@id&quot;: &quot;example-sv&quot;,
+  &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
+  &quot;label&quot;: &quot;Example wordnet (Swedish)&quot;,
+  &quot;language&quot;: &quot;sv&quot;,
+  &quot;email&quot;: &quot;john@mccr.ae&quot;,
+  &quot;license&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
+  &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
+  &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,
+  &quot;entry&quot;: [{
+      &quot;@id&quot; : &quot;w4&quot;,
+      &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;farfar&quot; }, 
+      &quot;form&quot;: [{ &quot;writtenForm&quot;: &quot;farfäder&quot;, &quot;tag&quot;: [{ &quot;category&quot;: &quot;penn&quot;, &quot;value&quot;: &quot;NNS&quot; }] }],
+      &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre></li>
+</ul>
+<p>Any examples should be given on the sense as follows:</p>
+<pre><code>          &quot;sense&quot;: [{
+              &quot;@id&quot;: &quot;example-sv-2-n-1&quot;,
+              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,
+              &quot;example&quot;: [{
+                  &quot;value&quot;: &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;,
+                  &quot;source&quot;: &quot;Europarl Corpus&quot;
+              }]
+          }]
+      }]
+  }]
+}</code></pre>
+<p>The JSON format can be validated by the <a href="http://json-schema.org">JSON Schema</a> provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
+<h2 id="rdf">RDF</h2>
+<p>The RDF schema is significantly more flexible and builds principally on the <a href="http://cimiano.github.io/ontolex/specification.html">W3C OntoLex Model</a>. The details of the RDF serialization are principally built on those of the JSON-LD model. We include a separate tutorial here for the benefit of those who wish to create their resource natively in RDF.</p>
+<p>The standard namespaces are</p>
+<pre><code>@prefix dc: &lt;http://purl.org/dc/terms/&gt; .
+@prefix ili: &lt;http://ili.globalwordnet.org/ili/&gt; .
+@prefix lime: &lt;http://www.w3.org/ns/lemon/lime#&gt; .
+@prefix ontolex: &lt;http://www.w3.org/ns/lemon/ontolex#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix schema: &lt;http://schema.org/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix synsem: &lt;http://www.w3.org/ns/lemon/synsem#&gt; .
+@prefix wn: &lt;http://wordnet-rdf.princeton.edu/ontology#&gt; .
+@prefix wordnetlicense: &lt;http://wordnet.princeton.edu/wordnet/license/&gt; .</code></pre>
+<p>Each wordnet is an instance of the class <code>lime:Lexicon</code> and must have the following properties</p>
+<ul>
+<li><code>rdfs:label</code>: A name for the wordnet.</li>
+<li><code>dc:language</code>: The BCP 47 identifier for your language (usually a two letter code)</li>
+<li><code>schema:email</code>: An email address for the owner of the wordnet</li>
+<li><code>dc:rights</code>: A link to the license of the resource</li>
+<li><code>owl:versionInfo</code>: The version number of this resource</li>
+</ul>
+<p>The mapping to the Lemon-OntoLex model is as follows:</p>
+<ul>
+<li>Words are <code>ontolex:LexicalEntry</code>, they must have a <code>ontolex:canonicalForm</code> and a <code>wn:partOfSpeech</code>.</li>
+<li>Senses are <code>ontolex:LexicalSense</code>, they must have a <code>ontolex:reference</code></li>
+<li>Synsets are <code>ontolex:LexicalConept</code>.</li>
+<li>Definitions and examples are given by <code>skos:definition</code> and <code>skos:example</code> optionally with a <code>rdf:value</code>.</li>
+</ul>
+<p>A more extended example is given here:</p>
+<pre><code>&lt;#example-en&gt; a lime:Lexicon ;
+  rdfs:label &quot;Example wordnet (English)&quot;@en ;
+  dc:language &quot;en&quot; ;
+  schema:email &quot;john@mccr.ae&quot; ;
+  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  owl:versionInfo &quot;1.0&quot; ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
+  schema:url &quot;http://globalwordnet.github.io/schemas/&quot; ;
+  dc:publisher &quot;Global Wordnet Association&quot; ;
+  lime:entry &lt;#w1&gt;, &lt;#w2&gt;, &lt;#w3&gt; .
+
+&lt;#w1&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;grandfather&quot;@en 
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense &lt;#example-en-10161911-n-1&gt; .
+
+&lt;#example-en-10161911-n-1&gt;  a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-en-10161911-n&gt; .
+
+&lt;#w2&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;paternal grandfather&quot;@en 
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense &lt;#example-en-1-n-1&gt; .
+
+&lt;#example-en-1-n-1&gt; a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-en-1-n&gt; .
+
+[] a ontolex:SenseRelation ;
+  vartrans:source &lt;#example-en-1-n-1&gt; ;
+  vartrans:category wn:derivation ;
+  vartrans:target &lt;#example-en-10161911-n-1&gt; ;
+  dc:creator &quot;John McCrae&quot;@en .
+          
+&lt;#w3&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;pay&quot;@en
+  ] ;
+  wn:partOfSpeech wn:verb ;
+  synsem:synBehavior [
+    rdfs:label &quot;Sam cannot %s Sue&quot; @en
+  ], [
+    rdfs:label &quot;Sam and Sue %s&quot;@en
+  ], [
+    rdfs:label &quot;The banks %s the check&quot;@en
+  ] .
+
+&lt;#example-en-10161911-n&gt; a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme &lt;#example-en&gt; ;
+  wn:ili ili:i90287 ;
+  wn:definition [
+    rdf:value &quot;the father of your father or mother&quot;@en
+  ] .
+
+[] 
+  vartrans:source &lt;#example-en-10161911-n&gt; ;
+  vartrans:category wn:hypernym ; 
+  vartrans:target &lt;#example-en-10162692-n&gt; .
+          
+&lt;#example-en-1-n&gt; a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme &lt;#example-en&gt; ;
+  wn:definition [
+    rdf:value &quot;the father of your father or mother&quot;@en 
+  ] ;
+  wn:iliDefinition [
+    rdf:value &quot;the father of your father or mother&quot;@en ;
+    dc:source &quot;https://en.wiktionary.org/wiki/farfar&quot;
+  ] .
+
+[]
+  vartrans:source &lt;#example-en-1-n&gt; ;
+  vartrans:category wn:hypernym ;
+  vartrans:target &lt;#example-en-10162692-n&gt; .
+
+&lt;#example-sv&gt; a lime:Lexicon ;
+  rdfs:label &quot;Example wordnet (Swedish)&quot;@sv ;
+  dc:language &quot;sv&quot; ;
+  schema:email &quot;john@mccr.ae&quot; ;
+  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
+  owl:versionInfo &quot;1.0&quot; ;
+  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
+  schema:url &quot;http://globalwordnet.github.io/schemas&quot; ;
+  dc:publisher &quot;Global Wordnet Association&quot; ;
+  lime:entry &lt;#w4&gt; .
+
+&lt;#w4&gt; a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep &quot;farfar&quot;@sv 
+  ] ;
+  ontolex:otherForm [
+    ontolex:writtenRep &quot;farfäder&quot;@sv ;
+    wn:tag [
+        wn:category &quot;penn&quot; ;
+        rdf:value &quot;NNS&quot; 
+    ]
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  wn:sense &lt;#example-sv-2-n-1&gt; .
+
+&lt;#example-sv-2-n-1&gt; a ontolex:LexicalSense ;
+  ontolex:reference &lt;#example-en-1-n&gt; ;
+  wn:example [
+    rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv ;
+    dc:source &quot;Europarl Corpus&quot;
+  ] .</code></pre>
+</div>
+</body>
+</html>
