@@ -443,3 +443,6 @@
 :target_direction a :SynsetRelType ;
   rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
+
+:memberList a owl:ObjectProperty ;
+  rdfs:comment "The list of words in a synset in order"@en .

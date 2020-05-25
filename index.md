@@ -204,6 +204,12 @@ The set of relations between synsets is limited to the following:
 * `target_direction`: A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to.
 
                 <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
+
+You may also indicate the words and the order in the synset. This should match 
+the lexical entries
+
+                <Member>grandfather</Member>
+                <Member>paternal grandfather</Member>
             </Synset>
 
 If you wish to define a new concept call the concept "in" (ILI New). If there is
@@ -402,7 +408,11 @@ Synset relations are given as for sense relations except the `target` must be th
 
               "relations": [{
                   "relType": "hypernym", "target": "example-en-10162692-n"
-              }]
+              }],
+
+Indicate the members and the order they occur in:
+
+              "member": ["grandfather","paternal grandfather"]
           }, {
               "@id": "example-en-1-n",
               "partOfSpeech": "noun",
@@ -552,7 +562,8 @@ A more extended example is given here:
       wn:ili ili:i90287 ;
       wn:definition [
         rdf:value "the father of your father or mother"@en
-      ] .
+      ] ;
+      wn:memberList ( "grandfather" "paternal grandfather" ) .
     
     [] 
       vartrans:source <#example-en-10161911-n> ;

@@ -84,7 +84,7 @@
     confidenceScore CDATA #IMPLIED
     lexicalized (true|false) "true"
     adjposition (a|ip|p) #IMPLIED>
-<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
+<!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*, Member*)>
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED
@@ -232,3 +232,4 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
+<!ELEMENT Member (#PCDATA)>
