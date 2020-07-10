@@ -290,11 +290,13 @@
 
 :hypernym a :SynsetRelType ;
   rdfs:label "hypernym"@en ;
-  rdfs:comment "A relation between two concepts where concept A is a type of concept B"@en .
+  rdfs:comment "A relation between two concepts where concept A is a type of concept B"@en ;
+  rdfs:subPropertyOf skos:broader .
 
 :hyponym a :SynsetRelType ;
   rdfs:label "hyponym"@en ;
-  rdfs:comment "A relation between two concepts where concept B is a type of concept A"@en .
+  rdfs:comment "A relation between two concepts where concept B is a type of concept A"@en ;
+  rdfs:subPropertyOf skos:narrower .
 
 :in_manner a :SynsetRelType ;
   rdfs:label "in manner"@en ;

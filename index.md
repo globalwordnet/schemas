@@ -473,7 +473,7 @@ The standard namespaces are
     @prefix schema: <http://schema.org/> .
     @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
     @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
-    @prefix wn: <http://wordnet-rdf.princeton.edu/ontology#> .
+    @prefix wn: <https://globalwordnet.github.io/schemas/wn#> .
     @prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
 
 Each wordnet is an instance of the class `lime:Lexicon` and must have the
