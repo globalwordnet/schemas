@@ -47,6 +47,7 @@ The following information is required:
             major.minor format)
 * url: A URL for your project homepage
 * citation: The paper to cite for this resource
+* logo: A link to a Logo (Image URL) for this project
 
 Extra properties may be included from Dublin core and in addition
 
@@ -281,7 +282,7 @@ unique in this document) and `@type` must be `lime:Lexicon`.
           "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
           "version": "1.0",
 
-In addition the properties `citation`, `url`, `status`, `confidenceScore` and any 
+In addition the properties `citation`, `url`, `logo`, `status`, `confidenceScore` and any 
 property from [Dublin Core Elements 1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
 May be used
 
