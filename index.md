@@ -95,8 +95,8 @@ The set of relations between senses is limited to the following
 * participle: An adjective that is a participle form a verb
 * pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
 * derivation: A word that is derived from some other word
-* domain_category: Indicates the category of this word
-* domain_member_category: Indicates a word involved in this category described by this word
+* domain_topic: Indicates the category of this word
+* domain_member_topic: Indicates a word involved in this category described by this word
 * domain_region: Indicates the region of this word
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
@@ -326,8 +326,8 @@ list below and a `target` and may have Dublin Core properties
 * `participle`: An adjective that is a participle form a verb
 * `pertainym`: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
 * `derivation`: A word that is derived from some other word
-* `domain_category`: Indicates the category of this word
-* `domain_member_category`: Indicates a word involved in this category described by this word
+* `domain_topic`: Indicates the category of this word
+* `domain_member_topic`: Indicates a word involved in this category described by this word
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
 * `exemplifies`: Indicates the usage of this word
@@ -393,8 +393,8 @@ Synset relations are given as for sense relations except the `target` must be th
 * `also`: See also, a reference of weak meaning
 * `attribute`: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.
 * `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
-* `domain_category`: Indicates the category of this word
-* `domain_member_category`: Indicates a word involved in this category described by this word
+* `domain_topic`: Indicates the category of this word
+* `domain_member_topic`: Indicates a word involved in this category described by this word
 * `domain_region`: Indicates the region of this word
 * `domain_member_region`: Indicates a word involved in the region described by this word
 * `exemplifies`: Indicates the usage of this word
