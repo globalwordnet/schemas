@@ -36,6 +36,11 @@
         "note": { "@id": "wn:note", "type": "string" },
         "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
         "category": { "@id": "wn:category", "type": "string" },
+        "pronunciation": { "@id": "wn:pronunciation", "@type": "@id" },
+        "variety": { "@id": "wn:variety", "@type": "@id" },
+        "notation": { "@id": "wn:notation", "@type": "string" },
+        "phonemic": { "@id": "wn:phonemic", "@type": "xsd:boolean" },
+        "audio": { "@id": "wn:audio", "@type": "string" },
 
         "agent": { "@id": "wn:agent", "@type": "@id" },
         "also": { "@id": "wn:also", "@type": "@id" },
