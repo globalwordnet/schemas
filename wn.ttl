@@ -450,3 +450,7 @@
   rdfs:label "interlingual index"@en ;
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
   rdfs:subPropertyOf skos:exactMatch .
+
+:lexfile a owl:DatatypeProperty ;
+  rdfs:label "lexicographer file"@en ;
+  rdfs:comments "Indicates the lexicographer file that this synset is derived from"@en .
