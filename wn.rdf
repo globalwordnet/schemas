@@ -306,11 +306,18 @@
   <SynsetRelType rdf:about="http://globalwordnet.github.io/schemas/wn#hypernym">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a type of concept B</rdfs:comment>
     <rdfs:label xml:lang="en">hypernym</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
   </SynsetRelType>
   <SynsetRelType rdf:about="http://globalwordnet.github.io/schemas/wn#hyponym">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a type of concept A</rdfs:comment>
     <rdfs:label xml:lang="en">hyponym</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
   </SynsetRelType>
+  <owl:ObjectProperty rdf:about="http://globalwordnet.github.io/schemas/wn#ili">
+    <rdfs:comment xml:lang="en">links a synset to a target the Interlingual Index</rdfs:comment>
+    <rdfs:label xml:lang="en">interlingual index</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://globalwordnet.github.io/schemas/wn#iliDefinition">
     <rdfs:comment xml:lang="en">The English standard definition of the synset in the ILI</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
