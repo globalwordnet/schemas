@@ -18,7 +18,7 @@
         "gloss" : "rdf:value",
         "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
         "example": { "@id": "wn:example", "@type": "@id" },
-        "ili": { "@id": "wn:iliRef", "@type": "@id" },
+        "ili": { "@id": "wn:ili", "@type": "@id" },
         "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@vocab" },
         "value": "rdf:value",
         "sense": { "@id": "ontolex:sense", "@type": "@id"},

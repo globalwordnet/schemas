@@ -445,3 +445,8 @@
 :target_direction a :SynsetRelType ;
   rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
+
+:ili a owl:ObjectProperty ;
+  rdfs:label "interlingual index"@en ;
+  rdfs:comment "links a synset to a target the Interlingual Index"@en ;
+  rdfs:subPropertyOf skos:exactMatch .
