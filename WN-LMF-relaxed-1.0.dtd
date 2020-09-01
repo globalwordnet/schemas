@@ -28,8 +28,7 @@
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
     note CDATA #IMPLIED
-    confidenceScore CDATA "1.0"
-    subcat IDREFS #IMPLIED>
+    confidenceScore CDATA "1.0">
 <!ELEMENT LexicalEntry (Lemma, Form*, Sense*, SyntacticBehaviour*)>
 <!ATTLIST LexicalEntry
     id ID #REQUIRED

@@ -48,8 +48,7 @@
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
     note CDATA #IMPLIED
-    confidenceScore CDATA #IMPLIED
-    subcat IDREFS #IMPLIED>
+    confidenceScore CDATA #IMPLIED>
 <!ELEMENT Lemma (Tag*)>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
