@@ -469,7 +469,7 @@
 
 :phonemic a owl:DatatypeProperty ;
   rdfs:label "phonemic"@en ;
-  rdfs:comment "Indicates if the pronunciation is phonemic, in that represents every aspect of the pronunciation and does not omit information that could be assumed for this language"@en ;
+  rdfs:comment "Indicates if the pronunciation is phonemic, in that it does not represent every aspect of the pronunciation and omits information that could be assumed for this language"@en ;
   rdfs:domain :Pronunciation .
 
 :audio a owl:DatatypeProperty ;
