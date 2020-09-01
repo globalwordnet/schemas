@@ -36,6 +36,7 @@
         "note": { "@id": "wn:note", "type": "string" },
         "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
         "category": { "@id": "wn:category", "type": "string" },
+        "members": { "@id": "wn:memberList", "@container": "@list" },
 
         "agent": { "@id": "wn:agent", "@type": "@id" },
         "also": { "@id": "wn:also", "@type": "@id" },

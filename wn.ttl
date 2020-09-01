@@ -450,3 +450,6 @@
   rdfs:label "interlingual index"@en ;
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
   rdfs:subPropertyOf skos:exactMatch .
+
+:memberList a owl:ObjectProperty ;
+  rdfs:comment "The list of words in a synset in order"@en .

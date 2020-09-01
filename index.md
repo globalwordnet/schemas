@@ -118,10 +118,15 @@ Syntactic Behaviour is given as in Princeton WordNet
 If a synset is already mapped to the ILI please give the ID here. __All synsets must
 have an ID that starts with ID of the lexicon followed by a dash, e.g., `example-en` + `-` + `local_synset_id`__.
 
-            <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n">
+            <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n"
+                members="example-en-10161911-n-1 example-en-1-n-1">
                 <Definition>
                     the father of your father or mother
                 </Definition>
+
+
+The `members` property gives the list of senses in order.
+
 The set of relations between synsets is limited to the following:
 
 **Princeton WordNet Properties**
@@ -402,7 +407,11 @@ Synset relations are given as for sense relations except the `target` must be th
 
               "relations": [{
                   "relType": "hypernym", "target": "example-en-10162692-n"
-              }]
+              }],
+
+Indicate the members and the order they occur in:
+
+              "members": ["example-en-10161911-n-1", "example-en-1-n-1"]
           }, {
               "@id": "example-en-1-n",
               "partOfSpeech": "noun",
@@ -552,7 +561,8 @@ A more extended example is given here:
       wn:ili ili:i90287 ;
       wn:definition [
         rdf:value "the father of your father or mother"@en
-      ] .
+      ] ;
+      wn:memberList ( <#example-en-1016911-n-1> <#example-en-1-n-1> ) .
     
     [] 
       vartrans:source <#example-en-10161911-n> ;
