@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!ELEMENT LexicalResource (Lexicon+)>
+<!ELEMENT LexicalResource (Lexicon+, LexiconExtension+)>
 <!ATTLIST LexicalResource
     xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
 <!ELEMENT Lexicon (LexicalEntry+, Synset*)>
@@ -232,3 +232,44 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
+<!ELEMENT LexiconExtension (Requires, ExternalLexicalEntry*, ExternalSynset*, LexicalEntry*, Synset*)>
+<!ATTLIST LexiconExtension
+    id ID #REQUIRED
+    label CDATA #REQUIRED
+    language CDATA #REQUIRED
+    email CDATA #REQUIRED
+    license CDATA #REQUIRED
+    version CDATA #REQUIRED
+    url CDATA #IMPLIED
+    citation CDATA #IMPLIED
+    dc:contributor CDATA #IMPLIED
+    dc:coverage CDATA #IMPLIED
+    dc:creator CDATA #IMPLIED
+    dc:date CDATA #IMPLIED
+    dc:description CDATA #IMPLIED
+    dc:format CDATA #IMPLIED
+    dc:identifier CDATA #IMPLIED
+    dc:publisher CDATA #IMPLIED
+    dc:relation CDATA #IMPLIED
+    dc:rights CDATA #IMPLIED
+    dc:source CDATA #IMPLIED
+    dc:subject CDATA #IMPLIED
+    dc:title CDATA #IMPLIED
+    dc:type CDATA #IMPLIED
+    status CDATA #IMPLIED
+    note CDATA #IMPLIED
+    confidenceScore CDATA "1.0">
+<!ELEMENT Requires EMPTY>
+<!ATTLIST Requires
+    id ID #REQUIRED
+    version CDATA #REQUIRED
+    url CDATA #IMPLIED>
+<!ELEMENT ExternalLexicalEntry (Form*, ExternalSense*, Sense*, SyntacticBehaviour*)>
+<!ATTLIST ExternalLexicalEntry
+    id ID #REQUIRED>
+<!ELEMENT ExternalSense (SenseRelation*, Example*, Count*)>
+<!ATTLIST ExternalSense
+    id ID #REQUIRED>
+<!ELEMENT ExternalSynset (Definition*, SynsetRelation*, Example*)>
+<!ATTLIST ExternalSynset
+    id ID #REQUIRED>
