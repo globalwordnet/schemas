@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!ELEMENT LexicalResource ((Lexicon|LexiconExtension)+)>
+<!ELEMENT LexicalResource (Lexicon|LexiconExtension)+>
 <!ATTLIST LexicalResource
     xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
 <!ELEMENT Lexicon (LexicalEntry+, Synset*)>
@@ -233,7 +233,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT LexiconExtension (Requires, ExternalLexicalEntry*, ExternalSynset*, LexicalEntry*, Synset*)>
+<!ELEMENT LexiconExtension (Requires, (LexicalEntry|ExternalLexicalEntry)*, (Synset|ExternalSynset)*)>
 <!ATTLIST LexiconExtension
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -265,7 +265,7 @@
     id ID #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED>
-<!ELEMENT ExternalLexicalEntry (Form*, ExternalSense*, Sense*, SyntacticBehaviour*)>
+<!ELEMENT ExternalLexicalEntry (Form*, (Sense|ExternalSense)*, SyntacticBehaviour*)>
 <!ATTLIST ExternalLexicalEntry
     id ID #REQUIRED>
 <!ELEMENT ExternalSense (SenseRelation*, Example*, Count*)>
