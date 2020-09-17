@@ -10,7 +10,7 @@
    xmlns:voaf="http://purl.org/vocommons/voaf#"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
    xmlns="http://globalwordnet.github.io/schemas/wn#">
-  <voaf:Vocabulary rdf:about="file:///home/jmccrae/projects/globalwordnet/schemas/wn.ttl">
+  <voaf:Vocabulary rdf:about="http://globalwordnet.github.io/schemas/wn">
     <cc:attributionName>Global Wordnet Association</cc:attributionName>
     <cc:attributionURL rdf:resource="http://www.globalwordnet.org"/>
     <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
