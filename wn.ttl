@@ -10,7 +10,7 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<> a voaf:Vocabulary ;
+<http://globalwordnet.github.io/schemas/wn> a voaf:Vocabulary ;
   vann:preferredNamespacePrefix "wn" ;
   vann:preferredNamespaceUri "http://globalwordnet.github.io/schemas/wn#" ;
   dc:title "Global Wordnet RDF Schema"@en ;
