@@ -1,4 +1,4 @@
-@prefix : <http://globalwordnet.github.io/schemas/wn#> .
+@prefix : <https://globalwordnet.github.io/schemas/wn#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
@@ -10,9 +10,9 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://globalwordnet.github.io/schemas/wn> a voaf:Vocabulary ;
+<https://globalwordnet.github.io/schemas/wn> a voaf:Vocabulary ;
   vann:preferredNamespacePrefix "wn" ;
-  vann:preferredNamespaceUri "http://globalwordnet.github.io/schemas/wn#" ;
+  vann:preferredNamespaceUri "https://globalwordnet.github.io/schemas/wn#" ;
   dc:title "Global Wordnet RDF Schema"@en ;
   dc:description "TODO"@en ;
   dc:issued "2014-08-13"^^xsd:date ;
