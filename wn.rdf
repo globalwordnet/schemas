@@ -23,6 +23,7 @@
     <dc:title xml:lang="en">Global Wordnet RDF Schema</dc:title>
     <vann:preferredNamespacePrefix>wn</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri>https://globalwordnet.github.io/schemas/wn#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
   </voaf:Vocabulary>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Count">
