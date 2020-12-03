@@ -2,7 +2,7 @@
 <!ELEMENT LexicalResource (Lexicon|LexiconExtension)+>
 <!ATTLIST LexicalResource
     xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
-<!ELEMENT Lexicon (LexicalEntry+, Synset*)>
+<!ELEMENT Lexicon (Requires*, LexicalEntry+, Synset*)>
 <!ATTLIST Lexicon
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -233,7 +233,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT LexiconExtension (Requires, (LexicalEntry|ExternalLexicalEntry)*, (Synset|ExternalSynset)*)>
+<!ELEMENT LexiconExtension (Extends, Requires*, (LexicalEntry|ExternalLexicalEntry)*, (Synset|ExternalSynset)*)>
 <!ATTLIST LexiconExtension
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -262,6 +262,11 @@
     confidenceScore CDATA "1.0">
 <!ELEMENT Requires EMPTY>
 <!ATTLIST Requires
+    id ID #REQUIRED
+    version CDATA #REQUIRED
+    url CDATA #IMPLIED>
+<!ELEMENT Extends EMPTY>
+<!ATTLIST Extends
     id ID #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED>
