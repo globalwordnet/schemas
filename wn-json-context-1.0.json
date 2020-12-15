@@ -115,6 +115,7 @@
         "email": { "@id": "schema:email", "type": "string" },
         "version": { "@id": "owl:versionInfo", "type": "string" },
         "citation": "schema:citation",
+        "logo": "schema:logo",
         "url": { "@id": "schema:url", "@type": "@id" },
         "lexicalized": { "@id": "wn:lexicalized", "@type": "xsd:boolean" },
 
