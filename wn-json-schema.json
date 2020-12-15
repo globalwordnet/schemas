@@ -75,6 +75,22 @@
                                                   "value" : { "type": "string" }
                                               }
                                           }
+                                      },
+                                      "pronunciation": {
+                                          "type": "array",
+                                          "minItems": 1,
+                                          "items": {
+                                              "type": "object",
+                                              "required": ["value"],
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                  "value": { "type": "string" },
+                                                  "variety": { "type": "string" },
+                                                  "notation": { "type": "string" },
+                                                  "phonemic": { "type": "boolean" },
+                                                  "audio": { "type": "string" }
+                                              }
+                                          }
                                       }
                                    }
                                 },
@@ -97,6 +113,22 @@
                                                   "properties": {
                                                       "category" : { "type": "string" },
                                                       "value" : { "type": "string" }
+                                                  }
+                                              }
+                                          },
+                                          "pronunciation": {
+                                              "type": "array",
+                                              "minItems": 1,
+                                              "items": {
+                                                  "type": "object",
+                                                  "required": ["value"],
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                      "value": { "type": "string" },
+                                                      "variety": { "type": "string" },
+                                                      "notation": { "type": "string" },
+                                                      "phonemic": { "type": "boolean" },
+                                                      "audio": { "type": "string" }
                                                   }
                                               }
                                           }

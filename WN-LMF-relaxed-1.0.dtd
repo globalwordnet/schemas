@@ -50,15 +50,21 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT Lemma (Tag*)>
+<!ELEMENT Lemma (Pronunciation*, Tag*)>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
-<!ELEMENT Form (Tag*)>
+<!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED>
+<!ELEMENT Pronunciation (#PCDATA)>
+<!ATTLIST Pronunciation
+    variety CDATA #IMPLIED
+    notation CDATA #IMPLIED
+    phonemic (true|false) "true"
+    audio CDATA #IMPLIED>
 <!ELEMENT Tag (#PCDATA)>
 <!ATTLIST Tag
     category CDATA #REQUIRED>
