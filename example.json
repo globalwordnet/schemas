@@ -51,7 +51,8 @@
           }],
           "relations": [{
               "relType": "hypernym", "target": "example-en-10162692-n"
-          }]
+          }],
+          "members": ["example-en-10161911-n-1", "example-en-1-n-1"]
       }, {
           "@id": "example-en-1-n",
           "partOfSpeech": "noun",

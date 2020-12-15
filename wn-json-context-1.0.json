@@ -37,6 +37,7 @@
         "note": { "@id": "wn:note", "type": "string" },
         "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
         "category": { "@id": "wn:category", "type": "string" },
+        "members": { "@id": "wn:memberList", "@container": "@list" },
         "lexfile": { "@id": "wn:lexfile", "type": "string" },
         "pronunciation": { "@id": "wn:pronunciation", "@type": "@id" },
         "variety": { "@id": "wn:variety", "@type": "@id" },

@@ -459,6 +459,9 @@
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
   rdfs:subPropertyOf skos:exactMatch .
 
+:memberList a owl:ObjectProperty ;
+  rdfs:comment "The list of words in a synset in order"@en .
+
 :lexfile a owl:DatatypeProperty ;
   rdfs:label "lexicographer file"@en ;
   rdfs:comments "Indicates the lexicographer file that this synset is derived from"@en . 

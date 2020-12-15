@@ -74,7 +74,8 @@
             <SyntacticBehaviour subcategorizationFrame="Somebody ----s somebody" id="transitive"/>
         </LexicalEntry>
         <!-- If a synset is already mapped to the ILI please give the ID here -->
-        <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n">
+        <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n"
+                members="example-en-10161911-n-1 example-en-1-n-1">
             <Definition>the father of your father or mother</Definition>
             <!-- The set of relations between synsets is limited to the following:
                     hypernym: A concept with a broader meaning

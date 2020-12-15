@@ -115,6 +115,7 @@
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
     lexicalized (true|false) "true"
+    members IDREFS #IMPLIED
     lexfile CDATA #IMPLIED>
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
