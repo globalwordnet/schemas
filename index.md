@@ -108,13 +108,15 @@ The set of relations between senses is limited to the following
             </LexicalEntry>
             <LexicalEntry id="w3">
                 <Lemma writtenForm="pay" partOfSpeech="v"/>
-                
-Syntactic Behaviour is given as in Princeton WordNet
+              
+Syntactic behaviour is given as in Princeton WordNet
 
-                <SyntacticBehaviour subcategorizationFrame="Sam cannot %s Sue "/>
-                <SyntacticBehaviour subcategorizationFrame="Sam and Sue %s"/>
-                <SyntacticBehaviour subcategorizationFrame="The banks %s the check"/>
+                <SyntacticBehaviour subcategorizationFrame="Somebody ----s" id="intransitive"/>
+                <SyntacticBehaviour subcategorizationFrame="Somebody ----s somebody" id="transitive"/>
             </LexicalEntry>
+
+Syntactic behaviour can also be given as part of the lexicon and referred to 
+with the `subcat` property.
 
 If a synset is already mapped to the ILI please give the ID here. __All synsets must
 have an ID that starts with ID of the lexicon followed by a dash, e.g., `example-en` + `-` + `local_synset_id`__.
@@ -348,9 +350,8 @@ list below and a `target` and may have Dublin Core properties
 The syntactic behavior is given here as follows:
 
               "synBehavior": [
-                 {"label": "Sam cannot %s Sue"}, 
-                 {"label": "Sam and Sue %s"},
-                 {"label": "The banks %s the check"}
+                 {"label": "Somebody ----s", "@id": "intransitive"}, 
+                 {"label": "Somebody ----s somebody", "@id": "transitive"}
                ]
           }],
  
@@ -539,13 +540,10 @@ A more extended example is given here:
         ontolex:writtenRep "pay"@en
       ] ;
       wn:partOfSpeech wn:verb ;
-      synsem:synBehavior [
-        rdfs:label "Sam cannot %s Sue" @en
-      ], [
-        rdfs:label "Sam and Sue %s"@en
-      ], [
-        rdfs:label "The banks %s the check"@en
-      ] .
+      synsem:synBehavior <#transitive>, <#intransitive> .
+
+    <#intransitive> rdfs:label "Somebody ----s"@en .
+    <#transitive> rdfs:label "Somebody ----s somebody"@en .
     
     <#example-en-10161911-n> a ontolex:LexicalConcept ;
       wn:partOfSpeech wn:noun ;

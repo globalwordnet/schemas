@@ -2,6 +2,7 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -446,7 +447,15 @@
   rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
 
+
+:senseSubcat a owl:ObjectProperty ;
+  rdfs:label "sense subcategorization"@en ;
+  rdfs:comment "Indicates that a syntactic behaviour applies to a specific sense"@en ;
+  rdfs:range ontolex:LexicalSense ;
+  rdfs:domain synsem:SyntacticBehaviour .
+
 :ili a owl:ObjectProperty ;
   rdfs:label "interlingual index"@en ;
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
   rdfs:subPropertyOf skos:exactMatch .
+

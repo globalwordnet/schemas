@@ -54,13 +54,10 @@
     ontolex:writtenRep "pay"@en
   ] ;
   wn:partOfSpeech wn:verb ;
-  synsem:synBehavior [
-    rdfs:label "Sam cannot %s Sue" @en
-  ], [
-    rdfs:label "Sam and Sue %s"@en
-  ], [
-    rdfs:label "The banks %s the check"@en
-  ] .
+  synsem:synBehavior <#transitive>, <#intransitive> .
+
+<#intransitive> rdfs:label "Somebody ----s"@en .
+<#transitive> rdfs:label "Somebody ----s somebody"@en .
 
 <#example-en-10161911-n> a ontolex:LexicalConcept ;
   wn:partOfSpeech wn:noun ;

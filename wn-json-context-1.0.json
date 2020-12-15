@@ -30,6 +30,7 @@
         "writtenForm": "ontolex:writtenRep",
         "label": { "@id": "rdfs:label", "type": "string" },
         "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
+        "subcat": { "@id": "wn:senseSubcat", "@type": "@id" },
         "license": { "@id": "cc:license", "@type": "@id" },
         "relations": { "@reverse": "vartrans:source", "@type": "@id" },
         "script": { "@id": "wn:script", "type": "string" },
