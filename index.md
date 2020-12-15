@@ -13,7 +13,7 @@ published and submitted to the ILI. These are as follows:
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
     * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.0.json)
     * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
-* [lemon-based RDF](#rdf)
+* [RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
 
 All of these formats are considered equivalent and a converter between them can 
@@ -523,11 +523,20 @@ provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.
 RDF
 ---
 
-The RDF schema is significantly more flexible and builds principally on the 
-[W3C OntoLex Model](http://cimiano.github.io/ontolex/specification.html). The 
-details of the RDF serialization are principally built on those of the JSON-LD
-model. We include a separate tutorial here for the benefit of those who wish
-to create their resource natively in RDF.
+We acknowledge the existence of two vocabularies to wordnet
+encoding. The wn-simple.ttl is based on the [W3C RDF/OWL
+Representation of WordNet](https://www.w3.org/TR/wordnet-rdf/). This
+vocabulary is a straightforward encoding in RDF of the original
+Princeton data model where synsets, word senses, and words are the
+main classes. In the current version, new relations are added and
+additional axioms are provided to reinforce consistency.
+
+The second RDF schema is significantly more flexible and builds
+principally on the [W3C OntoLex
+Model](http://cimiano.github.io/ontolex/specification.html). The
+details of the RDF serialization are principally built on those of the
+JSON-LD model. We include a separate tutorial here for the benefit of
+those who wish to create their resource natively in RDF.
 
 The standard namespaces are
 
