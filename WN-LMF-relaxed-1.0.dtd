@@ -12,6 +12,7 @@
     version CDATA #REQUIRED
     url CDATA #IMPLIED
     citation CDATA #IMPLIED
+    logo CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

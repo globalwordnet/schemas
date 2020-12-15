@@ -30,6 +30,7 @@
                     "license": { "type": "string" },
                     "version": { "type": "string" },
                     "citation": { "type": "string" }, 
+                    "logo": { "type": "string" },
                     "url": { "type": "string" }, 
                     "status": { "type": "string" }, 
                     "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
