@@ -259,6 +259,62 @@ Synsets need not be language-specific but senses must be
     </LexicalResource>
 
 
+**Wordnet Extensions**
+
+A file may contain a lexicon extension which serves to augment an existing lexicon with new lexical entries, synsets, senses, relations, etc.
+They are defined much like regular lexicons, but the `<Extends>` element specifies the ID and version of the base lexicon:
+
+        <LexiconExtension id="ewn-cs-example"
+                          label="English WordNet Computer Science Terms (example)"
+                          language="en"
+                          email="goodmami@uw.edu"
+                          license="https://creativecommons.org/publicdomain/zero/1.0/"
+                          version="1.0">
+            <Extends id="ewn" version="2020" />
+
+The contents of the lexicon extension are the same as a regular lexicon with the addition of elements for external lexical entries, synsets, and senses.
+There are two uses of external elements.
+First, they allow one to add additional information to the corresponding element in the base lexicon, such as adding a new sense to an existing lexical entry:
+
+            <ExternalLexicalEntry id="ewn-process-n">
+                <Sense id="ewn-process-n-20000123" synset="ewn-20000123-n" />
+            </ExternalLexicalEntry>
+
+In the above example, the `ewn-process-n` ID is not used to create a new lexical entry, but rather it must already exist in the base lexicon.
+The external lexical entry (as well as other external senses or synsets) may only add information; therefore it may not specify metadata or elements required on lexical entries, such as for the lemma.
+
+Second, they introduce an ID which may be referenced by new structures, such as the target of synset relation:
+
+            <ExternalSynset id="ewn-06581154-n" />
+            <Synset id="ewn-20000123-n" ili="" partOfSpeech="n">
+                <Definition>a running instance of a computer program</Definition>
+                <SynsetRelation relType="hypernym" target="ewn-06581154-n" />
+            </Synset>
+
+Due to the way external IDs are used, a lexicon extension may not exist in the same file as the base lexicon.
+
+**Wordnet Dependencies**
+
+Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://lr.soh.ntu.edu.sg/omw/) which depend upon the Princeton WordNet for synset structure.
+With the `<Requires>` element, it is possible to explicitly codify those dependencies:
+
+        <Lexicon id="spawn"
+                 label="Multilingual Central Repository"
+                 language="es"
+                 email="bond@ieee.org"
+                 license="https://creativecommons.org/licenses/by/3.0/"
+                 version="1.3+omw"
+                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."
+                 url="http://adimen.si.ehu.es/web/MCR/"
+                 dc:publisher="Global Wordnet Association"
+                 dc:format="OMW-LMF"
+                 dc:description="Wordnet made from OMW 1.0 data"
+                 confidenceScore="1.0">
+	        <Requires id="pwn" version="3.0" />
+
+This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
+The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
+
 JSON
 ----
 

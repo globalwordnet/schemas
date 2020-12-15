@@ -135,4 +135,34 @@
             </Sense>
         </LexicalEntry>
     </Lexicon>
+    <!-- LexiconExtensions build on top of some external wordnet. The
+         external lexicon must not be in the same document as the
+         extension, for technical reasons, and therefore any referenced
+         LexicalEntry, Sense, or Synset ids must be present as special
+         "external" entities. This example adds a new sense of "process"
+         (for a computer process) and a synset. In order to link it to
+         the external lexicon, the LexicalEntry for "process" and the
+         hypernym of the introduced synset are external entities. -->
+    <LexiconExtension id="ewn-cs-example"
+                      label="English WordNet Computer Science Terms (example)"
+                      language="en"
+                      email="goodmami@uw.edu"
+                      license="https://creativecommons.org/publicdomain/zero/1.0/"
+                      version="1.0">
+        <Extends id="ewn" version="2020" />
+        <!-- The ExternalLexicalEntry id should exist in ewn-2020 -->
+        <ExternalLexicalEntry id="ewn-process-n">
+            <!-- Add a new sense to the external entry -->
+            <Sense id="ewn-process-n-20000123" synset="ewn-20000123-n" />
+        </ExternalLexicalEntry>
+        <!-- External for "computer program" synset; it is only
+             introduced so its id can be referenced in the
+             SynsetRelation below -->
+        <ExternalSynset id="ewn-06581154-n" />
+        <!-- Add a new synset -->
+        <Synset id="ewn-20000123-n" ili="" partOfSpeech="n">
+            <Definition>a running instance of a computer program</Definition>
+            <SynsetRelation relType="hypernym" target="ewn-06581154-n" />
+        </Synset>
+    </LexiconExtension>
 </LexicalResource>
