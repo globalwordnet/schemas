@@ -2,7 +2,7 @@
 <!ELEMENT LexicalResource (Lexicon+)>
 <!ATTLIST LexicalResource
     xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
-<!ELEMENT Lexicon (LexicalEntry+, Synset*)>
+<!ELEMENT Lexicon (LexicalEntry+, Synset*, SyntacticBehaviour*)>
 <!ATTLIST Lexicon
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -12,6 +12,7 @@
     version CDATA #REQUIRED
     url CDATA #IMPLIED
     citation CDATA #IMPLIED
+    logo CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -49,15 +50,21 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT Lemma (Tag*)>
+<!ELEMENT Lemma (Pronunciation*, Tag*)>
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
-<!ELEMENT Form (Tag*)>
+<!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED>
+<!ELEMENT Pronunciation (#PCDATA)>
+<!ATTLIST Pronunciation
+    variety CDATA #IMPLIED
+    notation CDATA #IMPLIED
+    phonemic (true|false) "true"
+    audio CDATA #IMPLIED>
 <!ELEMENT Tag (#PCDATA)>
 <!ATTLIST Tag
     category CDATA #REQUIRED>
@@ -83,7 +90,8 @@
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
     lexicalized (true|false) "true"
-    adjposition (a|ip|p) #IMPLIED>
+    adjposition (a|ip|p) #IMPLIED
+    subcat IDREFS #IMPLIED>
 <!ELEMENT Synset (Definition*, ILIDefinition?, SynsetRelation*, Example*)>
 <!ATTLIST Synset
     id ID #REQUIRED
@@ -107,7 +115,8 @@
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
     lexicalized (true|false) "true"
-    members IDREFS #IMPLIED>
+    members IDREFS #IMPLIED
+    lexfile CDATA #IMPLIED>
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
     language CDATA #IMPLIED
@@ -212,6 +221,7 @@
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
+  id ID #IMPLIED
   subcategorizationFrame CDATA #REQUIRED
   senses IDREFS #IMPLIED>
 <!ELEMENT Count (#PCDATA)>

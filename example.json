@@ -38,9 +38,8 @@
           "lemma": { "writtenForm": "pay" },
           "partOfSpeech": "verb",
           "synBehavior": [
-             {"label": "Sam cannot %s Sue"}, 
-             {"label": "Sam and Sue %s"},
-             {"label": "The banks %s the check"}
+             {"label": "Somebody ----s", "@id": "intransitive" },
+             {"label": "Somebody ----s somebody", "@id": "transitive"}
            ]
       }],
       "synset": [{

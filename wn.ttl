@@ -1,7 +1,8 @@
-@prefix : <http://globalwordnet.github.io/schemas/wn#> .
+@prefix : <https://globalwordnet.github.io/schemas/wn#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -10,9 +11,9 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<> a voaf:Vocabulary ;
+<https://globalwordnet.github.io/schemas/wn> a voaf:Vocabulary, owl:Ontology ;
   vann:preferredNamespacePrefix "wn" ;
-  vann:preferredNamespaceUri "http://globalwordnet.github.io/schemas/wn#" ;
+  vann:preferredNamespaceUri "https://globalwordnet.github.io/schemas/wn#" ;
   dc:title "Global Wordnet RDF Schema"@en ;
   dc:description "TODO"@en ;
   dc:issued "2014-08-13"^^xsd:date ;
@@ -446,6 +447,13 @@
   rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
 
+
+:senseSubcat a owl:ObjectProperty ;
+  rdfs:label "sense subcategorization"@en ;
+  rdfs:comment "Indicates that a syntactic behaviour applies to a specific sense"@en ;
+  rdfs:range ontolex:LexicalSense ;
+  rdfs:domain synsem:SyntacticBehaviour .
+
 :ili a owl:ObjectProperty ;
   rdfs:label "interlingual index"@en ;
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
@@ -453,3 +461,33 @@
 
 :memberList a owl:ObjectProperty ;
   rdfs:comment "The list of words in a synset in order"@en .
+
+:lexfile a owl:DatatypeProperty ;
+  rdfs:label "lexicographer file"@en ;
+  rdfs:comments "Indicates the lexicographer file that this synset is derived from"@en . 
+
+:pronunciation a owl:ObjectProperty ;
+  rdfs:label "pronunciation"@en ;
+  rdfs:comment "Indicates the pronunciation of a form"@en ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range :Pronunciation .
+
+:variety a owl:DatatypeProperty ;
+  rdfs:label "variety"@en ;
+  rdfs:comment "Indicates the variety of language the pronunciation represents"@en ;
+  rdfs:domain :Pronunciation .
+
+:notation a owl:DatatypeProperty ;
+  rdfs:label "notation"@en ;
+  rdfs:comment "The notation scheme used for a pronunciation"@en ;
+  rdfs:domain :Pronunciation .
+
+:phonemic a owl:DatatypeProperty ;
+  rdfs:label "phonemic"@en ;
+  rdfs:comment "Indicates if the pronunciation is phonemic, in that it does not represent every aspect of the pronunciation and omits information that could be assumed for this language"@en ;
+  rdfs:domain :Pronunciation .
+
+:audio a owl:DatatypeProperty ;
+  rdfs:label "audio"@en ;
+  rdfs:comment "Links to an audio file for a pronunciation"@en ;
+  rdfs:domain :Pronunciation .
