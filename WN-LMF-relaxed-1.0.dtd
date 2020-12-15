@@ -115,7 +115,8 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED
-    lexicalized (true|false) "true">
+    lexicalized (true|false) "true"
+    lexfile CDATA #IMPLIED>
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
     language CDATA #IMPLIED

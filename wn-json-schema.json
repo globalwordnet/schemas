@@ -368,6 +368,7 @@
                                 "subject": { "type": "string" },
                                 "title": { "type": "string" },
                                 "type": { "type": "string" },
+                                "lexfile": { "type": "string" },
                                 "definition": {
                                     "type": "array",
                                     "minItems": 1,

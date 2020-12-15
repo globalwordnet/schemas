@@ -459,6 +459,10 @@
   rdfs:comment "links a synset to a target the Interlingual Index"@en ;
   rdfs:subPropertyOf skos:exactMatch .
 
+:lexfile a owl:DatatypeProperty ;
+  rdfs:label "lexicographer file"@en ;
+  rdfs:comments "Indicates the lexicographer file that this synset is derived from"@en . 
+
 :pronunciation a owl:ObjectProperty ;
   rdfs:label "pronunciation"@en ;
   rdfs:comment "Indicates the pronunciation of a form"@en ;
