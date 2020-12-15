@@ -30,6 +30,7 @@
                     "license": { "type": "string" },
                     "version": { "type": "string" },
                     "citation": { "type": "string" }, 
+                    "logo": { "type": "string" },
                     "url": { "type": "string" }, 
                     "status": { "type": "string" }, 
                     "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
@@ -74,6 +75,22 @@
                                                   "value" : { "type": "string" }
                                               }
                                           }
+                                      },
+                                      "pronunciation": {
+                                          "type": "array",
+                                          "minItems": 1,
+                                          "items": {
+                                              "type": "object",
+                                              "required": ["value"],
+                                              "additionalProperties": false,
+                                              "properties": {
+                                                  "value": { "type": "string" },
+                                                  "variety": { "type": "string" },
+                                                  "notation": { "type": "string" },
+                                                  "phonemic": { "type": "boolean" },
+                                                  "audio": { "type": "string" }
+                                              }
+                                          }
                                       }
                                    }
                                 },
@@ -96,6 +113,22 @@
                                                   "properties": {
                                                       "category" : { "type": "string" },
                                                       "value" : { "type": "string" }
+                                                  }
+                                              }
+                                          },
+                                          "pronunciation": {
+                                              "type": "array",
+                                              "minItems": 1,
+                                              "items": {
+                                                  "type": "object",
+                                                  "required": ["value"],
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                      "value": { "type": "string" },
+                                                      "variety": { "type": "string" },
+                                                      "notation": { "type": "string" },
+                                                      "phonemic": { "type": "boolean" },
+                                                      "audio": { "type": "string" }
                                                   }
                                               }
                                           }
@@ -154,6 +187,13 @@
                                             "subject": { "type": "string" },
                                             "title": { "type": "string" },
                                             "type": { "type": "string" },
+                                            "subcat": { 
+                                                "type": "array",
+                                                "minItems": 1,
+                                                "items": {
+                                                    "type": "string" 
+                                                }
+                                            },
                                             "relations": {
                                                 "type": "array",
                                                 "minItems": 1,
@@ -256,27 +296,34 @@
                                     "type": "array",
                                     "minItems": 1,
                                     "items": {
-                                        "type": "object",
-                                        "required": ["label"],
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "label": { "type": "string" }, 
-                                            "status": { "type": "string" }, 
-                                            "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
-                                            "contributor": { "type": "string" },
-                                            "coverage": { "type": "string" },
-                                            "creator": { "type": "string" },
-                                            "date": { "type": "string" },
-                                            "description": { "type": "string" },
-                                            "format": { "type": "string" },
-                                            "identifier": { "type": "string" },
-                                            "publisher": { "type": "string" },
-                                            "relation": { "type": "string" },
-                                            "source": { "type": "string" },
-                                            "subject": { "type": "string" },
-                                            "title": { "type": "string" },
-                                            "type": { "type": "string" }
-                                        }
+                                        "anyOf": [
+                                            {
+                                                "type": "object",
+                                                "required": ["label"],
+                                                "additionalProperties": false,
+                                                "properties": {
+                                                    "@id": { "type": "string" },
+                                                    "label": { "type": "string" }, 
+                                                    "status": { "type": "string" }, 
+                                                    "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                                    "contributor": { "type": "string" },
+                                                    "coverage": { "type": "string" },
+                                                    "creator": { "type": "string" },
+                                                    "date": { "type": "string" },
+                                                    "description": { "type": "string" },
+                                                    "format": { "type": "string" },
+                                                    "identifier": { "type": "string" },
+                                                    "publisher": { "type": "string" },
+                                                    "relation": { "type": "string" },
+                                                    "source": { "type": "string" },
+                                                    "subject": { "type": "string" },
+                                                    "title": { "type": "string" },
+                                                    "type": { "type": "string" }
+                                                }
+                                            },{
+                                                "type": "string"
+                                            }
+                                        ]
                                     }
                                 }
                             }

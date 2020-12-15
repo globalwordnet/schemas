@@ -30,6 +30,7 @@
         "writtenForm": "ontolex:writtenRep",
         "label": { "@id": "rdfs:label", "type": "string" },
         "synBehaviour": { "@id": "synsem:synBehavior", "@type": "@id" },
+        "subcat": { "@id": "wn:senseSubcat", "@type": "@id" },
         "license": { "@id": "cc:license", "@type": "@id" },
         "relations": { "@reverse": "vartrans:source", "@type": "@id" },
         "script": { "@id": "wn:script", "type": "string" },
@@ -37,7 +38,11 @@
         "sourceSense": { "@id": "wn:sourceSense", "@type": "@id" },
         "category": { "@id": "wn:category", "type": "string" },
         "lexfile": { "@id": "wn:lexfile", "type": "string" },
-
+        "pronunciation": { "@id": "wn:pronunciation", "@type": "@id" },
+        "variety": { "@id": "wn:variety", "@type": "@id" },
+        "notation": { "@id": "wn:notation", "@type": "string" },
+        "phonemic": { "@id": "wn:phonemic", "@type": "xsd:boolean" },
+        "audio": { "@id": "wn:audio", "@type": "string" },
         "agent": { "@id": "wn:agent", "@type": "@id" },
         "also": { "@id": "wn:also", "@type": "@id" },
         "attribute": { "@id": "wn:attribute", "@type": "@id" },
@@ -116,6 +121,7 @@
         "email": { "@id": "schema:email", "type": "string" },
         "version": { "@id": "owl:versionInfo", "type": "string" },
         "citation": "schema:citation",
+        "logo": "schema:logo",
         "url": { "@id": "schema:url", "@type": "@id" },
         "lexicalized": { "@id": "wn:lexicalized", "@type": "xsd:boolean" },
 
