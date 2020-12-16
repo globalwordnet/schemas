@@ -13,7 +13,7 @@ published and submitted to the ILI. These are as follows:
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
     * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.0.json)
     * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
-* [RDF](#rdf)
+* [OntoLex RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
 
 All of these formats are considered equivalent and a converter between them can 
