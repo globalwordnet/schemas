@@ -1,6 +1,6 @@
 @prefix : <https://globalwordnet.github.io/schemas/wn#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <https://globalwordnet.github.io/schemas/dc/> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

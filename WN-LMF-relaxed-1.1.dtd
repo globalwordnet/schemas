@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!ELEMENT LexicalResource (Lexicon|LexiconExtension)+>
 <!ATTLIST LexicalResource
-    xmlns:dc CDATA #FIXED "http://purl.org/dc/elements/1.1/">
+    xmlns:dc CDATA #FIXED "https://globalwordnet.github.io/schemas/dc/">
 <!ELEMENT Lexicon (Requires*, LexicalEntry+, Synset*, SyntacticBehaviour*)>
 <!ATTLIST Lexicon
     id ID #REQUIRED

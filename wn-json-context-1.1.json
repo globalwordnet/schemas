@@ -1,7 +1,7 @@
 {
     "@context": {
         "cc": "http://creativecommons.org/ns#",
-        "dc": "http://purl.org/dc/terms/",
+        "dc": "https://globalwordnet.github.io/schemas/dc/",
         "ili": "http://ili.globalwordnet.org/ili/",
         "lime": "http://www.w3.org/ns/lemon/lime#",
         "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
