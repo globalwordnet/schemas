@@ -222,6 +222,7 @@
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT SyntacticBehaviour EMPTY>
 <!ATTLIST SyntacticBehaviour
+  id ID #IMPLIED
   subcategorizationFrame CDATA #REQUIRED
   senses IDREFS #IMPLIED>
 <!ELEMENT Count (#PCDATA)>
