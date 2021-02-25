@@ -447,27 +447,27 @@
   rdfs:label "target direction"@en ;
   rdfs:comment "A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to"@en .
 
-:feminine_form a :SynsetRelType ;
+:feminine a :SynsetRelType ;
   rdfs:label "feminine form"@en ;
   rdfs:comment "A concept used to refer to female members of a class"@en . 
   
-:has_feminine_form a :SynsetRelType ;
+:has_feminine a :SynsetRelType ;
   rdfs:label "has feminine form"@en ;
   rdfs:comment "A concept which has a special concept for female members of its class"@en . 
   
-:masculine_form a :SynsetRelType ;
+:masculine a :SynsetRelType ;
   rdfs:label "masculine form"@en ;
   rdfs:comment "A concept used to refer to male members of a class"@en . 
   
-:has_masculine_form a :SynsetRelType ;
+:has_masculine a :SynsetRelType ;
   rdfs:label "has masculine form"@en ;
   rdfs:comment "A concept which has a special concept for male members of its class"@en . 
   
-:young_form a :SynsetRelType ;
+:young a :SynsetRelType ;
   rdfs:label "young form"@en ;
   rdfs:comment "A concept used to refer to young members of a class"@en . 
   
-:has_young_form a :SynsetRelType ;
+:has_young a :SynsetRelType ;
   rdfs:label "has young form"@en ;
   rdfs:comment "A concept which has a special concept for young members of its class"@en . 
   
