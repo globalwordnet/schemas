@@ -296,7 +296,7 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where B is a type of concept A</rdfs:comment>
     <rdfs:label xml:lang="en">exemplifies</rdfs:label>
   </SynsetRelType>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#feminine_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#feminine">
     <rdfs:comment xml:lang="en">A concept used to refer to female members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">feminine form</rdfs:label>
   </SynsetRelType>
@@ -318,15 +318,15 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where A is a a scientific domain (e</rdfs:comment>
     <rdfs:label xml:lang="en">has domain topic</rdfs:label>
   </SynsetRelType>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_feminine_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_feminine">
     <rdfs:comment xml:lang="en">A concept which has a special concept for female members of its class</rdfs:comment>
     <rdfs:label xml:lang="en">has feminine form</rdfs:label>
   </SynsetRelType>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_masculine_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_masculine">
     <rdfs:comment xml:lang="en">A concept which has a special concept for male members of its class</rdfs:comment>
     <rdfs:label xml:lang="en">has masculine form</rdfs:label>
   </SynsetRelType>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_young_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_young">
     <rdfs:comment xml:lang="en">A concept which has a special concept for young members of its class</rdfs:comment>
     <rdfs:label xml:lang="en">has young form</rdfs:label>
   </SynsetRelType>
@@ -460,7 +460,7 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place</rdfs:comment>
     <rdfs:label xml:lang="en">manner of</rdfs:label>
   </SynsetRelType>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#masculine_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#masculine">
     <rdfs:comment xml:lang="en">A concept used to refer to male members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">masculine form</rdfs:label>
   </SynsetRelType>
@@ -570,6 +570,10 @@
     <rdfs:comment xml:lang="en">A concept which is linked to another through a change in aspect (ip)</rdfs:comment>
     <rdfs:label xml:lang="en">secondary aspect (imperfect to perfect)</rdfs:label>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#secondary_aspect_pi">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change in aspect (pi)</rdfs:comment>
+    <rdfs:label xml:lang="en">secondary aspect (perfect to imperfect)</rdfs:label>
+  </SynsetRelType>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#senseSubcat">
     <rdfs:comment xml:lang="en">Indicates that a syntactic behaviour applies to a specific sense</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/synsem#SyntacticBehaviour"/>
@@ -584,6 +588,10 @@
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#simple_aspect_ip">
     <rdfs:comment xml:lang="en">A concept which is linked to another through a change from imperfective to perfective aspect</rdfs:comment>
     <rdfs:label xml:lang="en">simple aspect (imperfect to perfect)</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#simple_aspect_pi">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change from perfective to imperfective aspect</rdfs:comment>
+    <rdfs:label xml:lang="en">simple aspect (perfect to imperfect)</rdfs:label>
   </SynsetRelType>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#sourceSense">
     <rdfs:comment xml:lang="en">The sense that was originally used to define the concept</rdfs:comment>
@@ -629,7 +637,7 @@
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#verb">
     <rdfs:label xml:lang="en">verb</rdfs:label>
   </PartOfSpeech>
-  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#young_form">
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#young">
     <rdfs:comment xml:lang="en">A concept used to refer to young members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">young form</rdfs:label>
   </SynsetRelType>
