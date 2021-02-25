@@ -6,6 +6,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:synsem="http://www.w3.org/ns/lemon/synsem#"
    xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:voaf="http://purl.org/vocommons/voaf#"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -124,6 +125,18 @@
     <rdfs:comment xml:lang="en">A relation giving further information of an unspecified type</rdfs:comment>
     <rdfs:label xml:lang="en">also</rdfs:label>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#anto_converse">
+    <rdfs:comment xml:lang="en">word pairs that name or describe a single relationship from opposite perspectives</rdfs:comment>
+    <rdfs:label xml:lang="en">converse antonym</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#anto_gradable">
+    <rdfs:comment xml:lang="en">word pairs whose meanings are opposite and which lie on a continuous spectrum</rdfs:comment>
+    <rdfs:label xml:lang="en">gradable antonym</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#anto_simple">
+    <rdfs:comment xml:lang="en">word pairs whose meanings are opposite but whose meanings do not lie on a continuous spectrum</rdfs:comment>
+    <rdfs:label xml:lang="en">simple antonym</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#antonym">
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">Indicates that the two terms have opposite meanings</rdfs:comment>
@@ -132,6 +145,15 @@
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#attribute">
     <rdfs:comment xml:lang="en">A relation between nominal and adjectival concepts where the concept A is an attribute of concept B</rdfs:comment>
     <rdfs:label xml:lang="en">attribute</rdfs:label>
+  </SynsetRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#audio">
+    <rdfs:comment xml:lang="en">Links to an audio file for a pronunciation</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
+    <rdfs:label xml:lang="en">audio</rdfs:label>
+  </owl:DatatypeProperty>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#augmentative">
+    <rdfs:comment xml:lang="en">A concept used to refer to generally larger members of a class</rdfs:comment>
+    <rdfs:label xml:lang="en">augmentative</rdfs:label>
   </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#be_in_state">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A is qualified by concept B</rdfs:comment>
@@ -223,6 +245,10 @@
     <rdfs:comment xml:lang="en">Indicates a syntactic derivation from one term to another</rdfs:comment>
     <rdfs:label xml:lang="en">derivation</rdfs:label>
   </SenseRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#diminutive">
+    <rdfs:comment xml:lang="en">A concept used to refer to generally smaller members of a class</rdfs:comment>
+    <rdfs:label xml:lang="en">diminutive</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#direction">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B</rdfs:comment>
     <rdfs:label xml:lang="en">direction</rdfs:label>
@@ -270,6 +296,18 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where B is a type of concept A</rdfs:comment>
     <rdfs:label xml:lang="en">exemplifies</rdfs:label>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#feminine">
+    <rdfs:comment xml:lang="en">A concept used to refer to female members of a class</rdfs:comment>
+    <rdfs:label xml:lang="en">feminine form</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_augmentative">
+    <rdfs:comment xml:lang="en">A concept which has a special concept for generally larger members of its class</rdfs:comment>
+    <rdfs:label xml:lang="en">has augmentative form</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_diminutive">
+    <rdfs:comment xml:lang="en">A concept which has a special concept for generally smaller members of its class</rdfs:comment>
+    <rdfs:label xml:lang="en">has diminutive form</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_domain_region">
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">A relation between two concepts where A is a geographical / cultural domain of concept B</rdfs:comment>
@@ -279,6 +317,18 @@
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">A relation between two concepts where A is a a scientific domain (e</rdfs:comment>
     <rdfs:label xml:lang="en">has domain topic</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_feminine">
+    <rdfs:comment xml:lang="en">A concept which has a special concept for female members of its class</rdfs:comment>
+    <rdfs:label xml:lang="en">has feminine form</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_masculine">
+    <rdfs:comment xml:lang="en">A concept which has a special concept for male members of its class</rdfs:comment>
+    <rdfs:label xml:lang="en">has masculine form</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_young">
+    <rdfs:comment xml:lang="en">A concept which has a special concept for young members of its class</rdfs:comment>
+    <rdfs:label xml:lang="en">has young form</rdfs:label>
   </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#holo_location">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept B is a place located in concept A</rdfs:comment>
@@ -377,6 +427,10 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to</rdfs:comment>
     <rdfs:label xml:lang="en">involved target direction</rdfs:label>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#ir_synonym">
+    <rdfs:comment xml:lang="en">A concept that means the same except for the style or connotation</rdfs:comment>
+    <rdfs:label xml:lang="en">inter-registry synonym</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#is_caused_by">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A comes into existence as a result of concept B</rdfs:comment>
     <rdfs:label xml:lang="en">is caused by</rdfs:label>
@@ -394,6 +448,10 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place</rdfs:comment>
     <rdfs:label xml:lang="en">is subevent of</rdfs:label>
   </SynsetRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#lexfile">
+    <rdfs:comments xml:lang="en">Indicates the lexicographer file that this synset is derived from</rdfs:comments>
+    <rdfs:label xml:lang="en">lexicographer file</rdfs:label>
+  </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#location">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place</rdfs:comment>
     <rdfs:label xml:lang="en">location</rdfs:label>
@@ -402,6 +460,13 @@
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place</rdfs:comment>
     <rdfs:label xml:lang="en">manner of</rdfs:label>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#masculine">
+    <rdfs:comment xml:lang="en">A concept used to refer to male members of a class</rdfs:comment>
+    <rdfs:label xml:lang="en">masculine form</rdfs:label>
+  </SynsetRelType>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#memberList">
+    <rdfs:comment xml:lang="en">The list of words in a synset in order</rdfs:comment>
+  </owl:ObjectProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#mero_location">
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A is a place located in concept B</rdfs:comment>
     <rdfs:label xml:lang="en">meronym location</rdfs:label>
@@ -429,6 +494,11 @@
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#named_entity">
     <rdfs:label xml:lang="en">named entity</rdfs:label>
   </PartOfSpeech>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#notation">
+    <rdfs:comment xml:lang="en">The notation scheme used for a pronunciation</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
+    <rdfs:label xml:lang="en">notation</rdfs:label>
+  </owl:DatatypeProperty>
   <owl:AnnotationPropety rdf:about="https://globalwordnet.github.io/schemas/wn#note">
     <rdfs:comment xml:lang="en">Any extra notes made by a WordNet creator</rdfs:comment>
     <rdfs:label xml:lang="en">note</rdfs:label>
@@ -463,6 +533,17 @@
     <rdfs:comment xml:lang="en">Indicates a noun that pertains to this word</rdfs:comment>
     <rdfs:label xml:lang="en">pertainym</rdfs:label>
   </SenseRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#phonemic">
+    <rdfs:comment xml:lang="en">Indicates if the pronunciation is phonemic, in that it does not represent every aspect of the pronunciation and omits information that could be assumed for this language</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
+    <rdfs:label xml:lang="en">phonemic</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#pronunciation">
+    <rdfs:comment xml:lang="en">Indicates the pronunciation of a form</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>
+    <rdfs:label xml:lang="en">pronunciation</rdfs:label>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
+  </owl:ObjectProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#restricted_by">
     <rdfs:comment xml:lang="en">A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner)</rdfs:comment>
     <rdfs:label xml:lang="en">restricted by</rdfs:label>
@@ -485,10 +566,32 @@
     <rdfs:label xml:lang="en">script</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </owl:DatatypeProperty>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#secondary_aspect_ip">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change in aspect (ip)</rdfs:comment>
+    <rdfs:label xml:lang="en">secondary aspect (imperfect to perfect)</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#secondary_aspect_pi">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change in aspect (pi)</rdfs:comment>
+    <rdfs:label xml:lang="en">secondary aspect (perfect to imperfect)</rdfs:label>
+  </SynsetRelType>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#senseSubcat">
+    <rdfs:comment xml:lang="en">Indicates that a syntactic behaviour applies to a specific sense</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/synsem#SyntacticBehaviour"/>
+    <rdfs:label xml:lang="en">sense subcategorization</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+  </owl:ObjectProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#similar">
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset</rdfs:comment>
     <rdfs:label xml:lang="en">similar</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#simple_aspect_ip">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change from imperfective to perfective aspect</rdfs:comment>
+    <rdfs:label xml:lang="en">simple aspect (imperfect to perfect)</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#simple_aspect_pi">
+    <rdfs:comment xml:lang="en">A concept which is linked to another through a change from perfective to imperfective aspect</rdfs:comment>
+    <rdfs:label xml:lang="en">simple aspect (perfect to imperfect)</rdfs:label>
   </SynsetRelType>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#sourceSense">
     <rdfs:comment xml:lang="en">The sense that was originally used to define the concept</rdfs:comment>
@@ -526,7 +629,16 @@
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#unknown_pos">
     <rdfs:label xml:lang="en">unknown pos</rdfs:label>
   </PartOfSpeech>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#variety">
+    <rdfs:comment xml:lang="en">Indicates the variety of language the pronunciation represents</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
+    <rdfs:label xml:lang="en">variety</rdfs:label>
+  </owl:DatatypeProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#verb">
     <rdfs:label xml:lang="en">verb</rdfs:label>
   </PartOfSpeech>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#young">
+    <rdfs:comment xml:lang="en">A concept used to refer to young members of a class</rdfs:comment>
+    <rdfs:label xml:lang="en">young form</rdfs:label>
+  </SynsetRelType>
 </rdf:RDF>
