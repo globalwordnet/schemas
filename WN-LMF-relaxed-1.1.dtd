@@ -57,6 +57,7 @@
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
 <!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
+    id ID #IMPLIED
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED>
 <!ELEMENT Pronunciation (#PCDATA)>
@@ -244,7 +245,7 @@
     status CDATA #IMPLIED
     note CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
-<!ELEMENT LexiconExtension (Extends, Requires*, (LexicalEntry|ExternalLexicalEntry)*, (Synset|ExternalSynset)*)>
+<!ELEMENT LexiconExtension (Extends, Requires*, (LexicalEntry|ExternalLexicalEntry)*, (Synset|ExternalSynset)*, SyntacticBehaviour*)>
 <!ATTLIST LexiconExtension
     id ID #REQUIRED
     label CDATA #REQUIRED
@@ -281,8 +282,12 @@
     id ID #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED>
-<!ELEMENT ExternalLexicalEntry (Form*, (Sense|ExternalSense)*, SyntacticBehaviour*)>
+<!ELEMENT ExternalLexicalEntry (ExternalLemma?, (Form|ExternalForm)*, (Sense|ExternalSense)*, SyntacticBehaviour*)>
 <!ATTLIST ExternalLexicalEntry
+    id ID #REQUIRED>
+<!ELEMENT ExternalLemma (Pronunciation*, Tag*)>
+<!ELEMENT ExternalForm (Pronunciation*, Tag*)>
+<!ATTLIST ExternalForm
     id ID #REQUIRED>
 <!ELEMENT ExternalSense (SenseRelation*, Example*, Count*)>
 <!ATTLIST ExternalSense
