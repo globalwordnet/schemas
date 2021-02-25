@@ -141,6 +141,8 @@
         "ir_synonym": { "@id": "wn:ir_synonym", "@type": "@id" },
         "simple_aspect_ip": { "@id": "wn:simple_aspect_ip", "@type": "@id" },
         "secondary_aspect_ip": { "@id": "wn:secondary_aspect_ip", "@type": "@id" },
+        "simple_aspect_pi": { "@id": "wn:simple_aspect_pi", "@type": "@id" },
+        "secondary_aspect_pi": { "@id": "wn:secondary_aspect_pi", "@type": "@id" },
 
 
         "relType": { "@id": "vartrans:category", "@type": "@vocab" },

@@ -511,6 +511,14 @@
   rdfs:label "secondary aspect (imperfect to perfect)"@en ;
   rdfs:comment "A concept which is linked to another through a change in aspect (ip)"@en . 
 
+:simple_aspect_pi a :SynsetRelType ;
+  rdfs:label "simple aspect (perfect to imperfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change from perfective to imperfective aspect"@en . 
+  
+:secondary_aspect_pi a :SynsetRelType ;
+  rdfs:label "secondary aspect (perfect to imperfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change in aspect (pi)"@en . 
+
 :senseSubcat a owl:ObjectProperty ;
   rdfs:label "sense subcategorization"@en ;
   rdfs:comment "Indicates that a syntactic behaviour applies to a specific sense"@en ;
