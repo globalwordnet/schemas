@@ -1,0 +1,63 @@
+EuroWordNet,ILI,Definition
+instance,instance_hyponym,An individual instance of this class
+xpos_near_synonym,similar,Why does xpos matter anyway?
+has_xpos_hyponym,hyponym,Ditto
+role_source_direction,new,Definition Needed
+be_in_state,new,Definition Needed
+causes,cause,A verb that causes another
+co_agent_instrument,new,Definition Needed
+co_agent_patient,new,Definition Needed
+co_agent_result,new,Definition Needed 
+co_instrument_agent,new,Definition Needed
+co_instrument_patient,new,Definition Needed
+co_instrument_result,new,Definition Needed 
+co_patient_agent,new,Definition Needed 
+co_patient_instrument,new,Definition Needed 
+co_patient_result,new,Definition Needed 
+co_result_agent,new,Definition Needed 
+co_result_instrument,new,Definition Needed 
+co_result_patient,new,Definition Needed 
+co_role,new,Definition Needed 
+fuzzynym,new,Definition Needed 
+has_holo_location,location_holonym (new),Definition Needed 
+has_holo_madeof,substance_holonym,Something where a constituent material is this concept
+has_holo_member,member_holonym,A member of this concept
+has_holo_part,part_holonym,A part of this concept 
+has_holo_portion,portion_holonym (new),Definition Needed 
+has_holonym,holonym (new),Definition needed
+has_hyperonym,hypernym,A concept with a broader meaning 
+has_hyponym,hyponym,A concept with a narrower meaning 
+has_mero_location,location_meronym (new),Definition Needed 
+has_mero_madeof,substance_meronym (new),A constituent material of this concept 
+has_mero_member,member_meronym,A member of this concept 
+has_mero_part,part_meronym,A part of this concept
+has_mero_portion,portion_meronym (new),Definition Needed 
+has_meronym,meronym (new),Definition Needed 
+has_subevent,subevent (new),Definition Needed
+has_xpos_hyperonym,hypernym,Why does xpos matter?
+in_manner,new,Definition Needed
+involved,new,Definition Needed 
+involved_agent,new,Definition Needed 
+involved_direction,new,Definition Needed 
+involved_instrument,new,Definition Needed 
+involved_location,new,Definition Needed 
+involved_patient,new,Definition Needed 
+involved_result,new,Definition Needed 
+involved_source_direction,new,Definition Needed 
+involved_target_direction,new,Definition Needed 
+is_caused_by,new,Definition Needed (inverse of causes?) 
+is_subevent_of,new,Definition Needed 
+manner_of,new,Definition Needed 
+near_antonym,new,Definition Needed 
+near_synonym,similar,Similar, though not necessarily interchangeable 
+role,new,Definition Needed 
+role_agent,new,Definition Needed 
+role_direction,new,Definition Needed 
+role_instrument,new,Definition Needed 
+role_location,new,Definition Needed 
+role_patient,new,Definition Needed 
+role_result,new,Definition Needed 
+role_target_direction,new,Definition Needed 
+state_of,new,Definition Needed 
+xpos_fuzzynym,fuzzynym (new),Definition Needed
+xpos_near_antonym,near-antonym (new),Definition Needed
