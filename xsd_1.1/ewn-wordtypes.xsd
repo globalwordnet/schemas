@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY word    "[a-zA-Z0-9 \-\.,!/':]+">
+<!ENTITY lemma   "[a-zA-Z0-9 \-\.,!/':_]+">
+]>
+
+<!-- ' ': of age -->
+<!-- '-': tete-a-tete -->
+<!-- '.': O.K. -->
+<!-- ' ': Prince William, Duke of Cumberland --><!-- HAPAX -->
+<!-- '!': Yahoo! -->
+<!-- ':': Capital: Critique of Political Economy --><!-- HAPAX -->
+<!-- '/': A/C -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	>
+
+	<!-- form types -->
+
+	<xsd:simpleType name='WrittenFormType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&word;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='ScriptType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&word;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='LemmaType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&lemma;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

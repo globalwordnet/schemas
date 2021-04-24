@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+]>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:dc='https://globalwordnet.github.io/schemas/dc/'
+	>
+
+	<xsd:import namespace='https://globalwordnet.github.io/schemas/dc/'	schemaLocation='dc.xsd' />
+
+	<!-- T Y P E S  -->
+
+	<xsd:simpleType name='ConfidenceScoreType'>
+		<xsd:restriction base='xsd:float'>
+			<xsd:minInclusive value='0.0' />
+			<xsd:maxInclusive value='1.0' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- A T T R I B U T E S -->
+
+	<xsd:attribute name='status' type='xsd:string' />
+	<xsd:attribute name='note' type='xsd:string' />
+	<xsd:attribute name='confidenceScore' type='ConfidenceScoreType' default='1.0' />
+
+	<!-- G R O U P S  -->
+
+	<xsd:attributeGroup name='Meta'>
+		<xsd:attribute ref='dc:contributor' use='optional' />
+		<xsd:attribute ref='dc:coverage' use='optional' />
+		<xsd:attribute ref='dc:creator' use='optional' />
+		<xsd:attribute ref='dc:date' use='optional' />
+		<xsd:attribute ref='dc:description' use='optional' />
+		<xsd:attribute ref='dc:format' use='optional' />
+		<xsd:attribute ref='dc:publisher' use='optional' />
+		<xsd:attribute ref='dc:relation' use='optional' />
+		<xsd:attribute ref='dc:rights' use='optional' />
+		<xsd:attribute ref='dc:source' use='optional' />
+		<xsd:attribute ref='dc:title' use='optional' />
+		<xsd:attribute ref='dc:type' use='optional' />
+		<xsd:attribute ref='status' use='optional' />
+		<xsd:attribute ref='note' use='optional' />
+		<xsd:attribute ref='confidenceScore' use='optional' />
+	</xsd:attributeGroup>
+
+</xsd:schema>
