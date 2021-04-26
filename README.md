@@ -1,28 +1,17 @@
-# English WordNet and Extended English Wordnet
+Global WordNet Schemas 
+======================
 
-[Original README](README_orig.md) 
+Read the documentation [here](https://globalwordnet.github.io/schemas)
 
-New:
 
-The different folders (1.0, 2.0, 1.10, ...) correspond to different validation levels that may apply to different sets of data.
+Building the metadata
+---------------------
 
-![Schemas](images/schemas.png  "Schemas")
+`index.html` is constructed with PanDoc
 
-Downloadable [here](https://x-englishwordnet.github.io/schemas/) :
+    pandoc -t html -H template/header -A template/afterbody -B template/beforebody index.md > index.html
 
-https://x-englishwordnet.github.io/schemas/1.1/EWN-LMF-1.1.xsd
+`wn.rdf` is generated from the Turtle with Rapper
 
-https://x-englishwordnet.github.io/schemas/1.1/EWN-LMF-1.1-relax_idrefs.xsd
-
-https://x-englishwordnet.github.io/schemas/1.1/EWN-LMF-1.1b.xsd
-
-https://x-englishwordnet.github.io/schemas/1.1/EWN-LMF-1.1b-relax_idrefs.xsd
-
-https://x-englishwordnet.github.io/schemas/1.10/xEWN-LMF-1.10.xsd
-
-https://x-englishwordnet.github.io/schemas/1.10/xEWN-LMF-1.10-relax_idrefs.xsd
-
-https://x-englishwordnet.github.io/schemas/2.0/EWN-LMF-2.0.xsd
-
-https://x-englishwordnet.github.io/schemas/2.0/EWN-LMF-2.0-relax_idrefs.xsd
+    rapper -i turtle -o rdfxml-abbrev wn.ttl > wn.rdf
 
