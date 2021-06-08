@@ -20,7 +20,7 @@
             confidenceScore: A numeric value between 0 and 1 giving the 
                              confidence in the correctness of the element.                             
     -->
-    <Lexicon id="example_en"
+    <Lexicon id="example-en"
              label="Example wordnet (English)"
              language="en" 
              email="john@mccr.ae"
