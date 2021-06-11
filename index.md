@@ -566,7 +566,7 @@ The mapping to the Lemon-OntoLex model is as follows:
 * Words are `ontolex:LexicalEntry`, they must have a `ontolex:canonicalForm` 
   and a `wn:partOfSpeech`. 
 * Senses are `ontolex:LexicalSense`, they must have a `ontolex:reference`
-* Synsets are `ontolex:LexicalConept`.
+* Synsets are `ontolex:LexicalConcept`.
 * Definitions and examples are given by `skos:definition` and `skos:example` 
   optionally with a `rdf:value`.
 
