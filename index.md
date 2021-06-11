@@ -457,7 +457,7 @@ RDF
 ---
 
 The RDF schema is significantly more flexible and builds principally on the 
-[W3C OntoLex Model](http://cimiano.github.io/ontolex/specification.html). The 
+[W3C OntoLex Model](http://ontolex.github.io/ontolex/specification.html). The 
 details of the RDF serialization are principally built on those of the JSON-LD
 model. We include a separate tutorial here for the benefit of those who wish
 to create their resource natively in RDF.
