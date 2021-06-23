@@ -92,7 +92,6 @@ The set of relations between senses is limited to the following
 
 * antonym: An opposite and inherently incompatible word
 * also: See also, a reference of weak meaning
-* verb_group: Verb senses that similar in meaning and have been manually grouped together.
 * participle: An adjective that is a participle form a verb
 * pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
 * derivation: A word that is derived from some other word
@@ -149,7 +148,6 @@ The set of relations between synsets is limited to the following:
 * `similar`: A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset. 
 * `also`: See also, a reference of weak meaning
 * `attribute`: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B. 
-* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 * `domain_topic`: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.
 * `has_domain_topic`: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.
 * `domain_region`: A relation between two concepts where B is a geographical / cultural domain of concept A.
@@ -386,7 +384,6 @@ list below and a `target` and may have Dublin Core properties
 
 * `antonym`: An opposite and inherently incompatible word
 * `also`: See also, a reference of weak meaning
-* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 * `participle`: An adjective that is a participle form a verb
 * `pertainym`: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
 * `derivation`: A word that is derived from some other word
@@ -455,7 +452,6 @@ Synset relations are given as for sense relations except the `target` must be th
 * `similar`: Similar, though not necessarily interchangeable
 * `also`: See also, a reference of weak meaning
 * `attribute`: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.
-* `verb_group`: Verb senses that similar in meaning and have been manually grouped together.
 * `domain_topic`: Indicates the category of this word
 * `domain_member_topic`: Indicates a word involved in this category described by this word
 * `domain_region`: Indicates the region of this word

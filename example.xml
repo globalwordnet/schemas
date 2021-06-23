@@ -52,7 +52,6 @@
                 <!-- The set of relations between senses is limited to the following
                      antonym: An opposite and inherently incompatible word
                      also: See also, a reference of weak meaning
-                     verb_group: Verb senses that similar in meaning and have been manually grouped together.
                      participle: An adjective that is a participle form a verb
                      pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
                      derivation: A word that is derived from some other word
@@ -93,7 +92,6 @@
                     similar: Similar, though not necessarily interchangeable
                     also: See also, a reference of weak meaning
                     attribute: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.
-                    verb_group: Verb senses that similar in meaning and have been manually grouped together.
                     domain_category: Indicates the category of this word
                     domain_member_category: Indicates a word involved in this category described by this word
                     domain_region: Indicates the region of this word
