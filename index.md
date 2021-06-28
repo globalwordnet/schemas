@@ -199,7 +199,6 @@ The set of relations between synsets is limited to the following:
 * `meronym`: A relation between two concepts where concept B makes up a part of concept A.
 * `other`: Any relation not otherwise specified, please use `dc:type` attribute to give the name of exact property.
 * `patient`: A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B.
-* `pertainym`: usually an adjective, which can be defined as "of or pertaining to" another word.
 * `restricted_by`: A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner).
 * `restricts`: A relation between an adjectival concept A (quantifier/determiner) and a nominal (pronominal) concept B.
 * `result`: A relation between two concepts where concept A comes into existence as a result of concept B.
