@@ -369,6 +369,33 @@
                                 "title": { "type": "string" },
                                 "type": { "type": "string" },
                                 "lexfile": { "type": "string" },
+                                "example": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "required": ["value"],
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "value": { "type": "string" }, 
+                                            "status": { "type": "string" }, 
+                                            "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                                            "contributor": { "type": "string" },
+                                            "coverage": { "type": "string" },
+                                            "creator": { "type": "string" },
+                                            "date": { "type": "string" },
+                                            "description": { "type": "string" },
+                                            "format": { "type": "string" },
+                                            "identifier": { "type": "string" },
+                                            "publisher": { "type": "string" },
+                                            "relation": { "type": "string" },
+                                            "source": { "type": "string" },
+                                            "subject": { "type": "string" },
+                                            "title": { "type": "string" },
+                                            "type": { "type": "string" }
+                                        }
+                                    }
+                                },
                                 "definition": {
                                     "type": "array",
                                     "minItems": 1,
