@@ -8,10 +8,10 @@ published and submitted to the ILI. These are as follows:
 
 * [Lexical Markup Framework compatible XML](#xml)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.xml)
-    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd)
+    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.1.dtd)
 * [JSON-LD using the lemon Vocabulary](#json)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
-    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.0.json)
+    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.1.json)
     * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
 * [OntoLex RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
@@ -24,13 +24,13 @@ A converter and validator is available at [http://server1.nlp.insight-centre.org
 XML
 ---
 
-The XML is specified by the following [DTD](WN-LMF-1.0.dtd). An example is 
+The XML is specified by the following [DTD](WN-LMF-1.1.dtd). An example is 
 given [here](https://github.com/globalwordnet/schemas/blob/master/example.xml):
 
 The first three lines must always be as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd">
+    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.1.dtd">
     <LexicalResource xmlns:dc="http://purl.org/dc/elements/1.1/">
     
 A file may contain multiple WordNets in different languages:
@@ -326,7 +326,7 @@ Collaborative Interlingual Index, but web services may of course return shorter
 fragments of the structure.
 
     { 
-      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.0.json",
+      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.1.json",
       "@graph": [{
 
 The following are required properties of every WordNet (note the language

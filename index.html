@@ -36,12 +36,12 @@
 <li><a href="#xml">Lexical Markup Framework compatible XML</a>
 <ul>
 <li><a href="http://github.com/globalwordnet/schemas/blob/master/example.xml">Example</a></li>
-<li><a href="http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd">DTD</a></li>
+<li><a href="http://globalwordnet.github.io/schemas/WN-LMF-1.1.dtd">DTD</a></li>
 </ul></li>
 <li><a href="#json">JSON-LD using the lemon Vocabulary</a>
 <ul>
 <li><a href="http://github.com/globalwordnet/schemas/blob/master/example.json">Example</a></li>
-<li><a href="http://globalwordnet.github.io/schemas/wn-json-context-1.0.json">JSON-LD Context</a></li>
+<li><a href="http://globalwordnet.github.io/schemas/wn-json-context-1.1.json">JSON-LD Context</a></li>
 <li><a href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">Schema</a></li>
 </ul></li>
 <li><a href="#rdf">OntoLex RDF</a>
@@ -52,10 +52,10 @@
 <p>All of these formats are considered equivalent and a converter between them can be used at.</p>
 <p>A converter and validator is available at <a href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
 <h2 id="xml">XML</h2>
-<p>The XML is specified by the following <a href="WN-LMF-1.0.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
+<p>The XML is specified by the following <a href="WN-LMF-1.1.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
 <p>The first three lines must always be as follows:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.1.dtd&quot;&gt;
 &lt;LexicalResource xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;</code></pre>
 <p>A file may contain multiple WordNets in different languages:</p>
 <p>The following information is required:</p>
@@ -288,7 +288,7 @@
 <p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
 <p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
 <pre><code>{ 
-  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.0.json&quot;,
+  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.1.json&quot;,
   &quot;@graph&quot;: [{</code></pre>
 <p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>lime:Lexicon</code>.</p>
 <pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
