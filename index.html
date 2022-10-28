@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>GlobalWordNet Schemas</title>
+  <title>Global Wordnet Formats</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -24,16 +24,16 @@
 
   <!-- Custom CSS -->                                                         
   <link href="css/one-page-wonder.css" rel="stylesheet">         
+  <style>
+  img { width: 150px; float:left; margin: 50px; }
+  </style>
 </head>
 <body>
 <div class="container">
 <header id="title-block-header">
-<h1 class="title">GlobalWordNet Schemas</h1>
+<h1 class="title">Global Wordnet Formats</h1>
 </header>
-<h1 id="global-wordnet-formats">Global Wordnet Formats</h1>
-<figure>
-<img src="https://globalwordnet.github.io/schemas/img/GWA_logo.png" alt="" /><figcaption>Global WordNet Association</figcaption>
-</figure>
+<p><img src="https://globalwordnet.github.io/schemas/img/GWA_logo.png" /></p>
 <p>The Global WordNet Association provides three formats for which WordNets can be published and submitted to the ILI. These are as follows:</p>
 <ul>
 <li><a href="#xml">Lexical Markup Framework compatible XML</a>
@@ -54,7 +54,7 @@
 </ul>
 <p>All of these formats are considered equivalent and a converter between them can be used at.</p>
 <p>A converter and validator is available at <a href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
-<h2 id="xml">XML</h2>
+<h1 id="xml">XML</h1>
 <p>The XML is specified by the following <a href="WN-LMF-1.2.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
 <p>The first three lines must always be as follows:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -287,7 +287,7 @@
              confidenceScore=&quot;1.0&quot;&gt;
         &lt;Requires id=&quot;pwn&quot; version=&quot;3.0&quot; /&gt;</code></pre>
 <p>This element signifies to an application processing the wordnet that the required wordnet should be loaded as well. The <code>&lt;Requires&gt;</code> element may also be used on a <code>&lt;LexiconExtension&gt;</code> for cases where the lexicon extends one wordnet but requires another.</p>
-<h2 id="json">JSON</h2>
+<h1 id="json">JSON</h1>
 <p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
 <p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
 <pre><code>{ 
@@ -436,7 +436,7 @@
   }]
 }</code></pre>
 <p>The JSON format can be validated by the <a href="http://json-schema.org">JSON Schema</a> provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
-<h2 id="rdf">RDF</h2>
+<h1 id="rdf">RDF</h1>
 <p>We acknowledge the existence of two vocabularies to wordnet encoding. The wn-simple.ttl is based on the <a href="https://www.w3.org/TR/wordnet-rdf/">W3C RDF/OWL Representation of WordNet</a>. This vocabulary is a straightforward encoding in RDF of the original Princeton data model where synsets, word senses, and words are the main classes. In the current version, new relations are added and additional axioms are provided to reinforce consistency.</p>
 <p>The second RDF schema is significantly more flexible and builds principally on the <a href="https://www.w3.org/2016/05/ontolex/">W3C OntoLex Model</a>. The details of the RDF serialization are principally built on those of the JSON-LD model. We include a separate tutorial here for the benefit of those who wish to create their resource natively in RDF.</p>
 <p>The standard namespaces are</p>

@@ -1,7 +1,7 @@
 Global Wordnet Formats
 ======================
 
-![Global WordNet Association](https://globalwordnet.github.io/schemas/img/GWA_logo.png)
+![](https://globalwordnet.github.io/schemas/img/GWA_logo.png)
 
 The Global WordNet Association provides three formats for which WordNets can be
 published and submitted to the ILI. These are as follows:

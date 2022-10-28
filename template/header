@@ -9,3 +9,6 @@
 
 <!-- Custom CSS -->                                                         
 <link href="css/one-page-wonder.css" rel="stylesheet">         
+<style>
+img { width: 150px; float:left; margin: 50px; }
+</style>
