@@ -41,7 +41,8 @@
 
 :partOfSpeech a owl:ObjectProperty ;
   rdfs:subPropertyOf lexinfo:partOfSpeech ;
-  rdfs:domain ontolex:LexicalEntry ;
+  rdfs:domain [
+    owl:unionOf ( ontolex:LexicalEntry ; ontolex:LexicalConcept ) ] ;
   rdfs:range :PartOfSpeech ;
   rdfs:label "part of speech"@en ;
   rdfs:comment "The syntactic class of the entry, e.g., noun, verb"@en .
