@@ -52,13 +52,11 @@
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Lemma (Pronunciation*, Tag*)>
 <!ATTLIST Lemma
-    xml:space (default|preserve) "default"
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
 <!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
-    xml:space (default|preserve) "default"
     id ID #IMPLIED
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED>
