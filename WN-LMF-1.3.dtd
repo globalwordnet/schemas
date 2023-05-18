@@ -62,12 +62,14 @@
     script CDATA #IMPLIED>
 <!ELEMENT Pronunciation (#PCDATA)>
 <!ATTLIST Pronunciation
+    xml:space (default|preserve) "default"
     variety CDATA #IMPLIED
     notation CDATA #IMPLIED
     phonemic (true|false) "true"
     audio CDATA #IMPLIED>
 <!ELEMENT Tag (#PCDATA)>
 <!ATTLIST Tag
+    xml:space (default|preserve) "default"
     category CDATA #REQUIRED>
 <!ELEMENT Sense (SenseRelation*, Example*, Count*)>
 <!ATTLIST Sense
@@ -120,6 +122,7 @@
     lexfile CDATA #IMPLIED>
 <!ELEMENT Definition (#PCDATA)>
 <!ATTLIST Definition
+    xml:space (default|preserve) "default"
     language CDATA #IMPLIED
     sourceSense IDREF #IMPLIED
     dc:contributor CDATA #IMPLIED
@@ -141,6 +144,7 @@
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT ILIDefinition (#PCDATA)>
 <!ATTLIST ILIDefinition
+    xml:space (default|preserve) "default"
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
@@ -160,6 +164,7 @@
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Example (#PCDATA)>
 <!ATTLIST Example
+    xml:space (default|preserve) "default"
     language CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
@@ -227,6 +232,7 @@
   senses IDREFS #IMPLIED>
 <!ELEMENT Count (#PCDATA)>
 <!ATTLIST Count
+    xml:space (default|preserve) "default"
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
