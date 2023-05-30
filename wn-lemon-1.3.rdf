@@ -623,7 +623,21 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
   </PartOfSpeech>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#partOfSpeech">
     <rdfs:comment xml:lang="en">The syntactic class of the entry, e.g., noun, verb</rdfs:comment>
-    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+    <rdfs:domain>
+      <rdf:Description>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
     <rdfs:label xml:lang="en">part of speech</rdfs:label>
     <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#PartOfSpeech"/>
     <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech"/>
