@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY lexentryid "ewn\-[a-zA-Z0-9_\.\-]*-[nvars]">
+<!ENTITY synsetid "ewn\-\d{8}\-[nvars]">
+<!ENTITY senseid "ewn\-.*\-[nvars]\-\d{8}\-\d{2}">
+]>
+<xsd:schema	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- The LocalXXX variety means the target resides in the same file -->
+	<!-- The XXX variety means the target may reside in the same file or outside -->
+
+	<!-- I D -->
+
+	<!-- lexical entry -->
+
+	<xsd:simpleType name='LexicalEntryIDType'>
+		<xsd:restriction base='xsd:ID'>
+			<xsd:pattern value='&lexentryid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- synset -->
+
+	<xsd:simpleType name='SynsetIDType'>
+		<xsd:restriction base='xsd:ID'>
+			<xsd:pattern value='&synsetid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- sense -->
+
+	<xsd:simpleType name='SenseIDType'>
+		<xsd:restriction base='xsd:ID'>
+			<xsd:pattern value='&senseid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- I D R E F -->
+
+	<!-- synset -->
+
+	<xsd:simpleType name='SynsetIDREFType'>
+		<!-- relax 'xsd:IDREF' -->
+		<xsd:restriction base='xsd:NCName'>
+			<xsd:pattern value='&synsetid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='LocalSynsetIDREFType'>
+		<xsd:restriction base='xsd:IDREF'>
+			<xsd:pattern value='&synsetid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- synsets -->
+
+	<xsd:simpleType name='SynsetIDREFSType'>
+		<xsd:restriction>
+			<xsd:simpleType>
+				<xsd:list>
+					<xsd:simpleType>
+						<!-- relax 'xsd:IDREF' -->
+						<xsd:restriction base='xsd:NCName'>
+							<xsd:pattern value='&synsetid;' />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:list>
+			</xsd:simpleType>
+			<xsd:minLength value='1' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='LocalSynsetIDREFSType'>
+		<xsd:restriction>
+			<xsd:simpleType>
+				<xsd:list>
+					<xsd:simpleType>
+						<xsd:restriction base='xsd:IDREF'>
+							<xsd:pattern value='&synsetid;' />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:list>
+			</xsd:simpleType>
+			<xsd:minLength value='1' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- sense -->
+
+	<xsd:simpleType name='SenseIDREFType'>
+		<!-- relax 'xsd:IDREF' -->
+		<xsd:restriction base='xsd:NCName'>
+			<xsd:pattern value='&senseid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='LocalSenseIDREFType'>
+		<xsd:restriction base='xsd:IDREF'>
+			<xsd:pattern value='&senseid;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- senses -->
+
+	<xsd:simpleType name='SenseIDREFSType'>
+		<xsd:restriction>
+			<xsd:simpleType>
+				<xsd:list>
+					<xsd:simpleType>
+						<!-- relax 'xsd:IDREF' -->
+						<xsd:restriction base='xsd:NCName'>
+							<xsd:pattern value='&senseid;' />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:list>
+			</xsd:simpleType>
+			<xsd:minLength value='1' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='LocalSenseIDREFSType'>
+		<xsd:restriction>
+			<xsd:simpleType>
+				<xsd:list>
+					<xsd:simpleType>
+						<xsd:restriction base='xsd:IDREF'>
+							<xsd:pattern value='&senseid;' />
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:list>
+			</xsd:simpleType>
+			<xsd:minLength value='1' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
