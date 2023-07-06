@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2021. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+]>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	>
+
+	<!-- part-of-speech types -->
+
+	<xsd:simpleType name='PartOfSpeechType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='n' />
+			<xsd:enumeration value='v' />
+			<xsd:enumeration value='a' />
+			<xsd:enumeration value='r' />
+			<xsd:enumeration value='s' />
+			<xsd:enumeration value='t' />
+			<xsd:enumeration value='c' />
+			<xsd:enumeration value='p' />
+			<xsd:enumeration value='x' />
+			<xsd:enumeration value='u' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- relation types -->
+
+	<xsd:simpleType name='SynsetRelationType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='agent' />
+			<xsd:enumeration value='also' />
+			<xsd:enumeration value='anto_converse' />
+			<xsd:enumeration value='anto_gradable' />
+			<xsd:enumeration value='antonym' />
+			<xsd:enumeration value='anto_simple' />
+			<xsd:enumeration value='attribute' />
+			<xsd:enumeration value='augmentative' />
+			<xsd:enumeration value='be_in_state' />
+			<xsd:enumeration value='causes' />
+			<xsd:enumeration value='classified_by' />
+			<xsd:enumeration value='classifies' />
+			<xsd:enumeration value='co_agent_instrument' />
+			<xsd:enumeration value='co_agent_patient' />
+			<xsd:enumeration value='co_agent_result' />
+			<xsd:enumeration value='co_instrument_agent' />
+			<xsd:enumeration value='co_instrument_patient' />
+			<xsd:enumeration value='co_instrument_result' />
+			<xsd:enumeration value='co_patient_agent' />
+			<xsd:enumeration value='co_patient_instrument' />
+			<xsd:enumeration value='co_result_agent' />
+			<xsd:enumeration value='co_result_instrument' />
+			<xsd:enumeration value='co_role' />
+			<xsd:enumeration value='diminutive' />
+			<xsd:enumeration value='direction' />
+			<xsd:enumeration value='domain_region' />
+			<xsd:enumeration value='domain_topic' />
+			<xsd:enumeration value='entails' />
+			<xsd:enumeration value='eq_synonym' />
+			<xsd:enumeration value='exemplifies' />
+			<xsd:enumeration value='feminine' />
+			<xsd:enumeration value='has_augmentative' />
+			<xsd:enumeration value='has_diminutive' />
+			<xsd:enumeration value='has_domain_region' />
+			<xsd:enumeration value='has_domain_topic' />
+			<xsd:enumeration value='has_feminine' />
+			<xsd:enumeration value='has_masculine' />
+			<xsd:enumeration value='has_young' />
+			<xsd:enumeration value='holo_location' />
+			<xsd:enumeration value='holo_member' />
+			<xsd:enumeration value='holonym' />
+			<xsd:enumeration value='holo_part' />
+			<xsd:enumeration value='holo_portion' />
+			<xsd:enumeration value='holo_substance' />
+			<xsd:enumeration value='hypernym' />
+			<xsd:enumeration value='hyponym' />
+			<xsd:enumeration value='in_manner' />
+			<xsd:enumeration value='instance_hypernym' />
+			<xsd:enumeration value='instance_hyponym' />
+			<xsd:enumeration value='instrument' />
+			<xsd:enumeration value='involved' />
+			<xsd:enumeration value='involved_agent' />
+			<xsd:enumeration value='involved_direction' />
+			<xsd:enumeration value='involved_instrument' />
+			<xsd:enumeration value='involved_location' />
+			<xsd:enumeration value='involved_patient' />
+			<xsd:enumeration value='involved_result' />
+			<xsd:enumeration value='involved_source_direction' />
+			<xsd:enumeration value='involved_target_direction' />
+			<xsd:enumeration value='ir_synonym' />
+			<xsd:enumeration value='is_caused_by' />
+			<xsd:enumeration value='is_entailed_by' />
+			<xsd:enumeration value='is_exemplified_by' />
+			<xsd:enumeration value='is_subevent_of' />
+			<xsd:enumeration value='location' />
+			<xsd:enumeration value='manner_of' />
+			<xsd:enumeration value='masculine' />
+			<xsd:enumeration value='mero_location' />
+			<xsd:enumeration value='mero_member' />
+			<xsd:enumeration value='meronym' />
+			<xsd:enumeration value='mero_part' />
+			<xsd:enumeration value='mero_portion' />
+			<xsd:enumeration value='mero_substance' />
+			<xsd:enumeration value='other' />
+			<xsd:enumeration value='patient' />
+			<xsd:enumeration value='restricted_by' />
+			<xsd:enumeration value='restricts' />
+			<xsd:enumeration value='result' />
+			<xsd:enumeration value='role' />
+			<xsd:enumeration value='similar' />
+			<xsd:enumeration value='source_direction' />
+			<xsd:enumeration value='state_of' />
+			<xsd:enumeration value='subevent' />
+			<xsd:enumeration value='target_direction' />
+			<xsd:enumeration value='young' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name='SenseRelationType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='also' />
+			<xsd:enumeration value='anto_converse' />
+			<xsd:enumeration value='anto_gradable' />
+			<xsd:enumeration value='antonym' />
+			<xsd:enumeration value='anto_simple' />
+			<xsd:enumeration value='augmentative' />
+			<xsd:enumeration value='derivation' />
+			<xsd:enumeration value='diminutive' />
+			<xsd:enumeration value='domain_region' />
+			<xsd:enumeration value='domain_topic' />
+			<xsd:enumeration value='exemplifies' />
+			<xsd:enumeration value='feminine' />
+			<xsd:enumeration value='has_augmentative' />
+			<xsd:enumeration value='has_diminutive' />
+			<xsd:enumeration value='has_domain_region' />
+			<xsd:enumeration value='has_domain_topic' />
+			<xsd:enumeration value='has_feminine' />
+			<xsd:enumeration value='has_masculine' />
+			<xsd:enumeration value='has_young' />
+			<xsd:enumeration value='is_exemplified_by' />
+			<xsd:enumeration value='masculine' />
+			<xsd:enumeration value='other' />
+			<xsd:enumeration value='participle' />
+			<xsd:enumeration value='pertainym' />
+			<xsd:enumeration value='secondary_aspect_ip' />
+			<xsd:enumeration value='secondary_aspect_pi' />
+			<xsd:enumeration value='similar' />
+			<xsd:enumeration value='simple_aspect_ip' />
+			<xsd:enumeration value='simple_aspect_pi' />
+			<xsd:enumeration value='young' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- lex file types -->
+
+	<xsd:simpleType name='LexFileType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='adj.all' />
+			<xsd:enumeration value='adj.pert' />
+			<xsd:enumeration value='adj.ppl' />
+			<xsd:enumeration value='adv.all' />
+			<xsd:enumeration value='noun.act' />
+			<xsd:enumeration value='noun.animal' />
+			<xsd:enumeration value='noun.artifact' />
+			<xsd:enumeration value='noun.attribute' />
+			<xsd:enumeration value='noun.body' />
+			<xsd:enumeration value='noun.cognition' />
+			<xsd:enumeration value='noun.communication' />
+			<xsd:enumeration value='noun.event' />
+			<xsd:enumeration value='noun.feeling' />
+			<xsd:enumeration value='noun.food' />
+			<xsd:enumeration value='noun.group' />
+			<xsd:enumeration value='noun.location' />
+			<xsd:enumeration value='noun.motive' />
+			<xsd:enumeration value='noun.object' />
+			<xsd:enumeration value='noun.person' />
+			<xsd:enumeration value='noun.phenomenon' />
+			<xsd:enumeration value='noun.plant' />
+			<xsd:enumeration value='noun.possession' />
+			<xsd:enumeration value='noun.process' />
+			<xsd:enumeration value='noun.quantity' />
+			<xsd:enumeration value='noun.relation' />
+			<xsd:enumeration value='noun.shape' />
+			<xsd:enumeration value='noun.state' />
+			<xsd:enumeration value='noun.substance' />
+			<xsd:enumeration value='noun.time' />
+			<xsd:enumeration value='noun.Tops' />
+			<xsd:enumeration value='verb.body' />
+			<xsd:enumeration value='verb.change' />
+			<xsd:enumeration value='verb.cognition' />
+			<xsd:enumeration value='verb.communication' />
+			<xsd:enumeration value='verb.competition' />
+			<xsd:enumeration value='verb.consumption' />
+			<xsd:enumeration value='verb.contact' />
+			<xsd:enumeration value='verb.creation' />
+			<xsd:enumeration value='verb.emotion' />
+			<xsd:enumeration value='verb.motion' />
+			<xsd:enumeration value='verb.perception' />
+			<xsd:enumeration value='verb.possession' />
+			<xsd:enumeration value='verb.social' />
+			<xsd:enumeration value='verb.stative' />
+			<xsd:enumeration value='verb.weather' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- index types -->
+
+	<xsd:simpleType name='NType'>
+		<xsd:restriction base='xsd:integer'>
+			<xsd:minInclusive value='0' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- adj position type -->
+
+	<xsd:simpleType name='AdjPositionType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='a' />
+			<xsd:enumeration value='p' />
+			<xsd:enumeration value='ip' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- tag count type -->
+
+	<xsd:simpleType name='TagCntType'>
+		<xsd:restriction base='xsd:integer'>
+			<xsd:minInclusive value='0' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

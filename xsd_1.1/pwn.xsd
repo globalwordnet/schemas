@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY lemma "[a-z0-9_'/\-.,!:]+">
+<!ENTITY lexsense "\d+:\d+:\d+:[a-z0-9_'/\-\.]*:\d*">
+]>
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+	>
+
+	<!-- T Y P E S  -->
+
+	<xsd:simpleType name='LegacySenseKeyType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&lemma;\%&lexsense;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
+
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<!DOCTYPE xsd:schema
+[
+<!ENTITY ili "i\d+|in">
+]>
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema' 
+	>
+
+	<xsd:include schemaLocation='meta.xsd' />
+
+	<!-- T Y P E S  -->
+
+	<xsd:simpleType name='ILIIDType'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='&ili;' />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- A T T R I B U T E S -->
+
+	<xsd:attribute name='ili' type='ILIIDType' />
+
+	<!-- E L E M E N T S -->
+
+	<xsd:element name='ILIDefinition'>
+		<xsd:complexType mixed='true'>
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+
+
+
