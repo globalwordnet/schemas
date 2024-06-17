@@ -141,80 +141,111 @@
 <p>The set of relations between synsets is limited to the following:</p>
 <p><strong>Princeton WordNet Properties</strong></p>
 <ul>
-<li><code>hypernym</code>: A relation between two concepts where concept A is a type of concept B.</li>
-<li><code>hyponym</code>: A relation between two concepts where concept B is a type of concept A.</li>
-<li><code>instance_hyponym</code>: A relation between two concepts where concept A is a type of concept B, and where B is a terminal node in the hierchy.</li>
-<li><code>instance_hypernym</code>: A relation between two concepts where concept B is a type of concept A, and where B is a terminal node in the hierchy.</li>
-<li><code>mero_member</code>: A relation between two concepts where concept B is a member/ element of concept A.</li>
-<li><code>holo_member</code>: A relation between two concepts where concept A is a member/ element of concept B.</li>
-<li><code>mero_part</code>: A relation between two concepts where concept B is a component of concept A.</li>
-<li><code>holo_part</code>: A relation between two concepts where concept A is a component of concept B.</li>
-<li><code>mero_substance</code>: A relation between two concepts where concept A is made of concept B.</li>
-<li><code>holo_substance</code>: A relation between two concepts where concept B is made of concept A.</li>
-<li><code>entails</code>: A verb X entails Y if X cannot be done unles Y is, or has been done.</li>
-<li><code>causes</code>: A relation between two concepts where concept B comes into existence as a result of concept A.</li>
-<li><code>similar</code>: A relation between two concepts where concept A and concept B are closely related in meaning but are not in the same synset.</li>
-<li><code>also</code>: See also, a reference of weak meaning</li>
-<li><code>attribute</code>: A relation between nominal and adjectival concepts where the concept A is an attribute of concept B.</li>
-<li><code>domain_topic</code>: A relation between two concepts where B is a a scientific domain (e.g. computing, sport, biology, etc.) of concept A.</li>
-<li><code>has_domain_topic</code>: A relation between two concepts where A is a a scientific domain (e.g. computing, sport, biology, etc.) of concept B.</li>
-<li><code>domain_region</code>: A relation between two concepts where B is a geographical / cultural domain of concept A.</li>
-<li><code>has_domain_region</code>: A relation between two concepts where A is a geographical / cultural domain of concept B.</li>
-<li><code>exemplifies</code>: Indicates the usage of this word</li>
-<li><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</li>
+<li><code>hypernym</code>: a concept that is more general than a given concept</li>
+<li><code>hyponym</code>: a concept that is more specific than a given concept</li>
+<li><code>instance_hypernym</code>: the type of an instance</li>
+<li><code>instance_hyponym</code>: an occurrence of something</li>
+<li><code>mero_member</code>: concept A is a member of concept B</li>
+<li><code>mero_part</code>: concept A is a component of concept B</li>
+<li><code>mero_substance</code>: concept A is made of concept B.</li>
+<li><code>holo_member</code>: concept B is a member of concept A</li>
+<li><code>holo_part</code>: concept B is the whole where concept A is a part</li>
+<li><code>holo_substance</code>: concept B is a substance of concept A</li>
+<li><code>entails</code>: impose, involve, or imply as a necessary accompaniment or result</li>
+<li><code>causes</code>: concept A is an entity that produces an effect or is responsible for events or results of concept B.</li>
+<li><code>similar</code>: (of words) expressing closely related meanings</li>
+<li><code>attribute</code>: an abstraction belonging to or characteristic of an entity</li>
+<li><code>domain_region</code>: a concept which is a geographical / cultural domain pointer of a given concept.</li>
+<li><code>domain_topic</code>: a concept which is the scientific category pointer of a given concept.</li>
+<li><code>has_domain_region</code>: a concept which is the term in the geographical / cultural domain of a given concept.</li>
+<li><code>has_domain_topic</code>: a concept which is a term in the scientific category of a given concept.</li>
+<li><code>exemplifies</code>: a concept which is the example of a given concept.</li>
+<li><code>is_exemplified_by</code>: a concept which is the type of a given concept.</li>
 </ul>
 <p><strong>Non-Princeton WordNet Relations</strong></p>
 <ul>
-<li><p><code>agent</code>: A relation between two concepts where concept A is typically the agent of the action expressed by concept B.</p></li>
-<li><p><code>antonym</code>: An opposite and inherently incompatible word</p></li>
-<li><p><code>be_in_state</code>: A relation between two concepts where concept A is qualified by concept B.</p></li>
-<li><p><code>classified_by</code>: A relation between concept B and a classifier concept A.</p></li>
-<li><p><code>classifies</code>: A relation between a classifier concept A and concept B.</p></li>
-<li><p><code>co_agent_instrument</code>: A relation between two concepts where concept B is the instrument used by concept A in a certain action.</p></li>
-<li><p><code>co_agent_patient</code>: A relation between two concepts where concept B is the patient undergoing an action carried out by concept A.</p></li>
-<li><p><code>co_agent_result</code>: A relation between two concepts where concept B is the result of an action carried out by concept A.</p></li>
-<li><p><code>co_instrument_agent</code>: A relation between two concepts where concept A is the instrument used by concept B for a certain action.</p></li>
-<li><p><code>co_instrument_patient</code>: A relation between two concepts where concept B undergoes an action for which the instrument expressed by concept A is used.</p></li>
-<li><p><code>co_instrument_result</code>: A relation between two concepts where concept B is the result of an action carried out by the instrument expressed by concept A.</p></li>
-<li><p><code>co_patient_agent</code>: A relation between two concepts where concept B undergoes an action carried out by concept A.</p></li>
-<li><p><code>co_patient_instrument</code>: A relation between two concepts where concept A undergoes an action for which the instrument expressed by concept A is used.</p></li>
-<li><p><code>co_result_agent</code>: A relation between two concepts where concept A is the result of an action carried out by concept B.</p></li>
-<li><p><code>co_result_instrument</code>: A relation between two concepts where concept A is the result of an action for which the instrument expressed by concept B is used.</p></li>
-<li><p><code>co_role</code>: A relation between two concepts where one concept undergoes an action in which the other concept is involved (bidirectional).</p></li>
-<li><p><code>direction</code>: A relation between two concepts where concept A is typically the direction or location of the action or event expressed by concept B.</p></li>
-<li><p><code>eq_synonym</code>: A relation between two concepts where A and B are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)</p></li>
-<li><p><code>holo_location</code>: A relation between two concepts where concept B is a place located in concept A.</p></li>
-<li><p><code>holo_portion</code>: A relation between two concepts where concept B is an amount/piece/portion of concept A.</p></li>
-<li><p><code>holonym</code>: A relation between two concepts where concept A makes up a part of concept B.</p></li>
-<li><p><code>in_manner</code>: A relation between two concepts where concept B qualifies the manner in which an action or event expressed by concept A takes place.</p></li>
-<li><p><code>instrument</code>: A relation between two concepts where concept A is the instrument necessary for the action or event expressed by concept B.</p></li>
-<li><p><code>involved_agent</code>: A relation between two concepts where concept B is typically the agent of the action expressed by concept A.</p></li>
-<li><p><code>involved_direction</code>: A relation between two concepts where concept B is typically the direction or location of the action or event expressed by concept A.</p></li>
-<li><p><code>involved_instrument</code>: A relation between two concepts where concept B is typically the instrument necessary for the action or event expressed by concept A.</p></li>
-<li><p><code>involved_location</code>: A relation between two concepts where concept B is typically the location where the action or event expressed by concept A takes place.</p></li>
-<li><p><code>involved_patient</code>: A relation between two concepts where concept B is typically the patient un-dergoing an action or event expressed by concept A.</p></li>
-<li><p><code>involved_result</code>: A relation between two concepts where concept B comes into existence as a result of concept A.</p></li>
-<li><p><code>involved_source_direction</code>: A relation between two concepts where concept B is the place from where the action or event expressed by concept A begins/starts/happens.</p></li>
-<li><p><code>involved_target_direction</code>: A relation between two concepts where concept B is the place where the action or event expressed by concept A leads to.</p></li>
-<li><p><code>involved</code>: A relation between two concepts where concept B is typically involved in the action or event expressed by concept A.</p></li>
-<li><p><code>is_caused_by</code>: A relation between two concepts where concept A comes into existence as a result of concept B.</p></li>
-<li><p><code>is_entailed_by</code>: Opposite of <code>entails</code></p></li>
-<li><p><code>is_subevent_of</code>: A relation between two concepts where concept A takes place during or as part of concept B, and whenever concept A takes place, concept B takes place.</p></li>
-<li><p><code>location</code>: A relation between two concepts where concept A is the location where the action or event expressed by concept B takes place.</p></li>
-<li><p><code>manner_of</code>: A relation between two concepts where concept A qualifies the manner in which an action or event expressed by concept B takes place.</p></li>
-<li><p><code>mero_location</code>: A relation between two concepts where concept A is a place located in concept B.</p></li>
-<li><p><code>mero_portion</code>: A relation between two concepts where concept A is an amount/piece/portion of concept B.</p></li>
-<li><p><code>meronym</code>: A relation between two concepts where concept B makes up a part of concept A.</p></li>
-<li><p><code>other</code>: Any relation not otherwise specified, please use <code>dc:type</code> attribute to give the name of exact property.</p></li>
-<li><p><code>patient</code>: A relation between two concepts where concept A is the patient undergoing an action or event expressed by concept B.</p></li>
-<li><p><code>restricted_by</code>: A relation between nominal (pronominal) concept B and an adjectival concept A (quantifier/determiner).</p></li>
-<li><p><code>restricts</code>: A relation between an adjectival concept A (quantifier/determiner) and a nominal (pronominal) concept B.</p></li>
-<li><p><code>result</code>: A relation between two concepts where concept A comes into existence as a result of concept B.</p></li>
-<li><p><code>role</code>: A relation between two concepts where concept A is typically involved in the action or event expressed by concept B.</p></li>
-<li><p><code>source_direction</code>: A relation between two concepts where concept A is the place from where the action or event expressed by concept B begins/starts/happens.</p></li>
-<li><p><code>state_of</code>: A relation between two concepts where concept B is qualified by concept A.</p></li>
-<li><p><code>subevent</code>: A relation between two concepts where concept B takes place during or as part of concept A, and whenever concept B takes place, concept A takes place.</p></li>
-<li><p><code>target_direction</code>: A relation between two concepts where concept A is the place where the action or event expressed by concept B leads to.</p>
+<li><p><code>agent</code>: a concept which is typically the one/that who/which does the action denoted by a given concept.</p></li>
+<li><p><code>also</code>: a word having a loose semantic relation to another word</p></li>
+<li><p><code>anto_converse</code>: word pairs that name or describe a single relationship from opposite perspectives</p></li>
+<li><p><code>anto_gradable</code>: word pairs whose meanings are opposite and which lie on a continuous spectrum</p></li>
+<li><p><code>anto_simple</code>: word pairs whose meanings are opposite but whose meanings do not lie on a continuous spectrum</p></li>
+<li><p><code>antonym</code>: an opposite and inherently incompatible word</p></li>
+<li><p><code>attribute</code>: an abstraction belonging to or characteristic of an entity</p></li>
+<li><p><code>augmentative</code>: a concept used to refer to generally larger members of a class</p></li>
+<li><p><code>be_in_state</code>: a is qualified by B</p></li>
+<li><p><code>classified_by</code>: concept B is modified by classifier A when it is counted.</p></li>
+<li><p><code>classifies</code>: a concept A used when counting concept B</p></li>
+<li><p><code>co_agent_instrument</code>: a concept which is the instrument used by a given concept in an action.</p></li>
+<li><p><code>co_agent_patient</code>: a concept which is the patient undergoing an action carried out by a given concept.</p></li>
+<li><p><code>co_agent_result</code>: a concept which is the result of an action taken by a given concept.</p></li>
+<li><p><code>co_instrument_agent</code>: a concept which carries out an action by using a given concept as an instrument.</p></li>
+<li><p><code>co_instrument_patient</code>: a concept which undergoes an action with the use of a given concept as an instrument.</p></li>
+<li><p><code>co_instrument_result</code>: a concept which is the result of an action using an instrument of a given concept.</p></li>
+<li><p><code>co_patient_agent</code>: a concept which carries out an action a given concept undergoing.</p></li>
+<li><p><code>co_patient_instrument</code>: a concept which is used as an instrument in an action a given concept undergoes.</p></li>
+<li><p><code>co_result_agent</code>: a concept which takes an action resulting in a given concept.</p></li>
+<li><p><code>co_result_instrument</code>: a concept which is used as an instrument in an action resulting in a given concept.</p></li>
+<li><p><code>co_role</code>: a concept undergoes an action in which a given concept is involved.</p></li>
+<li><p><code>constitutive</code>: core semantic relations that define synsets</p></li>
+<li><p><code>derivation</code>: a concept which is a derivationally related form of a given concept.</p></li>
+<li><p><code>diminutive</code>: a concept used to refer to generally smaller members of a class</p></li>
+<li><p><code>direction</code>: a concept which is the direction of the action or event expressed by a given concept.</p></li>
+<li><p><code>domain</code>: a concept which is a Topic, Region or Usage pointer of a given concept.</p></li>
+<li><p><code>domain_region</code>: a concept which is a geographical / cultural domain pointer of a given concept.</p></li>
+<li><p><code>domain_topic</code>: a concept which is the scientific category pointer of a given concept.</p></li>
+<li><p><code>eq_synonym</code>: A and B are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)</p></li>
+<li><p><code>exemplifies</code>: a concept which is the example of a given concept.</p></li>
+<li><p><code>feminine</code>: a concept used to refer to female members of a class</p></li>
+<li><p><code>has_augmentative</code>: a concept which has a special concept for generally larger members of its class</p></li>
+<li><p><code>has_diminutive</code>: a concept which has a special concept for generally smaller members of its class</p></li>
+<li><p><code>has_domain</code>: a concept which is a term of a given Topic, Region or Usage concept.</p></li>
+<li><p><code>has_domain_region</code>: a concept which is the term in the geographical / cultural domain of a given concept.</p></li>
+<li><p><code>has_domain_topic</code>: a concept which is a term in the scientific category of a given concept.</p></li>
+<li><p><code>has_feminine</code>: a concept which has a special concept for female members of its class</p></li>
+<li><p><code>has_masculine</code>: a concept which has a special concept for male members of its class</p></li>
+<li><p><code>has_young</code>: a concept which has a special concept for young members of its class</p></li>
+<li><p><code>holo_location</code>: B is a place located in A</p></li>
+<li><p><code>holo_portion</code>: B is an amount/piece/portion of A</p></li>
+<li><p><code>holonym</code>: A makes up a part of B</p></li>
+<li><p><code>in_manner</code>: B qualifies the manner in which an action or event expressed by A takes place</p></li>
+<li><p><code>instrument</code>: a concept which is the instrument necessary for the action or event expressed by a given concept.</p></li>
+<li><p><code>involved</code>: a concept which is the action or event a given concept typically involved in.</p></li>
+<li><p><code>involved_agent</code>: a concept which is the action done by an agent expressed by a given concept.</p></li>
+<li><p><code>involved_direction</code>: a concept which is the action with the direction expressed by a given concept.</p></li>
+<li><p><code>involved_instrument</code>: a concept which is typically the action with the instrument expressed by a given concept.</p></li>
+<li><p><code>involved_location</code>: a concept which is the event happening in a place expressed by a given concept.</p></li>
+<li><p><code>involved_patient</code>: a concept which is the action that the patient expressed by a given concept undergoing.</p></li>
+<li><p><code>involved_result</code>: a concept which is the action or event with a result of a given concept comes into existence.</p></li>
+<li><p><code>involved_source_direction</code>: a concept which is the action beginning from a place of a given concept.</p></li>
+<li><p><code>involved_target_direction</code>: a concept which is the action or event leading to a place expressed by a given concept.</p></li>
+<li><p><code>ir_synonym</code>: a concept that means the same except for the style or connotation</p></li>
+<li><p><code>is_caused_by</code>: a comes about because of B</p></li>
+<li><p><code>is_entailed_by</code>: opposite of entails</p></li>
+<li><p><code>is_exemplified_by</code>: a concept which is the type of a given concept.</p></li>
+<li><p><code>is_subevent_of</code>: a takes place during or as part of B, and whenever A takes place, B takes place</p></li>
+<li><p><code>location</code>: a concept which is the place where the event expressed by a given concept happens.</p></li>
+<li><p><code>manner_of</code>: a qualifies the manner in which an action or event expressed by B takes place</p></li>
+<li><p><code>masculine</code>: a concept used to refer to male members of a class</p></li>
+<li><p><code>mero_location</code>: A is a place located in B</p></li>
+<li><p><code>mero_portion</code>: A is an amount/piece/portion of B</p></li>
+<li><p><code>meronym</code>: B makes up a part of A</p></li>
+<li><p><code>other</code>: any relation not otherwise specified</p></li>
+<li><p><code>participle</code>: a concept which is a participial adjective derived from a verb expressed by a given concept.</p></li>
+<li><p><code>patient</code>: a concept which is the one/that who/which undergoes a given concept.</p></li>
+<li><p><code>pertainym</code>: a concept which is of or pertaining to a given concept.</p></li>
+<li><p><code>restricted_by</code>: a relation between nominal (pronominal) B and an adjectival A (quantifier/determiner)</p></li>
+<li><p><code>restricts</code>: a relation between an adjectival A (quantifier/determiner) and a nominal (pronominal) B</p></li>
+<li><p><code>result</code>: a concept which comes into existence as a result of a given concept.</p></li>
+<li><p><code>role</code>: a concept which is involved in the action or event expressed by a given concept.</p></li>
+<li><p><code>secondary_aspect_ip</code>: a concept which is linked to another through a change in aspect (ip)</p></li>
+<li><p><code>secondary_aspect_pi</code>: a concept which is linked to another through a change in aspect (pi)</p></li>
+<li><p><code>simple_aspect_ip</code>: a concept which is linked to another through a change from imperfective to perfective aspect</p></li>
+<li><p><code>simple_aspect_pi</code>: a concept which is linked to another through a change from perfective to imperfective aspect</p></li>
+<li><p><code>source_direction</code>: a concept which is the place from where the event expressed by a given concept begins.</p></li>
+<li><p><code>state_of</code>: B is qualified by A</p></li>
+<li><p><code>subevent</code>: B takes place during or as part of A, and whenever B takes place, A takes place</p></li>
+<li><p><code>target_direction</code>: a concept which is the place where the action or event expressed by a given concept leads to.</p></li>
+<li><p><code>young</code>: a concept used to refer to young members of a class</p>
 <pre><code>          &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-en-10162692-n&quot;/&gt;
       &lt;/Synset&gt;</code></pre></li>
 </ul>
