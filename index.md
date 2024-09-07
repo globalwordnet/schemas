@@ -286,6 +286,27 @@ Synsets need not be language-specific but senses must be
         </Lexicon>
     </LexicalResource>
 
+***Pronunciation***
+
+Since 2021, the schema has the ability to represent the pronunciation of lemmas.
+
+This is in the `<Pronunciation>` element, which gives the IPA text.   It has the following attributes:
+* `variety` uses the IETF language tags to indicate dialect, for example encoding British English in IPA as `en-GB-fonipa`
+* `notation`:  can encode further information such as indicating a particular dialect (this was `notes` in the paper)
+* `phonemic`: indicates whether the transcription is phonemic ('true') or phonetic (`false`), defaulting to 'false'
+* `audio`:  gives the URL of an audio file of the pronuncation
+
+An example of encoding is given below:
+
+        <LexicalEntry id="ex-rabbit-n">
+            <Lemma writtenForm="rabbit" partOfSpeech="n"/>
+                <Pronunciation variety="en-GB-fonxsamp en-US-fonxsamp" 
+		            audio ="https://path/rabbit.flac">'r\{bIt</Pronunciation>
+	        <Pronunciation variety="en-AU-fonxsamp" notation="weak vowel merger" 
+		            audio ="https://path/rabbit1.flac">'r\{b@t</Pronunciation>
+             </Lemma>
+         </LexicalEntry>
+
 
 **Wordnet Extensions**
 
