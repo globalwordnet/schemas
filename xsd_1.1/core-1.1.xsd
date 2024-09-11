@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (c) 2020. Bernard Bou <1313ou@gmail.com>. -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:dc='https://globalwordnet.github.io/schemas/dc/'
+	>
+
+	<xsd:import namespace='https://globalwordnet.github.io/schemas/dc/'	schemaLocation='dc.xsd' />
+	<xsd:include														schemaLocation='pwn.xsd' />
+	<xsd:include														schemaLocation='ili.xsd' />
+	<xsd:include														schemaLocation='meta.xsd' />
+
+	<!-- E L E M E N T S -->
+
+	<xsd:element name='LexicalResource'>
+		<xsd:complexType>
+			<xsd:choice maxOccurs='unbounded'>
+				<xsd:element ref='Lexicon'/>
+				<xsd:element ref='LexiconExtension'/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Lexicon'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Requires' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='LexicalEntry' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='Synset' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='SyntacticBehaviour' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+
+			<xsd:attribute name='id' type='xsd:ID' use='required' />
+			<xsd:attribute name='label' type='xsd:string' use='required' />
+			<xsd:attribute name='language' type='xsd:string' use='required' />
+			<xsd:attribute name='email' type='xsd:string' use='required' />
+			<xsd:attribute name='license' type='xsd:string' use='required' />
+			<xsd:attribute name='version' type='xsd:string' use='required' />
+			<xsd:attribute name='url' type='xsd:string' use='optional' />
+			<xsd:attribute name='citation' type='xsd:string' use='optional' />
+			<xsd:attribute name='logo' type='xsd:string' use='optional'/>
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='LexicalEntry'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Lemma' minOccurs='1' maxOccurs='1' />
+				<xsd:element ref='Form' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='Sense' minOccurs='1' maxOccurs='unbounded' />
+				<xsd:element ref='SyntacticBehaviour' minOccurs='0' maxOccurs='unbounded' />
+			</xsd:sequence>
+
+			<xsd:attribute name='id' type='LexicalEntryIDType' use='required' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Lemma'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Pronunciation' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Tag' minOccurs='0' maxOccurs='unbounded' />
+			</xsd:sequence>
+
+			<xsd:attribute name='writtenForm' type='WrittenFormType' use='required' />
+			<xsd:attribute name='script' type='ScriptType' use='optional' />
+			<xsd:attribute name='partOfSpeech' type='PartOfSpeechType' use='required' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Form'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Pronunciation' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Tag' minOccurs='0' maxOccurs='unbounded' />
+			</xsd:sequence>
+
+			<xsd:attribute name='id' type='xsd:ID' use='optional'/>
+			<xsd:attribute name='writtenForm' type='WrittenFormType' use='required' />
+			<xsd:attribute name='script' type='ScriptType' use='optional' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Sense'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='SenseRelation' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='Example' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='Count' minOccurs='0' maxOccurs='1' />
+			</xsd:sequence>
+
+			<xsd:attribute name='id' type='SenseIDType' use='required' />
+			<xsd:attribute name='synset' type='LocalSynsetIDREFType' use='required' />
+			<xsd:attribute name='n' type='NType' use='optional' />
+			<xsd:attribute name='adjposition' type='AdjPositionType' use='optional' />
+			<xsd:attribute name='subcat' type='SyntacticBehaviourIDREFSType' use='optional'/>
+			<xsd:attribute name='lexicalized' type='xsd:boolean' default='true' use='optional' />
+			<xsd:attribute ref='dc:identifier' use='optional' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Synset'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Definition' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='ILIDefinition' minOccurs='0' maxOccurs='1' />
+				<xsd:element ref='SynsetRelation' minOccurs='0' maxOccurs='unbounded' />
+				<xsd:element ref='Example' minOccurs='0' maxOccurs='unbounded' />
+			</xsd:sequence>
+
+			<xsd:attribute name='id' type='SynsetIDType' use='required' />
+			<xsd:attribute ref='ili' use='required' />
+			<xsd:attribute name='partOfSpeech' use='optional' type='PartOfSpeechType' />
+			<xsd:attribute name='members' type='LocalSenseIDREFSType' use='optional'/>
+			<xsd:attribute name='lexfile' type='xsd:string' use='optional'/>
+			<xsd:attribute ref='dc:subject' use='optional' />
+			<xsd:attribute name='lexicalized' type='xsd:boolean' default='true' use='optional' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Definition'>
+		<xsd:complexType mixed='true'>
+			<xsd:attribute name='language' type='xsd:string' use='optional' />
+			<xsd:attribute name='sourceSense' type='SynsetIDREFType' use='optional' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Example'>
+		<xsd:complexType mixed='true'>
+			<xsd:attribute name='language' type='xsd:string' use='optional' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='SynsetRelation'>
+		<xsd:complexType>
+			<xsd:attribute name='target' type='SynsetIDREFType' use='required' />
+			<xsd:attribute name='relType' type='SynsetRelationType' use='required' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='SenseRelation'>
+		<xsd:complexType>
+			<xsd:attribute name='target' type='SenseIDREFType' use='required' />
+			<xsd:attribute name='relType' type='SenseRelationType' use='required' />
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='SyntacticBehaviour'>
+		<xsd:complexType>
+			<xsd:attribute name='id' type='SyntacticBehaviourIDType' use='optional'/>
+			<xsd:attribute name='subcategorizationFrame' type='xsd:string' use='required' />
+			<xsd:attribute name='senses' type='LocalSenseIDREFSType' use='optional' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Pronunciation'>
+		<xsd:complexType mixed='true'>
+			<xsd:attribute name='variety' type='xsd:string' use='optional'/>
+			<xsd:attribute name='notation' type='xsd:string' use='optional'/>
+			<xsd:attribute name='phonemic' type='xsd:boolean' default='true' use='optional'/>
+			<xsd:attribute name='audio' type='xsd:string' use='optional'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Tag'>
+		<xsd:complexType mixed='true'>
+			<xsd:attribute name='category' type='xsd:string' use='required' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Count'>
+		<xsd:complexType mixed='true'>
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='LexiconExtension'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Extends'/>
+				<xsd:element ref='Requires' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:choice minOccurs='0' maxOccurs='unbounded'>
+					<xsd:element ref='LexicalEntry'/>
+					<xsd:element ref='ExternalLexicalEntry'/>
+				</xsd:choice>
+				<xsd:choice minOccurs='0' maxOccurs='unbounded'>
+					<xsd:element ref='Synset'/>
+					<xsd:element ref='ExternalSynset'/>
+				</xsd:choice>
+				<xsd:element ref='SyntacticBehaviour' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+			<xsd:attribute name='label' type='xsd:string' use='required'/>
+			<xsd:attribute name='language' type='xsd:string' use='required'/>
+			<xsd:attribute name='email' type='xsd:string' use='required'/>
+			<xsd:attribute name='license' type='xsd:string' use='required'/>
+			<xsd:attribute name='version' type='xsd:string' use='required'/>
+			<xsd:attribute name='url' type='xsd:string' use='optional'/>
+			<xsd:attribute name='citation' type='xsd:string' use='optional'/>
+			<xsd:attributeGroup ref='Meta' />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Requires'>
+		<xsd:complexType>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+			<xsd:attribute name='version' type='xsd:string' use='required'/>
+			<xsd:attribute name='url' type='xsd:string' use='optional'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='Extends'>
+		<xsd:complexType>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+			<xsd:attribute name='version' type='xsd:string' use='required'/>
+			<xsd:attribute name='url' type='xsd:string' use='optional'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='ExternalLexicalEntry'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='ExternalLemma' minOccurs='0' maxOccurs='1'/>
+				<xsd:choice minOccurs='0' maxOccurs='unbounded'>
+					<xsd:element ref='Form'/>
+					<xsd:element ref='ExternalForm'/>
+				</xsd:choice>
+				<xsd:choice minOccurs='0' maxOccurs='unbounded'>
+					<xsd:element ref='Sense'/>
+					<xsd:element ref='ExternalSense'/>
+				</xsd:choice>
+				<xsd:element ref='SyntacticBehaviour' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='ExternalLemma'>
+		<xsd:complexType>
+			<xsd:sequence>
+			 <xsd:element ref='Pronunciation' minOccurs='0' maxOccurs='unbounded'/>
+			 <xsd:element ref='Tag' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='ExternalForm'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Pronunciation' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Tag' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='ExternalSense'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='SenseRelation' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Example' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Count' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name='ExternalSynset'>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref='Definition' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='SynsetRelation' minOccurs='0' maxOccurs='unbounded'/>
+				<xsd:element ref='Example' minOccurs='0' maxOccurs='unbounded'/>
+			</xsd:sequence>
+			<xsd:attribute name='id' type='xsd:ID' use='required'/>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
