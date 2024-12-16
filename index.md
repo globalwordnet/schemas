@@ -8,10 +8,10 @@ published and submitted to the ILI. These are as follows:
 
 * [Lexical Markup Framework compatible XML](#xml)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.xml)
-    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.3.dtd)
+    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd)
 * [JSON-LD using the lemon Vocabulary](#json)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
-    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.3.json)
+    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.4.json)
     * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
 * [OntoLex RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
@@ -24,13 +24,13 @@ A converter and validator is available at [http://server1.nlp.insight-centre.org
 XML
 ---
 
-The XML is specified by the following [DTD](WN-LMF-1.3.dtd). An example is 
+The XML is specified by the following [DTD](WN-LMF-1.4.dtd). An example is 
 given [here](https://github.com/globalwordnet/schemas/blob/master/example.xml):
 
 The first three lines must always be as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.3.dtd">
+    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
     <LexicalResource xmlns:dc="http://purl.org/dc/elements/1.1/">
     
 A file may contain multiple WordNets in different languages:
@@ -352,7 +352,7 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
                  language="es"
                  email="bond@ieee.org"
                  license="https://creativecommons.org/licenses/by/3.0/"
-                 version="1.3+omw"
+                 version="1.4+omw"
                  citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."
                  url="http://adimen.si.ehu.es/web/MCR/"
                  dc:publisher="Global Wordnet Association"
@@ -378,7 +378,7 @@ Collaborative Interlingual Index, but web services may of course return shorter
 fragments of the structure.
 
     { 
-      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.3.json",
+      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.4.json",
       "@graph": [{
 
 The following are required properties of every WordNet (note the language
