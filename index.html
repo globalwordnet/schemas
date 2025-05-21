@@ -6,12 +6,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Global Wordnet Formats</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <meta charset="utf-8">                                                      
   <meta http-equiv="X-UA-Compatible" content="IE=edge">                       
@@ -33,29 +187,43 @@
 <header id="title-block-header">
 <h1 class="title">Global Wordnet Formats</h1>
 </header>
-<p><img src="https://globalwordnet.github.io/schemas/img/GWA_logo.png" /></p>
-<p>The Global WordNet Association provides three formats for which WordNets can be published and submitted to the ILI. These are as follows:</p>
+<p><img
+src="https://globalwordnet.github.io/schemas/img/GWA_logo.png" /></p>
+<p>The Global WordNet Association provides three formats for which
+WordNets can be published and submitted to the ILI. These are as
+follows:</p>
 <ul>
 <li><a href="#xml">Lexical Markup Framework compatible XML</a>
 <ul>
-<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.xml">Example</a></li>
-<li><a href="http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">DTD</a></li>
+<li><a
+href="http://github.com/globalwordnet/schemas/blob/master/example.xml">Example</a></li>
+<li><a
+href="http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">DTD</a></li>
 </ul></li>
 <li><a href="#json">JSON-LD using the lemon Vocabulary</a>
 <ul>
-<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.json">Example</a></li>
-<li><a href="http://globalwordnet.github.io/schemas/wn-json-context-1.4.json">JSON-LD Context</a></li>
-<li><a href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">Schema</a></li>
+<li><a
+href="http://github.com/globalwordnet/schemas/blob/master/example.json">Example</a></li>
+<li><a
+href="http://globalwordnet.github.io/schemas/wn-json-context-1.4.json">JSON-LD
+Context</a></li>
+<li><a
+href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">Schema</a></li>
 </ul></li>
 <li><a href="#rdf">OntoLex RDF</a>
 <ul>
-<li><a href="http://github.com/globalwordnet/schemas/blob/master/example.ttl">Example</a></li>
+<li><a
+href="http://github.com/globalwordnet/schemas/blob/master/example.ttl">Example</a></li>
 </ul></li>
 </ul>
-<p>All of these formats are considered equivalent and a converter between them can be used at.</p>
-<p>A converter and validator is available at <a href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
+<p>All of these formats are considered equivalent and a converter
+between them can be used at.</p>
+<p>A converter and validator is available at <a
+href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
 <h1 id="xml">XML</h1>
-<p>The XML is specified by the following <a href="WN-LMF-1.4.dtd">DTD</a>. An example is given <a href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
+<p>The XML is specified by the following <a
+href="WN-LMF-1.4.dtd">DTD</a>. An example is given <a
+href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
 <p>The first three lines must always be as follows:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd&quot;&gt;
@@ -65,18 +233,22 @@
 <ul>
 <li>id: A short name for the resource</li>
 <li>label: The full name for the resources</li>
-<li>language: Please follow BCP-47, i.e., use a two-letter code if available else a three-letter code</li>
+<li>language: Please follow BCP-47, i.e., use a two-letter code if
+available else a three-letter code</li>
 <li>email: Please give a contact email address</li>
 <li>license: The license of your resource (please provide URL)</li>
-<li>version: A string identifying this version (preferably follow major.minor format)</li>
+<li>version: A string identifying this version (preferably follow
+major.minor format)</li>
 <li>url: A URL for your project homepage</li>
 <li>citation: The paper to cite for this resource</li>
 <li>logo: A link to a Logo (Image URL) for this project</li>
 </ul>
 <p>Extra properties may be included from Dublin core and in addition</p>
 <ul>
-<li><p>status: The status of the resource, e.g., “valid”, “checked”, “unchecked”</p></li>
-<li><p>confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of the element.</p>
+<li><p>status: The status of the resource, e.g., “valid”, “checked”,
+“unchecked”</p></li>
+<li><p>confidenceScore: A numeric value between 0 and 1 giving the
+confidence in the correctness of the element.</p>
 <pre><code>  &lt;Lexicon id=&quot;example-en&quot;
            label=&quot;Example wordnet (English)&quot;
            language=&quot;en&quot; 
@@ -98,7 +270,8 @@
 <li><p>s: Adjective Satellite</p></li>
 <li><p>c: Conjunction</p></li>
 <li><p>p: Adposition (Preposition, postposition, etc.)</p></li>
-<li><p>x: Other (inc. particle, classifier, bound morphemes, determiners)</p></li>
+<li><p>x: Other (inc. particle, classifier, bound morphemes,
+determiners)</p></li>
 <li><p>u: Unknown</p>
 <pre><code>          &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
           &lt;Sense id=&quot;example-en-10161911-n-1&quot; synset=&quot;example-en-10161911-n&quot;/&gt;
@@ -111,15 +284,22 @@
 <ul>
 <li><p>antonym: An opposite and inherently incompatible word</p></li>
 <li><p>also: See also, a reference of weak meaning</p></li>
-<li><p>participle: An adjective that is a participle form a verb</p></li>
-<li><p>pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as “of or pertaining to” and do not have antonyms. A pertainym can point to a noun or another pertainym</p></li>
+<li><p>participle: An adjective that is a participle form a
+verb</p></li>
+<li><p>pertainym: A relational adjective. Adjectives that are pertainyms
+are usually defined by such phrases as “of or pertaining to” and do not
+have antonyms. A pertainym can point to a noun or another
+pertainym</p></li>
 <li><p>derivation: A word that is derived from some other word</p></li>
 <li><p>domain_topic: Indicates the category of this word</p></li>
-<li><p>domain_member_topic: Indicates a word involved in this category described by this word</p></li>
+<li><p>domain_member_topic: Indicates a word involved in this category
+described by this word</p></li>
 <li><p>domain_region: Indicates the region of this word</p></li>
-<li><p>domain_member_region: Indicates a word involved in the region described by this word</p></li>
+<li><p>domain_member_region: Indicates a word involved in the region
+described by this word</p></li>
 <li><p>exemplifies: Indicates the usage of this word</p></li>
-<li><p>is_exemplified_by: Indicates a word involved in the usage described by this word</p>
+<li><p>is_exemplified_by: Indicates a word involved in the usage
+described by this word</p>
 <pre><code>              &lt;SenseRelation relType=&quot;derivation&quot; target=&quot;example-en-10161911-n-1&quot;/&gt;
           &lt;/Sense&gt;
       &lt;/LexicalEntry&gt;
@@ -130,129 +310,226 @@
 <pre><code>            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Somebody ----s&quot; id=&quot;intransitive&quot;/&gt;
             &lt;SyntacticBehaviour subcategorizationFrame=&quot;Somebody ----s somebody&quot; id=&quot;transitive&quot;/&gt;
         &lt;/LexicalEntry&gt;</code></pre>
-<p>Syntactic behaviour can also be given as part of the lexicon and referred to with the <code>subcat</code> property.</p>
-<p>If a synset is already mapped to the ILI please give the ID here. <strong>All synsets must have an ID that starts with ID of the lexicon followed by a dash, e.g., <code>example-en</code> + <code>-</code> + <code>local_synset_id</code></strong>.</p>
+<p>Syntactic behaviour can also be given as part of the lexicon and
+referred to with the <code>subcat</code> property.</p>
+<p>If a synset is already mapped to the ILI please give the ID here.
+<strong>All synsets must have an ID that starts with ID of the lexicon
+followed by a dash, e.g., <code>example-en</code> + <code>-</code> +
+<code>local_synset_id</code></strong>.</p>
 <pre><code>        &lt;Synset id=&quot;example-en-10161911-n&quot; ili=&quot;i90287&quot; partOfSpeech=&quot;n&quot;
             members=&quot;example-en-10161911-n-1 example-en-1-n-1&quot;&gt;
             &lt;Definition&gt;
                 the father of your father or mother
             &lt;/Definition&gt;</code></pre>
-<p>The <code>members</code> property gives the list of senses in order.</p>
+<p>The <code>members</code> property gives the list of senses in
+order.</p>
 <p>The set of relations between synsets is limited to the following:</p>
 <p><strong>Princeton WordNet Properties</strong></p>
 <ul>
-<li><code>hypernym</code>: a concept that is more general than a given concept</li>
-<li><code>hyponym</code>: a concept that is more specific than a given concept</li>
+<li><code>hypernym</code>: a concept that is more general than a given
+concept</li>
+<li><code>hyponym</code>: a concept that is more specific than a given
+concept</li>
 <li><code>instance_hypernym</code>: the type of an instance</li>
 <li><code>instance_hyponym</code>: an occurrence of something</li>
 <li><code>mero_member</code>: concept A is a member of concept B</li>
 <li><code>mero_part</code>: concept A is a component of concept B</li>
 <li><code>mero_substance</code>: concept A is made of concept B.</li>
 <li><code>holo_member</code>: concept B is a member of concept A</li>
-<li><code>holo_part</code>: concept B is the whole where concept A is a part</li>
-<li><code>holo_substance</code>: concept B is a substance of concept A</li>
-<li><code>entails</code>: impose, involve, or imply as a necessary accompaniment or result</li>
-<li><code>causes</code>: concept A is an entity that produces an effect or is responsible for events or results of concept B.</li>
-<li><code>similar</code>: (of words) expressing closely related meanings</li>
-<li><code>attribute</code>: an abstraction belonging to or characteristic of an entity</li>
-<li><code>domain_region</code>: a concept which is a geographical / cultural domain pointer of a given concept.</li>
-<li><code>domain_topic</code>: a concept which is the scientific category pointer of a given concept.</li>
-<li><code>has_domain_region</code>: a concept which is the term in the geographical / cultural domain of a given concept.</li>
-<li><code>has_domain_topic</code>: a concept which is a term in the scientific category of a given concept.</li>
-<li><code>exemplifies</code>: a concept which is the example of a given concept.</li>
-<li><code>is_exemplified_by</code>: a concept which is the type of a given concept.</li>
+<li><code>holo_part</code>: concept B is the whole where concept A is a
+part</li>
+<li><code>holo_substance</code>: concept B is a substance of concept
+A</li>
+<li><code>entails</code>: impose, involve, or imply as a necessary
+accompaniment or result</li>
+<li><code>causes</code>: concept A is an entity that produces an effect
+or is responsible for events or results of concept B.</li>
+<li><code>similar</code>: (of words) expressing closely related
+meanings</li>
+<li><code>attribute</code>: an abstraction belonging to or
+characteristic of an entity</li>
+<li><code>domain_region</code>: a concept which is a geographical /
+cultural domain pointer of a given concept.</li>
+<li><code>domain_topic</code>: a concept which is the scientific
+category pointer of a given concept.</li>
+<li><code>has_domain_region</code>: a concept which is the term in the
+geographical / cultural domain of a given concept.</li>
+<li><code>has_domain_topic</code>: a concept which is a term in the
+scientific category of a given concept.</li>
+<li><code>exemplifies</code>: a concept which is the example of a given
+concept.</li>
+<li><code>is_exemplified_by</code>: a concept which is the type of a
+given concept.</li>
 </ul>
 <p><strong>Non-Princeton WordNet Relations</strong></p>
 <ul>
-<li><p><code>agent</code>: a concept which is typically the one/that who/which does the action denoted by a given concept.</p></li>
-<li><p><code>also</code>: a word having a loose semantic relation to another word</p></li>
-<li><p><code>anto_converse</code>: word pairs that name or describe a single relationship from opposite perspectives</p></li>
-<li><p><code>anto_gradable</code>: word pairs whose meanings are opposite and which lie on a continuous spectrum</p></li>
-<li><p><code>anto_simple</code>: word pairs whose meanings are opposite but whose meanings do not lie on a continuous spectrum</p></li>
-<li><p><code>antonym</code>: an opposite and inherently incompatible word</p></li>
-<li><p><code>attribute</code>: an abstraction belonging to or characteristic of an entity</p></li>
-<li><p><code>augmentative</code>: a concept used to refer to generally larger members of a class</p></li>
+<li><p><code>agent</code>: a concept which is typically the one/that
+who/which does the action denoted by a given concept.</p></li>
+<li><p><code>also</code>: a word having a loose semantic relation to
+another word</p></li>
+<li><p><code>anto_converse</code>: word pairs that name or describe a
+single relationship from opposite perspectives</p></li>
+<li><p><code>anto_gradable</code>: word pairs whose meanings are
+opposite and which lie on a continuous spectrum</p></li>
+<li><p><code>anto_simple</code>: word pairs whose meanings are opposite
+but whose meanings do not lie on a continuous spectrum</p></li>
+<li><p><code>antonym</code>: an opposite and inherently incompatible
+word</p></li>
+<li><p><code>attribute</code>: an abstraction belonging to or
+characteristic of an entity</p></li>
+<li><p><code>augmentative</code>: a concept used to refer to generally
+larger members of a class</p></li>
 <li><p><code>be_in_state</code>: a is qualified by B</p></li>
-<li><p><code>classified_by</code>: concept B is modified by classifier A when it is counted.</p></li>
-<li><p><code>classifies</code>: a concept A used when counting concept B</p></li>
-<li><p><code>co_agent_instrument</code>: a concept which is the instrument used by a given concept in an action.</p></li>
-<li><p><code>co_agent_patient</code>: a concept which is the patient undergoing an action carried out by a given concept.</p></li>
-<li><p><code>co_agent_result</code>: a concept which is the result of an action taken by a given concept.</p></li>
-<li><p><code>co_instrument_agent</code>: a concept which carries out an action by using a given concept as an instrument.</p></li>
-<li><p><code>co_instrument_patient</code>: a concept which undergoes an action with the use of a given concept as an instrument.</p></li>
-<li><p><code>co_instrument_result</code>: a concept which is the result of an action using an instrument of a given concept.</p></li>
-<li><p><code>co_patient_agent</code>: a concept which carries out an action a given concept undergoing.</p></li>
-<li><p><code>co_patient_instrument</code>: a concept which is used as an instrument in an action a given concept undergoes.</p></li>
-<li><p><code>co_result_agent</code>: a concept which takes an action resulting in a given concept.</p></li>
-<li><p><code>co_result_instrument</code>: a concept which is used as an instrument in an action resulting in a given concept.</p></li>
-<li><p><code>co_role</code>: a concept undergoes an action in which a given concept is involved.</p></li>
-<li><p><code>constitutive</code>: core semantic relations that define synsets</p></li>
-<li><p><code>derivation</code>: a concept which is a derivationally related form of a given concept.</p></li>
-<li><p><code>diminutive</code>: a concept used to refer to generally smaller members of a class</p></li>
-<li><p><code>direction</code>: a concept which is the direction of the action or event expressed by a given concept.</p></li>
-<li><p><code>domain</code>: a concept which is a Topic, Region or Usage pointer of a given concept.</p></li>
-<li><p><code>domain_region</code>: a concept which is a geographical / cultural domain pointer of a given concept.</p></li>
-<li><p><code>domain_topic</code>: a concept which is the scientific category pointer of a given concept.</p></li>
-<li><p><code>eq_synonym</code>: A and B are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)</p></li>
-<li><p><code>exemplifies</code>: a concept which is the example of a given concept.</p></li>
-<li><p><code>feminine</code>: a concept used to refer to female members of a class</p></li>
-<li><p><code>has_augmentative</code>: a concept which has a special concept for generally larger members of its class</p></li>
-<li><p><code>has_diminutive</code>: a concept which has a special concept for generally smaller members of its class</p></li>
-<li><p><code>has_domain</code>: a concept which is a term of a given Topic, Region or Usage concept.</p></li>
-<li><p><code>has_domain_region</code>: a concept which is the term in the geographical / cultural domain of a given concept.</p></li>
-<li><p><code>has_domain_topic</code>: a concept which is a term in the scientific category of a given concept.</p></li>
-<li><p><code>has_feminine</code>: a concept which has a special concept for female members of its class</p></li>
-<li><p><code>has_masculine</code>: a concept which has a special concept for male members of its class</p></li>
-<li><p><code>has_young</code>: a concept which has a special concept for young members of its class</p></li>
+<li><p><code>classified_by</code>: concept B is modified by classifier A
+when it is counted.</p></li>
+<li><p><code>classifies</code>: a concept A used when counting concept
+B</p></li>
+<li><p><code>co_agent_instrument</code>: a concept which is the
+instrument used by a given concept in an action.</p></li>
+<li><p><code>co_agent_patient</code>: a concept which is the patient
+undergoing an action carried out by a given concept.</p></li>
+<li><p><code>co_agent_result</code>: a concept which is the result of an
+action taken by a given concept.</p></li>
+<li><p><code>co_instrument_agent</code>: a concept which carries out an
+action by using a given concept as an instrument.</p></li>
+<li><p><code>co_instrument_patient</code>: a concept which undergoes an
+action with the use of a given concept as an instrument.</p></li>
+<li><p><code>co_instrument_result</code>: a concept which is the result
+of an action using an instrument of a given concept.</p></li>
+<li><p><code>co_patient_agent</code>: a concept which carries out an
+action a given concept undergoing.</p></li>
+<li><p><code>co_patient_instrument</code>: a concept which is used as an
+instrument in an action a given concept undergoes.</p></li>
+<li><p><code>co_result_agent</code>: a concept which takes an action
+resulting in a given concept.</p></li>
+<li><p><code>co_result_instrument</code>: a concept which is used as an
+instrument in an action resulting in a given concept.</p></li>
+<li><p><code>co_role</code>: a concept undergoes an action in which a
+given concept is involved.</p></li>
+<li><p><code>constitutive</code>: core semantic relations that define
+synsets</p></li>
+<li><p><code>derivation</code>: a concept which is a derivationally
+related form of a given concept.</p></li>
+<li><p><code>diminutive</code>: a concept used to refer to generally
+smaller members of a class</p></li>
+<li><p><code>direction</code>: a concept which is the direction of the
+action or event expressed by a given concept.</p></li>
+<li><p><code>domain</code>: a concept which is a Topic, Region or Usage
+pointer of a given concept.</p></li>
+<li><p><code>domain_region</code>: a concept which is a geographical /
+cultural domain pointer of a given concept.</p></li>
+<li><p><code>domain_topic</code>: a concept which is the scientific
+category pointer of a given concept.</p></li>
+<li><p><code>eq_synonym</code>: A and B are equivalent concepts but
+their nature requires that they remain separate
+(e.g. Exemplifies)</p></li>
+<li><p><code>exemplifies</code>: a concept which is the example of a
+given concept.</p></li>
+<li><p><code>feminine</code>: a concept used to refer to female members
+of a class</p></li>
+<li><p><code>has_augmentative</code>: a concept which has a special
+concept for generally larger members of its class</p></li>
+<li><p><code>has_diminutive</code>: a concept which has a special
+concept for generally smaller members of its class</p></li>
+<li><p><code>has_domain</code>: a concept which is a term of a given
+Topic, Region or Usage concept.</p></li>
+<li><p><code>has_domain_region</code>: a concept which is the term in
+the geographical / cultural domain of a given concept.</p></li>
+<li><p><code>has_domain_topic</code>: a concept which is a term in the
+scientific category of a given concept.</p></li>
+<li><p><code>has_feminine</code>: a concept which has a special concept
+for female members of its class</p></li>
+<li><p><code>has_masculine</code>: a concept which has a special concept
+for male members of its class</p></li>
+<li><p><code>has_young</code>: a concept which has a special concept for
+young members of its class</p></li>
 <li><p><code>holo_location</code>: B is a place located in A</p></li>
-<li><p><code>holo_portion</code>: B is an amount/piece/portion of A</p></li>
+<li><p><code>holo_portion</code>: B is an amount/piece/portion of
+A</p></li>
 <li><p><code>holonym</code>: A makes up a part of B</p></li>
-<li><p><code>in_manner</code>: B qualifies the manner in which an action or event expressed by A takes place</p></li>
-<li><p><code>instrument</code>: a concept which is the instrument necessary for the action or event expressed by a given concept.</p></li>
-<li><p><code>involved</code>: a concept which is the action or event a given concept typically involved in.</p></li>
-<li><p><code>involved_agent</code>: a concept which is the action done by an agent expressed by a given concept.</p></li>
-<li><p><code>involved_direction</code>: a concept which is the action with the direction expressed by a given concept.</p></li>
-<li><p><code>involved_instrument</code>: a concept which is typically the action with the instrument expressed by a given concept.</p></li>
-<li><p><code>involved_location</code>: a concept which is the event happening in a place expressed by a given concept.</p></li>
-<li><p><code>involved_patient</code>: a concept which is the action that the patient expressed by a given concept undergoing.</p></li>
-<li><p><code>involved_result</code>: a concept which is the action or event with a result of a given concept comes into existence.</p></li>
-<li><p><code>involved_source_direction</code>: a concept which is the action beginning from a place of a given concept.</p></li>
-<li><p><code>involved_target_direction</code>: a concept which is the action or event leading to a place expressed by a given concept.</p></li>
-<li><p><code>ir_synonym</code>: a concept that means the same except for the style or connotation</p></li>
+<li><p><code>in_manner</code>: B qualifies the manner in which an action
+or event expressed by A takes place</p></li>
+<li><p><code>instrument</code>: a concept which is the instrument
+necessary for the action or event expressed by a given concept.</p></li>
+<li><p><code>involved</code>: a concept which is the action or event a
+given concept typically involved in.</p></li>
+<li><p><code>involved_agent</code>: a concept which is the action done
+by an agent expressed by a given concept.</p></li>
+<li><p><code>involved_direction</code>: a concept which is the action
+with the direction expressed by a given concept.</p></li>
+<li><p><code>involved_instrument</code>: a concept which is typically
+the action with the instrument expressed by a given concept.</p></li>
+<li><p><code>involved_location</code>: a concept which is the event
+happening in a place expressed by a given concept.</p></li>
+<li><p><code>involved_patient</code>: a concept which is the action that
+the patient expressed by a given concept undergoing.</p></li>
+<li><p><code>involved_result</code>: a concept which is the action or
+event with a result of a given concept comes into existence.</p></li>
+<li><p><code>involved_source_direction</code>: a concept which is the
+action beginning from a place of a given concept.</p></li>
+<li><p><code>involved_target_direction</code>: a concept which is the
+action or event leading to a place expressed by a given
+concept.</p></li>
+<li><p><code>ir_synonym</code>: a concept that means the same except for
+the style or connotation</p></li>
 <li><p><code>is_caused_by</code>: a comes about because of B</p></li>
 <li><p><code>is_entailed_by</code>: opposite of entails</p></li>
-<li><p><code>is_exemplified_by</code>: a concept which is the type of a given concept.</p></li>
-<li><p><code>is_subevent_of</code>: a takes place during or as part of B, and whenever A takes place, B takes place</p></li>
-<li><p><code>location</code>: a concept which is the place where the event expressed by a given concept happens.</p></li>
-<li><p><code>manner_of</code>: a qualifies the manner in which an action or event expressed by B takes place</p></li>
-<li><p><code>masculine</code>: a concept used to refer to male members of a class</p></li>
+<li><p><code>is_exemplified_by</code>: a concept which is the type of a
+given concept.</p></li>
+<li><p><code>is_subevent_of</code>: a takes place during or as part of
+B, and whenever A takes place, B takes place</p></li>
+<li><p><code>location</code>: a concept which is the place where the
+event expressed by a given concept happens.</p></li>
+<li><p><code>manner_of</code>: a qualifies the manner in which an action
+or event expressed by B takes place</p></li>
+<li><p><code>masculine</code>: a concept used to refer to male members
+of a class</p></li>
 <li><p><code>mero_location</code>: A is a place located in B</p></li>
-<li><p><code>mero_portion</code>: A is an amount/piece/portion of B</p></li>
+<li><p><code>mero_portion</code>: A is an amount/piece/portion of
+B</p></li>
 <li><p><code>meronym</code>: B makes up a part of A</p></li>
 <li><p><code>other</code>: any relation not otherwise specified</p></li>
-<li><p><code>participle</code>: a concept which is a participial adjective derived from a verb expressed by a given concept.</p></li>
-<li><p><code>patient</code>: a concept which is the one/that who/which undergoes a given concept.</p></li>
-<li><p><code>pertainym</code>: a concept which is of or pertaining to a given concept.</p></li>
-<li><p><code>restricted_by</code>: a relation between nominal (pronominal) B and an adjectival A (quantifier/determiner)</p></li>
-<li><p><code>restricts</code>: a relation between an adjectival A (quantifier/determiner) and a nominal (pronominal) B</p></li>
-<li><p><code>result</code>: a concept which comes into existence as a result of a given concept.</p></li>
-<li><p><code>role</code>: a concept which is involved in the action or event expressed by a given concept.</p></li>
-<li><p><code>secondary_aspect_ip</code>: a concept which is linked to another through a change in aspect (ip)</p></li>
-<li><p><code>secondary_aspect_pi</code>: a concept which is linked to another through a change in aspect (pi)</p></li>
-<li><p><code>simple_aspect_ip</code>: a concept which is linked to another through a change from imperfective to perfective aspect</p></li>
-<li><p><code>simple_aspect_pi</code>: a concept which is linked to another through a change from perfective to imperfective aspect</p></li>
-<li><p><code>source_direction</code>: a concept which is the place from where the event expressed by a given concept begins.</p></li>
+<li><p><code>participle</code>: a concept which is a participial
+adjective derived from a verb expressed by a given concept.</p></li>
+<li><p><code>patient</code>: a concept which is the one/that who/which
+undergoes a given concept.</p></li>
+<li><p><code>pertainym</code>: a concept which is of or pertaining to a
+given concept.</p></li>
+<li><p><code>restricted_by</code>: a relation between nominal
+(pronominal) B and an adjectival A (quantifier/determiner)</p></li>
+<li><p><code>restricts</code>: a relation between an adjectival A
+(quantifier/determiner) and a nominal (pronominal) B</p></li>
+<li><p><code>result</code>: a concept which comes into existence as a
+result of a given concept.</p></li>
+<li><p><code>role</code>: a concept which is involved in the action or
+event expressed by a given concept.</p></li>
+<li><p><code>secondary_aspect_ip</code>: a concept which is linked to
+another through a change in aspect (ip)</p></li>
+<li><p><code>secondary_aspect_pi</code>: a concept which is linked to
+another through a change in aspect (pi)</p></li>
+<li><p><code>simple_aspect_ip</code>: a concept which is linked to
+another through a change from imperfective to perfective aspect</p></li>
+<li><p><code>simple_aspect_pi</code>: a concept which is linked to
+another through a change from perfective to imperfective aspect</p></li>
+<li><p><code>source_direction</code>: a concept which is the place from
+where the event expressed by a given concept begins.</p></li>
 <li><p><code>state_of</code>: B is qualified by A</p></li>
-<li><p><code>subevent</code>: B takes place during or as part of A, and whenever B takes place, A takes place</p></li>
-<li><p><code>target_direction</code>: a concept which is the place where the action or event expressed by a given concept leads to.</p></li>
-<li><p><code>young</code>: a concept used to refer to young members of a class</p>
+<li><p><code>subevent</code>: B takes place during or as part of A, and
+whenever B takes place, A takes place</p></li>
+<li><p><code>target_direction</code>: a concept which is the place where
+the action or event expressed by a given concept leads to.</p></li>
+<li><p><code>young</code>: a concept used to refer to young members of a
+class</p>
 <pre><code>          &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-en-10162692-n&quot;/&gt;
       &lt;/Synset&gt;</code></pre></li>
 </ul>
-<p>If you wish to define a new concept call the concept “in” (ILI New). If there is no mapping to the ILI leave this field empty (it is required).</p>
+<p>If you wish to define a new concept call the concept “in” (ILI New).
+If there is no mapping to the ILI leave this field empty (it is
+required).</p>
 <pre><code>        &lt;Synset id=&quot;example-en-1-n&quot; ili=&quot;in&quot; partOfSpeech=&quot;n&quot;&gt;
             &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
-<p>You can include metadata (such as source) at many points The ILI Definition must be at least 20 characters or five words</p>
+<p>You can include metadata (such as source) at many points The ILI
+Definition must be at least 20 characters or five words</p>
 <pre><code>            &lt;ILIDefinition dc:source=&quot;https://en.wiktionary.org/wiki/farfar&quot;&gt;
                 A father&#39;s father; a paternal grandfather
             &lt;/ILIDefinition&gt;
@@ -282,8 +559,18 @@
     &lt;/Lexicon&gt;
 &lt;/LexicalResource&gt;</code></pre>
 <p><strong><em>Pronunciation</em></strong></p>
-<p>Since 2021, the schema has the ability to represent the pronunciation of lemmas.</p>
-<p>This is in the <code>&lt;Pronunciation&gt;</code> element, which gives the IPA text. It has the following attributes: * <code>variety</code> uses the IETF language tags to indicate dialect, for example encoding British English in IPA as <code>en-GB-fonipa</code> * <code>notation</code>: can encode further information such as indicating a particular dialect (this was <code>notes</code> in the paper) * <code>phonemic</code>: indicates whether the transcription is phonemic (‘true’) or phonetic (<code>false</code>), defaulting to ‘true’ * <code>audio</code>: gives the URL of an audio file of the pronuncation</p>
+<p>Since 2021, the schema has the ability to represent the pronunciation
+of lemmas.</p>
+<p>This is in the <code>&lt;Pronunciation&gt;</code> element, which
+gives the IPA text. It has the following attributes: *
+<code>variety</code> uses the IETF language tags to indicate dialect,
+for example encoding British English in IPA as <code>en-GB-fonipa</code>
+* <code>notation</code>: can encode further information such as
+indicating a particular dialect (this was <code>notes</code> in the
+paper) * <code>phonemic</code>: indicates whether the transcription is
+phonemic (‘true’) or phonetic (<code>false</code>), defaulting to
+‘false’ * <code>audio</code>: gives the URL of an audio file of the
+pronuncation</p>
 <p>An example of encoding is given below:</p>
 <pre><code>    &lt;LexicalEntry id=&quot;ex-rabbit-n&quot;&gt;
         &lt;Lemma writtenForm=&quot;rabbit&quot; partOfSpeech=&quot;n&quot;/&gt;
@@ -294,7 +581,11 @@
          &lt;/Lemma&gt;
      &lt;/LexicalEntry&gt;</code></pre>
 <p><strong>Wordnet Extensions</strong></p>
-<p>A file may contain a lexicon extension which serves to augment an existing lexicon with new lexical entries, synsets, senses, relations, etc. They are defined much like regular lexicons, but the <code>&lt;Extends&gt;</code> element specifies the ID and version of the base lexicon:</p>
+<p>A file may contain a lexicon extension which serves to augment an
+existing lexicon with new lexical entries, synsets, senses, relations,
+etc. They are defined much like regular lexicons, but the
+<code>&lt;Extends&gt;</code> element specifies the ID and version of the
+base lexicon:</p>
 <pre><code>    &lt;LexiconExtension id=&quot;ewn-cs-example&quot;
                       label=&quot;English WordNet Computer Science Terms (example)&quot;
                       language=&quot;en&quot;
@@ -302,20 +593,36 @@
                       license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
                       version=&quot;1.0&quot;&gt;
         &lt;Extends id=&quot;ewn&quot; version=&quot;2020&quot; /&gt;</code></pre>
-<p>The contents of the lexicon extension are the same as a regular lexicon with the addition of elements for external lexical entries, synsets, and senses. There are two uses of external elements. First, they allow one to add additional information to the corresponding element in the base lexicon, such as adding a new sense to an existing lexical entry:</p>
+<p>The contents of the lexicon extension are the same as a regular
+lexicon with the addition of elements for external lexical entries,
+synsets, and senses. There are two uses of external elements. First,
+they allow one to add additional information to the corresponding
+element in the base lexicon, such as adding a new sense to an existing
+lexical entry:</p>
 <pre><code>        &lt;ExternalLexicalEntry id=&quot;ewn-process-n&quot;&gt;
             &lt;Sense id=&quot;ewn-process-n-20000123&quot; synset=&quot;ewn-20000123-n&quot; /&gt;
         &lt;/ExternalLexicalEntry&gt;</code></pre>
-<p>In the above example, the <code>ewn-process-n</code> ID is not used to create a new lexical entry, but rather it must already exist in the base lexicon. The external lexical entry (as well as other external senses or synsets) may only add information; therefore it may not specify metadata or elements required on lexical entries, such as for the lemma.</p>
-<p>Second, they introduce an ID which may be referenced by new structures, such as the target of synset relation:</p>
+<p>In the above example, the <code>ewn-process-n</code> ID is not used
+to create a new lexical entry, but rather it must already exist in the
+base lexicon. The external lexical entry (as well as other external
+senses or synsets) may only add information; therefore it may not
+specify metadata or elements required on lexical entries, such as for
+the lemma.</p>
+<p>Second, they introduce an ID which may be referenced by new
+structures, such as the target of synset relation:</p>
 <pre><code>        &lt;ExternalSynset id=&quot;ewn-06581154-n&quot; /&gt;
         &lt;Synset id=&quot;ewn-20000123-n&quot; ili=&quot;&quot; partOfSpeech=&quot;n&quot;&gt;
             &lt;Definition&gt;a running instance of a computer program&lt;/Definition&gt;
             &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;ewn-06581154-n&quot; /&gt;
         &lt;/Synset&gt;</code></pre>
-<p>Due to the way external IDs are used, a lexicon extension may not exist in the same file as the base lexicon.</p>
+<p>Due to the way external IDs are used, a lexicon extension may not
+exist in the same file as the base lexicon.</p>
 <p><strong>Wordnet Dependencies</strong></p>
-<p>Some wordnets depend upon others, such as those in the <a href="https://lr.soh.ntu.edu.sg/omw/">Open Multilingual Wordnet</a> which depend upon the Princeton WordNet for synset structure. With the <code>&lt;Requires&gt;</code> element, it is possible to explicitly codify those dependencies:</p>
+<p>Some wordnets depend upon others, such as those in the <a
+href="https://lr.soh.ntu.edu.sg/omw/">Open Multilingual Wordnet</a>
+which depend upon the Princeton WordNet for synset structure. With the
+<code>&lt;Requires&gt;</code> element, it is possible to explicitly
+codify those dependencies:</p>
 <pre><code>    &lt;Lexicon id=&quot;spawn&quot;
              label=&quot;Multilingual Central Repository&quot;
              language=&quot;es&quot;
@@ -329,14 +636,46 @@
              dc:description=&quot;Wordnet made from OMW 1.0 data&quot;
              confidenceScore=&quot;1.0&quot;&gt;
         &lt;Requires id=&quot;pwn&quot; version=&quot;3.0&quot; /&gt;</code></pre>
-<p>This element signifies to an application processing the wordnet that the required wordnet should be loaded as well. The <code>&lt;Requires&gt;</code> element may also be used on a <code>&lt;LexiconExtension&gt;</code> for cases where the lexicon extends one wordnet but requires another.</p>
+<p>This element signifies to an application processing the wordnet that
+the required wordnet should be loaded as well. The
+<code>&lt;Requires&gt;</code> element may also be used on a
+<code>&lt;LexiconExtension&gt;</code> for cases where the lexicon
+extends one wordnet but requires another.</p>
+<p><strong>Sense orders</strong></p>
+<p>Sense orders are typically captured by the order of the senses in the
+XML file. In some cases, wordnets may wish to specify the order of
+senses across multiple lexical entries; this is typically the case when
+there are entries in lowercase, uppercase and/or titlecase. The
+<code>index</code> property indicates the normalized form of the entry
+and the <code>n</code> property indicates the order of the senses. For
+example:</p>
+<pre><code> &lt;LexicalEntry id=&quot;w1&quot; index=&quot;god&quot;&gt;
+    &lt;Lemma writtenForm=&quot;god&quot; partOfSpeech=&quot;n&quot;/&gt;
+    &lt;Sense id=&quot;example-en-09528550-n&quot; synset=&quot;example-en-09528550-n&quot; n=&quot;1&quot;/&gt;
+    &lt;Sense id=&quot;example-en-10152827-n&quot; synset=&quot;example-en-10152827-n&quot; n=&quot;3&quot;/&gt;
+&lt;/LexicalEntry&gt;
+&lt;LexicalEntry id=&quot;w2&quot; index=&quot;god&quot;&gt;
+    &lt;Lemma writtenForm=&quot;God&quot; partOfSpeech=&quot;n&quot;/&gt;
+    &lt;Sense id=&quot;example-en-09559169-n&quot; synset=&quot;example-en-09559169-n&quot; n=&quot;1&quot;/&gt;
+&lt;/LexicalEntry&gt;</code></pre>
 <h1 id="json">JSON</h1>
-<p>The JSON format follows that of the XML and is based on <a href="http://json-ld.org">JSON-LD</a> <a href="https://github.com/globalwordnet/schemas/blob/master/example.json">An example</a> of the JSON is as follows:</p>
-<p>The top level of a JSON graph consists of an object with two properties <code>@context</code> which must be the fixed string referring to the JSON-LD context and <code>@graph</code> giving the lexicon format. This structure is required for submission to the Collaborative Interlingual Index, but web services may of course return shorter fragments of the structure.</p>
+<p>The JSON format follows that of the XML and is based on <a
+href="http://json-ld.org">JSON-LD</a> <a
+href="https://github.com/globalwordnet/schemas/blob/master/example.json">An
+example</a> of the JSON is as follows:</p>
+<p>The top level of a JSON graph consists of an object with two
+properties <code>@context</code> which must be the fixed string
+referring to the JSON-LD context and <code>@graph</code> giving the
+lexicon format. This structure is required for submission to the
+Collaborative Interlingual Index, but web services may of course return
+shorter fragments of the structure.</p>
 <pre><code>{ 
   &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.4.json&quot;,
   &quot;@graph&quot;: [{</code></pre>
-<p>The following are required properties of every WordNet (note the language must be given twice). <code>@id</code> gives the identifier of this wordnet (should be unique in this document) and <code>@type</code> must be <code>lime:Lexicon</code>.</p>
+<p>The following are required properties of every WordNet (note the
+language must be given twice). <code>@id</code> gives the identifier of
+this wordnet (should be unique in this document) and <code>@type</code>
+must be <code>lime:Lexicon</code>.</p>
 <pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
       &quot;@id&quot;: &quot;example-en&quot;,
       &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
@@ -345,16 +684,35 @@
       &quot;email&quot;: &quot;john@mccr.ae&quot;,
       &quot;rights&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
       &quot;version&quot;: &quot;1.0&quot;,</code></pre>
-<p>In addition the properties <code>citation</code>, <code>url</code>, <code>logo</code>, <code>status</code>, <code>confidenceScore</code> and any property from <a href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements">Dublin Core Elements 1.1</a> May be used</p>
+<p>In addition the properties <code>citation</code>, <code>url</code>,
+<code>logo</code>, <code>status</code>, <code>confidenceScore</code> and
+any property from <a
+href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements">Dublin
+Core Elements 1.1</a> May be used</p>
 <pre><code>      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
       &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
       &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,</code></pre>
-<p>The entries are given as a list under the <code>entry</code> property it requires an <code>@id</code> <code>partOfSpeech</code> and <code>lemma</code> and may have <code>sense</code>, <code>synBehavior</code>, <code>status</code>, <code>confidence</code> and Dublin Core properties. The lemma has only a single value <code>writtenForm</code> and the <code>partOfSpeech</code> must be one of the following: [ <code>noun</code>, <code>verb</code>, <code>adjective</code>, <code>adverb</code>, <code>adjective_satellite</code>, <code>phrase</code>, <code>conjunction</code>, <code>adposition</code>, <code>other</code>, <code>unknown</code> ]. The <code>@id</code> must be unique in the document, it is not the same as the <code>@id</code> of the wordnet or any other entry.</p>
+<p>The entries are given as a list under the <code>entry</code> property
+it requires an <code>@id</code> <code>partOfSpeech</code> and
+<code>lemma</code> and may have <code>sense</code>,
+<code>synBehavior</code>, <code>status</code>, <code>confidence</code>
+and Dublin Core properties. The lemma has only a single value
+<code>writtenForm</code> and the <code>partOfSpeech</code> must be one
+of the following: [ <code>noun</code>, <code>verb</code>,
+<code>adjective</code>, <code>adverb</code>,
+<code>adjective_satellite</code>, <code>phrase</code>,
+<code>conjunction</code>, <code>adposition</code>, <code>other</code>,
+<code>unknown</code> ]. The <code>@id</code> must be unique in the
+document, it is not the same as the <code>@id</code> of the wordnet or
+any other entry.</p>
 <pre><code>      &quot;entry&quot;: [{
           &quot;@id&quot; : &quot;w1&quot;,
           &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
           &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre>
-<p>The Sense requires only an <code>@id</code> and a <code>synsetRef</code> and may take <code>status</code>, <code>confidenceScore</code>, Dublin Core properties, an <code>example</code>.</p>
+<p>The Sense requires only an <code>@id</code> and a
+<code>synsetRef</code> and may take <code>status</code>,
+<code>confidenceScore</code>, Dublin Core properties, an
+<code>example</code>.</p>
 <pre><code>          &quot;sense&quot;: [{
               &quot;@id&quot;: &quot;example-en-10161911-n-1&quot;,
               &quot;synsetRef&quot;: &quot;example-en-10161911-n&quot;
@@ -366,19 +724,33 @@
           &quot;sense&quot;: [{
               &quot;@id&quot;: &quot;example-en-1-n-1&quot;,
               &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,</code></pre>
-<p>A sense may also have any number of <code>relations</code> which have a <code>relType</code> from the list below and a <code>target</code> and may have Dublin Core properties</p>
+<p>A sense may also have any number of <code>relations</code> which have
+a <code>relType</code> from the list below and a <code>target</code> and
+may have Dublin Core properties</p>
 <ul>
-<li><p><code>antonym</code>: An opposite and inherently incompatible word</p></li>
+<li><p><code>antonym</code>: An opposite and inherently incompatible
+word</p></li>
 <li><p><code>also</code>: See also, a reference of weak meaning</p></li>
-<li><p><code>participle</code>: An adjective that is a participle form a verb</p></li>
-<li><p><code>pertainym</code>: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as “of or pertaining to” and do not have antonyms. A pertainym can point to a noun or another pertainym</p></li>
-<li><p><code>derivation</code>: A word that is derived from some other word</p></li>
-<li><p><code>domain_topic</code>: Indicates the category of this word</p></li>
-<li><p><code>domain_member_topic</code>: Indicates a word involved in this category described by this word</p></li>
-<li><p><code>domain_region</code>: Indicates the region of this word</p></li>
-<li><p><code>domain_member_region</code>: Indicates a word involved in the region described by this word</p></li>
-<li><p><code>exemplifies</code>: Indicates the usage of this word</p></li>
-<li><p><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</p>
+<li><p><code>participle</code>: An adjective that is a participle form a
+verb</p></li>
+<li><p><code>pertainym</code>: A relational adjective. Adjectives that
+are pertainyms are usually defined by such phrases as “of or pertaining
+to” and do not have antonyms. A pertainym can point to a noun or another
+pertainym</p></li>
+<li><p><code>derivation</code>: A word that is derived from some other
+word</p></li>
+<li><p><code>domain_topic</code>: Indicates the category of this
+word</p></li>
+<li><p><code>domain_member_topic</code>: Indicates a word involved in
+this category described by this word</p></li>
+<li><p><code>domain_region</code>: Indicates the region of this
+word</p></li>
+<li><p><code>domain_member_region</code>: Indicates a word involved in
+the region described by this word</p></li>
+<li><p><code>exemplifies</code>: Indicates the usage of this
+word</p></li>
+<li><p><code>is_exemplified_by</code>: Indicates a word involved in the
+usage described by this word</p>
 <pre><code>            &quot;relations&quot;: [{
                 &quot;relType&quot;: &quot;derivation&quot;,
                 &quot;target&quot;: &quot;example-en-10161911-n-1&quot;,
@@ -396,39 +768,67 @@
              {&quot;label&quot;: &quot;Somebody ----s somebody&quot;, &quot;@id&quot;: &quot;transitive&quot;}
            ]
       }],</code></pre>
-<p>Synsets are listed under the <code>synset</code> property. A synset requires only an <code>@id</code>. It may take an <code>ili</code> which is a code from the CILI (starting with <code>ili:i</code>), a <code>definition</code>, an <code>iliDefinition</code> (which must be given in English), <code>status</code>, <code>confidenceScore</code>, <code>relations</code> and Dublin Core properties.</p>
-<p>In contrast to the XML form the <code>ili</code> is optional. If there is no match omit this tag, if you wish to propose a new synset add only a <code>iliDefinition</code>.</p>
+<p>Synsets are listed under the <code>synset</code> property. A synset
+requires only an <code>@id</code>. It may take an <code>ili</code> which
+is a code from the CILI (starting with <code>ili:i</code>), a
+<code>definition</code>, an <code>iliDefinition</code> (which must be
+given in English), <code>status</code>, <code>confidenceScore</code>,
+<code>relations</code> and Dublin Core properties.</p>
+<p>In contrast to the XML form the <code>ili</code> is optional. If
+there is no match omit this tag, if you wish to propose a new synset add
+only a <code>iliDefinition</code>.</p>
 <pre><code>      &quot;synset&quot;: [{
           &quot;@id&quot;: &quot;example-en-10161911-n&quot;,
           &quot;partOfSpeech&quot;: &quot;noun&quot;,
           &quot;ili&quot;: &quot;ili:i90287&quot;,</code></pre>
-<p>Definitions must have a <code>gloss</code> and may be have a <code>language</code>, in addition, <code>status</code>, <code>confidenceScore</code> and Dublin Core properties may be added. An <code>iliDefinition</code> is the same but may not have a language.</p>
+<p>Definitions must have a <code>gloss</code> and may be have a
+<code>language</code>, in addition, <code>status</code>,
+<code>confidenceScore</code> and Dublin Core properties may be added. An
+<code>iliDefinition</code> is the same but may not have a language.</p>
 <pre><code>          &quot;definition&quot;: [{
             &quot;gloss&quot;: &quot;that which is perceived or known or inferred to have its own distinct existence (living or nonliving)&quot;
            }],</code></pre>
-<p>Synset relations are given as for sense relations except the <code>target</code> must be the <code>@id</code> of another synset not a sense. The following properties can be used:</p>
+<p>Synset relations are given as for sense relations except the
+<code>target</code> must be the <code>@id</code> of another synset not a
+sense. The following properties can be used:</p>
 <ul>
 <li><p><code>hypernym</code>: A concept with a broader meaning</p></li>
 <li><p><code>hyponym</code>: A concept with a narrower meaning</p></li>
-<li><p><code>instance_hypernym</code>: The class of objects to which this instance belongs</p></li>
-<li><p><code>instance_hyponym</code>: An individual instance of this class</p></li>
-<li><p><code>part_holonym</code>: A larger whole that this concept is part of</p></li>
+<li><p><code>instance_hypernym</code>: The class of objects to which
+this instance belongs</p></li>
+<li><p><code>instance_hyponym</code>: An individual instance of this
+class</p></li>
+<li><p><code>part_holonym</code>: A larger whole that this concept is
+part of</p></li>
 <li><p><code>part_meronym</code>: A part of this concept</p></li>
-<li><p><code>member_holonym</code>: A group that this concept is a member of</p></li>
+<li><p><code>member_holonym</code>: A group that this concept is a
+member of</p></li>
 <li><p><code>member_meronym</code>: A member of this concept</p></li>
-<li><p><code>substance_holonym</code>: Something where a constituent material is this concept</p></li>
-<li><p><code>substance_meronym</code>: A constituent material of this concept</p></li>
-<li><p><code>entail</code>: A verb X entails Y if X cannot be done unless Y is, or has been, done.</p></li>
+<li><p><code>substance_holonym</code>: Something where a constituent
+material is this concept</p></li>
+<li><p><code>substance_meronym</code>: A constituent material of this
+concept</p></li>
+<li><p><code>entail</code>: A verb X entails Y if X cannot be done
+unless Y is, or has been, done.</p></li>
 <li><p><code>cause</code>: A verb that causes another</p></li>
-<li><p><code>similar</code>: Similar, though not necessarily interchangeable</p></li>
+<li><p><code>similar</code>: Similar, though not necessarily
+interchangeable</p></li>
 <li><p><code>also</code>: See also, a reference of weak meaning</p></li>
-<li><p><code>attribute</code>: A noun for which adjectives express values. The noun weight is an attribute, for which the adjectives light and heavy express values.</p></li>
-<li><p><code>domain_topic</code>: Indicates the category of this word</p></li>
-<li><p><code>domain_member_topic</code>: Indicates a word involved in this category described by this word</p></li>
-<li><p><code>domain_region</code>: Indicates the region of this word</p></li>
-<li><p><code>domain_member_region</code>: Indicates a word involved in the region described by this word</p></li>
-<li><p><code>exemplifies</code>: Indicates the usage of this word</p></li>
-<li><p><code>is_exemplified_by</code>: Indicates a word involved in the usage described by this word</p>
+<li><p><code>attribute</code>: A noun for which adjectives express
+values. The noun weight is an attribute, for which the adjectives light
+and heavy express values.</p></li>
+<li><p><code>domain_topic</code>: Indicates the category of this
+word</p></li>
+<li><p><code>domain_member_topic</code>: Indicates a word involved in
+this category described by this word</p></li>
+<li><p><code>domain_region</code>: Indicates the region of this
+word</p></li>
+<li><p><code>domain_member_region</code>: Indicates a word involved in
+the region described by this word</p></li>
+<li><p><code>exemplifies</code>: Indicates the usage of this
+word</p></li>
+<li><p><code>is_exemplified_by</code>: Indicates a word involved in the
+usage described by this word</p>
 <pre><code>        &quot;relations&quot;: [{
             &quot;relType&quot;: &quot;hypernym&quot;, &quot;target&quot;: &quot;example-en-10162692-n&quot;
         }],</code></pre></li>
@@ -478,10 +878,23 @@
       }]
   }]
 }</code></pre>
-<p>The JSON format can be validated by the <a href="http://json-schema.org">JSON Schema</a> provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
+<p>The JSON format can be validated by the <a
+href="http://json-schema.org">JSON Schema</a> provided at
+https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
 <h1 id="rdf">RDF</h1>
-<p>We acknowledge the existence of two vocabularies to wordnet encoding. The wn-simple.ttl is based on the <a href="https://www.w3.org/TR/wordnet-rdf/">W3C RDF/OWL Representation of WordNet</a>. This vocabulary is a straightforward encoding in RDF of the original Princeton data model where synsets, word senses, and words are the main classes. In the current version, new relations are added and additional axioms are provided to reinforce consistency.</p>
-<p>The second RDF schema is significantly more flexible and builds principally on the <a href="https://www.w3.org/2016/05/ontolex/">W3C OntoLex Model</a>. The details of the RDF serialization are principally built on those of the JSON-LD model. We include a separate tutorial here for the benefit of those who wish to create their resource natively in RDF.</p>
+<p>We acknowledge the existence of two vocabularies to wordnet encoding.
+The wn-simple.ttl is based on the <a
+href="https://www.w3.org/TR/wordnet-rdf/">W3C RDF/OWL Representation of
+WordNet</a>. This vocabulary is a straightforward encoding in RDF of the
+original Princeton data model where synsets, word senses, and words are
+the main classes. In the current version, new relations are added and
+additional axioms are provided to reinforce consistency.</p>
+<p>The second RDF schema is significantly more flexible and builds
+principally on the <a href="https://www.w3.org/2016/05/ontolex/">W3C
+OntoLex Model</a>. The details of the RDF serialization are principally
+built on those of the JSON-LD model. We include a separate tutorial here
+for the benefit of those who wish to create their resource natively in
+RDF.</p>
 <p>The standard namespaces are</p>
 <pre><code>@prefix dc: &lt;http://purl.org/dc/terms/&gt; .
 @prefix ili: &lt;http://ili.globalwordnet.org/ili/&gt; .
@@ -494,20 +907,29 @@
 @prefix synsem: &lt;http://www.w3.org/ns/lemon/synsem#&gt; .
 @prefix wn: &lt;https://globalwordnet.github.io/schemas/wn#&gt; .
 @prefix wordnetlicense: &lt;http://wordnet.princeton.edu/wordnet/license/&gt; .</code></pre>
-<p>Each wordnet is an instance of the class <code>lime:Lexicon</code> and must have the following properties</p>
+<p>Each wordnet is an instance of the class <code>lime:Lexicon</code>
+and must have the following properties</p>
 <ul>
 <li><code>rdfs:label</code>: A name for the wordnet.</li>
-<li><code>dc:language</code>: The BCP 47 identifier for your language (usually a two letter code)</li>
-<li><code>schema:email</code>: An email address for the owner of the wordnet</li>
+<li><code>dc:language</code>: The BCP 47 identifier for your language
+(usually a two letter code)</li>
+<li><code>schema:email</code>: An email address for the owner of the
+wordnet</li>
 <li><code>dc:rights</code>: A link to the license of the resource</li>
-<li><code>owl:versionInfo</code>: The version number of this resource</li>
+<li><code>owl:versionInfo</code>: The version number of this
+resource</li>
 </ul>
 <p>The mapping to the Lemon-OntoLex model is as follows:</p>
 <ul>
-<li>Words are <code>ontolex:LexicalEntry</code>, they must have a <code>ontolex:canonicalForm</code> and a <code>wn:partOfSpeech</code>.</li>
-<li>Senses are <code>ontolex:LexicalSense</code>, they must have a <code>ontolex:reference</code></li>
+<li>Words are <code>ontolex:LexicalEntry</code>, they must have a
+<code>ontolex:canonicalForm</code> and a
+<code>wn:partOfSpeech</code>.</li>
+<li>Senses are <code>ontolex:LexicalSense</code>, they must have a
+<code>ontolex:reference</code></li>
 <li>Synsets are <code>ontolex:LexicalConcept</code>.</li>
-<li>Definitions and examples are given by <code>skos:definition</code> and <code>skos:example</code> optionally with a <code>rdf:value</code>.</li>
+<li>Definitions and examples are given by <code>skos:definition</code>
+and <code>skos:example</code> optionally with a
+<code>rdf:value</code>.</li>
 </ul>
 <p>A more extended example is given here:</p>
 <pre><code>&lt;#example-en&gt; a lime:Lexicon ;
