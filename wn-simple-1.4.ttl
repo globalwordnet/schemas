@@ -1,8 +1,12 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wns: <https://globalwordnet.github.io/schemas/wn-simple/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix nomlex: <https://globalwordnet.github.io/schemas/nomlex/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix wns: <https://globalwordnet.github.io/schemas/wn-simple#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://globalwordnet.github.io/schemas/wn-simple/> a voaf:Vocabulary, owl:Ontology ;
@@ -644,76 +648,3 @@ wns:word
     rdfs:range wns:Word ;
     owl:inverseOf wns:sense .
 
-nomlex:Nomlex
-    a rdfs:Class, owl:Class ;
-    rdfs:subClassOf owl:Thing, [
-        a owl:Restriction ;
-	owl:onProperty nomlex:verb ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-        owl:onClass wns:Word  
-    ], [
-        a owl:Restriction ;
-	owl:onProperty nomlex:noun;
-	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	owl:onClass wns:Word 
-    ] .
-
-nomlex:verb
-    a rdf:Property, owl:ObjectProperty ;
-    rdfs:domain nomlex:Nomlex ;
-    rdfs:range wns:Word .
-
-nomlex:noun
-    a rdf:Property, owl:ObjectProperty ;
-    rdfs:domain nomlex:Nomlex ;
-    rdfs:range wns:Word .
-
-nomlex:morphosemanticLink
-    rdfs:domain wns:WordSense ;
-    rdfs:range wns:WordSense ;
-    a rdf:Property, owl:ObjectProperty .
-
-nomlex:agent
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:bodyPart
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:byMeansOf
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:destination
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:event
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:instrument
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:location
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:material
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:property
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:relation
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:result
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:state
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:undergoer
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:uses
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
-
-nomlex:vehicle
-    rdfs:subPropertyOf nomlex:morphosemanticLink .
