@@ -203,7 +203,7 @@
 <!ELEMENT SenseRelation EMPTY>
 <!ATTLIST SenseRelation
     target CDATA #REQUIRED
-    relType (antonym|also|participle|pertainym|derivation|domain_topic|has_domain_topic|domain_region|has_domain_region|exemplifies|is_exemplified_by|similar|other|simple_aspect_ip|secondary_aspect_ip|simple_aspect_pi|secondary_aspect_pi|feminine|has_feminine|masculine|has_masculine|young|has_young|diminutive|has_diminutive|augmentative|has_augmentative|anto_gradable|anto_simple|anto_converse|metaphor|has_metaphor|metonym|has_metonym) #REQUIRED
+    relType (antonym|also|participle|pertainym|derivation|domain_topic|has_domain_topic|domain_region|has_domain_region|exemplifies|is_exemplified_by|similar|other|simple_aspect_ip|secondary_aspect_ip|simple_aspect_pi|secondary_aspect_pi|feminine|has_feminine|masculine|has_masculine|young|has_young|diminutive|has_diminutive|augmentative|has_augmentative|anto_gradable|anto_simple|anto_converse|metaphor|has_metaphor|metonym|has_metonym|agent|material|event|instrument|location|by_means_of|undergoer|property|result|state|uses|destination|body_part|vehicle) #REQUIRED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

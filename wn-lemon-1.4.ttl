@@ -159,7 +159,7 @@
 :SenseRelType a owl:Class ;
   rdfs:label "sense relation type"@en .
 
-:agent a :SynsetRelType ;
+:agent a :SynsetRelType , :SenseRelType ;
   rdfs:label "agent"@en ;
   rdfs:comment "A concept which is typically the one/that who/which does the action denoted by a given concept."@en ;
   owl:inverseOf :involved_agent .
@@ -661,6 +661,60 @@
   rdfs:label "secondary aspect (perfect to imperfect)"@en ;
   rdfs:comment "A concept which is linked to another through a change in aspect (pi)"@en ;
   owl:inverseOf :secondary_aspect_ip .
+
+:material a :SynsetRelType ;
+  rdfs:label "material"@en ;
+  rdfs:comment "A word which is typically the material of a given word (e.g. \"wood\")"@en .
+
+:event a :SynsetRelType ;
+  rdfs:label "event"@en ;
+  rdfs:comment "An noun representing the event of a verb (e.g., \"(a) meet\" - \"(to) meet\")"@en .
+
+:instrument a :SynsetRelType ;
+  rdfs:label "instrument"@en ;
+  rdfs:comment "An instrument for doing a task (e.g., \"photocopier\" - \"photocopy\")"@en .
+
+:location a :SynsetRelType ;
+  rdfs:label "location"@en ;
+  rdfs:comment "A verb derived from the action performed at a place (e.g., \"(a) forge\" - \"(to) forge\")"@en .
+
+:by_means_of a :SynsetRelType ;
+  rdfs:label "by means of"@en ;
+  rdfs:comment "A word which is typically the means by which something is done (e.g.,g \"deceive\" - \"deception\")"@en .
+
+:undergoer a :SynsetRelType ;
+  rdfs:label "undergoer"@en ;
+  rdfs:comment "A word which is typically the undergoer of a given word (e.g. \"honor\" - \"honoree\")"@en .
+
+:property a :SynsetRelType ;
+  rdfs:label "property"@en ;
+  rdfs:comment "Cause something to have a particular property (e.g., \"magnetize\" - \"magnetization\")"@en .
+
+:result a :SynsetRelType ;
+  rdfs:label "result"@en ;
+  rdfs:comment "A word which is typically the result of a given word (e.g. \"nitrify\" - \"nitrate\")"@en .
+
+:state a :SynsetRelType ;
+  rdfs:label "state"@en ;
+  rdfs:comment "A state caused by the verb (e.g., \"sensitize\" - \"sensitization\")"@en .
+
+:uses a :SynsetRelType ;
+  rdfs:label "uses"@en ;
+  rdfs:comment "A verb that uses a noun (e.g., \"(to) talc\" - \"talc\")"@en .
+
+:destination a :SynsetRelType ;
+  rdfs:label "destination"@en ;
+  rdfs:comment "The noun indicates the destination of a verb (e.g., \"retire\" - \"retiree\")"@en .
+
+:body_part a :SynsetRelType ;
+  rdfs:label "body part"@en ;
+  rdfs:comment "A word which is typically a body part of a given word (e.g. \"finger\")"@en .
+
+:vehicle a :SynsetRelType ;
+  rdfs:label "vehicle"@en ;
+  rdfs:comment "A verb indicating movement with a particular vehicle (e.g., \"(to) ship\" - \"ship\")"@en .
+
+
 
 :senseSubcat a owl:ObjectProperty ;
   rdfs:label "sense subcategorization"@en ;
