@@ -101,6 +101,24 @@ The set of relations between senses is limited to the following
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
 * is_exemplified_by: Indicates a word involved in the usage described by this word
+* similar: Similar, though not necessarily interchangeable
+* simple_aspect_ip: A word which is linked to another through a change from imperfective to perfective aspect
+* secondary_aspect_ip: A word which is linked to another through a change in aspect (ip)
+* simple_aspect_pi: A word which is linked to another through a change from perfective to imperfective aspect
+* secondary_aspect_pi: A word which is linked to another through a change in aspect (pi)
+* feminine: A feminine form of a word
+* has_feminine: Indicates the base form of a word with a feminine derivation
+* masculine: A masculine form of a word
+* has_masculine: Indicates the base form of a word with a masculine derivation
+* young: A form of a word with a derivation indicating the young of a species
+* has_young: Indicates the base form of a word with a young derivation
+* diminutive: A diminutive form of a word
+* has_diminutive: Indicates the base form of a word with a diminutive derivation
+* augmentative: An augmentative form of a word
+* has_augmentative: Indicates the base form of a word with an augmentative derivation
+* anto_gradable: A word pair whose meanings are opposite and which lie on a continuous spectrum
+* anto_simple: A word pair whose meanings are opposite but whose meanings do not lie on a continuous spectrum
+* anto_converse: A word pair that name or describe a single relationship from opposite perspectives
 * metaphor: A relation between two senses, where the first sense is a metaphorical extension of the second sense
 * has_metaphor: A relation between two senses, where the first sense can be metaphorically extended to the second sense
 * metonym: A relation between two senses, where the first sense is a metonymic extension of the second sense
