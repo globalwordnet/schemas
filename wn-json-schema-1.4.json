@@ -216,6 +216,10 @@
                                                                 "exemplifies",
                                                                 "is_exemplified_by",
                                                                 "similar",
+                                                                "metaphor",
+                                                                "has_metaphor",
+                                                                "metonym",
+                                                                "has_metonym",
                                                                 "other" ]
                                                         },
                                                         "target": { "type": "string" },

@@ -315,6 +315,26 @@
   rdfs:comment "当該synsetの領域が相手synsetの用法を規定する"@ja ;
   owl:inverseOf :exemplifies .
 
+:metaphor a :SenseRelType ;
+  rdfs:label "metaphor"@en ;
+  rdfs:comment "a relation between two senses, where the first sense is a metaphorical extension of the second sense"@en ;
+  owl:inverseOf :has_metaphor .
+
+:has_metaphor a :SenseRelType ;
+  rdfs:label "has metaphor"@en ;
+  rdfs:comment "a relation between two senses, where the second sense is a metaphorical extension of the first sense"@en ;
+  owl:inverseOf :metaphor .
+
+:metonym a :SenseRelType ;
+  rdfs:label "metonym"@en ;
+  rdfs:comment "a relation between two senses, where the first sense is a metonymical extension of the second sense"@en ;
+  owl:inverseOf :has_metonym .
+
+:has_metonym a :SenseRelType ;
+  rdfs:label "has metonym"@en ;
+  rdfs:comment "a relation between two senses, where the second sense is a metonymical extension of the first sense"@en ;
+  owl:inverseOf :metonym .
+
 :holo_location a :SynsetRelType ;
   rdfs:label "holonym location"@en ;
   rdfs:comment "Y is a place located in X"@en ;

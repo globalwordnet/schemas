@@ -101,6 +101,10 @@ The set of relations between senses is limited to the following
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
 * is_exemplified_by: Indicates a word involved in the usage described by this word
+* metaphor: A relation between two senses, where the first sense is a metaphorical extension of the second sense
+* has_metaphor: A relation between two senses, where the first sense can be metaphorically extended to the second sense
+* metonym: A relation between two senses, where the first sense is a metonymic extension of the second sense
+* has_metonym: A relation between two senses, where the first sense can be metonymically extended to the second sense
 
                     <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
                 </Sense>

@@ -143,6 +143,10 @@
         "secondary_aspect_ip": { "@id": "wn:secondary_aspect_ip", "@type": "@id" },
         "simple_aspect_pi": { "@id": "wn:simple_aspect_pi", "@type": "@id" },
         "secondary_aspect_pi": { "@id": "wn:secondary_aspect_pi", "@type": "@id" },
+        "metaphor": { "@id": "wn:metaphor", "@type": "@id" },
+        "has_metaphor": { "@id": "wn:has_metaphor", "@type": "@id" },
+        "metonym": { "@id": "wn:metonym", "@type": "@id" },
+        "has_metonym": { "@id": "wn:has_metonym", "@type": "@id" },
 
 
         "relType": { "@id": "vartrans:category", "@type": "@vocab" },
