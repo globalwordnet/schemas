@@ -382,6 +382,21 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
 
+**Sense Definitions**
+
+This format does not directly support sense-level definitions as definitions in
+a wordnet are typically given on the synset level. You may indicate that definition
+belongs to a particular sense with the `sourceSense` attribute.
+
+    <Synset id="synset1">
+        <Definition sourceSense="sense1">
+            the father of your father or mother
+        </Definition>
+        <Definition sourceSense="sense2">
+            A father's father; a paternal grandfather
+        </Definition>
+    </Synset>
+
 JSON
 ----
 
