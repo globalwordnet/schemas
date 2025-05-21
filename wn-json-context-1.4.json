@@ -43,6 +43,8 @@
         "variety": { "@id": "wn:variety", "@type": "@id" },
         "notation": { "@id": "wn:notation", "@type": "string" },
         "phonemic": { "@id": "wn:phonemic", "@type": "xsd:boolean" },
+        "index": { "@id": "wn:index", "@type": "string" },
+        "n": { "@id": "wn:n", "@type": "xsd:integer" },
         "audio": { "@id": "wn:audio", "@type": "string" },
         "agent": { "@id": "wn:agent", "@type": "@id" },
         "also": { "@id": "wn:also", "@type": "@id" },

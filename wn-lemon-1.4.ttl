@@ -685,3 +685,15 @@
   rdfs:label "audio"@en ;
   rdfs:comment "Links to an audio file for a pronunciation"@en ;
   rdfs:domain :Pronunciation .
+
+:index a owl:DatatypeProperty ;
+  rdfs:label "index"@en ;
+  rdfs:comment "The normalized form of a lexical entry for indexing purposes"@en ;
+  rdfs:domain ontolex:LexicalEntry ;
+  rdfs:range rdfs:Literal .
+
+:n a owl:DatatypeProperty ;
+  rdfs:label "n"@en ;
+  rdfs:comment "The ordering of a sense within a lexical entry or a normalized group of entries"@en ;
+  rdfs:domain ontolex:LexicalSense ;
+  rdfs:range xsd:integer .

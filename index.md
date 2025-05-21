@@ -364,6 +364,24 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
 
+**Sense orders**
+
+Sense orders are typically captured by the order of the senses in the XML file.
+In some cases, wordnets may wish to specify the order of senses across multiple
+lexical entries; this is typically the case when there are entries in lowercase,
+uppercase and/or titlecase. The `index` property indicates the normalized form
+of the entry and the `n` property indicates the order of the senses. For example:
+
+     <LexicalEntry id="w1" index="god">
+        <Lemma writtenForm="god" partOfSpeech="n"/>
+        <Sense id="example-en-09528550-n" synset="example-en-09528550-n" n="1"/>
+        <Sense id="example-en-10152827-n" synset="example-en-10152827-n" n="3"/>
+    </LexicalEntry>
+    <LexicalEntry id="w2" index="god">
+        <Lemma writtenForm="God" partOfSpeech="n"/>
+        <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="1"/>
+    </LexicalEntry>
+
 JSON
 ----
 

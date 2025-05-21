@@ -49,6 +49,7 @@
     dc:type CDATA #IMPLIED
     status CDATA #IMPLIED
     note CDATA #IMPLIED
+    index CDATA #IMPLIED
     confidenceScore CDATA #IMPLIED>
 <!ELEMENT Lemma (Pronunciation*, Tag*)>
 <!ATTLIST Lemma
@@ -75,6 +76,7 @@
 <!ATTLIST Sense
     id ID #REQUIRED
     synset IDREF #REQUIRED
+    n CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
