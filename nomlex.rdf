@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:nomlex="https://globalwordnet.github.io/schemas/nomlex#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:wns="https://globalwordnet.github.io/schemas/wn-simple/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/nomlex#Nomlex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/Word"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/nomlex#verb"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/Word"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/nomlex#noun"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#agent">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#bodyPart">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#byMeansOf">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#destination">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#event">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#instrument">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#location">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#material">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/WordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/WordSense"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/nomlex#noun">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/nomlex#Nomlex"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/Word"/>
+  </rdf:Property>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#property">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#relation">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#result">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#state">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#undergoer">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#uses">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://globalwordnet.github.io/schemas/nomlex#vehicle">
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/nomlex#morphosemanticLink"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/nomlex#verb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/nomlex#Nomlex"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple/Word"/>
+  </rdf:Property>
+</rdf:RDF>
