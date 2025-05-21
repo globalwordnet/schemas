@@ -283,7 +283,7 @@
 &lt;/LexicalResource&gt;</code></pre>
 <p><strong><em>Pronunciation</em></strong></p>
 <p>Since 2021, the schema has the ability to represent the pronunciation of lemmas.</p>
-<p>This is in the <code>&lt;Pronunciation&gt;</code> element, which gives the IPA text. It has the following attributes: * <code>variety</code> uses the IETF language tags to indicate dialect, for example encoding British English in IPA as <code>en-GB-fonipa</code> * <code>notation</code>: can encode further information such as indicating a particular dialect (this was <code>notes</code> in the paper) * <code>phonemic</code>: indicates whether the transcription is phonemic (‘true’) or phonetic (<code>false</code>), defaulting to ‘false’ * <code>audio</code>: gives the URL of an audio file of the pronuncation</p>
+<p>This is in the <code>&lt;Pronunciation&gt;</code> element, which gives the IPA text. It has the following attributes: * <code>variety</code> uses the IETF language tags to indicate dialect, for example encoding British English in IPA as <code>en-GB-fonipa</code> * <code>notation</code>: can encode further information such as indicating a particular dialect (this was <code>notes</code> in the paper) * <code>phonemic</code>: indicates whether the transcription is phonemic (‘true’) or phonetic (<code>false</code>), defaulting to ‘true’ * <code>audio</code>: gives the URL of an audio file of the pronuncation</p>
 <p>An example of encoding is given below:</p>
 <pre><code>    &lt;LexicalEntry id=&quot;ex-rabbit-n&quot;&gt;
         &lt;Lemma writtenForm=&quot;rabbit&quot; partOfSpeech=&quot;n&quot;/&gt;
