@@ -379,8 +379,24 @@ of the entry and the `n` property indicates the order of the senses. For example
     </LexicalEntry>
     <LexicalEntry id="w2" index="god">
         <Lemma writtenForm="God" partOfSpeech="n"/>
-        <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="1"/>
+        <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="2"/>
     </LexicalEntry>
+
+The following rules should be followed:
+
+1. There SHOULD be a unique `n` value for each sense sharing an `index`
+2. The integer values of `n` SHOULD be greater than zero
+3. The values of `n` SHOULD only increase in successive senses within an entry
+4. If an entry uses `n` attributes on senses, all senses in the entry SHOULD have an `n` attribute
+5. If an entry's `index` normalizes it to be shared with another entry (e.g., "God" normalized to "god"), then all included entries SHOULD have the `index` attribute (e.g., the "god" entry should have `index="god"`, even if it is redundant)
+
+None of the above are enforced, and things like having multiple senses sharing an `n` value, omitting `n` on some senses, omitting `index` while using `n`, etc., do not result in an invalid document.
+
+Since the attributes are optional and their values are relatively unconstrained, consumers of WN-LMF data may want to adopt these interpretations:
+
+* If the `index` attribute is omitted, its value can default to the `writtenForm` value of the `<Lemma>` element.
+* If the `n` attribute is omitted, the value follows the order of `<Sense>` elements in the XML, starting with `1` (even if this overlaps with an explicit value of `n` on another sense)
+* If two or more senses sharing an (explicit or implicit) `index` also share the (explicit or implicit) value of `n`, their relative order is undecided.
 
 JSON
 ----
