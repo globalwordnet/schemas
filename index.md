@@ -384,7 +384,7 @@ The `<Requires>` element may also be used on a `<LexiconExtension>` for cases wh
 
 **Grammatical Properties**
 
-Grammatical properties such as gender, number, case, and tense are represented with the `<Tag>` element.
+Grammatical properties such as gender, number, case, and tense can be represented with the `<Tag>` element.
 
 The `<Tag>` element has a `category` attribute which indicates the type of grammatical property, and the value is the text of the tag
 
