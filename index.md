@@ -397,6 +397,7 @@ The `<Tag>` element has a `category` attribute which indicates the type of gramm
         </Form>
     </LexicalEntry>
 
+A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
 JSON
 ----
 
