@@ -85,8 +85,7 @@ The following properties may also be specified on the entry:
 
 * status: A string giving the status of this entry, e.g., "valid", "checked", "unchecked"
 * note: A string giving a note about this entry
-* confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of this entry.
-  If this is omitted it is assumed to be the value given on the lexicon, or 1.0 if the lexicon has no value.
+* confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of this entry. If this is omitted it is assumed to be the value given on the lexicon, or 1.0 if the lexicon has no value. Confidence scores may also be stated on senses, synsets, definitions, examples, relations and counts. In all cases, if the value is omitted it is assumed to be the lexicon value not any parent element's value.
 
                 <Lemma writtenForm="grandfather" partOfSpeech="n"/>
                 <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n"/>
