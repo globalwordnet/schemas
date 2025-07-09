@@ -382,6 +382,22 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
 
+**Grammatical Properties**
+
+Grammatical properties such as gender, number, case, and tense can be represented with the `<Tag>` element.
+
+The `<Tag>` element has a `category` attribute which indicates the type of grammatical property, and the value is the text of the tag
+
+    <LexicalEntry id="ex-gato-n">
+        <Lemma writtenForm="gato" partOfSpeech="n">
+          <Tag category="gender">masculine</Tag>
+        </Lemma>
+        <Form writtenForm="gatos">
+            <Tag category="number">plural</Tag>
+        </Form>
+    </LexicalEntry>
+
+A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
 JSON
 ----
 
