@@ -122,6 +122,7 @@
     <owl:sameAs rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#adverb"/>
   </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#agent">
+    <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">A concept which is typically the one/that who/which does the action denoted by a given concept.</rdfs:comment>
     <rdfs:label xml:lang="en">agent</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_agent"/>
@@ -176,6 +177,14 @@
     <rdfs:comment xml:lang="en">X is qualified by Y</rdfs:comment>
     <rdfs:label xml:lang="en">be in state</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#state_of"/>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#body_part">
+    <rdfs:comment xml:lang="en">A word which is typically a body part of a given word (e.g. "finger")</rdfs:comment>
+    <rdfs:label xml:lang="en">body part</rdfs:label>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#by_means_of">
+    <rdfs:comment xml:lang="en">A word which is typically the means by which something is done (e.g.,g "deceive" - "deception")</rdfs:comment>
+    <rdfs:label xml:lang="en">by means of</rdfs:label>
   </SynsetRelType>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#category">
     <rdfs:comment xml:lang="en">The data category of a tag</rdfs:comment>
@@ -280,6 +289,10 @@ results of Concept B.</rdfs:comment>
     <rdfs:comment xml:lang="en">A concept which is a derivationally related form of a given concept.</rdfs:comment>
     <rdfs:label xml:lang="en">derivation</rdfs:label>
   </SenseRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#destination">
+    <rdfs:comment xml:lang="en">The noun indicates the destination of a verb (e.g., "retire" - "retiree")</rdfs:comment>
+    <rdfs:label xml:lang="en">destination</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#diminutive">
     <rdfs:comment xml:lang="en">A concept used to refer to generally smaller members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">diminutive</rdfs:label>
@@ -314,6 +327,10 @@ results of Concept B.</rdfs:comment>
     <rdfs:comment xml:lang="en">X and Y are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)</rdfs:comment>
     <rdfs:label xml:lang="en">eq synonym</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#eq_synonym"/>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#event">
+    <rdfs:comment xml:lang="en">An noun representing the event of a verb (e.g., "(a) meet" - "(to) meet")</rdfs:comment>
+    <rdfs:label xml:lang="en">event</rdfs:label>
   </SynsetRelType>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#example">
     <rdfs:comment xml:lang="en">An example usage of a sense or synset</rdfs:comment>
@@ -381,6 +398,16 @@ results of Concept B.</rdfs:comment>
     <rdfs:label xml:lang="en">has masculine form</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#masculine"/>
   </SynsetRelType>
+  <SenseRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_metaphor">
+    <rdfs:comment xml:lang="en">a relation between two senses, where the second sense is a metaphorical extension of the first sense</rdfs:comment>
+    <rdfs:label xml:lang="en">has metaphor</rdfs:label>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#metaphor"/>
+  </SenseRelType>
+  <SenseRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_metonym">
+    <rdfs:comment xml:lang="en">a relation between two senses, where the second sense is a metonymical extension of the first sense</rdfs:comment>
+    <rdfs:label xml:lang="en">has metonym</rdfs:label>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#metonym"/>
+  </SenseRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#has_young">
     <rdfs:comment xml:lang="en">A concept which has a special concept for young members of its class</rdfs:comment>
     <rdfs:label xml:lang="en">has young form</rdfs:label>
@@ -464,7 +491,9 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#instance_hypernym"/>
   </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#instrument">
+    <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
     <rdfs:comment xml:lang="en">A concept which is the instrument necessary for the action or event expressed by a given concept.</rdfs:comment>
+    <rdfs:comment xml:lang="en">An instrument for doing a task (e.g., "photocopier" - "photocopy")</rdfs:comment>
     <rdfs:label xml:lang="en">instrument</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_instrument"/>
   </SynsetRelType>
@@ -545,7 +574,9 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">lexicographer file</rdfs:label>
   </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#location">
+    <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
     <rdfs:comment xml:lang="en">A concept which is the place where the event expressed by a given concept happens.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A verb derived from the action performed at a place (e.g., "(a) forge" - "(to) forge")</rdfs:comment>
     <rdfs:label xml:lang="en">location</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_location"/>
   </SynsetRelType>
@@ -558,6 +589,10 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:comment xml:lang="en">A concept used to refer to male members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">masculine form</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#has_masculine"/>
+  </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#material">
+    <rdfs:comment xml:lang="en">A word which is typically the material of a given word (e.g. "wood")</rdfs:comment>
+    <rdfs:label xml:lang="en">material</rdfs:label>
   </SynsetRelType>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#memberList">
     <rdfs:comment xml:lang="en">The list of words in a synset in order</rdfs:comment>
@@ -596,6 +631,16 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">meronym</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#holonym"/>
   </SynsetRelType>
+  <SenseRelType rdf:about="https://globalwordnet.github.io/schemas/wn#metaphor">
+    <rdfs:comment xml:lang="en">a relation between two senses, where the first sense is a metaphorical extension of the second sense</rdfs:comment>
+    <rdfs:label xml:lang="en">metaphor</rdfs:label>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#has_metaphor"/>
+  </SenseRelType>
+  <SenseRelType rdf:about="https://globalwordnet.github.io/schemas/wn#metonym">
+    <rdfs:comment xml:lang="en">a relation between two senses, where the first sense is a metonymical extension of the second sense</rdfs:comment>
+    <rdfs:label xml:lang="en">metonym</rdfs:label>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#has_metonym"/>
+  </SenseRelType>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#named_entity">
     <rdfs:label xml:lang="en">named entity</rdfs:label>
   </PartOfSpeech>
@@ -666,6 +711,10 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">pronunciation</rdfs:label>
     <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
   </owl:ObjectProperty>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#property">
+    <rdfs:comment xml:lang="en">Cause something to have a particular property (e.g., "magnetize" - "magnetization")</rdfs:comment>
+    <rdfs:label xml:lang="en">property</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#restricted_by">
     <rdfs:comment xml:lang="en">A relation between nominal (pronominal) Y and an adjectival X (quantifier/determiner)</rdfs:comment>
     <rdfs:label xml:lang="en">restricted by</rdfs:label>
@@ -677,7 +726,9 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#restricted_by"/>
   </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#result">
+    <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SynsetRelType"/>
     <rdfs:comment xml:lang="en">A concept which comes into existence as a result of a given concept.</rdfs:comment>
+    <rdfs:comment xml:lang="en">A word which is typically the result of a given word (e.g. "nitrify" - "nitrate")</rdfs:comment>
     <rdfs:label xml:lang="en">result</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_result"/>
   </SynsetRelType>
@@ -736,6 +787,10 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">source direction</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_source_direction"/>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#state">
+    <rdfs:comment xml:lang="en">A state caused by the verb (e.g., "sensitize" - "sensitization")</rdfs:comment>
+    <rdfs:label xml:lang="en">state</rdfs:label>
+  </SynsetRelType>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#state_of">
     <rdfs:comment xml:lang="en">Y is qualified by X</rdfs:comment>
     <rdfs:label xml:lang="en">state of</rdfs:label>
@@ -762,14 +817,26 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">target direction</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#involved_target_direction"/>
   </SynsetRelType>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#undergoer">
+    <rdfs:comment xml:lang="en">A word which is typically the undergoer of a given word (e.g. "honor" - "honoree")</rdfs:comment>
+    <rdfs:label xml:lang="en">undergoer</rdfs:label>
+  </SynsetRelType>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#unknown_pos">
     <rdfs:label xml:lang="en">unknown pos</rdfs:label>
   </PartOfSpeech>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#uses">
+    <rdfs:comment xml:lang="en">A verb that uses a noun (e.g., "(to) talc" - "talc")</rdfs:comment>
+    <rdfs:label xml:lang="en">uses</rdfs:label>
+  </SynsetRelType>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#variety">
     <rdfs:comment xml:lang="en">Indicates the variety of language the pronunciation represents</rdfs:comment>
     <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
     <rdfs:label xml:lang="en">variety</rdfs:label>
   </owl:DatatypeProperty>
+  <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#vehicle">
+    <rdfs:comment xml:lang="en">A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")</rdfs:comment>
+    <rdfs:label xml:lang="en">vehicle</rdfs:label>
+  </SynsetRelType>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#verb">
     <rdfs:label xml:lang="en">verb</rdfs:label>
     <owl:sameAs rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#verb"/>
