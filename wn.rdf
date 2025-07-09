@@ -478,6 +478,12 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">in manner</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#manner_of"/>
   </SynsetRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#index">
+    <rdfs:comment xml:lang="en">The normalized form of a lexical entry for indexing purposes</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+    <rdfs:label xml:lang="en">index</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#instance_hypernym">
     <rdfs:comment xml:lang="en">the type of an instance</rdfs:comment>
     <rdfs:comment xml:lang="ja">当該synsetは相手synsetを事例として持つ</rdfs:comment>
@@ -641,6 +647,12 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">metonym</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#has_metonym"/>
   </SenseRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#n">
+    <rdfs:comment xml:lang="en">The ordering of a sense within a lexical entry or a normalized group of entries</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+    <rdfs:label xml:lang="en">n</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#named_entity">
     <rdfs:label xml:lang="en">named entity</rdfs:label>
   </PartOfSpeech>
