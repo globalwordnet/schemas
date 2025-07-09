@@ -408,6 +408,21 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
 
+**Sense Definitions**
+
+This format does not directly support sense-level definitions as definitions in
+a wordnet are typically given on the synset level. You may indicate that definition
+belongs to a particular sense with the `sourceSense` attribute.
+
+    <Synset id="synset1">
+        <Definition sourceSense="sense1">
+            the father of your father or mother
+        </Definition>
+        <Definition sourceSense="sense2">
+            A father's father; a paternal grandfather
+        </Definition>
+    </Synset>
+
 **Grammatical Properties**
 
 Grammatical properties such as gender, number, case, and tense can be represented with the `<Tag>` element.
@@ -424,6 +439,7 @@ The `<Tag>` element has a `category` attribute which indicates the type of gramm
     </LexicalEntry>
 
 A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
+
 JSON
 ----
 
