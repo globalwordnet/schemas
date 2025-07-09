@@ -725,6 +725,58 @@ the required wordnet should be loaded as well. The
 <code>&lt;Requires&gt;</code> element may also be used on a
 <code>&lt;LexiconExtension&gt;</code> for cases where the lexicon
 extends one wordnet but requires another.</p>
+<p><strong>Sense orders</strong></p>
+<p>Sense orders are typically captured by the order of the senses in the
+XML file. In some cases, wordnets may wish to specify the order of
+senses across multiple lexical entries; this is typically the case when
+there are entries in lowercase, uppercase and/or titlecase. The
+<code>index</code> property indicates the normalized form of the entry
+and the <code>n</code> property indicates the order of the senses. For
+example:</p>
+<pre><code> &lt;LexicalEntry id=&quot;w1&quot; index=&quot;god&quot;&gt;
+    &lt;Lemma writtenForm=&quot;god&quot; partOfSpeech=&quot;n&quot;/&gt;
+    &lt;Sense id=&quot;example-en-09528550-n&quot; synset=&quot;example-en-09528550-n&quot; n=&quot;1&quot;/&gt;
+    &lt;Sense id=&quot;example-en-10152827-n&quot; synset=&quot;example-en-10152827-n&quot; n=&quot;3&quot;/&gt;
+&lt;/LexicalEntry&gt;
+&lt;LexicalEntry id=&quot;w2&quot; index=&quot;god&quot;&gt;
+    &lt;Lemma writtenForm=&quot;God&quot; partOfSpeech=&quot;n&quot;/&gt;
+    &lt;Sense id=&quot;example-en-09559169-n&quot; synset=&quot;example-en-09559169-n&quot; n=&quot;2&quot;/&gt;
+&lt;/LexicalEntry&gt;</code></pre>
+<p>The following rules should be followed:</p>
+<ol type="1">
+<li>There SHOULD be a unique <code>n</code> value for each sense sharing
+an <code>index</code></li>
+<li>The integer values of <code>n</code> SHOULD be greater than
+zero</li>
+<li>The values of <code>n</code> SHOULD only increase in successive
+senses within an entry</li>
+<li>If an entry uses <code>n</code> attributes on senses, all senses in
+the entry SHOULD have an <code>n</code> attribute</li>
+<li>If an entry’s <code>index</code> normalizes it to be shared with
+another entry (e.g., “God” normalized to “god”), then all included
+entries SHOULD have the <code>index</code> attribute (e.g., the “god”
+entry should have <code>index="god"</code>, even if it is
+redundant)</li>
+</ol>
+<p>None of the above are enforced, and things like having multiple
+senses sharing an <code>n</code> value, omitting <code>n</code> on some
+senses, omitting <code>index</code> while using <code>n</code>, etc., do
+not result in an invalid document.</p>
+<p>Since the attributes are optional and their values are relatively
+unconstrained, consumers of WN-LMF data may want to adopt these
+interpretations:</p>
+<ul>
+<li>If the <code>index</code> attribute is omitted, its value can
+default to the <code>writtenForm</code> value of the
+<code>&lt;Lemma&gt;</code> element.</li>
+<li>If the <code>n</code> attribute is omitted, the value follows the
+order of <code>&lt;Sense&gt;</code> elements in the XML, starting with
+<code>1</code> (even if this overlaps with an explicit value of
+<code>n</code> on another sense)</li>
+<li>If two or more senses sharing an (explicit or implicit)
+<code>index</code> also share the (explicit or implicit) value of
+<code>n</code>, their relative order is undecided.</li>
+</ul>
 <p><strong>Sense Definitions</strong></p>
 <p>This format does not directly support sense-level definitions as
 definitions in a wordnet are typically given on the synset level. You

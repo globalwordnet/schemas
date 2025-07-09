@@ -163,6 +163,7 @@
                                 "subject": { "type": "string" },
                                 "title": { "type": "string" },
                                 "type": { "type": "string" },
+                                "index": { "type": "string" },
                                 "sense": { 
                                     "type": "array",
                                     "minItems": 1,
@@ -187,6 +188,7 @@
                                             "subject": { "type": "string" },
                                             "title": { "type": "string" },
                                             "type": { "type": "string" },
+                                            "n": { "type": "number", "minimum": 0 },
                                             "subcat": { 
                                                 "type": "array",
                                                 "minItems": 1,
