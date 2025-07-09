@@ -247,8 +247,8 @@ major.minor format)</li>
 <ul>
 <li><p>status: The status of the resource, e.g., “valid”, “checked”,
 “unchecked”</p></li>
-<li><p>confidenceScore: A numeric value between 0 and 1 giving the
-confidence in the correctness of the element.</p>
+<li><p>confidenceScore: A default numeric value between 0 and 1 giving
+the confidence in the correctness of elements in this resource.</p>
 <pre><code>  &lt;Lexicon id=&quot;example-en&quot;
            label=&quot;Example wordnet (English)&quot;
            language=&quot;en&quot; 
@@ -263,16 +263,29 @@ confidence in the correctness of the element.</p>
 <pre><code>        &lt;LexicalEntry id=&quot;w1&quot;&gt;</code></pre>
 <p>The part of speech values are as follows:</p>
 <ul>
-<li><p>n: Noun</p></li>
-<li><p>v: Verb</p></li>
-<li><p>a: Adjective</p></li>
-<li><p>r: Adverb</p></li>
-<li><p>s: Adjective Satellite</p></li>
-<li><p>c: Conjunction</p></li>
-<li><p>p: Adposition (Preposition, postposition, etc.)</p></li>
-<li><p>x: Other (inc. particle, classifier, bound morphemes,
-determiners)</p></li>
-<li><p>u: Unknown</p>
+<li>n: Noun</li>
+<li>v: Verb</li>
+<li>a: Adjective</li>
+<li>r: Adverb</li>
+<li>s: Adjective Satellite</li>
+<li>c: Conjunction</li>
+<li>p: Adposition (Preposition, postposition, etc.)</li>
+<li>x: Other (inc. particle, classifier, bound morphemes,
+determiners)</li>
+<li>u: Unknown</li>
+</ul>
+<p>The following properties may also be specified on the entry:</p>
+<ul>
+<li><p>status: A string giving the status of this entry, e.g., “valid”,
+“checked”, “unchecked”</p></li>
+<li><p>note: A string giving a note about this entry</p></li>
+<li><p>confidenceScore: A numeric value between 0 and 1 giving the
+confidence in the correctness of this entry. If this is omitted it is
+assumed to be the value given on the lexicon, or 1.0 if the lexicon has
+no value. Confidence scores may also be stated on senses, synsets,
+definitions, examples, relations and counts. In all cases, if the value
+is omitted it is assumed to be the lexicon value not any parent
+element’s value.</p>
 <pre><code>          &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
           &lt;Sense id=&quot;example-en-10161911-n-1&quot; synset=&quot;example-en-10161911-n&quot;/&gt;
       &lt;/LexicalEntry&gt;
@@ -281,26 +294,58 @@ determiners)</p></li>
           &lt;Sense id=&quot;example-en-1-n-1&quot; synset=&quot;example-en-1-n&quot;&gt;</code></pre></li>
 </ul>
 <p>The set of relations between senses is limited to the following</p>
+<p><strong>Princeton WordNet Relations</strong></p>
 <ul>
-<li><p>antonym: An opposite and inherently incompatible word</p></li>
-<li><p>also: See also, a reference of weak meaning</p></li>
-<li><p>participle: An adjective that is a participle form a
-verb</p></li>
-<li><p>pertainym: A relational adjective. Adjectives that are pertainyms
+<li>antonym: An opposite and inherently incompatible word</li>
+<li>also: See also, a reference of weak meaning</li>
+<li>participle: An adjective that is a participle form a verb</li>
+<li>pertainym: A relational adjective. Adjectives that are pertainyms
 are usually defined by such phrases as “of or pertaining to” and do not
-have antonyms. A pertainym can point to a noun or another
-pertainym</p></li>
-<li><p>derivation: A word that is derived from some other word</p></li>
-<li><p>domain_topic: Indicates the category of this word</p></li>
-<li><p>domain_member_topic: Indicates a word involved in this category
-described by this word</p></li>
-<li><p>domain_region: Indicates the region of this word</p></li>
-<li><p>domain_member_region: Indicates a word involved in the region
-described by this word</p></li>
-<li><p>exemplifies: Indicates the usage of this word</p></li>
-<li><p>is_exemplified_by: Indicates a word involved in the usage
-described by this word</p></li>
-<li><p>similar: Similar, though not necessarily interchangeable</p></li>
+have antonyms. A pertainym can point to a noun or another pertainym</li>
+<li>derivation: A word that is derived from some other word</li>
+<li>domain_topic: Indicates the category of this word</li>
+<li>domain_member_topic: Indicates a word involved in this category
+described by this word</li>
+<li>domain_region: Indicates the region of this word</li>
+<li>domain_member_region: Indicates a word involved in the region
+described by this word</li>
+<li>exemplifies: Indicates the usage of this word</li>
+<li>is_exemplified_by: Indicates a word involved in the usage described
+by this word</li>
+<li>similar: Similar, though not necessarily interchangeable</li>
+</ul>
+<p><strong>Morphosemantic relations</strong></p>
+<ul>
+<li>agent: A word which is typically the one/that who/which does the
+action denoted by a given word (e.g. “to eat” - “eater”)</li>
+<li>material: A word which is typically the material of a given word
+(e.g. “wood”)</li>
+<li>event: An noun representing the event of a verb (e.g., “(a) meet” -
+“(to) meet”)</li>
+<li>instrument: An instrument for doing a task (e.g., “photocopier” -
+“photocopy”)</li>
+<li>location: A verb derived from the action performed at a place (e.g.,
+“(a) forge” - “(to) forge”)</li>
+<li>by_means_of: A word which is typically the means by which something
+is done (e.g.,g “deceive” - “deception”)</li>
+<li>undergoer: A word which is typically the undergoer of a given word
+(e.g. “honor” - “honoree”)</li>
+<li>property: Cause something to have a particular property (e.g.,
+“magnetize” - “magnetization”)</li>
+<li>result: A word which is typically the result of a given word
+(e.g. “nitrify” - “nitrate”)</li>
+<li>state: A state caused by the verb (e.g., “sensitize” -
+“sensitization”)</li>
+<li>uses: A verb that uses a noun (e.g., “(to) talc” - “talc”)</li>
+<li>destination: The noun indicates the destination of a verb (e.g.,
+“retire” - “retiree”)</li>
+<li>body_part: A word which is typically a body part of a given word
+(e.g. “finger”)</li>
+<li>vehicle: A verb indicating movement with a particular vehicle (e.g.,
+“(to) ship” - “ship”)</li>
+</ul>
+<p>** Non-Princeton WordNet Relations**</p>
+<ul>
 <li><p>simple_aspect_ip: A word which is linked to another through a
 change from imperfective to perfective aspect</p></li>
 <li><p>secondary_aspect_ip: A word which is linked to another through a
@@ -330,7 +375,15 @@ lie on a continuous spectrum</p></li>
 <li><p>anto_simple: A word pair whose meanings are opposite but whose
 meanings do not lie on a continuous spectrum</p></li>
 <li><p>anto_converse: A word pair that name or describe a single
-relationship from opposite perspectives</p>
+relationship from opposite perspectives</p></li>
+<li><p>metaphor: A relation between two senses, where the first sense is
+a metaphorical extension of the second sense</p></li>
+<li><p>has_metaphor: A relation between two senses, where the first
+sense can be metaphorically extended to the second sense</p></li>
+<li><p>metonym: A relation between two senses, where the first sense is
+a metonymic extension of the second sense</p></li>
+<li><p>has_metonym: A relation between two senses, where the first sense
+can be metonymically extended to the second sense</p>
 <pre><code>              &lt;SenseRelation relType=&quot;derivation&quot; target=&quot;example-en-10161911-n-1&quot;/&gt;
           &lt;/Sense&gt;
       &lt;/LexicalEntry&gt;
@@ -685,6 +738,22 @@ may indicate that definition belongs to a particular sense with the
         A father&#39;s father; a paternal grandfather
     &lt;/Definition&gt;
 &lt;/Synset&gt;</code></pre>
+<p><strong>Grammatical Properties</strong></p>
+<p>Grammatical properties such as gender, number, case, and tense can be
+represented with the <code>&lt;Tag&gt;</code> element.</p>
+<p>The <code>&lt;Tag&gt;</code> element has a <code>category</code>
+attribute which indicates the type of grammatical property, and the
+value is the text of the tag</p>
+<pre><code>&lt;LexicalEntry id=&quot;ex-gato-n&quot;&gt;
+    &lt;Lemma writtenForm=&quot;gato&quot; partOfSpeech=&quot;n&quot;&gt;
+      &lt;Tag category=&quot;gender&quot;&gt;masculine&lt;/Tag&gt;
+    &lt;/Lemma&gt;
+    &lt;Form writtenForm=&quot;gatos&quot;&gt;
+        &lt;Tag category=&quot;number&quot;&gt;plural&lt;/Tag&gt;
+    &lt;/Form&gt;
+&lt;/LexicalEntry&gt;</code></pre>
+<p>A universal tagging scheme is not prescribed and wordnet project
+owners are free to choose a scheme that works for their data.</p>
 <h1 id="json">JSON</h1>
 <p>The JSON format follows that of the XML and is based on <a
 href="http://json-ld.org">JSON-LD</a> <a
