@@ -96,6 +96,8 @@ The following properties may also be specified on the entry:
 
 The set of relations between senses is limited to the following
 
+**Princeton WordNet Relations**
+
 * antonym: An opposite and inherently incompatible word
 * also: See also, a reference of weak meaning
 * participle: An adjective that is a participle form a verb
@@ -108,6 +110,26 @@ The set of relations between senses is limited to the following
 * exemplifies: Indicates the usage of this word
 * is_exemplified_by: Indicates a word involved in the usage described by this word
 * similar: Similar, though not necessarily interchangeable
+
+**Morphosemantic relations**
+
+* agent: A word which is typically the one/that who/which does the action denoted by a given word (e.g. "to eat" - "eater")
+* material: A word which is typically the material of a given word (e.g. "wood")
+* event: An noun representing the event of a verb (e.g., "(a) meet" - "(to) meet")
+* instrument: An instrument for doing a task (e.g., "photocopier" - "photocopy")
+* location: A verb derived from the action performed at a place (e.g., "(a) forge" - "(to) forge")
+* by_means_of: A word which is typically the means by which something is done (e.g.,g "deceive" - "deception")
+* undergoer: A word which is typically the undergoer of a given word (e.g. "honor" - "honoree")
+* property: Cause something to have a particular property (e.g., "magnetize" - "magnetization")
+* result: A word which is typically the result of a given word (e.g. "nitrify" - "nitrate")
+* state: A state caused by the verb (e.g., "sensitize" - "sensitization")
+* uses: A verb that uses a noun (e.g., "(to) talc" - "talc")
+* destination: The noun indicates the destination of a verb (e.g., "retire" - "retiree")
+* body_part: A word which is typically a body part of a given word (e.g. "finger")
+* vehicle: A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")
+
+** Non-Princeton WordNet Relations**
+
 * simple_aspect_ip: A word which is linked to another through a change from imperfective to perfective aspect
 * secondary_aspect_ip: A word which is linked to another through a change in aspect (ip)
 * simple_aspect_pi: A word which is linked to another through a change from perfective to imperfective aspect
@@ -125,6 +147,10 @@ The set of relations between senses is limited to the following
 * anto_gradable: A word pair whose meanings are opposite and which lie on a continuous spectrum
 * anto_simple: A word pair whose meanings are opposite but whose meanings do not lie on a continuous spectrum
 * anto_converse: A word pair that name or describe a single relationship from opposite perspectives
+* metaphor: A relation between two senses, where the first sense is a metaphorical extension of the second sense
+* has_metaphor: A relation between two senses, where the first sense can be metaphorically extended to the second sense
+* metonym: A relation between two senses, where the first sense is a metonymic extension of the second sense
+* has_metonym: A relation between two senses, where the first sense can be metonymically extended to the second sense
 
                     <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
                 </Sense>
@@ -387,6 +413,38 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
+
+**Sense Definitions**
+
+This format does not directly support sense-level definitions as definitions in
+a wordnet are typically given on the synset level. You may indicate that definition
+belongs to a particular sense with the `sourceSense` attribute.
+
+    <Synset id="synset1">
+        <Definition sourceSense="sense1">
+            the father of your father or mother
+        </Definition>
+        <Definition sourceSense="sense2">
+            A father's father; a paternal grandfather
+        </Definition>
+    </Synset>
+
+**Grammatical Properties**
+
+Grammatical properties such as gender, number, case, and tense can be represented with the `<Tag>` element.
+
+The `<Tag>` element has a `category` attribute which indicates the type of grammatical property, and the value is the text of the tag
+
+    <LexicalEntry id="ex-gato-n">
+        <Lemma writtenForm="gato" partOfSpeech="n">
+          <Tag category="gender">masculine</Tag>
+        </Lemma>
+        <Form writtenForm="gatos">
+            <Tag category="number">plural</Tag>
+        </Form>
+    </LexicalEntry>
+
+A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
 
 JSON
 ----
