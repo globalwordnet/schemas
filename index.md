@@ -369,7 +369,7 @@ They are defined much like regular lexicons, but the `<Extends>` element specifi
                           email="goodmami@uw.edu"
                           license="https://creativecommons.org/publicdomain/zero/1.0/"
                           version="1.0">
-            <Extends id="ewn" version="2020" />
+            <Extends ref="ewn" version="2020" />
 
 The contents of the lexicon extension are the same as a regular lexicon with the addition of elements for external lexical entries, synsets, and senses.
 There are two uses of external elements.
@@ -409,7 +409,7 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
                  dc:format="OMW-LMF"
                  dc:description="Wordnet made from OMW 1.0 data"
                  confidenceScore="1.0">
-	        <Requires id="pwn" version="3.0" />
+	        <Requires ref="pwn" version="3.0" />
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
