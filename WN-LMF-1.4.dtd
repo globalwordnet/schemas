@@ -281,12 +281,12 @@
     confidenceScore CDATA "1.0">
 <!ELEMENT Requires EMPTY>
 <!ATTLIST Requires
-    ref ID #REQUIRED
+    ref CDATA #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED>
 <!ELEMENT Extends EMPTY>
 <!ATTLIST Extends
-    ref ID #REQUIRED
+    ref CDATA #REQUIRED
     version CDATA #REQUIRED
     url CDATA #IMPLIED>
 <!ELEMENT ExternalLexicalEntry (ExternalLemma?, (Form|ExternalForm)*, (Sense|ExternalSense)*, SyntacticBehaviour*)>
