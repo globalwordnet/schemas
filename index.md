@@ -31,7 +31,7 @@ The first three lines must always be as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
-    <LexicalResource xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <LexicalResource xmlns:dc="https://globalwordnet.github.io/schemas/dc/">
     
 A file may contain multiple WordNets in different languages:
 
