@@ -8,10 +8,10 @@ published and submitted to the ILI. These are as follows:
 
 * [Lexical Markup Framework compatible XML](#xml)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.xml)
-    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.3.dtd)
+    * [DTD](http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd)
 * [JSON-LD using the lemon Vocabulary](#json)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.json)
-    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.3.json)
+    * [JSON-LD Context](http://globalwordnet.github.io/schemas/wn-json-context-1.4.json)
     * [Schema](http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json)
 * [OntoLex RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
@@ -24,14 +24,14 @@ A converter and validator is available at [http://server1.nlp.insight-centre.org
 XML
 ---
 
-The XML is specified by the following [DTD](WN-LMF-1.3.dtd). An example is 
+The XML is specified by the following [DTD](WN-LMF-1.4.dtd). An example is 
 given [here](https://github.com/globalwordnet/schemas/blob/master/example.xml):
 
 The first three lines must always be as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.3.dtd">
-    <LexicalResource xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
+    <LexicalResource xmlns:dc="https://globalwordnet.github.io/schemas/dc/">
     
 A file may contain multiple WordNets in different languages:
 
@@ -52,8 +52,8 @@ The following information is required:
 Extra properties may be included from Dublin core and in addition
 
 * status: The status of the resource, e.g., "valid", "checked", "unchecked"
-* confidenceScore: A numeric value between 0 and 1 giving the 
-                    confidence in the correctness of the element.
+* confidenceScore: A default numeric value between 0 and 1 giving the 
+                    confidence in the correctness of elements in this resource.
 
         <Lexicon id="example-en"
                  label="Example wordnet (English)"
@@ -81,6 +81,12 @@ The part of speech values are as follows:
 * x: Other (inc. particle, classifier, bound morphemes, determiners)
 * u: Unknown
 
+The following properties may also be specified on the entry:
+
+* status: A string giving the status of this entry, e.g., "valid", "checked", "unchecked"
+* note: A string giving a note about this entry
+* confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of this entry. If this is omitted it is assumed to be the value given on the lexicon, or 1.0 if the lexicon has no value. Confidence scores may also be stated on senses, synsets, definitions, examples, relations and counts. In all cases, if the value is omitted it is assumed to be the lexicon value not any parent element's value.
+
                 <Lemma writtenForm="grandfather" partOfSpeech="n"/>
                 <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n"/>
             </LexicalEntry>
@@ -89,6 +95,8 @@ The part of speech values are as follows:
                 <Sense id="example-en-1-n-1" synset="example-en-1-n">
 
 The set of relations between senses is limited to the following
+
+**Princeton WordNet Relations**
 
 * antonym: An opposite and inherently incompatible word
 * also: See also, a reference of weak meaning
@@ -101,6 +109,48 @@ The set of relations between senses is limited to the following
 * domain_member_region: Indicates a word involved in the region described by this word
 * exemplifies: Indicates the usage of this word
 * is_exemplified_by: Indicates a word involved in the usage described by this word
+* similar: Similar, though not necessarily interchangeable
+
+**Morphosemantic relations**
+
+* agent: A word which is typically the one/that who/which does the action denoted by a given word (e.g. "to eat" - "eater")
+* material: A word which is typically the material of a given word (e.g. "wood")
+* event: An noun representing the event of a verb (e.g., "(a) meet" - "(to) meet")
+* instrument: An instrument for doing a task (e.g., "photocopier" - "photocopy")
+* location: A verb derived from the action performed at a place (e.g., "(a) forge" - "(to) forge")
+* by_means_of: A word which is typically the means by which something is done (e.g.,g "deceive" - "deception")
+* undergoer: A word which is typically the undergoer of a given word (e.g. "honor" - "honoree")
+* property: Cause something to have a particular property (e.g., "magnetize" - "magnetization")
+* result: A word which is typically the result of a given word (e.g. "nitrify" - "nitrate")
+* state: A state caused by the verb (e.g., "sensitize" - "sensitization")
+* uses: A verb that uses a noun (e.g., "(to) talc" - "talc")
+* destination: The noun indicates the destination of a verb (e.g., "retire" - "retiree")
+* body_part: A word which is typically a body part of a given word (e.g. "finger")
+* vehicle: A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")
+
+** Non-Princeton WordNet Relations**
+
+* simple_aspect_ip: A word which is linked to another through a change from imperfective to perfective aspect
+* secondary_aspect_ip: A word which is linked to another through a change in aspect (ip)
+* simple_aspect_pi: A word which is linked to another through a change from perfective to imperfective aspect
+* secondary_aspect_pi: A word which is linked to another through a change in aspect (pi)
+* feminine: A feminine form of a word
+* has_feminine: Indicates the base form of a word with a feminine derivation
+* masculine: A masculine form of a word
+* has_masculine: Indicates the base form of a word with a masculine derivation
+* young: A form of a word with a derivation indicating the young of a species
+* has_young: Indicates the base form of a word with a young derivation
+* diminutive: A diminutive form of a word
+* has_diminutive: Indicates the base form of a word with a diminutive derivation
+* augmentative: An augmentative form of a word
+* has_augmentative: Indicates the base form of a word with an augmentative derivation
+* anto_gradable: A word pair whose meanings are opposite and which lie on a continuous spectrum
+* anto_simple: A word pair whose meanings are opposite but whose meanings do not lie on a continuous spectrum
+* anto_converse: A word pair that name or describe a single relationship from opposite perspectives
+* metaphor: A relation between two senses, where the first sense is a metaphorical extension of the second sense
+* has_metaphor: A relation between two senses, where the first sense can be metaphorically extended to the second sense
+* metonym: A relation between two senses, where the first sense is a metonymic extension of the second sense
+* has_metonym: A relation between two senses, where the first sense can be metonymically extended to the second sense
 
                     <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
                 </Sense>
@@ -344,25 +394,87 @@ Due to the way external IDs are used, a lexicon extension may not exist in the s
 
 **Wordnet Dependencies**
 
-Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://lr.soh.ntu.edu.sg/omw/) which depend upon the Princeton WordNet for synset structure.
+Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://compling.upol.cz/omw/omw) which depend upon the Princeton WordNet for synset structure.
 With the `<Requires>` element, it is possible to explicitly codify those dependencies:
 
-        <Lexicon id="spawn"
-                 label="Multilingual Central Repository"
+        <Lexicon id="omw-es"
+                 label="Multilingual Central Repository (Spanish)"
                  language="es"
                  email="bond@ieee.org"
                  license="https://creativecommons.org/licenses/by/3.0/"
-                 version="1.3+omw"
-                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."
-                 url="http://adimen.si.ehu.es/web/MCR/"
-                 dc:publisher="Global Wordnet Association"
-                 dc:format="OMW-LMF"
-                 dc:description="Wordnet made from OMW 1.0 data"
-                 confidenceScore="1.0">
-	        <Requires id="pwn" version="3.0" />
+                 version="2.0"
+                 url="https://adimen.si.ehu.es/web/MCR/"
+                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.">
+          <Requires id="omw-en" version="2.0" />
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
+
+**Sense orders**
+
+Sense orders are typically captured by the order of the senses in the XML file.
+In some cases, wordnets may wish to specify the order of senses across multiple
+lexical entries; this is typically the case when there are entries in lowercase,
+uppercase and/or titlecase. The `index` property indicates the normalized form
+of the entry and the `n` property indicates the order of the senses. For example:
+
+     <LexicalEntry id="w1" index="god">
+        <Lemma writtenForm="god" partOfSpeech="n"/>
+        <Sense id="example-en-09528550-n" synset="example-en-09528550-n" n="1"/>
+        <Sense id="example-en-10152827-n" synset="example-en-10152827-n" n="3"/>
+    </LexicalEntry>
+    <LexicalEntry id="w2" index="god">
+        <Lemma writtenForm="God" partOfSpeech="n"/>
+        <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="2"/>
+    </LexicalEntry>
+
+The following rules should be followed:
+
+1. There SHOULD be a unique `n` value for each sense sharing an `index`
+2. The integer values of `n` SHOULD be greater than zero
+3. The values of `n` SHOULD only increase in successive senses within an entry
+4. If an entry uses `n` attributes on senses, all senses in the entry SHOULD have an `n` attribute
+5. If an entry's `index` normalizes it to be shared with another entry (e.g., "God" normalized to "god"), then all included entries SHOULD have the `index` attribute (e.g., the "god" entry should have `index="god"`, even if it is redundant)
+
+None of the above are enforced, and things like having multiple senses sharing an `n` value, omitting `n` on some senses, omitting `index` while using `n`, etc., do not result in an invalid document.
+
+Since the attributes are optional and their values are relatively unconstrained, consumers of WN-LMF data may want to adopt these interpretations:
+
+* If the `index` attribute is omitted, its value can default to the `writtenForm` value of the `<Lemma>` element.
+* If the `n` attribute is omitted, the value follows the order of `<Sense>` elements in the XML, starting with `1` (even if this overlaps with an explicit value of `n` on another sense)
+* If two or more senses sharing an (explicit or implicit) `index` also share the (explicit or implicit) value of `n`, their relative order is undecided.
+
+**Sense Definitions**
+
+This format does not directly support sense-level definitions as definitions in
+a wordnet are typically given on the synset level. You may indicate that definition
+belongs to a particular sense with the `sourceSense` attribute.
+
+    <Synset id="synset1">
+        <Definition sourceSense="sense1">
+            the father of your father or mother
+        </Definition>
+        <Definition sourceSense="sense2">
+            A father's father; a paternal grandfather
+        </Definition>
+    </Synset>
+
+**Grammatical Properties**
+
+Grammatical properties such as gender, number, case, and tense can be represented with the `<Tag>` element.
+
+The `<Tag>` element has a `category` attribute which indicates the type of grammatical property, and the value is the text of the tag
+
+    <LexicalEntry id="ex-gato-n">
+        <Lemma writtenForm="gato" partOfSpeech="n">
+          <Tag category="gender">masculine</Tag>
+        </Lemma>
+        <Form writtenForm="gatos">
+            <Tag category="number">plural</Tag>
+        </Form>
+    </LexicalEntry>
+
+A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
 
 JSON
 ----
@@ -378,7 +490,7 @@ Collaborative Interlingual Index, but web services may of course return shorter
 fragments of the structure.
 
     { 
-      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.3.json",
+      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.4.json",
       "@graph": [{
 
 The following are required properties of every WordNet (note the language

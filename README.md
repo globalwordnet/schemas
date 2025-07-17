@@ -13,5 +13,7 @@ Building the metadata
 
 `wn.rdf` is generated from the Turtle with Rapper
 
-    rapper -i turtle -o rdfxml-abbrev wn.ttl > wn.rdf
+    rapper -i turtle -o rdfxml-abbrev wn-lemon-$VERSION.ttl > wn.rdf
+    rapper -i turtle -o rdfxml-abbrev wn-simple-$VERSION.ttl > wn-simple.rdf
+    rapper -i turtle -o rdfxml-abbrev nomlex-$VERSION.ttl > nomlex.rdf
 

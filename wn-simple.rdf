@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:nomlex="https://globalwordnet.github.io/schemas/nomlex/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:voaf="http://purl.org/vocommons/voaf#"
+   xmlns:wns="https://globalwordnet.github.io/schemas/wn-simple#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+  <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteSynset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A Synset in an adjective cluster representing a concept that is similar in meaning to the concept represented by its head synset .</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteWordSense"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A sense of an adjective satellite word.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSatelliteSynset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A synset including adjective word senses.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A sense of an adjective word.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdverbSynset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A synset including adverb word senses.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdverbWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdverbWordSense"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#AdverbWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A meaning of an adverb word.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdverbSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdverbSynset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#NounSynset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A synset including noun word senses.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A meaning of a noun word.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#Synset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A synonym set; a set of words that are interchangeable in some context. Word and WordSenses are distinguished in this datamodel for two reasons: 1) WordNet uses the distinction in the database, and several relations are defined for WordSenses rather than for Synsets; 2) For the sake of ontological clarity, here it is assumed that Synsets include word senses, in order to partition the logical space of the lexicon (words as forms, which belong to different natural language lexica, words as meanings, which also can be peculiar to different natural languages, but usually exist in several of them, and synsets, which cluster word senses by abstracting out their distributional context.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Word"/>
+    <owl:disjointWith rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A synset including verb word senses.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A meaning of a verb word.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#Word">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">Any word or composed term (collocation) deputed to have a sense in WordNet. For the sake of ontological clarity, here it is assumed that synsets include word senses, in order to partition the logical space of the lexicon (words as forms, which belong to different natural language lexica, words as meanings, which also can be peculiar to different natural languages, but usually exist in several of them, and synsets, which cluster word senses by abstracting out their distributional context.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#sense"/>
+        <owl:someValuesFrom rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#lexicalForm"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://globalwordnet.github.io/schemas/wn-simple#WordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en-us">A meaning of a word in WordNet. Each sense of a word is in a different synset. Each word sense is contained in exactly one synset. Word and WordSenses are distinguished in this datamodel for two reasons: 1) WordNet uses the distinction in the database, and several relations are defined for WordSenses rather than for Synsets. 2) For the sake of ontological clarity, here it is assumed that synsets include word senses, in order to partition the logical space of the lexicon (words as forms, which belong to different natural language lexica, words as meanings, which also can be peculiar to different natural languages, but usually exist in several of them, and synsets, which cluster word senses by abstracting out their distributional context.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Word"/>
+        <owl:onProperty rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#word"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#adjectivePertainsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">It specifies an adjective word sense that pertains to either the noun or adjective second word sense.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#adverbPertainsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies an adverb word sense that pertains to the adjective second word sense.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdverbWordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#antonymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies antonymous word senses. This is a lexical relation that holds for all syntactic categories. For each antonymous pair, both relations are listed.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#attribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It defines the attribute relation between noun and adjective synset pairs in which the adjective is a value of the noun.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#attributeOf"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#attributeOf">
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#attribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#causedBy">
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is a cause of the first synset. This relation only holds for verbs.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#causes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">inverse of causedBy</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#causedBy"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies that the first synset has been classified as a member of the class (either as topic or 'category', as region, or as usage) represented by the second (noun) synset.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifies"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiedByRegion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedBy"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiedByTopic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedBy"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiedByUsage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedBy"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifies">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedBy"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiesByRegion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifies"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedByRegion"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiesByTopic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifies"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedByTopic"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#classifiesByUsage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifies"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#classifiedByUsage"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">A relation added here to link synsets and word senses explicitly (in the WordNet db, it is implicit in the sense tag record)</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#inSynset"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#derivationallyRelated">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies that there exists a symmetric lexical morphosemantic relation between the first and second synset terms representing derivational morphology. In the WordNet database this relation extends over word senses within synsets</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+  </rdf:Property>
+  <owl:TransitiveProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#entailedBy">
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#entails"/>
+  </owl:TransitiveProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#entails">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:comment xml:lang="en-us">A verb X entails Y if X cannot be done unless Y is, or has been, done.
+It specifies that the second synset is an entailment of first synset. This relation only holds for verbs.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#entailedBy"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies the example for a synset.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#frame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies a generic sentence frame for one or all words in a synset. The operator is defined only for verbs.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#gloss">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies the gloss for a synset.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#hasInstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#instanceOf"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#holonymOf">
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is a meronym of the first synset. This relation only holds for nouns.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#hypernymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AntisymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#hyponymOf"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#hyponymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AntisymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#hypernymOf"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#inSynset">
+    <rdfs:comment xml:lang="en-us">A relation added here to link word senses and synsets explicitly (in WordNet, it is implicit in the sense tag record)</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#containsWordSense"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#instanceOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#hasInstance"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#lexicalForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">A datatype relation between Word and its lexical form.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Word"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#lexicographerFile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies the synset's lexicography file.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#memberHolonymOf">
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is a member meronym of the first synset. This relation only holds for nouns.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#holonymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#memberMeronymOf"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#memberMeronymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#meronymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#memberHolonymOf"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#meronymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">noun/noun, e.g. nose/face</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#holonymOf"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#partHolonymOf">
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is a part meronym of the first synset. This relation only holds for nouns.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#holonymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#partMeronymOf"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#partMeronymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#meronymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#partHolonymOf"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#participle">
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#participleOf"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#participleOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies that the adjective first word is a participle of the verb second word.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#participle"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#sameVerbGroupAs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies verb synsets that are similar in meaning and should be grouped together when displayed in response to a grouped synset search.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#seeAlso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies that additional information about the first word can be obtained by seeing the second word. This operator is only defined for verbs and adjectives. There is no symmetric relation (ie. it cannot be inferred that the additional information about the second word can be obtained from the first word).</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+                  </rdf:Description>
+                </rdf:rest>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbWordSense"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveWordSense"/>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#VerbSynset"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+                  </rdf:Description>
+                </rdf:rest>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#sense">
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Word"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#word"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#similarTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is similar in meaning to the first synset. This means that the second synset is a satellite of the first synset, which is the cluster head. This relation only holds for adjective synsets contained in adjective clusters.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#AdjectiveSynset"/>
+  </rdf:Property>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn-simple#substanceHolonymOf">
+    <rdfs:comment xml:lang="en-us">It specifies that the second synset is a substance meronym of the first synset. This relation only holds for nouns.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#holonymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#substanceMeronymOf"/>
+  </owl:ObjectProperty>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#substanceMeronymOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#NounSynset"/>
+    <rdfs:subPropertyOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#meronymOf"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#substanceHolonymOf"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#synsetId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">A datatype relation between synsets and their integer identifiers.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Synset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#tagCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en-us">A datatype relation between word senses and their tags within synsets.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://globalwordnet.github.io/schemas/wn-simple#word">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#WordSense"/>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#Word"/>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn-simple#sense"/>
+  </rdf:Property>
+  <voaf:Vocabulary rdf:about="https://globalwordnet.github.io/schemas/wn-simple/">
+    <cc:attributionName>Global Wordnet Association</cc:attributionName>
+    <cc:attributionURL rdf:resource="http://www.globalwordnet.org"/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0"/>
+    <dc:contributor rdf:resource="http://arademaker.github.io"/>
+    <dc:description xml:lang="en">The original straightforward encoding of Wordnet model in RDF</dc:description>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-06-19</dc:issued>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-08-22</dc:modified>
+    <dc:publisher rdf:resource="http://www.globalwordnet.org"/>
+    <dc:rights>Copyright Global Wordnet Association</dc:rights>
+    <dc:title xml:lang="en">Global Wordnet RDF Simple Schema</dc:title>
+    <vann:preferredNamespacePrefix>wns</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://globalwordnet.github.io/schemas/wn-simple.ttl#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
+  </voaf:Vocabulary>
+</rdf:RDF>

@@ -1,5 +1,5 @@
 { 
-  "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.3.json",
+  "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.4.json",
   "@graph": [{
       "@context": { "@language": "en" },
       "@id": "example-en",
