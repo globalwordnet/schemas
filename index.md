@@ -31,7 +31,7 @@ The first three lines must always be as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
-    <LexicalResource xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <LexicalResource xmlns:dc="https://globalwordnet.github.io/schemas/dc/">
     
 A file may contain multiple WordNets in different languages:
 
@@ -394,22 +394,18 @@ Due to the way external IDs are used, a lexicon extension may not exist in the s
 
 **Wordnet Dependencies**
 
-Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://lr.soh.ntu.edu.sg/omw/) which depend upon the Princeton WordNet for synset structure.
+Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://compling.upol.cz/omw/omw) which depend upon the Princeton WordNet for synset structure.
 With the `<Requires>` element, it is possible to explicitly codify those dependencies:
 
-        <Lexicon id="spawn"
-                 label="Multilingual Central Repository"
+        <Lexicon id="omw-es"
+                 label="Multilingual Central Repository (Spanish)"
                  language="es"
                  email="bond@ieee.org"
                  license="https://creativecommons.org/licenses/by/3.0/"
-                 version="1.4+omw"
-                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan."
-                 url="http://adimen.si.ehu.es/web/MCR/"
-                 dc:publisher="Global Wordnet Association"
-                 dc:format="OMW-LMF"
-                 dc:description="Wordnet made from OMW 1.0 data"
-                 confidenceScore="1.0">
-	        <Requires ref="pwn" version="3.0" />
+                 version="2.0"
+                 url="https://adimen.si.ehu.es/web/MCR/"
+                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.">
+          <Requires id="omw-en" version="2.0" />
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
