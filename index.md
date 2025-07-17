@@ -16,10 +16,8 @@ published and submitted to the ILI. These are as follows:
 * [OntoLex RDF](#rdf)
     * [Example](http://github.com/globalwordnet/schemas/blob/master/example.ttl)
 
-All of these formats are considered equivalent and a converter between them can 
-be used at.
-
-A converter and validator is available at [http://server1.nlp.insight-centre.org/gwn-converter/](http://server1.nlp.insight-centre.org/gwn-converter/)
+All of these formats are considered equivalent.
+A converter and validator are available at [http://server1.nlp.insight-centre.org/gwn-converter/](http://server1.nlp.insight-centre.org/gwn-converter/)
 
 XML
 ---
@@ -405,7 +403,7 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
                  version="2.0"
                  url="https://adimen.si.ehu.es/web/MCR/"
                  citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.">
-          <Requires id="omw-en" version="2.0" />
+          <Requires ref="omw-en" version="2.0" />
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.

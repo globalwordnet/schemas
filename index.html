@@ -216,9 +216,8 @@ href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">S
 href="http://github.com/globalwordnet/schemas/blob/master/example.ttl">Example</a></li>
 </ul></li>
 </ul>
-<p>All of these formats are considered equivalent and a converter
-between them can be used at.</p>
-<p>A converter and validator is available at <a
+<p>All of these formats are considered equivalent. A converter and
+validator are available at <a
 href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
 <h1 id="xml">XML</h1>
 <p>The XML is specified by the following <a
@@ -227,7 +226,7 @@ href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>
 <p>The first three lines must always be as follows:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd&quot;&gt;
-&lt;LexicalResource xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;&gt;</code></pre>
+&lt;LexicalResource xmlns:dc=&quot;https://globalwordnet.github.io/schemas/dc/&quot;&gt;</code></pre>
 <p>A file may contain multiple WordNets in different languages:</p>
 <p>The following information is required:</p>
 <ul>
@@ -676,7 +675,7 @@ base lexicon:</p>
                       email=&quot;goodmami@uw.edu&quot;
                       license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
                       version=&quot;1.0&quot;&gt;
-        &lt;Extends id=&quot;ewn&quot; version=&quot;2020&quot; /&gt;</code></pre>
+        &lt;Extends ref=&quot;ewn&quot; version=&quot;2020&quot; /&gt;</code></pre>
 <p>The contents of the lexicon extension are the same as a regular
 lexicon with the addition of elements for external lexical entries,
 synsets, and senses. There are two uses of external elements. First,
@@ -703,23 +702,19 @@ structures, such as the target of synset relation:</p>
 exist in the same file as the base lexicon.</p>
 <p><strong>Wordnet Dependencies</strong></p>
 <p>Some wordnets depend upon others, such as those in the <a
-href="https://lr.soh.ntu.edu.sg/omw/">Open Multilingual Wordnet</a>
+href="https://compling.upol.cz/omw/omw">Open Multilingual Wordnet</a>
 which depend upon the Princeton WordNet for synset structure. With the
 <code>&lt;Requires&gt;</code> element, it is possible to explicitly
 codify those dependencies:</p>
-<pre><code>    &lt;Lexicon id=&quot;spawn&quot;
-             label=&quot;Multilingual Central Repository&quot;
+<pre><code>    &lt;Lexicon id=&quot;omw-es&quot;
+             label=&quot;Multilingual Central Repository (Spanish)&quot;
              language=&quot;es&quot;
              email=&quot;bond@ieee.org&quot;
              license=&quot;https://creativecommons.org/licenses/by/3.0/&quot;
-             version=&quot;1.4+omw&quot;
-             citation=&quot;Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &amp;lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;amp;nid=18&amp;gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.&quot;
-             url=&quot;http://adimen.si.ehu.es/web/MCR/&quot;
-             dc:publisher=&quot;Global Wordnet Association&quot;
-             dc:format=&quot;OMW-LMF&quot;
-             dc:description=&quot;Wordnet made from OMW 1.0 data&quot;
-             confidenceScore=&quot;1.0&quot;&gt;
-        &lt;Requires id=&quot;pwn&quot; version=&quot;3.0&quot; /&gt;</code></pre>
+             version=&quot;2.0&quot;
+             url=&quot;https://adimen.si.ehu.es/web/MCR/&quot;
+             citation=&quot;Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &amp;lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;amp;nid=18&amp;gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.&quot;&gt;
+      &lt;Requires ref=&quot;omw-en&quot; version=&quot;2.0&quot; /&gt;</code></pre>
 <p>This element signifies to an application processing the wordnet that
 the required wordnet should be loaded as well. The
 <code>&lt;Requires&gt;</code> element may also be used on a
