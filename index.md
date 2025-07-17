@@ -369,7 +369,7 @@ They are defined much like regular lexicons, but the `<Extends>` element specifi
                           email="goodmami@uw.edu"
                           license="https://creativecommons.org/publicdomain/zero/1.0/"
                           version="1.0">
-            <Extends id="ewn" version="2020" />
+            <Extends ref="ewn" version="2020" />
 
 The contents of the lexicon extension are the same as a regular lexicon with the addition of elements for external lexical entries, synsets, and senses.
 There are two uses of external elements.
