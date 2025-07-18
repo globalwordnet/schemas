@@ -147,7 +147,7 @@
                       email="goodmami@uw.edu"
                       license="https://creativecommons.org/publicdomain/zero/1.0/"
                       version="1.0">
-        <Extends id="ewn" version="2020" />
+        <Extends ref="ewn" version="2020" />
         <!-- The ExternalLexicalEntry id should exist in ewn-2020 -->
         <ExternalLexicalEntry id="ewn-process-n">
             <!-- Add a new sense to the external entry -->
