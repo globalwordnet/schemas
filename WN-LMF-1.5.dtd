@@ -234,7 +234,6 @@
   senses IDREFS #IMPLIED>
 <!ELEMENT Count (#PCDATA)>
 <!ATTLIST Count
-    xml:space (default|preserve) "default"
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED
