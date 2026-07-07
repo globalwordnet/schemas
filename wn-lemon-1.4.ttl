@@ -179,8 +179,7 @@
 :attribute a :SynsetRelType ;
   rdfs:label "attribute"@en ;
   rdfs:comment "an abstraction belonging to or characteristic of an entity"@en ;
-  rdfs:comment "(a=形容詞のsynsetから見て)当該synsetが相手synsetという属性を表す際に使われる\n(n=名詞のsynsetから見て)当該synsetという属性を表す際に相手synsetを使う"@ja ;
-  owl:inverseOf :attribute .
+  rdfs:comment "(a=形容詞のsynsetから見て)当該synsetが相手synsetという属性を表す際に使われる\n(n=名詞のsynsetから見て)当該synsetという属性を表す際に相手synsetを使う"@ja .
 
 :be_in_state a :SynsetRelType ;
   rdfs:label "be in state"@en ;
