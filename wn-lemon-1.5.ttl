@@ -1,0 +1,773 @@
+@prefix : <https://globalwordnet.github.io/schemas/wn#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://globalwordnet.github.io/schemas/wn> a voaf:Vocabulary, owl:Ontology ;
+  vann:preferredNamespacePrefix "wn" ;
+  vann:preferredNamespaceUri "https://globalwordnet.github.io/schemas/wn#" ;
+  dc:title "Global Wordnet RDF Schema"@en ;
+  dc:description "TODO"@en ;
+  dc:issued "2014-08-13"^^xsd:date ;
+  dc:modified "2014-09-13"^^xsd:date ;
+  owl:versionInfo "Development"@en ;
+  dc:rights "Copyright Global Wordnet Association" ;
+  cc:license <http://creativecommons.org/licenses/by/4.0> ;
+  cc:attributionName "Global Wordnet Association";
+  cc:attributionURL <http://www.globalwordnet.org>;
+  dc:contributor <http://john.mccr.ae> ;
+  dc:publisher <http://www.globalwordnet.org> .
+
+##
+
+:status a owl:AnnotationProperty ;
+  rdfs:range xsd:string ;
+  rdfs:comment "A status string such as, 'finalized', 'checked' or 'to check'"@en ;
+  rdfs:label "status"@en .
+
+:confidenceScore a owl:AnnotationProperty ;
+  rdfs:range xsd:decimal ;
+  rdfs:comment "A confidence score, usually assigned by an algorithm, with a value between 0 and 1"@en ;
+  rdfs:label "confidence score"@en .
+
+:partOfSpeech a owl:ObjectProperty ;
+  rdfs:subPropertyOf lexinfo:partOfSpeech ;
+  rdfs:domain [
+    owl:unionOf ( ontolex:LexicalEntry ontolex:LexicalConcept ) ] ;
+  rdfs:range :PartOfSpeech ;
+  rdfs:label "part of speech"@en ;
+  rdfs:comment "The syntactic class of the entry, e.g., noun, verb"@en .
+
+:PartOfSpeech a owl:Class ;
+  rdfs:subClassOf lexinfo:PartOfSpeech ;
+  rdfs:label "part of speech"@en ;
+  rdfs:comment "The syntactic class of the entry, e.g., noun, verb"@en ;
+  owl:oneOf (
+    :noun :verb :adjective :adverb :adjective_satellite :named_entity
+    :conjunction :adposition :other_pos :unknown_pos ) .
+
+
+:noun a :PartOfSpeech ;
+  owl:sameAs lexinfo:noun ;
+  rdfs:label "noun"@en.
+:verb a :PartOfSpeech ;
+  owl:sameAs lexinfo:verb ;
+  rdfs:label "verb"@en .
+:adjective a :PartOfSpeech ;
+  owl:sameAs lexinfo:adjective ;
+  rdfs:label "adjective"@en .
+:adverb a :PartOfSpeech ;
+  owl:sameAs lexinfo:adverb ;
+  rdfs:label "adverb"@en .
+:adjective_satellite a :PartOfSpeech ;
+  rdfs:label "adjective satellite"@en .
+:named_entity a :PartOfSpeech ;
+  rdfs:label "named entity"@en .
+:conjunction a :PartOfSpeech ;
+  owl:sameAs lexinfo:conjunction ;
+  rdfs:label "conjunction"@en .
+:adposition a :PartOfSpeech ;
+  owl:sameAs lexinfo:adposition ;
+  rdfs:label "adposition"@en .
+:other_pos a :PartOfSpeech ;
+  rdfs:label "other pos"@en .
+:unknown_pos a :PartOfSpeech ;
+  rdfs:label "unknown pos"@en .
+
+:tag a owl:ObjectProperty ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range  :Tag ;
+  rdfs:label "tag"@en ;
+  rdfs:comment "A tag describing an inflected form. There are no specific guidelines about the form of this element"@en .
+
+:Tag a owl:Class ;
+  rdfs:comment "The tag describing the category of a form"@en ;
+  rdfs:label "tag"@en .
+
+:category a owl:DatatypeProperty ;
+  rdfs:domain :Tag ;
+  rdfs:range xsd:string ;
+  rdfs:label "category"@en ;
+  rdfs:comment "The data category of a tag"@en .
+
+:example a owl:ObjectProperty ;
+  rdfs:domain [
+    owl:unionOf ( ontolex:LexicalSense ontolex:LexicalConcept ) ] ;
+  rdfs:range :Example ;
+  rdfs:label "example"@en ;
+  rdfs:comment "An example usage of a sense or synset"@en .
+
+:Example a owl:Class ;
+  rdfs:label "example"@en .
+
+:count a owl:ObjectProperty ;
+  rdfs:domain ontolex:LexicalSense ;
+  rdfs:range :Count ;
+  rdfs:comment "The count of usages of a sense in some corpus"@en ;
+  rdfs:label "count"@en .
+
+:Count a owl:Class ;
+  rdf:label "count"@en .
+
+:definition a owl:ObjectProperty ;
+  rdfs:domain ontolex:LexicalConcept ;
+  rdfs:range  :Definition ;
+  rdfs:label "definition"@en ;
+  rdfs:comment "A definition of the synset"@en .
+
+:iliDefinition a owl:ObjectProperty ;
+  rdfs:domain ontolex:LexicalConcept ;
+  rdfs:range  :ILIDefinition ;
+  rdfs:label "ILI definition"@en ;
+  rdfs:comment "The English standard definition of the synset in the ILI"@en .
+
+:sourceSense a owl:ObjectProperty ;
+  rdfs:domain :Definition ;
+  rdfs:range ontolex:LexicalSense ;
+  rdfs:label "source sense"@en ;
+  rdfs:comment "The sense that was originally used to define the concept"@en .
+
+:Definition a owl:Class ;
+  rdfs:label "definition"@en .
+
+:ILIDefinition a owl:Class ;
+  rdfs:label "ILI definition"@en .
+
+:script a owl:DatatypeProperty ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range xsd:string ;
+  rdfs:label "script"@en ;
+  rdfs:comment "The script as a 4 letter ISO 15924 code"@en .
+
+:note a owl:AnnotationPropety ;
+  rdfs:range xsd:string ;
+  rdfs:label "note"@en ;
+  rdfs:comment "Any extra notes made by a WordNet creator"@en .
+
+:SynsetRelType a owl:Class ;
+  rdfs:label "synset relation type"@en .
+
+:SenseRelType a owl:Class ;
+  rdfs:label "sense relation type"@en .
+
+:agent a :SynsetRelType , :SenseRelType ;
+  rdfs:label "agent"@en ;
+  rdfs:comment "A concept which is typically the one/that who/which does the action denoted by a given concept."@en ;
+  owl:inverseOf :involved_agent .
+
+:also a :SynsetRelType, :SenseRelType ;
+  rdfs:label "also"@en ;
+  rdfs:comment "a word having a loose semantic relation to another word"@en ;
+  rdfs:comment "当該synsetと相手synsetとの間に何らかの関連がある"@ja ;
+  owl:inverseOf :also .
+
+:antonym a :SynsetRelType, :SenseRelType ;
+  rdfs:label "antonym"@en ;
+  rdfs:comment "An opposite and inherently incompatible word"@en ;
+  rdfs:comment "当該語義やsynsetの意味や程度が反対または対の関係となっている語義やsynset"@ja ;
+  owl:inverseOf :antonym .
+
+:attribute a :SynsetRelType ;
+  rdfs:label "attribute"@en ;
+  rdfs:comment "an abstraction belonging to or characteristic of an entity"@en ;
+  rdfs:comment "(a=形容詞のsynsetから見て)当該synsetが相手synsetという属性を表す際に使われる\n(n=名詞のsynsetから見て)当該synsetという属性を表す際に相手synsetを使う"@ja ;
+  owl:inverseOf :attribute .
+
+:be_in_state a :SynsetRelType ;
+  rdfs:label "be in state"@en ;
+  rdfs:comment "X is qualified by Y"@en ;
+  owl:inverseOf :state_of .
+
+:causes a :SynsetRelType ;
+  rdfs:label "causes"@en ;
+  rdfs:comment "Concept A is an entity that produces an effect or is responsible for events or\nresults of Concept B."@en ;
+  rdfs:comment "当該synsetを行うと、相手synsetを引き起こす"@ja ;
+  owl:inverseOf :is_caused_by .
+
+
+:classified_by a :SynsetRelType ;
+  rdfs:label "classified by"@en ;
+  rdfs:comment "Concept B is modified by classifier A when it is counted."@en ;
+  owl:inverseOf :classifies .
+
+:classifies a :SynsetRelType ;
+  rdfs:label "classifies"@en ;
+  rdfs:comment "A concept A used when counting concept B"@en ;
+  owl:inverseOf :classified_by .
+
+:co_agent_instrument a :SynsetRelType ;
+  rdfs:label "co-agent instrument"@en ;
+  rdfs:comment "A concept which is the instrument used by a given concept in an action."@en ;
+  owl:inverseOf :co_instrument_agent .
+
+:co_agent_patient a :SynsetRelType ;
+  rdfs:label "co-agent patient"@en ;
+  rdfs:comment "A concept which is the patient undergoing an action carried out by a given concept."@en ;
+  owl:inverseOf :co_patient_agent .
+
+:co_agent_result a :SynsetRelType ;
+  rdfs:label "co-agent result"@en ;
+  rdfs:comment "A concept which is the result of an action taken by a given concept."@en ;
+  owl:inverseOf :co_result_agent .
+
+:co_instrument_agent a :SynsetRelType ;
+  rdfs:label "co-instrument agent"@en ;
+  rdfs:comment "A concept which carries out an action by using a given concept as an instrument."@en ;
+  owl:inverseOf :co_agent_instrument .
+
+:co_instrument_patient a :SynsetRelType ;
+  rdfs:label "co-instrument patient"@en ;
+  rdfs:comment "A concept which undergoes an action with the use of a given concept as an instrument."@en ;
+  owl:inverseOf :co_patient_instrument .
+
+:co_instrument_result a :SynsetRelType ;
+  rdfs:label "co-instrument result"@en ;
+  rdfs:comment "A concept which is the result of an action using an instrument of a given concept."@en ;
+  owl:inverseOf :co_result_instrument .
+
+:co_patient_agent a :SynsetRelType ;
+  rdfs:label "co-patient agent"@en ;
+  rdfs:comment "A concept which carries out an action a given concept undergoing."@en ;
+  owl:inverseOf :co_agent_patient .
+
+:co_patient_instrument a :SynsetRelType ;
+  rdfs:label "co-patient instrument"@en ;
+  rdfs:comment "A concept which is used as an instrument in an action a given concept undergoes."@en ;
+  owl:inverseOf :co_instrument_patient .
+
+:co_result_agent a :SynsetRelType ;
+  rdfs:label "co-result agent"@en ;
+  rdfs:comment "A concept which takes an action resulting in a given concept."@en ;
+  owl:inverseOf :co_agent_result .
+
+:co_result_instrument a :SynsetRelType ;
+  rdfs:label "co-result instrument"@en ;
+  rdfs:comment "A concept which is used as an instrument in an action resulting in a given concept."@en ;
+  owl:inverseOf :co_instrument_result .
+
+:co_role a :SynsetRelType ;
+  rdfs:label "co-role"@en ;
+  rdfs:comment "A concept undergoes an action in which a given concept is involved."@en ;
+  owl:inverseOf :co_role .
+
+:derivation a :SenseRelType ;
+  rdfs:label "derivation"@en ;
+  rdfs:comment "A concept which is a derivationally related form of a given concept."@en .
+
+:direction a :SynsetRelType ;
+  rdfs:label "direction"@en ;
+  rdfs:comment "A concept which is the direction of the action or event expressed by a given concept."@en ;
+  owl:inverseOf :involved_direction .
+
+:domain_region a :SynsetRelType, :SenseRelType ;
+  rdfs:label "domain region"@en ;
+  rdfs:comment "A concept which is a geographical / cultural domain pointer of a given concept."@en ;
+  rdfs:comment "当該synsetが相手synsetの地域に属するものである"@ja ;
+  owl:inverseOf :has_domain_region .
+
+:domain_topic a :SynsetRelType, :SenseRelType ;
+  rdfs:label "domain topic"@en ;
+  rdfs:comment "A concept which is the scientific category pointer of a given concept."@en ;
+  rdfs:comment "当該synsetが相手synsetのカテゴリに属する"@ja ;
+  owl:inverseOf :has_domain_topic .
+
+:exemplifies a :SynsetRelType, :SenseRelType ;
+  rdfs:label "exemplifies"@en ;
+  rdfs:comment "A concept which is the example of a given concept."@en ;
+  rdfs:comment "当該synsetの用法が相手synsetの領域に限られる"@ja ;
+  owl:inverseOf :is_exemplified_by .
+
+:entails a :SynsetRelType ;
+  rdfs:label "entails"@en ;
+  rdfs:comment "impose, involve, or imply as a necessary accompaniment or result"@en ;
+  rdfs:comment "当該synsetを行う場合、必ず相手synsetも行っている"@ja ;
+  owl:inverseOf :is_entailed_by .
+
+:eq_synonym a :SynsetRelType ;
+  rdfs:label "eq synonym"@en ;
+  rdfs:comment "X and Y are equivalent concepts but their nature requires that they remain separate (e.g. Exemplifies)"@en ;
+  owl:inverseOf :eq_synonym .
+
+:has_domain_region a :SynsetRelType, :SenseRelType ;
+  rdfs:label "has domain region"@en ;
+  rdfs:comment "A concept which is the term in the geographical / cultural domain of a given concept."@en ;
+  rdfs:comment "当該synsetが相手synsetの属する地域である"@ja ;
+  owl:inverseOf :domain_region .
+
+:has_domain_topic a :SynsetRelType, :SenseRelType ;
+  rdfs:label "has domain topic"@en ;
+  rdfs:comment "A concept which is a term in the scientific category of a given concept."@en ;
+  rdfs:comment "当該synsetが相手synsetが属するカテゴリである"@ja ;
+  owl:inverseOf :domain_topic .
+
+:is_exemplified_by a :SynsetRelType, :SenseRelType ;
+  rdfs:label "is exemplified by"@en ;
+  rdfs:comment "A concept which is the type of a given concept."@en ;
+  rdfs:comment "当該synsetの領域が相手synsetの用法を規定する"@ja ;
+  owl:inverseOf :exemplifies .
+
+:metaphor a :SenseRelType ;
+  rdfs:label "metaphor"@en ;
+  rdfs:comment "a relation between two senses, where the first sense is a metaphorical extension of the second sense"@en ;
+  owl:inverseOf :has_metaphor .
+
+:has_metaphor a :SenseRelType ;
+  rdfs:label "has metaphor"@en ;
+  rdfs:comment "a relation between two senses, where the second sense is a metaphorical extension of the first sense"@en ;
+  owl:inverseOf :metaphor .
+
+:metonym a :SenseRelType ;
+  rdfs:label "metonym"@en ;
+  rdfs:comment "a relation between two senses, where the first sense is a metonymical extension of the second sense"@en ;
+  owl:inverseOf :has_metonym .
+
+:has_metonym a :SenseRelType ;
+  rdfs:label "has metonym"@en ;
+  rdfs:comment "a relation between two senses, where the second sense is a metonymical extension of the first sense"@en ;
+  owl:inverseOf :metonym .
+
+:holo_location a :SynsetRelType ;
+  rdfs:label "holonym location"@en ;
+  rdfs:comment "Y is a place located in X"@en ;
+  owl:inverseOf :mero_location .
+
+:holo_member a :SynsetRelType ;
+  rdfs:label "holonym member"@en ;
+  rdfs:comment "Concept B is a member of Concept A"@en ;
+  rdfs:comment "当該synsetが相手synsetという構成員によって構成される"@ja ;
+  owl:inverseOf :mero_member .
+
+:holo_part a :SynsetRelType ;
+  rdfs:label "holonym part"@en ;
+  rdfs:comment "Concept B is the whole where Concept A is a part"@en ;
+  rdfs:comment "当該synsetが部分として相手synsetを構成する"@ja ;
+  owl:inverseOf :mero_part .
+
+:holo_portion a :SynsetRelType ;
+  rdfs:label "holonym portion"@en ;
+  rdfs:comment "Y is an amount/piece/portion of X"@en ;
+  owl:inverseOf :mero_portion .
+
+:holo_substance a :SynsetRelType ;
+  rdfs:label "holonym substance"@en ;
+  rdfs:comment "Concept-B is a substance of Concept-A"@en ;
+  rdfs:comment "当該synsetが相手synsetを構成する物質or材料である"@ja ;
+  owl:inverseOf :mero_substance .
+
+:holonym a :SynsetRelType ;
+  rdfs:label "holonym"@en ;
+  rdfs:comment "X makes up a part of Y"@en ;
+  rdfs:comment "当該synsetがsynsetを構成する"@ja ;
+  owl:inverseOf :meronym .
+
+:hypernym a :SynsetRelType ;
+  rdfs:label "hypernym"@en ;
+  rdfs:comment "a word that is more general than a given word"@en ;
+  rdfs:comment "Relacja łącząca znaczenie z drugim, ogólniejszym, niż to pierwsze, ale\nnależącym do tej samej części mowy, co ono"@pl ;
+  rdfs:subPropertyOf skos:broader ;
+  owl:inverseOf :hyponym .
+
+:hyponym a :SynsetRelType ;
+  rdfs:label "hyponym"@en ;
+  rdfs:comment "a word that is more specific than a given word"@en ;
+  rdfs:comment "当該synsetが相手synsetを包含する"@ja ;
+  rdfs:subPropertyOf skos:narrower ;
+  owl:inverseOf :hypernym .
+
+:in_manner a :SynsetRelType ;
+  rdfs:label "in manner"@en ;
+  rdfs:comment "Y qualifies the manner in which an action or event expressed by X takes place"@en ;
+  owl:inverseOf :manner_of .
+
+:instance_hypernym a :SynsetRelType ;
+  rdfs:label "instance hypernym"@en ;
+  rdfs:comment "the type of an instance"@en ;
+  rdfs:comment "当該synsetは相手synsetを事例として持つ"@ja ;
+  owl:inverseOf :instance_hyponym .
+
+:instance_hyponym a :SynsetRelType ;
+  rdfs:label "instance hyponym"@en ;
+  rdfs:comment "an occurrence of something"@en ;
+  rdfs:comment "当該synsetは相手synsetの事例である"@ja ;
+  owl:inverseOf :instance_hypernym .
+
+:instrument a :SynsetRelType ;
+  rdfs:label "instrument"@en ;
+  rdfs:comment "A concept which is the instrument necessary for the action or event expressed by a given concept."@en ;
+  owl:inverseOf :involved_instrument .
+
+:involved a :SynsetRelType ;
+  rdfs:label "involved"@en ;
+  rdfs:comment "A concept which is the action or event a given concept typically involved in."@en ;
+  owl:inverseOf :role .
+
+:involved_agent a :SynsetRelType ;
+  rdfs:label "involved agent"@en ;
+  rdfs:comment "A concept which is the action done by an agent expressed by a given concept."@en ;
+  owl:inverseOf :agent .
+
+:involved_direction a :SynsetRelType ;
+  rdfs:label "involved direction"@en ;
+  rdfs:comment "A concept which is the action with the direction expressed by a given concept."@en ;
+  owl:inverseOf :direction .
+
+:involved_instrument a :SynsetRelType ;
+  rdfs:label "involved instrument"@en ;
+  rdfs:comment "A concept which is typically the action with the instrument expressed by a given concept."@en ;
+  owl:inverseOf :instrument .
+
+:involved_location a :SynsetRelType ;
+  rdfs:label "involved location"@en ;
+  rdfs:comment "A concept which is the event happening in a place expressed by a given concept."@en ;
+  owl:inverseOf :location .
+
+:involved_patient a :SynsetRelType ;
+  rdfs:label "involved patient"@en ;
+  rdfs:comment "A concept which is the action that the patient expressed by a given concept undergoing."@en ;
+  owl:inverseOf :patient .
+
+:involved_result a :SynsetRelType ;
+  rdfs:label "involved result"@en ;
+  rdfs:comment "A concept which is the action or event with a result of a given concept comes into existence."@en ;
+  owl:inverseOf :result .
+
+:involved_source_direction a :SynsetRelType ;
+  rdfs:label "involved source direction"@en ;
+  rdfs:comment "A concept which is the action beginning from a place of a given concept."@en ;
+  owl:inverseOf :source_direction .
+
+:involved_target_direction a :SynsetRelType ;
+  rdfs:label "involved target direction"@en ;
+  rdfs:comment "A concept which is the action or event leading to a place expressed by a given concept."@en ;
+  owl:inverseOf :target_direction .
+
+:is_caused_by a :SynsetRelType ;
+  rdfs:label "is caused by"@en ;
+  rdfs:comment "X comes about because of Y"@en ;
+  owl:inverseOf :causes .
+
+:is_entailed_by a :SynsetRelType ;
+  rdfs:label "is entailed by"@en ;
+  rdfs:comment "Opposite of entails"@en ;
+  owl:inverseOf :entails .
+
+:is_subevent_of a :SynsetRelType ;
+  rdfs:label "is subevent of"@en ;
+  rdfs:comment "X takes place during or as part of Y, and whenever X takes place, Y takes place"@en ;
+  owl:inverseOf :subevent .
+
+:location a :SynsetRelType ;
+  rdfs:label "location"@en ;
+  rdfs:comment "A concept which is the place where the event expressed by a given concept happens."@en ;
+  owl:inverseOf :involved_location .
+
+:manner_of a :SynsetRelType ;
+  rdfs:label "manner of"@en ;
+  rdfs:comment "X qualifies the manner in which an action or event expressed by Y takes place"@en ;
+  owl:inverseOf :in_manner .
+
+:mero_location a :SynsetRelType ;
+  rdfs:label "meronym location"@en ;
+  rdfs:comment "X is a place located in Y"@en ;
+  owl:inverseOf :holo_location .
+
+:mero_member a :SynsetRelType ;
+  rdfs:label "meronym member"@en ;
+  rdfs:comment "Concept A is a member of Concept B"@en ;
+  rdfs:comment "当該synsetが相手synsetの構成員である"@ja ;
+  owl:inverseOf :holo_member .
+
+:mero_part a :SynsetRelType ;
+  rdfs:label "meronym part"@en ;
+  rdfs:comment "concept A is a component of concept B"@en ;
+  rdfs:comment "当該synsetが相手synsetという部分によって構成される"@ja ;
+  owl:inverseOf :holo_part .
+
+:mero_portion a :SynsetRelType ;
+  rdfs:label "meronym portion"@en ;
+  rdfs:comment "X is an amount/piece/portion of Y"@en ;
+  owl:inverseOf :holo_portion .
+
+:mero_substance a :SynsetRelType ;
+  rdfs:label "meronym substance"@en ;
+  rdfs:comment "Concept A is made of concept B."@en ;
+  rdfs:comment "当該synsetが相手synsetという物質or材料によって構成される"@ja ;
+  owl:inverseOf :holo_substance .
+
+:meronym a :SynsetRelType ;
+  rdfs:label "meronym"@en ;
+  rdfs:comment "Y makes up a part of X"@en ;
+  rdfs:comment "当該synsetが相手synsetによって構成される"@ja ;
+  owl:inverseOf :holonym .
+
+:other a :SynsetRelType, :SenseRelType ;
+  rdfs:label "other"@en ;
+  rdfs:comment "Any relation not otherwise specified"@en .
+
+:participle a :SenseRelType ;
+  rdfs:label "participle"@en ;
+  rdfs:comment "A concept which is a participial adjective derived from a verb expressed by a given concept."@en .
+
+:patient a :SynsetRelType ;
+  rdfs:label "patient"@en ;
+  rdfs:comment "A concept which is the one/that who/which undergoes a given concept."@en ;
+  owl:inverseOf :involved_patient .
+
+:pertainym a :SenseRelType ;
+  rdfs:label "pertainym"@en ;
+  rdfs:comment "A concept which is of or pertaining to a given concept."@en .
+
+:restricted_by a :SynsetRelType ;
+  rdfs:label "restricted by"@en ;
+  rdfs:comment "A relation between nominal (pronominal) Y and an adjectival X (quantifier/determiner)"@en ;
+  owl:inverseOf :restricts .
+
+:restricts a :SynsetRelType ;
+  rdfs:label "restricts"@en ;
+  rdfs:comment "A relation between an adjectival X (quantifier/determiner) and a nominal (pronominal) Y"@en ;
+  owl:inverseOf :restricted_by .
+
+:result a :SynsetRelType ;
+  rdfs:label "result"@en ;
+  rdfs:comment "A concept which comes into existence as a result of a given concept."@en ;
+  owl:inverseOf :involved_result .
+
+:role a :SynsetRelType ;
+  rdfs:label "role"@en ;
+  rdfs:comment "A concept which is involved in the action or event expressed by a given concept."@en ;
+  owl:inverseOf :involved .
+
+:similar a :SynsetRelType, :SenseRelType ;
+  rdfs:label "similar"@en ;
+  rdfs:comment "(of words) expressing closely related meanings"@en ;
+  rdfs:comment "当該synsetは表す意味が相手synsetと近似している"@ja ;
+  owl:inverseOf :similar .
+
+:source_direction a :SynsetRelType ;
+  rdfs:label "source direction"@en ;
+  rdfs:comment "A concept which is the place from where the event expressed by a given concept begins."@en ;
+  owl:inverseOf :involved_source_direction .
+
+:state_of a :SynsetRelType ;
+  rdfs:label "state of"@en ;
+  rdfs:comment "Y is qualified by X"@en ;
+  owl:inverseOf :be_in_state .
+
+:subevent a :SynsetRelType ;
+  rdfs:label "subevent"@en ;
+  rdfs:comment "Y takes place during or as part of X, and whenever Y takes place, X takes place"@en ;
+  owl:inverseOf :is_subevent_of .
+
+:target_direction a :SynsetRelType ;
+  rdfs:label "target direction"@en ;
+  rdfs:comment "A concept which is the place where the action or event expressed by a given concept leads to."@en ;
+  owl:inverseOf :involved_target_direction .
+
+:feminine a :SynsetRelType ;
+  rdfs:label "feminine form"@en ;
+  rdfs:comment "A concept used to refer to female members of a class"@en ;
+  owl:inverseOf :has_feminine .
+
+:has_feminine a :SynsetRelType ;
+  rdfs:label "has feminine form"@en ;
+  rdfs:comment "A concept which has a special concept for female members of its class"@en ;
+  owl:inverseOf :feminine .
+
+:masculine a :SynsetRelType ;
+  rdfs:label "masculine form"@en ;
+  rdfs:comment "A concept used to refer to male members of a class"@en ;
+  owl:inverseOf :has_masculine .
+
+:has_masculine a :SynsetRelType ;
+  rdfs:label "has masculine form"@en ;
+  rdfs:comment "A concept which has a special concept for male members of its class"@en ;
+  owl:inverseOf :masculine .
+
+:young a :SynsetRelType ;
+  rdfs:label "young form"@en ;
+  rdfs:comment "A concept used to refer to young members of a class"@en ;
+  owl:inverseOf :has_young .
+
+:has_young a :SynsetRelType ;
+  rdfs:label "has young form"@en ;
+  rdfs:comment "A concept which has a special concept for young members of its class"@en ;
+  owl:inverseOf :young .
+
+:diminutive a :SynsetRelType ;
+  rdfs:label "diminutive"@en ;
+  rdfs:comment "A concept used to refer to generally smaller members of a class"@en ;
+  owl:inverseOf :has_diminutive .
+
+:has_diminutive a :SynsetRelType ;
+  rdfs:label "has diminutive form"@en ;
+  rdfs:comment "A concept which has a special concept for generally smaller members of its class"@en ;
+  owl:inverseOf :diminutive .
+
+:augmentative a :SynsetRelType ;
+  rdfs:label "augmentative"@en ;
+  rdfs:comment "A concept used to refer to generally larger members of a class"@en ;
+  owl:inverseOf :has_augmentative .
+
+:has_augmentative a :SynsetRelType ;
+  rdfs:label "has augmentative form"@en ;
+  rdfs:comment "A concept which has a special concept for generally larger members of its class"@en ;
+  owl:inverseOf :augmentative .
+
+:anto_gradable a :SynsetRelType ;
+  rdfs:label "gradable antonym"@en ;
+  rdfs:comment "word pairs whose meanings are opposite and which lie on a continuous spectrum"@en ;
+  owl:inverseOf :anto_gradable .
+
+:anto_simple a :SynsetRelType ;
+  rdfs:label "simple antonym"@en ;
+  rdfs:comment "word pairs whose meanings are opposite but whose meanings do not lie on a continuous spectrum"@en ;
+  owl:inverseOf :anto_simple .
+
+:anto_converse a :SynsetRelType ;
+  rdfs:label "converse antonym"@en ;
+  rdfs:comment "word pairs that name or describe a single relationship from opposite perspectives"@en ;
+  owl:inverseOf :anto_converse .
+
+:ir_synonym a :SynsetRelType ;
+  rdfs:label "inter-registry synonym"@en ;
+  rdfs:comment "A concept that means the same except for the style or connotation"@en ;
+  owl:inverseOf :ir_synonym .
+
+:simple_aspect_ip a :SynsetRelType ;
+  rdfs:label "simple aspect (imperfect to perfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change from imperfective to perfective aspect"@en ;
+  owl:inverseOf :simple_aspect_pi .
+
+:secondary_aspect_ip a :SynsetRelType ;
+  rdfs:label "secondary aspect (imperfect to perfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change in aspect (ip)"@en ;
+  owl:inverseOf :secondary_aspect_pi .
+
+:simple_aspect_pi a :SynsetRelType ;
+  rdfs:label "simple aspect (perfect to imperfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change from perfective to imperfective aspect"@en ;
+  owl:inverseOf :simple_aspect_ip .
+
+:secondary_aspect_pi a :SynsetRelType ;
+  rdfs:label "secondary aspect (perfect to imperfect)"@en ;
+  rdfs:comment "A concept which is linked to another through a change in aspect (pi)"@en ;
+  owl:inverseOf :secondary_aspect_ip .
+
+:material a :SynsetRelType ;
+  rdfs:label "material"@en ;
+  rdfs:comment "A word which is typically the material of a given word (e.g. \"wood\")"@en .
+
+:event a :SynsetRelType ;
+  rdfs:label "event"@en ;
+  rdfs:comment "An noun representing the event of a verb (e.g., \"(a) meet\" - \"(to) meet\")"@en .
+
+:instrument a :SynsetRelType ;
+  rdfs:label "instrument"@en ;
+  rdfs:comment "An instrument for doing a task (e.g., \"photocopier\" - \"photocopy\")"@en .
+
+:location a :SynsetRelType ;
+  rdfs:label "location"@en ;
+  rdfs:comment "A verb derived from the action performed at a place (e.g., \"(a) forge\" - \"(to) forge\")"@en .
+
+:by_means_of a :SynsetRelType ;
+  rdfs:label "by means of"@en ;
+  rdfs:comment "A word which is typically the means by which something is done (e.g.,g \"deceive\" - \"deception\")"@en .
+
+:undergoer a :SynsetRelType ;
+  rdfs:label "undergoer"@en ;
+  rdfs:comment "A word which is typically the undergoer of a given word (e.g. \"honor\" - \"honoree\")"@en .
+
+:property a :SynsetRelType ;
+  rdfs:label "property"@en ;
+  rdfs:comment "Cause something to have a particular property (e.g., \"magnetize\" - \"magnetization\")"@en .
+
+:result a :SynsetRelType ;
+  rdfs:label "result"@en ;
+  rdfs:comment "A word which is typically the result of a given word (e.g. \"nitrify\" - \"nitrate\")"@en .
+
+:state a :SynsetRelType ;
+  rdfs:label "state"@en ;
+  rdfs:comment "A state caused by the verb (e.g., \"sensitize\" - \"sensitization\")"@en .
+
+:uses a :SynsetRelType ;
+  rdfs:label "uses"@en ;
+  rdfs:comment "A verb that uses a noun (e.g., \"(to) talc\" - \"talc\")"@en .
+
+:destination a :SynsetRelType ;
+  rdfs:label "destination"@en ;
+  rdfs:comment "The noun indicates the destination of a verb (e.g., \"retire\" - \"retiree\")"@en .
+
+:body_part a :SynsetRelType ;
+  rdfs:label "body part"@en ;
+  rdfs:comment "A word which is typically a body part of a given word (e.g. \"finger\")"@en .
+
+:vehicle a :SynsetRelType ;
+  rdfs:label "vehicle"@en ;
+  rdfs:comment "A verb indicating movement with a particular vehicle (e.g., \"(to) ship\" - \"ship\")"@en .
+
+
+
+:senseSubcat a owl:ObjectProperty ;
+  rdfs:label "sense subcategorization"@en ;
+  rdfs:comment "Indicates that a syntactic behaviour applies to a specific sense"@en ;
+  rdfs:range ontolex:LexicalSense ;
+  rdfs:domain synsem:SyntacticBehaviour .
+
+:ili a owl:ObjectProperty ;
+  rdfs:label "interlingual index"@en ;
+  rdfs:comment "links a synset to a target the Interlingual Index"@en ;
+  rdfs:subPropertyOf skos:exactMatch .
+
+:memberList a owl:ObjectProperty ;
+  rdfs:comment "The list of words in a synset in order"@en .
+
+:lexfile a owl:DatatypeProperty ;
+  rdfs:label "lexicographer file"@en ;
+  rdfs:comments "Indicates the lexicographer file that this synset is derived from"@en .
+
+:pronunciation a owl:ObjectProperty ;
+  rdfs:label "pronunciation"@en ;
+  rdfs:comment "Indicates the pronunciation of a form"@en ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range :Pronunciation .
+
+:variety a owl:DatatypeProperty ;
+  rdfs:label "variety"@en ;
+  rdfs:comment "Indicates the variety of language the pronunciation represents"@en ;
+  rdfs:domain :Pronunciation .
+
+:notation a owl:DatatypeProperty ;
+  rdfs:label "notation"@en ;
+  rdfs:comment "The notation scheme used for a pronunciation"@en ;
+  rdfs:domain :Pronunciation .
+
+:phonemic a owl:DatatypeProperty ;
+  rdfs:label "phonemic"@en ;
+  rdfs:comment "Indicates if the pronunciation is phonemic, in that it does not represent every aspect of the pronunciation and omits information that could be assumed for this language"@en ;
+  rdfs:domain :Pronunciation .
+
+:audio a owl:DatatypeProperty ;
+  rdfs:label "audio"@en ;
+  rdfs:comment "Links to an audio file for a pronunciation"@en ;
+  rdfs:domain :Pronunciation .
+
+:index a owl:DatatypeProperty ;
+  rdfs:label "index"@en ;
+  rdfs:comment "The normalized form of a lexical entry for indexing purposes"@en ;
+  rdfs:domain ontolex:LexicalEntry ;
+  rdfs:range rdfs:Literal .
+
+:n a owl:DatatypeProperty ;
+  rdfs:label "n"@en ;
+  rdfs:comment "The ordering of a sense within a lexical entry or a normalized group of entries"@en ;
+  rdfs:domain ontolex:LexicalSense ;
+  rdfs:range xsd:integer .

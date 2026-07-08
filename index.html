@@ -198,14 +198,14 @@ follows:</p>
 <li><a
 href="http://github.com/globalwordnet/schemas/blob/master/example.xml">Example</a></li>
 <li><a
-href="http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">DTD</a></li>
+href="http://globalwordnet.github.io/schemas/WN-LMF-1.5.dtd">DTD</a></li>
 </ul></li>
 <li><a href="#json">JSON-LD using the lemon Vocabulary</a>
 <ul>
 <li><a
 href="http://github.com/globalwordnet/schemas/blob/master/example.json">Example</a></li>
 <li><a
-href="http://globalwordnet.github.io/schemas/wn-json-context-1.4.json">JSON-LD
+href="http://globalwordnet.github.io/schemas/wn-json-context-1.5.json">JSON-LD
 Context</a></li>
 <li><a
 href="http://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json">Schema</a></li>
@@ -221,11 +221,11 @@ validator are available at <a
 href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
 <h1 id="xml">XML</h1>
 <p>The XML is specified by the following <a
-href="WN-LMF-1.4.dtd">DTD</a>. An example is given <a
+href="WN-LMF-1.5.dtd">DTD</a>. An example is given <a
 href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
 <p>The first three lines must always be as follows:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd&quot;&gt;
+&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.5.dtd&quot;&gt;
 &lt;LexicalResource xmlns:dc=&quot;https://globalwordnet.github.io/schemas/dc/&quot;&gt;</code></pre>
 <p>A file may contain multiple WordNets in different languages:</p>
 <p>The following information is required:</p>
@@ -813,7 +813,7 @@ lexicon format. This structure is required for submission to the
 Collaborative Interlingual Index, but web services may of course return
 shorter fragments of the structure.</p>
 <pre><code>{ 
-  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.4.json&quot;,
+  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.5.json&quot;,
   &quot;@graph&quot;: [{</code></pre>
 <p>The following are required properties of every WordNet (note the
 language must be given twice). <code>@id</code> gives the identifier of
