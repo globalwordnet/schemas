@@ -259,6 +259,11 @@
   rdfs:comment "A concept undergoes an action in which a given concept is involved."@en ;
   owl:inverseOf :co_role .
 
+:collocation a :SenseRelType ;
+  rdfs:label "collocation"@en ;
+  rdfs:comment "A lexical item that habitually co-occurs with a given lexical item within the semantic context expressed by a synset (a relation on the syntagmatic axis)."@en ;
+  owl:inverseOf :collocation .
+
 :derivation a :SenseRelType ;
   rdfs:label "derivation"@en ;
   rdfs:comment "A concept which is a derivationally related form of a given concept."@en .

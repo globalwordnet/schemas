@@ -264,6 +264,11 @@ results of Concept B.</rdfs:comment>
     <rdfs:label xml:lang="en">co-role</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#co_role"/>
   </SynsetRelType>
+  <SenseRelType rdf:about="https://globalwordnet.github.io/schemas/wn#collocation">
+    <rdfs:comment xml:lang="en">A lexical item that habitually co-occurs with a given lexical item within the semantic context expressed by a synset (a relation on the syntagmatic axis).</rdfs:comment>
+    <rdfs:label xml:lang="en">collocation</rdfs:label>
+    <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#collocation"/>
+  </SenseRelType>
   <owl:AnnotationProperty rdf:about="https://globalwordnet.github.io/schemas/wn#confidenceScore">
     <rdfs:comment xml:lang="en">A confidence score, usually assigned by an algorithm, with a value between 0 and 1</rdfs:comment>
     <rdfs:label xml:lang="en">confidence score</rdfs:label>
