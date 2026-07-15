@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:lexinfo="http://www.lexinfo.net/ontology/3.0/lexinfo#"
+   xmlns:lime="http://www.w3.org/ns/lemon/lime#"
    xmlns:ontolex="http://www.w3.org/ns/lemon/ontolex#"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -37,8 +38,17 @@
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Example">
     <rdfs:label xml:lang="en">example</rdfs:label>
   </owl:Class>
+  <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Extends">
+    <rdfs:comment xml:lang="en">A reference, by identifier and version, to the base lexicon of a lexicon extension</rdfs:comment>
+    <rdfs:label xml:lang="en">extends reference</rdfs:label>
+  </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#ILIDefinition">
     <rdfs:label xml:lang="en">ILI definition</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#LexiconExtension">
+    <rdfs:comment xml:lang="en">A lexicon that adds to or modifies the lexical entries, senses and synsets of another lexicon (its base lexicon) without redistributing that lexicon. Entries, senses and synsets reused from the base lexicon are simply referred to by their existing identifiers; no distinct class is needed for these in RDF as statements about a given identifier merge across graphs.</rdfs:comment>
+    <rdfs:label xml:lang="en">lexicon extension</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/lime#Lexicon"/>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#PartOfSpeech">
     <rdfs:comment xml:lang="en">The syntactic class of the entry, e.g., noun, verb</rdfs:comment>
@@ -95,6 +105,10 @@
         </rdf:rest>
       </rdf:Description>
     </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Requires">
+    <rdfs:comment xml:lang="en">A reference, by identifier and version, to a lexicon required by this lexicon or lexicon extension</rdfs:comment>
+    <rdfs:label xml:lang="en">requires reference</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#SenseRelType">
     <rdfs:label xml:lang="en">sense relation type</rdfs:label>
@@ -359,6 +373,12 @@ results of Concept B.</rdfs:comment>
     <rdfs:label xml:lang="en">exemplifies</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#is_exemplified_by"/>
   </SynsetRelType>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#extends">
+    <rdfs:comment xml:lang="en">Indicates the base lexicon that a lexicon extension adds to or modifies</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#LexiconExtension"/>
+    <rdfs:label xml:lang="en">extends</rdfs:label>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#Extends"/>
+  </owl:ObjectProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#feminine">
     <rdfs:comment xml:lang="en">A concept used to refer to female members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">feminine form</rdfs:label>
@@ -727,6 +747,46 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:comment xml:lang="en">Cause something to have a particular property (e.g., "magnetize" - "magnetization")</rdfs:comment>
     <rdfs:label xml:lang="en">property</rdfs:label>
   </SynsetRelType>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#ref">
+    <rdfs:comment xml:lang="en">The identifier of the lexicon referred to by an extends or requires statement</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#Extends"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#Requires"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">reference</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#requires">
+    <rdfs:comment xml:lang="en">Indicates another lexicon that must be loaded to fully interpret this lexicon or lexicon extension</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="http://www.w3.org/ns/lemon/lime#Lexicon"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#LexiconExtension"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:label xml:lang="en">requires</rdfs:label>
+    <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#Requires"/>
+  </owl:ObjectProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#restricted_by">
     <rdfs:comment xml:lang="en">A relation between nominal (pronominal) Y and an adjectival X (quantifier/determiner)</rdfs:comment>
     <rdfs:label xml:lang="en">restricted by</rdfs:label>
