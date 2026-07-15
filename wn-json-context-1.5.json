@@ -19,7 +19,14 @@
         "iliDef": { "@id": "wn:iliDef", "type": "string", "@language": "en" },
         "example": { "@id": "wn:example", "@type": "@id" },
         "ili": { "@id": "wn:ili", "@type": "@id" },
-        "partOfSpeech": { "@id": "wn:partOfSpeech", "@type": "@vocab" },
+        "partOfSpeech": {
+            "@id": "wn:partOfSpeech",
+            "@type": "@vocab",
+            "@context": {
+                "other": "wn:other_pos",
+                "unknown": "wn:unknown_pos"
+            }
+        },
         "value": "rdf:value",
         "sense": { "@id": "ontolex:sense", "@type": "@id"},
         "definition": { "@id": "skos:definition", "@type": "@id" },
