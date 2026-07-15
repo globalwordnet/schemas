@@ -677,6 +677,50 @@ Any examples should be given on the sense as follows:
 The JSON format can be validated by the [JSON Schema](http://json-schema.org)
 provided at https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json
 
+**Lexicon Extensions in JSON**
+
+A lexicon extension is represented as a graph node with `@type` set to
+`wn:LexiconExtension` instead of `lime:Lexicon`. It takes the same properties
+as a `lime:Lexicon` node, plus a required `extends` object, giving the `ref`
+(identifier) and `version` of the base lexicon that is being extended, and
+optionally its `url`:
+
+    {
+      "@id": "ewn-cs-example",
+      "@type": "wn:LexiconExtension",
+      "label": "English WordNet Computer Science Terms (example)",
+      "language": "en",
+      "email": "goodmami@uw.edu",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "version": "1.0",
+      "extends": { "ref": "ewn", "version": "2020" },
+
+As with the XML form, a lexicon extension may add new information to an entry,
+sense or synset that already exists in the base lexicon. This is done with the
+`externalEntry` and `externalSynset` properties, which take the same form as
+`entry` and `synset` but require only `@id` (their contents may not redeclare
+metadata such as `lemma` or `partOfSpeech`):
+
+      "externalEntry": [{
+          "@id": "ewn-process-n",
+          "sense": [{
+              "@id": "ewn-process-n-20000123",
+              "synsetRef": "ewn-20000123-n"
+          }]
+      }],
+      "externalSynset": [{ "@id": "ewn-06581154-n" }],
+      "synset": [{
+          "@id": "ewn-20000123-n",
+          "definition": [{ "gloss": "a running instance of a computer program" }],
+          "relations": [{ "relType": "hypernym", "target": "ewn-06581154-n" }]
+      }]
+    }
+
+Both `lime:Lexicon` and `wn:LexiconExtension` nodes may also declare `requires`,
+an array of the same `{ "ref", "version", "url" }` objects used by `extends`,
+to indicate other lexicons that an application should load in order to fully
+interpret this one.
+
 RDF
 ---
 
@@ -837,3 +881,47 @@ A more extended example is given here:
         rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
         dc:source "Europarl Corpus"
       ] .
+
+**Lexicon Extensions in RDF**
+
+A lexicon extension is an instance of `wn:LexiconExtension`, a subclass of
+`lime:Lexicon`, and carries a `wn:extends` property pointing to a blank node
+that gives the `wn:ref` (identifier) and `owl:versionInfo` (version) of the
+base lexicon:
+
+    <#ewn-cs-example> a wn:LexiconExtension ;
+      rdfs:label "English WordNet Computer Science Terms (example)"@en ;
+      dc:language "en" ;
+      schema:email "goodmami@uw.edu" ;
+      cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+      owl:versionInfo "1.0" ;
+      wn:extends [ wn:ref "ewn" ; owl:versionInfo "2020" ] ;
+      lime:entry <#ewn-process-n> ;
+      skos:member <#ewn-20000123-n> .
+
+Unlike the XML and JSON forms, RDF does not need a separate class for
+"external" lexical entries, senses or synsets. Since resources are identified
+by URI rather than by position in a tree, a lexicon extension simply asserts
+further triples about the identifiers of the base lexicon's `ontolex:LexicalEntry`,
+`ontolex:LexicalSense` and `ontolex:LexicalConcept` resources, and these merge
+automatically with the base lexicon's own triples about the same URIs:
+
+    <#ewn-process-n> a ontolex:LexicalEntry ;
+      ontolex:sense <#ewn-process-n-20000123> .
+
+    <#ewn-process-n-20000123> a ontolex:LexicalSense ;
+      ontolex:reference <#ewn-20000123-n> .
+
+    <#ewn-20000123-n> a ontolex:LexicalConcept ;
+      wn:definition [ rdf:value "a running instance of a computer program"@en ] ;
+      skos:inScheme <#ewn-cs-example> .
+
+    []
+      vartrans:source <#ewn-20000123-n> ;
+      vartrans:category wn:hypernym ;
+      vartrans:target <#ewn-06581154-n> .
+
+A `wn:requires` property, with the same `wn:ref`/`owl:versionInfo` blank node
+shape as `wn:extends`, may be used on either a `lime:Lexicon` or a
+`wn:LexiconExtension` to indicate another lexicon that should be loaded to
+fully interpret this one.

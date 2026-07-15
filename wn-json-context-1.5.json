@@ -196,8 +196,20 @@
             "@id": "lime:entry",
             "@type": "@id"
         },
+        "externalEntry" : {
+            "@id": "lime:entry",
+            "@type": "@id"
+        },
+
+        "extends": { "@id": "wn:extends", "@type": "@id" },
+        "requires": { "@id": "wn:requires", "@type": "@id" },
+        "ref": { "@id": "wn:ref", "type": "string" },
 
         "synset": {
+            "@id": "skos:member",
+            "@type": "@id"
+        },
+        "externalSynset": {
             "@id": "skos:member",
             "@type": "@id"
         },

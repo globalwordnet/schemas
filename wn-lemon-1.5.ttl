@@ -1,6 +1,7 @@
 @prefix : <https://globalwordnet.github.io/schemas/wn#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
@@ -771,3 +772,36 @@
   rdfs:comment "The ordering of a sense within a lexical entry or a normalized group of entries"@en ;
   rdfs:domain ontolex:LexicalSense ;
   rdfs:range xsd:integer .
+
+:LexiconExtension a owl:Class ;
+  rdfs:subClassOf lime:Lexicon ;
+  rdfs:label "lexicon extension"@en ;
+  rdfs:comment "A lexicon that adds to or modifies the lexical entries, senses and synsets of another lexicon (its base lexicon) without redistributing that lexicon. Entries, senses and synsets reused from the base lexicon are simply referred to by their existing identifiers; no distinct class is needed for these in RDF as statements about a given identifier merge across graphs."@en .
+
+:extends a owl:ObjectProperty ;
+  rdfs:domain :LexiconExtension ;
+  rdfs:range :Extends ;
+  rdfs:label "extends"@en ;
+  rdfs:comment "Indicates the base lexicon that a lexicon extension adds to or modifies"@en .
+
+:Extends a owl:Class ;
+  rdfs:label "extends reference"@en ;
+  rdfs:comment "A reference, by identifier and version, to the base lexicon of a lexicon extension"@en .
+
+:requires a owl:ObjectProperty ;
+  rdfs:domain [
+    owl:unionOf ( lime:Lexicon :LexiconExtension ) ] ;
+  rdfs:range :Requires ;
+  rdfs:label "requires"@en ;
+  rdfs:comment "Indicates another lexicon that must be loaded to fully interpret this lexicon or lexicon extension"@en .
+
+:Requires a owl:Class ;
+  rdfs:label "requires reference"@en ;
+  rdfs:comment "A reference, by identifier and version, to a lexicon required by this lexicon or lexicon extension"@en .
+
+:ref a owl:DatatypeProperty ;
+  rdfs:domain [
+    owl:unionOf ( :Extends :Requires ) ] ;
+  rdfs:range xsd:string ;
+  rdfs:label "reference"@en ;
+  rdfs:comment "The identifier of the lexicon referred to by an extends or requires statement"@en .
