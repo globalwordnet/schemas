@@ -61,7 +61,7 @@
                         <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#adjective_satellite"/>
                         <rdf:rest>
                           <rdf:Description>
-                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#named_entity"/>
+                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#phrase"/>
                             <rdf:rest>
                               <rdf:Description>
                                 <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#conjunction"/>
@@ -653,9 +653,6 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">n</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   </owl:DatatypeProperty>
-  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#named_entity">
-    <rdfs:label xml:lang="en">named entity</rdfs:label>
-  </PartOfSpeech>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#notation">
     <rdfs:comment xml:lang="en">The notation scheme used for a pronunciation</rdfs:comment>
     <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
@@ -717,6 +714,10 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
     <rdfs:label xml:lang="en">phonemic</rdfs:label>
   </owl:DatatypeProperty>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#phrase">
+    <rdfs:comment xml:lang="en">A multiword expression, e.g. a phrase or idiom</rdfs:comment>
+    <rdfs:label xml:lang="en">phrase</rdfs:label>
+  </PartOfSpeech>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#pronunciation">
     <rdfs:comment xml:lang="en">Indicates the pronunciation of a form</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>
