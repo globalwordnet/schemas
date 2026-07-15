@@ -107,8 +107,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -312,6 +312,9 @@ described by this word</li>
 <li>is_exemplified_by: Indicates a word involved in the usage described
 by this word</li>
 <li>similar: Similar, though not necessarily interchangeable</li>
+<li>collocation: A lexical item that habitually co-occurs with this word
+within the semantic context of a synset (a relation on the syntagmatic
+axis)</li>
 </ul>
 <p><strong>Morphosemantic relations</strong></p>
 <ul>
@@ -489,6 +492,9 @@ resulting in a given concept.</p></li>
 instrument in an action resulting in a given concept.</p></li>
 <li><p><code>co_role</code>: a concept undergoes an action in which a
 given concept is involved.</p></li>
+<li><p><code>collocation</code>: a lexical item that habitually
+co-occurs with a given lexical item within the semantic context
+expressed by a synset (a relation on the syntagmatic axis).</p></li>
 <li><p><code>constitutive</code>: core semantic relations that define
 synsets</p></li>
 <li><p><code>derivation</code>: a concept which is a derivationally
@@ -893,7 +899,9 @@ the region described by this word</p></li>
 <li><p><code>exemplifies</code>: Indicates the usage of this
 word</p></li>
 <li><p><code>is_exemplified_by</code>: Indicates a word involved in the
-usage described by this word</p>
+usage described by this word</p></li>
+<li><p><code>collocation</code>: A lexical item that habitually
+co-occurs with this word within the semantic context of a synset</p>
 <pre><code>            &quot;relations&quot;: [{
                 &quot;relType&quot;: &quot;derivation&quot;,
                 &quot;target&quot;: &quot;example-en-10161911-n-1&quot;,

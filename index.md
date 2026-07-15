@@ -108,6 +108,7 @@ The set of relations between senses is limited to the following
 * exemplifies: Indicates the usage of this word
 * is_exemplified_by: Indicates a word involved in the usage described by this word
 * similar: Similar, though not necessarily interchangeable
+* collocation: A lexical item that habitually co-occurs with this word within the semantic context of a synset (a relation on the syntagmatic axis)
 
 **Morphosemantic relations**
 
@@ -226,6 +227,7 @@ The set of relations between synsets is limited to the following:
 * `co_result_agent`: a concept which takes an action resulting in a given concept.
 * `co_result_instrument`: a concept which is used as an instrument in an action resulting in a given concept.
 * `co_role`: a concept undergoes an action in which a given concept is involved.
+* `collocation`: a lexical item that habitually co-occurs with a given lexical item within the semantic context expressed by a synset (a relation on the syntagmatic axis).
 * `constitutive`: core semantic relations that define synsets
 * `derivation`: a concept which is a derivationally related form of a given concept.
 * `diminutive`: a concept used to refer to generally smaller members of a class
@@ -554,6 +556,7 @@ list below and a `target` and may have Dublin Core properties
 * `domain_member_region`: Indicates a word involved in the region described by this word
 * `exemplifies`: Indicates the usage of this word
 * `is_exemplified_by`: Indicates a word involved in the usage described by this word
+* `collocation`: A lexical item that habitually co-occurs with this word within the semantic context of a synset
 
                   "relations": [{
                       "relType": "derivation",

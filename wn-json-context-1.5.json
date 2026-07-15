@@ -79,6 +79,7 @@
         "co_result_agent": { "@id": "wn:co_result_agent", "@type": "@id" },
         "co_result_instrument": { "@id": "wn:co_result_instrument", "@type": "@id" },
         "co_role": { "@id": "wn:co_role", "@type": "@id" },
+        "collocation": { "@id": "wn:collocation", "@type": "@id" },
         "derivation": { "@id": "wn:derivation", "@type": "@id" },
         "destination": { "@id": "wn:destination", "@type": "@id" },
         "diminutive": { "@id": "wn:diminutive", "@type": "@id" },
