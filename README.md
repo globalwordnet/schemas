@@ -9,7 +9,7 @@ Building the metadata
 
 `index.html` is constructed with PanDoc
 
-    pandoc -t html -H template/header -A template/afterbody -B template/beforebody --shift-heading-level-by=-1 index.md > index.html
+    pandoc index.md -s --metadata title="Global WordNet Formats" -c https://cdn.jsdelivr.net/npm/water.css@2/out/water.css -o index.html
 
 `wn.rdf` is generated from the Turtle with Rapper
 

@@ -4,153 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Global Wordnet Formats</title>
+  <title>Global WordNet Formats</title>
   <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -167,25 +22,11 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <meta charset="utf-8">                                                      
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">                       
-  <meta name="viewport" content="width=device-width, initial-scale=1">        
-  <meta name="description" content="">                                        
-  <meta name="author" content="">                                             
-                                                                                  
-  <!-- Bootstrap Core CSS -->                                                 
-  <link href="css/bootstrap.min.css" rel="stylesheet">                        
-
-  <!-- Custom CSS -->                                                         
-  <link href="css/one-page-wonder.css" rel="stylesheet">         
-  <style>
-  img { width: 150px; float:left; margin: 50px; }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
 </head>
 <body>
-<div class="container">
 <header id="title-block-header">
-<h1 class="title">Global Wordnet Formats</h1>
+<h1 class="title">Global WordNet Formats</h1>
 </header>
 <p><img
 src="https://globalwordnet.github.io/schemas/img/GWA_logo.png" /></p>
@@ -219,7 +60,7 @@ href="http://github.com/globalwordnet/schemas/blob/master/example.ttl">Example</
 <p>All of these formats are considered equivalent. A converter and
 validator are available at <a
 href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.insight-centre.org/gwn-converter/</a></p>
-<h1 id="xml">XML</h1>
+<h2 id="xml">XML</h2>
 <p>The XML is specified by the following <a
 href="WN-LMF-1.4.dtd">DTD</a>. An example is given <a
 href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
@@ -343,7 +184,7 @@ is done (e.g.,g “deceive” - “deception”)</li>
 <li>vehicle: A verb indicating movement with a particular vehicle (e.g.,
 “(to) ship” - “ship”)</li>
 </ul>
-<p>** Non-Princeton WordNet Relations**</p>
+<p><strong>Non-Princeton WordNet Relations</strong></p>
 <ul>
 <li><p>simple_aspect_ip: A word which is linked to another through a
 change from imperfective to perfective aspect</p></li>
@@ -801,7 +642,7 @@ value is the text of the tag</p>
 &lt;/LexicalEntry&gt;</code></pre>
 <p>A universal tagging scheme is not prescribed and wordnet project
 owners are free to choose a scheme that works for their data.</p>
-<h1 id="json">JSON</h1>
+<h2 id="json">JSON</h2>
 <p>The JSON format follows that of the XML and is based on <a
 href="http://json-ld.org">JSON-LD</a> <a
 href="https://github.com/globalwordnet/schemas/blob/master/example.json">An
@@ -1024,7 +865,7 @@ usage described by this word</p>
 <p>The JSON format can be validated by the <a
 href="http://json-schema.org">JSON Schema</a> provided at
 https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
-<h1 id="rdf">RDF</h1>
+<h2 id="rdf">RDF</h2>
 <p>We acknowledge the existence of two vocabularies to wordnet encoding.
 The wn-simple.ttl is based on the <a
 href="https://www.w3.org/TR/wordnet-rdf/">W3C RDF/OWL Representation of
@@ -1183,6 +1024,5 @@ and <code>skos:example</code> optionally with a
     rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv ;
     dc:source &quot;Europarl Corpus&quot;
   ] .</code></pre>
-</div>
 </body>
 </html>

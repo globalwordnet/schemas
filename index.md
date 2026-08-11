@@ -1,6 +1,3 @@
-Global Wordnet Formats
-======================
-
 ![](https://globalwordnet.github.io/schemas/img/GWA_logo.png)
 
 The Global WordNet Association provides three formats for which WordNets can be
@@ -126,7 +123,7 @@ The set of relations between senses is limited to the following
 * body_part: A word which is typically a body part of a given word (e.g. "finger")
 * vehicle: A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")
 
-** Non-Princeton WordNet Relations**
+**Non-Princeton WordNet Relations**
 
 * simple_aspect_ip: A word which is linked to another through a change from imperfective to perfective aspect
 * secondary_aspect_ip: A word which is linked to another through a change in aspect (ip)
