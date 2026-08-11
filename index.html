@@ -21,8 +21,73 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -65,9 +130,10 @@ href="http://server1.nlp.insight-centre.org/gwn-converter/">http://server1.nlp.i
 href="WN-LMF-1.4.dtd">DTD</a>. An example is given <a
 href="https://github.com/globalwordnet/schemas/blob/master/example.xml">here</a>:</p>
 <p>The first three lines must always be as follows:</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE LexicalResource SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd&quot;&gt;
-&lt;LexicalResource xmlns:dc=&quot;https://globalwordnet.github.io/schemas/dc/&quot;&gt;</code></pre>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span> <span class="ot">encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> <span class="dt">LexicalResource</span> SYSTEM &quot;http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd&quot;<span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexicalResource</span> <span class="ot">xmlns:dc=</span><span class="st">&quot;https://globalwordnet.github.io/schemas/dc/&quot;</span>&gt;</span></code></pre></div>
 <p>A file may contain multiple WordNets in different languages:</p>
 <p>The following information is required:</p>
 <ul>
@@ -85,22 +151,24 @@ major.minor format)</li>
 </ul>
 <p>Extra properties may be included from Dublin core and in addition</p>
 <ul>
-<li><p>status: The status of the resource, e.g., “valid”, “checked”,
-“unchecked”</p></li>
-<li><p>confidenceScore: A default numeric value between 0 and 1 giving
-the confidence in the correctness of elements in this resource.</p>
-<pre><code>  &lt;Lexicon id=&quot;example-en&quot;
-           label=&quot;Example wordnet (English)&quot;
-           language=&quot;en&quot; 
-           email=&quot;john@mccr.ae&quot;
-           license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
-           version=&quot;1.0&quot;
-           citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
-           url=&quot;http://globalwordnet.github.io/schemas/&quot;
-           dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre></li>
+<li>status: The status of the resource, e.g., “valid”, “checked”,
+“unchecked”</li>
+<li>confidenceScore: A default numeric value between 0 and 1 giving the
+confidence in the correctness of elements in this resource.</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   &lt;<span class="kw">Lexicon</span> <span class="ot">id=</span><span class="st">&quot;example-en&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            <span class="ot">label=</span><span class="st">&quot;Example wordnet (English)&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="ot">language=</span><span class="st">&quot;en&quot;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="ot">email=</span><span class="st">&quot;john@mccr.ae&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="ot">license=</span><span class="st">&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="ot">citation=</span><span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="ot">url=</span><span class="st">&quot;http://globalwordnet.github.io/schemas/&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="ot">dc:publisher=</span><span class="st">&quot;Global Wordnet Association&quot;</span>&gt;</span></code></pre></div>
 <p>Each word (lexical entry) must have a unique id:</p>
-<pre><code>        &lt;LexicalEntry id=&quot;w1&quot;&gt;</code></pre>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w1&quot;</span>&gt;</span></code></pre></div>
 <p>The part of speech values are as follows:</p>
 <ul>
 <li>n: Noun</li>
@@ -116,135 +184,145 @@ determiners)</li>
 </ul>
 <p>The following properties may also be specified on the entry:</p>
 <ul>
-<li><p>status: A string giving the status of this entry, e.g., “valid”,
-“checked”, “unchecked”</p></li>
-<li><p>note: A string giving a note about this entry</p></li>
-<li><p>confidenceScore: A numeric value between 0 and 1 giving the
+<li>status: A string giving the status of this entry, e.g., “valid”,
+“checked”, “unchecked”</li>
+<li>note: A string giving a note about this entry</li>
+<li>confidenceScore: A numeric value between 0 and 1 giving the
 confidence in the correctness of this entry. If this is omitted it is
 assumed to be the value given on the lexicon, or 1.0 if the lexicon has
 no value. Confidence scores may also be stated on senses, synsets,
 definitions, examples, relations and counts. In all cases, if the value
 is omitted it is assumed to be the lexicon value not any parent
-element’s value.</p>
-<pre><code>          &lt;Lemma writtenForm=&quot;grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
-          &lt;Sense id=&quot;example-en-10161911-n-1&quot; synset=&quot;example-en-10161911-n&quot;/&gt;
-      &lt;/LexicalEntry&gt;
-      &lt;LexicalEntry id=&quot;w2&quot;&gt;
-          &lt;Lemma writtenForm=&quot;paternal grandfather&quot; partOfSpeech=&quot;n&quot;/&gt;
-          &lt;Sense id=&quot;example-en-1-n-1&quot; synset=&quot;example-en-1-n&quot;&gt;</code></pre></li>
+element’s value.</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;grandfather&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-en-10161911-n-1&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-10161911-n&quot;</span>/&gt;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">LexicalEntry</span>&gt;</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w2&quot;</span>&gt;</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;paternal grandfather&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-en-1-n-1&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-1-n&quot;</span>&gt;</span></code></pre></div>
 <p>The set of relations between senses is limited to the following</p>
 <p><strong>Princeton WordNet Relations</strong></p>
 <ul>
-<li>antonym: An opposite and inherently incompatible word</li>
-<li>also: See also, a reference of weak meaning</li>
-<li>participle: An adjective that is a participle form a verb</li>
-<li>pertainym: A relational adjective. Adjectives that are pertainyms
-are usually defined by such phrases as “of or pertaining to” and do not
-have antonyms. A pertainym can point to a noun or another pertainym</li>
-<li>derivation: A word that is derived from some other word</li>
-<li>domain_topic: Indicates the category of this word</li>
-<li>domain_member_topic: Indicates a word involved in this category
-described by this word</li>
-<li>domain_region: Indicates the region of this word</li>
-<li>domain_member_region: Indicates a word involved in the region
-described by this word</li>
-<li>exemplifies: Indicates the usage of this word</li>
-<li>is_exemplified_by: Indicates a word involved in the usage described
-by this word</li>
-<li>similar: Similar, though not necessarily interchangeable</li>
+<li><code>antonym</code>: An opposite and inherently incompatible
+word</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>participle</code>: An adjective that is a participle form a
+verb</li>
+<li><code>pertainym</code>: A relational adjective. Adjectives that are
+pertainyms are usually defined by such phrases as “of or pertaining to”
+and do not have antonyms. A pertainym can point to a noun or another
+pertainym</li>
+<li><code>derivation</code>: A word that is derived from some other
+word</li>
+<li><code>domain_topic</code>: Indicates the category of this word</li>
+<li><code>domain_member_topic</code>: Indicates a word involved in this
+category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the
+region described by this word</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><code>is_exemplified_by</code>: Indicates a word involved in the
+usage described by this word</li>
+<li><code>similar</code>: Similar, though not necessarily
+interchangeable</li>
 </ul>
 <p><strong>Morphosemantic relations</strong></p>
 <ul>
-<li>agent: A word which is typically the one/that who/which does the
-action denoted by a given word (e.g. “to eat” - “eater”)</li>
-<li>material: A word which is typically the material of a given word
-(e.g. “wood”)</li>
-<li>event: An noun representing the event of a verb (e.g., “(a) meet” -
-“(to) meet”)</li>
-<li>instrument: An instrument for doing a task (e.g., “photocopier” -
-“photocopy”)</li>
-<li>location: A verb derived from the action performed at a place (e.g.,
-“(a) forge” - “(to) forge”)</li>
-<li>by_means_of: A word which is typically the means by which something
-is done (e.g.,g “deceive” - “deception”)</li>
-<li>undergoer: A word which is typically the undergoer of a given word
-(e.g. “honor” - “honoree”)</li>
-<li>property: Cause something to have a particular property (e.g.,
-“magnetize” - “magnetization”)</li>
-<li>result: A word which is typically the result of a given word
-(e.g. “nitrify” - “nitrate”)</li>
-<li>state: A state caused by the verb (e.g., “sensitize” -
+<li><code>agent</code>: A word which is typically the one/that who/which
+does the action denoted by a given word (e.g. “to eat” - “eater”)</li>
+<li><code>material</code>: A word which is typically the material of a
+given word (e.g. “wood”)</li>
+<li><code>event</code>: An noun representing the event of a verb (e.g.,
+“(a) meet” - “(to) meet”)</li>
+<li><code>instrument</code>: An instrument for doing a task (e.g.,
+“photocopier” - “photocopy”)</li>
+<li><code>location</code>: A verb derived from the action performed at a
+place (e.g., “(a) forge” - “(to) forge”)</li>
+<li><code>by_means_of</code>: A word which is typically the means by
+which something is done (e.g.,g “deceive” - “deception”)</li>
+<li><code>undergoer</code>: A word which is typically the undergoer of a
+given word (e.g. “honor” - “honoree”)</li>
+<li><code>property</code>: Cause something to have a particular property
+(e.g., “magnetize” - “magnetization”)</li>
+<li><code>result</code>: A word which is typically the result of a given
+word (e.g. “nitrify” - “nitrate”)</li>
+<li><code>state</code>: A state caused by the verb (e.g., “sensitize” -
 “sensitization”)</li>
-<li>uses: A verb that uses a noun (e.g., “(to) talc” - “talc”)</li>
-<li>destination: The noun indicates the destination of a verb (e.g.,
-“retire” - “retiree”)</li>
-<li>body_part: A word which is typically a body part of a given word
-(e.g. “finger”)</li>
-<li>vehicle: A verb indicating movement with a particular vehicle (e.g.,
-“(to) ship” - “ship”)</li>
+<li><code>uses</code>: A verb that uses a noun (e.g., “(to) talc” -
+“talc”)</li>
+<li><code>destination</code>: The noun indicates the destination of a
+verb (e.g., “retire” - “retiree”)</li>
+<li><code>body_part</code>: A word which is typically a body part of a
+given word (e.g. “finger”)</li>
+<li><code>vehicle</code>: A verb indicating movement with a particular
+vehicle (e.g., “(to) ship” - “ship”)</li>
 </ul>
 <p><strong>Non-Princeton WordNet Relations</strong></p>
 <ul>
-<li><p>simple_aspect_ip: A word which is linked to another through a
-change from imperfective to perfective aspect</p></li>
-<li><p>secondary_aspect_ip: A word which is linked to another through a
-change in aspect (ip)</p></li>
-<li><p>simple_aspect_pi: A word which is linked to another through a
-change from perfective to imperfective aspect</p></li>
-<li><p>secondary_aspect_pi: A word which is linked to another through a
-change in aspect (pi)</p></li>
-<li><p>feminine: A feminine form of a word</p></li>
-<li><p>has_feminine: Indicates the base form of a word with a feminine
-derivation</p></li>
-<li><p>masculine: A masculine form of a word</p></li>
-<li><p>has_masculine: Indicates the base form of a word with a masculine
-derivation</p></li>
-<li><p>young: A form of a word with a derivation indicating the young of
-a species</p></li>
-<li><p>has_young: Indicates the base form of a word with a young
-derivation</p></li>
-<li><p>diminutive: A diminutive form of a word</p></li>
-<li><p>has_diminutive: Indicates the base form of a word with a
-diminutive derivation</p></li>
-<li><p>augmentative: An augmentative form of a word</p></li>
-<li><p>has_augmentative: Indicates the base form of a word with an
-augmentative derivation</p></li>
-<li><p>anto_gradable: A word pair whose meanings are opposite and which
-lie on a continuous spectrum</p></li>
-<li><p>anto_simple: A word pair whose meanings are opposite but whose
-meanings do not lie on a continuous spectrum</p></li>
-<li><p>anto_converse: A word pair that name or describe a single
-relationship from opposite perspectives</p></li>
-<li><p>metaphor: A relation between two senses, where the first sense is
-a metaphorical extension of the second sense</p></li>
-<li><p>has_metaphor: A relation between two senses, where the first
-sense can be metaphorically extended to the second sense</p></li>
-<li><p>metonym: A relation between two senses, where the first sense is
-a metonymic extension of the second sense</p></li>
-<li><p>has_metonym: A relation between two senses, where the first sense
-can be metonymically extended to the second sense</p>
-<pre><code>              &lt;SenseRelation relType=&quot;derivation&quot; target=&quot;example-en-10161911-n-1&quot;/&gt;
-          &lt;/Sense&gt;
-      &lt;/LexicalEntry&gt;
-      &lt;LexicalEntry id=&quot;w3&quot;&gt;
-          &lt;Lemma writtenForm=&quot;pay&quot; partOfSpeech=&quot;v&quot;/&gt;</code></pre></li>
+<li><code>simple_aspect_ip</code>: A word which is linked to another
+through a change from imperfective to perfective aspect</li>
+<li><code>secondary_aspect_ip</code>: A word which is linked to another
+through a change in aspect (ip)</li>
+<li><code>simple_aspect_pi</code>: A word which is linked to another
+through a change from perfective to imperfective aspect</li>
+<li><code>secondary_aspect_pi</code>: A word which is linked to another
+through a change in aspect (pi)</li>
+<li><code>feminine</code>: A feminine form of a word</li>
+<li><code>has_feminine</code>: Indicates the base form of a word with a
+feminine derivation</li>
+<li><code>masculine</code>: A masculine form of a word</li>
+<li><code>has_masculine</code>: Indicates the base form of a word with a
+masculine derivation</li>
+<li><code>young</code>: A form of a word with a derivation indicating
+the young of a species</li>
+<li><code>has_young</code>: Indicates the base form of a word with a
+young derivation</li>
+<li><code>diminutive</code>: A diminutive form of a word</li>
+<li><code>has_diminutive</code>: Indicates the base form of a word with
+a diminutive derivation</li>
+<li><code>augmentative</code>: An augmentative form of a word</li>
+<li><code>has_augmentative</code>: Indicates the base form of a word
+with an augmentative derivation</li>
+<li><code>anto_gradable</code>: A word pair whose meanings are opposite
+and which lie on a continuous spectrum</li>
+<li><code>anto_simple</code>: A word pair whose meanings are opposite
+but whose meanings do not lie on a continuous spectrum</li>
+<li><code>anto_converse</code>: A word pair that name or describe a
+single relationship from opposite perspectives</li>
+<li><code>metaphor</code>: A relation between two senses, where the
+first sense is a metaphorical extension of the second sense</li>
+<li><code>has_metaphor</code>: A relation between two senses, where the
+first sense can be metaphorically extended to the second sense</li>
+<li><code>metonym</code>: A relation between two senses, where the first
+sense is a metonymic extension of the second sense</li>
+<li><code>has_metonym</code>: A relation between two senses, where the
+first sense can be metonymically extended to the second sense</li>
 </ul>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SenseRelation</span> <span class="ot">relType=</span><span class="st">&quot;derivation&quot;</span> <span class="ot">target=</span><span class="st">&quot;example-en-10161911-n-1&quot;</span>/&gt;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">Sense</span>&gt;</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">LexicalEntry</span>&gt;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w3&quot;</span>&gt;</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;pay&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;v&quot;</span>/&gt;</span></code></pre></div>
 <p>Syntactic behaviour is given as in Princeton WordNet</p>
-<pre><code>            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Somebody ----s&quot; id=&quot;intransitive&quot;/&gt;
-            &lt;SyntacticBehaviour subcategorizationFrame=&quot;Somebody ----s somebody&quot; id=&quot;transitive&quot;/&gt;
-        &lt;/LexicalEntry&gt;</code></pre>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SyntacticBehaviour</span> <span class="ot">subcategorizationFrame=</span><span class="st">&quot;Somebody ----s&quot;</span> <span class="ot">id=</span><span class="st">&quot;intransitive&quot;</span>/&gt;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SyntacticBehaviour</span> <span class="ot">subcategorizationFrame=</span><span class="st">&quot;Somebody ----s somebody&quot;</span> <span class="ot">id=</span><span class="st">&quot;transitive&quot;</span>/&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">LexicalEntry</span>&gt;</span></code></pre></div>
 <p>Syntactic behaviour can also be given as part of the lexicon and
 referred to with the <code>subcat</code> property.</p>
 <p>If a synset is already mapped to the ILI please give the ID here.
 <strong>All synsets must have an ID that starts with ID of the lexicon
 followed by a dash, e.g., <code>example-en</code> + <code>-</code> +
 <code>local_synset_id</code></strong>.</p>
-<pre><code>        &lt;Synset id=&quot;example-en-10161911-n&quot; ili=&quot;i90287&quot; partOfSpeech=&quot;n&quot;
-            members=&quot;example-en-10161911-n-1 example-en-1-n-1&quot;&gt;
-            &lt;Definition&gt;
-                the father of your father or mother
-            &lt;/Definition&gt;</code></pre>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Synset</span> <span class="ot">id=</span><span class="st">&quot;example-en-10161911-n&quot;</span> <span class="ot">ili=</span><span class="st">&quot;i90287&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="ot">members=</span><span class="st">&quot;example-en-10161911-n-1 example-en-1-n-1&quot;</span>&gt;</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Definition</span>&gt;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                the father of your father or mother</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">Definition</span>&gt;</span></code></pre></div>
 <p>The <code>members</code> property gives the list of senses in
 order.</p>
 <p>The set of relations between synsets is limited to the following:</p>
@@ -287,201 +365,203 @@ given concept.</li>
 </ul>
 <p><strong>Non-Princeton WordNet Relations</strong></p>
 <ul>
-<li><p><code>agent</code>: a concept which is typically the one/that
-who/which does the action denoted by a given concept.</p></li>
-<li><p><code>also</code>: a word having a loose semantic relation to
-another word</p></li>
-<li><p><code>anto_converse</code>: word pairs that name or describe a
-single relationship from opposite perspectives</p></li>
-<li><p><code>anto_gradable</code>: word pairs whose meanings are
-opposite and which lie on a continuous spectrum</p></li>
-<li><p><code>anto_simple</code>: word pairs whose meanings are opposite
-but whose meanings do not lie on a continuous spectrum</p></li>
-<li><p><code>antonym</code>: an opposite and inherently incompatible
-word</p></li>
-<li><p><code>attribute</code>: an abstraction belonging to or
-characteristic of an entity</p></li>
-<li><p><code>augmentative</code>: a concept used to refer to generally
-larger members of a class</p></li>
-<li><p><code>be_in_state</code>: a is qualified by B</p></li>
-<li><p><code>classified_by</code>: concept B is modified by classifier A
-when it is counted.</p></li>
-<li><p><code>classifies</code>: a concept A used when counting concept
-B</p></li>
-<li><p><code>co_agent_instrument</code>: a concept which is the
-instrument used by a given concept in an action.</p></li>
-<li><p><code>co_agent_patient</code>: a concept which is the patient
-undergoing an action carried out by a given concept.</p></li>
-<li><p><code>co_agent_result</code>: a concept which is the result of an
-action taken by a given concept.</p></li>
-<li><p><code>co_instrument_agent</code>: a concept which carries out an
-action by using a given concept as an instrument.</p></li>
-<li><p><code>co_instrument_patient</code>: a concept which undergoes an
-action with the use of a given concept as an instrument.</p></li>
-<li><p><code>co_instrument_result</code>: a concept which is the result
-of an action using an instrument of a given concept.</p></li>
-<li><p><code>co_patient_agent</code>: a concept which carries out an
-action a given concept undergoing.</p></li>
-<li><p><code>co_patient_instrument</code>: a concept which is used as an
-instrument in an action a given concept undergoes.</p></li>
-<li><p><code>co_result_agent</code>: a concept which takes an action
-resulting in a given concept.</p></li>
-<li><p><code>co_result_instrument</code>: a concept which is used as an
-instrument in an action resulting in a given concept.</p></li>
-<li><p><code>co_role</code>: a concept undergoes an action in which a
-given concept is involved.</p></li>
-<li><p><code>constitutive</code>: core semantic relations that define
-synsets</p></li>
-<li><p><code>derivation</code>: a concept which is a derivationally
-related form of a given concept.</p></li>
-<li><p><code>diminutive</code>: a concept used to refer to generally
-smaller members of a class</p></li>
-<li><p><code>direction</code>: a concept which is the direction of the
-action or event expressed by a given concept.</p></li>
-<li><p><code>domain</code>: a concept which is a Topic, Region or Usage
-pointer of a given concept.</p></li>
-<li><p><code>domain_region</code>: a concept which is a geographical /
-cultural domain pointer of a given concept.</p></li>
-<li><p><code>domain_topic</code>: a concept which is the scientific
-category pointer of a given concept.</p></li>
-<li><p><code>eq_synonym</code>: A and B are equivalent concepts but
-their nature requires that they remain separate
-(e.g. Exemplifies)</p></li>
-<li><p><code>exemplifies</code>: a concept which is the example of a
-given concept.</p></li>
-<li><p><code>feminine</code>: a concept used to refer to female members
-of a class</p></li>
-<li><p><code>has_augmentative</code>: a concept which has a special
-concept for generally larger members of its class</p></li>
-<li><p><code>has_diminutive</code>: a concept which has a special
-concept for generally smaller members of its class</p></li>
-<li><p><code>has_domain</code>: a concept which is a term of a given
-Topic, Region or Usage concept.</p></li>
-<li><p><code>has_domain_region</code>: a concept which is the term in
-the geographical / cultural domain of a given concept.</p></li>
-<li><p><code>has_domain_topic</code>: a concept which is a term in the
-scientific category of a given concept.</p></li>
-<li><p><code>has_feminine</code>: a concept which has a special concept
-for female members of its class</p></li>
-<li><p><code>has_masculine</code>: a concept which has a special concept
-for male members of its class</p></li>
-<li><p><code>has_young</code>: a concept which has a special concept for
-young members of its class</p></li>
-<li><p><code>holo_location</code>: B is a place located in A</p></li>
-<li><p><code>holo_portion</code>: B is an amount/piece/portion of
-A</p></li>
-<li><p><code>holonym</code>: A makes up a part of B</p></li>
-<li><p><code>in_manner</code>: B qualifies the manner in which an action
-or event expressed by A takes place</p></li>
-<li><p><code>instrument</code>: a concept which is the instrument
-necessary for the action or event expressed by a given concept.</p></li>
-<li><p><code>involved</code>: a concept which is the action or event a
-given concept typically involved in.</p></li>
-<li><p><code>involved_agent</code>: a concept which is the action done
-by an agent expressed by a given concept.</p></li>
-<li><p><code>involved_direction</code>: a concept which is the action
-with the direction expressed by a given concept.</p></li>
-<li><p><code>involved_instrument</code>: a concept which is typically
-the action with the instrument expressed by a given concept.</p></li>
-<li><p><code>involved_location</code>: a concept which is the event
-happening in a place expressed by a given concept.</p></li>
-<li><p><code>involved_patient</code>: a concept which is the action that
-the patient expressed by a given concept undergoing.</p></li>
-<li><p><code>involved_result</code>: a concept which is the action or
-event with a result of a given concept comes into existence.</p></li>
-<li><p><code>involved_source_direction</code>: a concept which is the
-action beginning from a place of a given concept.</p></li>
-<li><p><code>involved_target_direction</code>: a concept which is the
-action or event leading to a place expressed by a given
-concept.</p></li>
-<li><p><code>ir_synonym</code>: a concept that means the same except for
-the style or connotation</p></li>
-<li><p><code>is_caused_by</code>: a comes about because of B</p></li>
-<li><p><code>is_entailed_by</code>: opposite of entails</p></li>
-<li><p><code>is_exemplified_by</code>: a concept which is the type of a
-given concept.</p></li>
-<li><p><code>is_subevent_of</code>: a takes place during or as part of
-B, and whenever A takes place, B takes place</p></li>
-<li><p><code>location</code>: a concept which is the place where the
-event expressed by a given concept happens.</p></li>
-<li><p><code>manner_of</code>: a qualifies the manner in which an action
-or event expressed by B takes place</p></li>
-<li><p><code>masculine</code>: a concept used to refer to male members
-of a class</p></li>
-<li><p><code>mero_location</code>: A is a place located in B</p></li>
-<li><p><code>mero_portion</code>: A is an amount/piece/portion of
-B</p></li>
-<li><p><code>meronym</code>: B makes up a part of A</p></li>
-<li><p><code>other</code>: any relation not otherwise specified</p></li>
-<li><p><code>participle</code>: a concept which is a participial
-adjective derived from a verb expressed by a given concept.</p></li>
-<li><p><code>patient</code>: a concept which is the one/that who/which
-undergoes a given concept.</p></li>
-<li><p><code>pertainym</code>: a concept which is of or pertaining to a
-given concept.</p></li>
-<li><p><code>restricted_by</code>: a relation between nominal
-(pronominal) B and an adjectival A (quantifier/determiner)</p></li>
-<li><p><code>restricts</code>: a relation between an adjectival A
-(quantifier/determiner) and a nominal (pronominal) B</p></li>
-<li><p><code>result</code>: a concept which comes into existence as a
-result of a given concept.</p></li>
-<li><p><code>role</code>: a concept which is involved in the action or
-event expressed by a given concept.</p></li>
-<li><p><code>secondary_aspect_ip</code>: a concept which is linked to
-another through a change in aspect (ip)</p></li>
-<li><p><code>secondary_aspect_pi</code>: a concept which is linked to
-another through a change in aspect (pi)</p></li>
-<li><p><code>simple_aspect_ip</code>: a concept which is linked to
-another through a change from imperfective to perfective aspect</p></li>
-<li><p><code>simple_aspect_pi</code>: a concept which is linked to
-another through a change from perfective to imperfective aspect</p></li>
-<li><p><code>source_direction</code>: a concept which is the place from
-where the event expressed by a given concept begins.</p></li>
-<li><p><code>state_of</code>: B is qualified by A</p></li>
-<li><p><code>subevent</code>: B takes place during or as part of A, and
-whenever B takes place, A takes place</p></li>
-<li><p><code>target_direction</code>: a concept which is the place where
-the action or event expressed by a given concept leads to.</p></li>
-<li><p><code>young</code>: a concept used to refer to young members of a
-class</p>
-<pre><code>          &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;example-en-10162692-n&quot;/&gt;
-      &lt;/Synset&gt;</code></pre></li>
+<li><code>agent</code>: a concept which is typically the one/that
+who/which does the action denoted by a given concept.</li>
+<li><code>also</code>: a word having a loose semantic relation to
+another word</li>
+<li><code>anto_converse</code>: word pairs that name or describe a
+single relationship from opposite perspectives</li>
+<li><code>anto_gradable</code>: word pairs whose meanings are opposite
+and which lie on a continuous spectrum</li>
+<li><code>anto_simple</code>: word pairs whose meanings are opposite but
+whose meanings do not lie on a continuous spectrum</li>
+<li><code>antonym</code>: an opposite and inherently incompatible
+word</li>
+<li><code>attribute</code>: an abstraction belonging to or
+characteristic of an entity</li>
+<li><code>augmentative</code>: a concept used to refer to generally
+larger members of a class</li>
+<li><code>be_in_state</code>: a is qualified by B</li>
+<li><code>classified_by</code>: concept B is modified by classifier A
+when it is counted.</li>
+<li><code>classifies</code>: a concept A used when counting concept
+B</li>
+<li><code>co_agent_instrument</code>: a concept which is the instrument
+used by a given concept in an action.</li>
+<li><code>co_agent_patient</code>: a concept which is the patient
+undergoing an action carried out by a given concept.</li>
+<li><code>co_agent_result</code>: a concept which is the result of an
+action taken by a given concept.</li>
+<li><code>co_instrument_agent</code>: a concept which carries out an
+action by using a given concept as an instrument.</li>
+<li><code>co_instrument_patient</code>: a concept which undergoes an
+action with the use of a given concept as an instrument.</li>
+<li><code>co_instrument_result</code>: a concept which is the result of
+an action using an instrument of a given concept.</li>
+<li><code>co_patient_agent</code>: a concept which carries out an action
+a given concept undergoing.</li>
+<li><code>co_patient_instrument</code>: a concept which is used as an
+instrument in an action a given concept undergoes.</li>
+<li><code>co_result_agent</code>: a concept which takes an action
+resulting in a given concept.</li>
+<li><code>co_result_instrument</code>: a concept which is used as an
+instrument in an action resulting in a given concept.</li>
+<li><code>co_role</code>: a concept undergoes an action in which a given
+concept is involved.</li>
+<li><code>constitutive</code>: core semantic relations that define
+synsets</li>
+<li><code>derivation</code>: a concept which is a derivationally related
+form of a given concept.</li>
+<li><code>diminutive</code>: a concept used to refer to generally
+smaller members of a class</li>
+<li><code>direction</code>: a concept which is the direction of the
+action or event expressed by a given concept.</li>
+<li><code>domain</code>: a concept which is a Topic, Region or Usage
+pointer of a given concept.</li>
+<li><code>domain_region</code>: a concept which is a geographical /
+cultural domain pointer of a given concept.</li>
+<li><code>domain_topic</code>: a concept which is the scientific
+category pointer of a given concept.</li>
+<li><code>eq_synonym</code>: A and B are equivalent concepts but their
+nature requires that they remain separate (e.g. Exemplifies)</li>
+<li><code>exemplifies</code>: a concept which is the example of a given
+concept.</li>
+<li><code>feminine</code>: a concept used to refer to female members of
+a class</li>
+<li><code>has_augmentative</code>: a concept which has a special concept
+for generally larger members of its class</li>
+<li><code>has_diminutive</code>: a concept which has a special concept
+for generally smaller members of its class</li>
+<li><code>has_domain</code>: a concept which is a term of a given Topic,
+Region or Usage concept.</li>
+<li><code>has_domain_region</code>: a concept which is the term in the
+geographical / cultural domain of a given concept.</li>
+<li><code>has_domain_topic</code>: a concept which is a term in the
+scientific category of a given concept.</li>
+<li><code>has_feminine</code>: a concept which has a special concept for
+female members of its class</li>
+<li><code>has_masculine</code>: a concept which has a special concept
+for male members of its class</li>
+<li><code>has_young</code>: a concept which has a special concept for
+young members of its class</li>
+<li><code>holo_location</code>: B is a place located in A</li>
+<li><code>holo_portion</code>: B is an amount/piece/portion of A</li>
+<li><code>holonym</code>: A makes up a part of B</li>
+<li><code>in_manner</code>: B qualifies the manner in which an action or
+event expressed by A takes place</li>
+<li><code>instrument</code>: a concept which is the instrument necessary
+for the action or event expressed by a given concept.</li>
+<li><code>involved</code>: a concept which is the action or event a
+given concept typically involved in.</li>
+<li><code>involved_agent</code>: a concept which is the action done by
+an agent expressed by a given concept.</li>
+<li><code>involved_direction</code>: a concept which is the action with
+the direction expressed by a given concept.</li>
+<li><code>involved_instrument</code>: a concept which is typically the
+action with the instrument expressed by a given concept.</li>
+<li><code>involved_location</code>: a concept which is the event
+happening in a place expressed by a given concept.</li>
+<li><code>involved_patient</code>: a concept which is the action that
+the patient expressed by a given concept undergoing.</li>
+<li><code>involved_result</code>: a concept which is the action or event
+with a result of a given concept comes into existence.</li>
+<li><code>involved_source_direction</code>: a concept which is the
+action beginning from a place of a given concept.</li>
+<li><code>involved_target_direction</code>: a concept which is the
+action or event leading to a place expressed by a given concept.</li>
+<li><code>ir_synonym</code>: a concept that means the same except for
+the style or connotation</li>
+<li><code>is_caused_by</code>: a comes about because of B</li>
+<li><code>is_entailed_by</code>: opposite of entails</li>
+<li><code>is_exemplified_by</code>: a concept which is the type of a
+given concept.</li>
+<li><code>is_subevent_of</code>: a takes place during or as part of B,
+and whenever A takes place, B takes place</li>
+<li><code>location</code>: a concept which is the place where the event
+expressed by a given concept happens.</li>
+<li><code>manner_of</code>: a qualifies the manner in which an action or
+event expressed by B takes place</li>
+<li><code>masculine</code>: a concept used to refer to male members of a
+class</li>
+<li><code>mero_location</code>: A is a place located in B</li>
+<li><code>mero_portion</code>: A is an amount/piece/portion of B</li>
+<li><code>meronym</code>: B makes up a part of A</li>
+<li><code>other</code>: any relation not otherwise specified</li>
+<li><code>participle</code>: a concept which is a participial adjective
+derived from a verb expressed by a given concept.</li>
+<li><code>patient</code>: a concept which is the one/that who/which
+undergoes a given concept.</li>
+<li><code>pertainym</code>: a concept which is of or pertaining to a
+given concept.</li>
+<li><code>restricted_by</code>: a relation between nominal (pronominal)
+B and an adjectival A (quantifier/determiner)</li>
+<li><code>restricts</code>: a relation between an adjectival A
+(quantifier/determiner) and a nominal (pronominal) B</li>
+<li><code>result</code>: a concept which comes into existence as a
+result of a given concept.</li>
+<li><code>role</code>: a concept which is involved in the action or
+event expressed by a given concept.</li>
+<li><code>secondary_aspect_ip</code>: a concept which is linked to
+another through a change in aspect (ip)</li>
+<li><code>secondary_aspect_pi</code>: a concept which is linked to
+another through a change in aspect (pi)</li>
+<li><code>simple_aspect_ip</code>: a concept which is linked to another
+through a change from imperfective to perfective aspect</li>
+<li><code>simple_aspect_pi</code>: a concept which is linked to another
+through a change from perfective to imperfective aspect</li>
+<li><code>source_direction</code>: a concept which is the place from
+where the event expressed by a given concept begins.</li>
+<li><code>state_of</code>: B is qualified by A</li>
+<li><code>subevent</code>: B takes place during or as part of A, and
+whenever B takes place, A takes place</li>
+<li><code>target_direction</code>: a concept which is the place where
+the action or event expressed by a given concept leads to.</li>
+<li><code>young</code>: a concept used to refer to young members of a
+class</li>
 </ul>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SynsetRelation</span> <span class="ot">relType=</span><span class="st">&quot;hypernym&quot;</span> <span class="ot">target=</span><span class="st">&quot;example-en-10162692-n&quot;</span>/&gt;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">Synset</span>&gt;</span></code></pre></div>
 <p>If you wish to define a new concept call the concept “in” (ILI New).
 If there is no mapping to the ILI leave this field empty (it is
 required).</p>
-<pre><code>        &lt;Synset id=&quot;example-en-1-n&quot; ili=&quot;in&quot; partOfSpeech=&quot;n&quot;&gt;
-            &lt;Definition&gt;A father&#39;s father; a paternal grandfather&lt;/Definition&gt;</code></pre>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Synset</span> <span class="ot">id=</span><span class="st">&quot;example-en-1-n&quot;</span> <span class="ot">ili=</span><span class="st">&quot;in&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>&gt;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Definition</span>&gt;A father&#39;s father; a paternal grandfather&lt;/<span class="kw">Definition</span>&gt;</span></code></pre></div>
 <p>You can include metadata (such as source) at many points The ILI
 Definition must be at least 20 characters or five words</p>
-<pre><code>            &lt;ILIDefinition dc:source=&quot;https://en.wiktionary.org/wiki/farfar&quot;&gt;
-                A father&#39;s father; a paternal grandfather
-            &lt;/ILIDefinition&gt;
-        &lt;/Synset&gt;</code></pre>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ILIDefinition</span> <span class="ot">dc:source=</span><span class="st">&quot;https://en.wiktionary.org/wiki/farfar&quot;</span>&gt;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                A father&#39;s father; a paternal grandfather</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ILIDefinition</span>&gt;</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">Synset</span>&gt;</span></code></pre></div>
 <p>You must include all targets of relations</p>
-<pre><code>        &lt;Synset id=&quot;example-en-10162692-n&quot; ili=&quot;i90292&quot; partOfSpeech=&quot;n&quot;/&gt;
-    &lt;/Lexicon&gt;
-    &lt;Lexicon id=&quot;example-sv&quot;
-             label=&quot;Example wordnet (Swedish)&quot;
-             language=&quot;sv&quot; 
-             email=&quot;john@mccr.ae&quot;
-             license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
-             version=&quot;1.0&quot;
-             citation=&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;
-             url=&quot;http://globalwordnet.github.io/schemas/&quot;
-             dc:publisher=&quot;Global Wordnet Association&quot;&gt;</code></pre>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Synset</span> <span class="ot">id=</span><span class="st">&quot;example-en-10162692-n&quot;</span> <span class="ot">ili=</span><span class="st">&quot;i90292&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Lexicon</span>&gt;</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Lexicon</span> <span class="ot">id=</span><span class="st">&quot;example-sv&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>             <span class="ot">label=</span><span class="st">&quot;Example wordnet (Swedish)&quot;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>             <span class="ot">language=</span><span class="st">&quot;sv&quot;</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>             <span class="ot">email=</span><span class="st">&quot;john@mccr.ae&quot;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>             <span class="ot">license=</span><span class="st">&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>             <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>             <span class="ot">citation=</span><span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>             <span class="ot">url=</span><span class="st">&quot;http://globalwordnet.github.io/schemas/&quot;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>             <span class="ot">dc:publisher=</span><span class="st">&quot;Global Wordnet Association&quot;</span>&gt;</span></code></pre></div>
 <p>The list of lexical entries (words) in your wordnet</p>
-<pre><code>        &lt;LexicalEntry id=&quot;w4&quot;&gt;
-            &lt;Lemma writtenForm=&quot;farfar&quot; partOfSpeech=&quot;n&quot;/&gt;</code></pre>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w4&quot;</span>&gt;</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;farfar&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span></code></pre></div>
 <p>Synsets need not be language-specific but senses must be</p>
-<pre><code>            &lt;Sense id=&quot;example-sv-2-n-1&quot; synset=&quot;example-en-1-n&quot;&gt;
-                &lt;SenseExample dc:source=&quot;Europarl Corpus&quot;&gt;
-                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
-                &lt;/SenseExample&gt;
-            &lt;/Sense&gt;
-        &lt;/LexicalEntry&gt;
-    &lt;/Lexicon&gt;
-&lt;/LexicalResource&gt;</code></pre>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-sv-2-n-1&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-1-n&quot;</span>&gt;</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SenseExample</span> <span class="ot">dc:source=</span><span class="st">&quot;Europarl Corpus&quot;</span>&gt;</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">SenseExample</span>&gt;</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">Sense</span>&gt;</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">LexicalEntry</span>&gt;</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Lexicon</span>&gt;</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">LexicalResource</span>&gt;</span></code></pre></div>
 <p><strong><em>Pronunciation</em></strong></p>
 <p>Since 2021, the schema has the ability to represent the pronunciation
 of lemmas.</p>
@@ -496,36 +576,39 @@ phonemic (‘true’) or phonetic (<code>false</code>), defaulting to
 ‘false’ * <code>audio</code>: gives the URL of an audio file of the
 pronuncation</p>
 <p>An example of encoding is given below:</p>
-<pre><code>    &lt;LexicalEntry id=&quot;ex-rabbit-n&quot;&gt;
-        &lt;Lemma writtenForm=&quot;rabbit&quot; partOfSpeech=&quot;n&quot;/&gt;
-            &lt;Pronunciation variety=&quot;en-GB-fonxsamp en-US-fonxsamp&quot; 
-                audio =&quot;https://path/rabbit.flac&quot;&gt;&#39;r\{bIt&lt;/Pronunciation&gt;
-        &lt;Pronunciation variety=&quot;en-AU-fonxsamp&quot; notation=&quot;weak vowel merger&quot; 
-                audio =&quot;https://path/rabbit1.flac&quot;&gt;&#39;r\{b@t&lt;/Pronunciation&gt;
-         &lt;/Lemma&gt;
-     &lt;/LexicalEntry&gt;</code></pre>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;ex-rabbit-n&quot;</span>&gt;</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;rabbit&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Pronunciation</span> <span class="ot">variety=</span><span class="st">&quot;en-GB-fonxsamp en-US-fonxsamp&quot;</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="ot">audio</span> <span class="ot">=</span><span class="st">&quot;https://path/rabbit.flac&quot;</span>&gt;&#39;r\{bIt&lt;/<span class="kw">Pronunciation</span>&gt;</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Pronunciation</span> <span class="ot">variety=</span><span class="st">&quot;en-AU-fonxsamp&quot;</span> <span class="ot">notation=</span><span class="st">&quot;weak vowel merger&quot;</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="ot">audio</span> <span class="ot">=</span><span class="st">&quot;https://path/rabbit1.flac&quot;</span>&gt;&#39;r\{b@t&lt;/<span class="kw">Pronunciation</span>&gt;</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>     &lt;/<span class="kw">Lemma</span>&gt;</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">LexicalEntry</span>&gt;</span></code></pre></div>
 <p><strong>Wordnet Extensions</strong></p>
 <p>A file may contain a lexicon extension which serves to augment an
 existing lexicon with new lexical entries, synsets, senses, relations,
 etc. They are defined much like regular lexicons, but the
 <code>&lt;Extends&gt;</code> element specifies the ID and version of the
 base lexicon:</p>
-<pre><code>    &lt;LexiconExtension id=&quot;ewn-cs-example&quot;
-                      label=&quot;English WordNet Computer Science Terms (example)&quot;
-                      language=&quot;en&quot;
-                      email=&quot;goodmami@uw.edu&quot;
-                      license=&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;
-                      version=&quot;1.0&quot;&gt;
-        &lt;Extends ref=&quot;ewn&quot; version=&quot;2020&quot; /&gt;</code></pre>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexiconExtension</span> <span class="ot">id=</span><span class="st">&quot;ewn-cs-example&quot;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                  <span class="ot">label=</span><span class="st">&quot;English WordNet Computer Science Terms (example)&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                  <span class="ot">language=</span><span class="st">&quot;en&quot;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                  <span class="ot">email=</span><span class="st">&quot;goodmami@uw.edu&quot;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                  <span class="ot">license=</span><span class="st">&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                  <span class="ot">version=</span><span class="st">&quot;1.0&quot;</span>&gt;</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Extends</span> <span class="ot">ref=</span><span class="st">&quot;ewn&quot;</span> <span class="ot">version=</span><span class="st">&quot;2020&quot;</span> /&gt;</span></code></pre></div>
 <p>The contents of the lexicon extension are the same as a regular
 lexicon with the addition of elements for external lexical entries,
 synsets, and senses. There are two uses of external elements. First,
 they allow one to add additional information to the corresponding
 element in the base lexicon, such as adding a new sense to an existing
 lexical entry:</p>
-<pre><code>        &lt;ExternalLexicalEntry id=&quot;ewn-process-n&quot;&gt;
-            &lt;Sense id=&quot;ewn-process-n-20000123&quot; synset=&quot;ewn-20000123-n&quot; /&gt;
-        &lt;/ExternalLexicalEntry&gt;</code></pre>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ExternalLexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;ewn-process-n&quot;</span>&gt;</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;ewn-process-n-20000123&quot;</span> <span class="ot">synset=</span><span class="st">&quot;ewn-20000123-n&quot;</span> /&gt;</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExternalLexicalEntry</span>&gt;</span></code></pre></div>
 <p>In the above example, the <code>ewn-process-n</code> ID is not used
 to create a new lexical entry, but rather it must already exist in the
 base lexicon. The external lexical entry (as well as other external
@@ -534,11 +617,12 @@ specify metadata or elements required on lexical entries, such as for
 the lemma.</p>
 <p>Second, they introduce an ID which may be referenced by new
 structures, such as the target of synset relation:</p>
-<pre><code>        &lt;ExternalSynset id=&quot;ewn-06581154-n&quot; /&gt;
-        &lt;Synset id=&quot;ewn-20000123-n&quot; ili=&quot;&quot; partOfSpeech=&quot;n&quot;&gt;
-            &lt;Definition&gt;a running instance of a computer program&lt;/Definition&gt;
-            &lt;SynsetRelation relType=&quot;hypernym&quot; target=&quot;ewn-06581154-n&quot; /&gt;
-        &lt;/Synset&gt;</code></pre>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ExternalSynset</span> <span class="ot">id=</span><span class="st">&quot;ewn-06581154-n&quot;</span> /&gt;</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Synset</span> <span class="ot">id=</span><span class="st">&quot;ewn-20000123-n&quot;</span> <span class="ot">ili=</span><span class="st">&quot;&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>&gt;</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Definition</span>&gt;a running instance of a computer program&lt;/<span class="kw">Definition</span>&gt;</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">SynsetRelation</span> <span class="ot">relType=</span><span class="st">&quot;hypernym&quot;</span> <span class="ot">target=</span><span class="st">&quot;ewn-06581154-n&quot;</span> /&gt;</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Synset</span>&gt;</span></code></pre></div>
 <p>Due to the way external IDs are used, a lexicon extension may not
 exist in the same file as the base lexicon.</p>
 <p><strong>Wordnet Dependencies</strong></p>
@@ -547,15 +631,16 @@ href="https://compling.upol.cz/omw/omw">Open Multilingual Wordnet</a>
 which depend upon the Princeton WordNet for synset structure. With the
 <code>&lt;Requires&gt;</code> element, it is possible to explicitly
 codify those dependencies:</p>
-<pre><code>    &lt;Lexicon id=&quot;omw-es&quot;
-             label=&quot;Multilingual Central Repository (Spanish)&quot;
-             language=&quot;es&quot;
-             email=&quot;bond@ieee.org&quot;
-             license=&quot;https://creativecommons.org/licenses/by/3.0/&quot;
-             version=&quot;2.0&quot;
-             url=&quot;https://adimen.si.ehu.es/web/MCR/&quot;
-             citation=&quot;Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &amp;lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;amp;nid=18&amp;gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.&quot;&gt;
-      &lt;Requires ref=&quot;omw-en&quot; version=&quot;2.0&quot; /&gt;</code></pre>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Lexicon</span> <span class="ot">id=</span><span class="st">&quot;omw-es&quot;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>         <span class="ot">label=</span><span class="st">&quot;Multilingual Central Repository (Spanish)&quot;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>         <span class="ot">language=</span><span class="st">&quot;es&quot;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>         <span class="ot">email=</span><span class="st">&quot;bond@ieee.org&quot;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>         <span class="ot">license=</span><span class="st">&quot;https://creativecommons.org/licenses/by/3.0/&quot;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>         <span class="ot">version=</span><span class="st">&quot;2.0&quot;</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>         <span class="ot">url=</span><span class="st">&quot;https://adimen.si.ehu.es/web/MCR/&quot;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>         <span class="ot">citation=</span><span class="st">&quot;Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base </span><span class="dv">&amp;lt;</span><span class="st">http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf</span><span class="dv">&amp;amp;</span><span class="st">nid=18</span><span class="dv">&amp;gt;</span><span class="st">`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.&quot;</span>&gt;</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">Requires</span> <span class="ot">ref=</span><span class="st">&quot;omw-en&quot;</span> <span class="ot">version=</span><span class="st">&quot;2.0&quot;</span> /&gt;</span></code></pre></div>
 <p>This element signifies to an application processing the wordnet that
 the required wordnet should be loaded as well. The
 <code>&lt;Requires&gt;</code> element may also be used on a
@@ -569,15 +654,16 @@ there are entries in lowercase, uppercase and/or titlecase. The
 <code>index</code> property indicates the normalized form of the entry
 and the <code>n</code> property indicates the order of the senses. For
 example:</p>
-<pre><code> &lt;LexicalEntry id=&quot;w1&quot; index=&quot;god&quot;&gt;
-    &lt;Lemma writtenForm=&quot;god&quot; partOfSpeech=&quot;n&quot;/&gt;
-    &lt;Sense id=&quot;example-en-09528550-n&quot; synset=&quot;example-en-09528550-n&quot; n=&quot;1&quot;/&gt;
-    &lt;Sense id=&quot;example-en-10152827-n&quot; synset=&quot;example-en-10152827-n&quot; n=&quot;3&quot;/&gt;
-&lt;/LexicalEntry&gt;
-&lt;LexicalEntry id=&quot;w2&quot; index=&quot;god&quot;&gt;
-    &lt;Lemma writtenForm=&quot;God&quot; partOfSpeech=&quot;n&quot;/&gt;
-    &lt;Sense id=&quot;example-en-09559169-n&quot; synset=&quot;example-en-09559169-n&quot; n=&quot;2&quot;/&gt;
-&lt;/LexicalEntry&gt;</code></pre>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w1&quot;</span> <span class="ot">index=</span><span class="st">&quot;god&quot;</span>&gt;</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;god&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-en-09528550-n&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-09528550-n&quot;</span> <span class="ot">n=</span><span class="st">&quot;1&quot;</span>/&gt;</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-en-10152827-n&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-10152827-n&quot;</span> <span class="ot">n=</span><span class="st">&quot;3&quot;</span>/&gt;</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">LexicalEntry</span>&gt;</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;w2&quot;</span> <span class="ot">index=</span><span class="st">&quot;god&quot;</span>&gt;</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;God&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>/&gt;</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Sense</span> <span class="ot">id=</span><span class="st">&quot;example-en-09559169-n&quot;</span> <span class="ot">synset=</span><span class="st">&quot;example-en-09559169-n&quot;</span> <span class="ot">n=</span><span class="st">&quot;2&quot;</span>/&gt;</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">LexicalEntry</span>&gt;</span></code></pre></div>
 <p>The following rules should be followed:</p>
 <ol type="1">
 <li>There SHOULD be a unique <code>n</code> value for each sense sharing
@@ -618,28 +704,30 @@ order of <code>&lt;Sense&gt;</code> elements in the XML, starting with
 definitions in a wordnet are typically given on the synset level. You
 may indicate that definition belongs to a particular sense with the
 <code>sourceSense</code> attribute.</p>
-<pre><code>&lt;Synset id=&quot;synset1&quot;&gt;
-    &lt;Definition sourceSense=&quot;sense1&quot;&gt;
-        the father of your father or mother
-    &lt;/Definition&gt;
-    &lt;Definition sourceSense=&quot;sense2&quot;&gt;
-        A father&#39;s father; a paternal grandfather
-    &lt;/Definition&gt;
-&lt;/Synset&gt;</code></pre>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Synset</span> <span class="ot">id=</span><span class="st">&quot;synset1&quot;</span>&gt;</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Definition</span> <span class="ot">sourceSense=</span><span class="st">&quot;sense1&quot;</span>&gt;</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        the father of your father or mother</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Definition</span>&gt;</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Definition</span> <span class="ot">sourceSense=</span><span class="st">&quot;sense2&quot;</span>&gt;</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        A father&#39;s father; a paternal grandfather</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Definition</span>&gt;</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Synset</span>&gt;</span></code></pre></div>
 <p><strong>Grammatical Properties</strong></p>
 <p>Grammatical properties such as gender, number, case, and tense can be
 represented with the <code>&lt;Tag&gt;</code> element.</p>
 <p>The <code>&lt;Tag&gt;</code> element has a <code>category</code>
 attribute which indicates the type of grammatical property, and the
 value is the text of the tag</p>
-<pre><code>&lt;LexicalEntry id=&quot;ex-gato-n&quot;&gt;
-    &lt;Lemma writtenForm=&quot;gato&quot; partOfSpeech=&quot;n&quot;&gt;
-      &lt;Tag category=&quot;gender&quot;&gt;masculine&lt;/Tag&gt;
-    &lt;/Lemma&gt;
-    &lt;Form writtenForm=&quot;gatos&quot;&gt;
-        &lt;Tag category=&quot;number&quot;&gt;plural&lt;/Tag&gt;
-    &lt;/Form&gt;
-&lt;/LexicalEntry&gt;</code></pre>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">LexicalEntry</span> <span class="ot">id=</span><span class="st">&quot;ex-gato-n&quot;</span>&gt;</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Lemma</span> <span class="ot">writtenForm=</span><span class="st">&quot;gato&quot;</span> <span class="ot">partOfSpeech=</span><span class="st">&quot;n&quot;</span>&gt;</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">Tag</span> <span class="ot">category=</span><span class="st">&quot;gender&quot;</span>&gt;masculine&lt;/<span class="kw">Tag</span>&gt;</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Lemma</span>&gt;</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">Form</span> <span class="ot">writtenForm=</span><span class="st">&quot;gatos&quot;</span>&gt;</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Tag</span> <span class="ot">category=</span><span class="st">&quot;number&quot;</span>&gt;plural&lt;/<span class="kw">Tag</span>&gt;</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">Form</span>&gt;</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">LexicalEntry</span>&gt;</span></code></pre></div>
 <p>A universal tagging scheme is not prescribed and wordnet project
 owners are free to choose a scheme that works for their data.</p>
 <h2 id="json">JSON</h2>
@@ -653,29 +741,32 @@ referring to the JSON-LD context and <code>@graph</code> giving the
 lexicon format. This structure is required for submission to the
 Collaborative Interlingual Index, but web services may of course return
 shorter fragments of the structure.</p>
-<pre><code>{ 
-  &quot;@context&quot;: &quot;http://globalwordnet.github.io/schemas/wn-json-context-1.4.json&quot;,
-  &quot;@graph&quot;: [{</code></pre>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="st">&quot;http://globalwordnet.github.io/schemas/wn-json-context-1.4.json&quot;</span><span class="fu">,</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;@graph&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span></code></pre></div>
 <p>The following are required properties of every WordNet (note the
 language must be given twice). <code>@id</code> gives the identifier of
 this wordnet (should be unique in this document) and <code>@type</code>
 must be <code>lime:Lexicon</code>.</p>
-<pre><code>      &quot;@context&quot;: { &quot;@language&quot;: &quot;en&quot; },
-      &quot;@id&quot;: &quot;example-en&quot;,
-      &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
-      &quot;label&quot;: &quot;Example wordnet (English)&quot;,
-      &quot;language&quot;: &quot;en&quot;,
-      &quot;email&quot;: &quot;john@mccr.ae&quot;,
-      &quot;rights&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
-      &quot;version&quot;: &quot;1.0&quot;,</code></pre>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@context&quot;</span><span class="er">:</span> <span class="fu">{</span> <span class="dt">&quot;@language&quot;</span><span class="fu">:</span> <span class="st">&quot;en&quot;</span> <span class="fu">}</span><span class="er">,</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@id&quot;</span><span class="er">:</span> <span class="st">&quot;example-en&quot;</span><span class="er">,</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;@type&quot;</span><span class="er">:</span> <span class="st">&quot;lime:Lexicon&quot;</span><span class="er">,</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;label&quot;</span><span class="er">:</span> <span class="st">&quot;Example wordnet (English)&quot;</span><span class="er">,</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;language&quot;</span><span class="er">:</span> <span class="st">&quot;en&quot;</span><span class="er">,</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;email&quot;</span><span class="er">:</span> <span class="st">&quot;john@mccr.ae&quot;</span><span class="er">,</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;rights&quot;</span><span class="er">:</span> <span class="st">&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;</span><span class="er">,</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;version&quot;</span><span class="er">:</span> <span class="st">&quot;1.0&quot;</span><span class="er">,</span></span></code></pre></div>
 <p>In addition the properties <code>citation</code>, <code>url</code>,
 <code>logo</code>, <code>status</code>, <code>confidenceScore</code> and
 any property from <a
 href="http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements">Dublin
 Core Elements 1.1</a> May be used</p>
-<pre><code>      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
-      &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
-      &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,</code></pre>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;citation&quot;</span><span class="er">:</span> <span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span><span class="er">,</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;url&quot;</span><span class="er">:</span> <span class="st">&quot;http://globalwordnet.github.io/schemas&quot;</span><span class="er">,</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;publisher&quot;</span><span class="er">:</span> <span class="st">&quot;Global Wordnet Association&quot;</span><span class="er">,</span></span></code></pre></div>
 <p>The entries are given as a list under the <code>entry</code> property
 it requires an <code>@id</code> <code>partOfSpeech</code> and
 <code>lemma</code> and may have <code>sense</code>,
@@ -689,69 +780,70 @@ of the following: [ <code>noun</code>, <code>verb</code>,
 <code>unknown</code> ]. The <code>@id</code> must be unique in the
 document, it is not the same as the <code>@id</code> of the wordnet or
 any other entry.</p>
-<pre><code>      &quot;entry&quot;: [{
-          &quot;@id&quot; : &quot;w1&quot;,
-          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
-          &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;entry&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span> <span class="fu">:</span> <span class="st">&quot;w1&quot;</span><span class="fu">,</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;lemma&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;writtenForm&quot;</span><span class="fu">:</span> <span class="st">&quot;father&quot;</span> <span class="fu">},</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;noun&quot;</span><span class="fu">,</span></span></code></pre></div>
 <p>The Sense requires only an <code>@id</code> and a
 <code>synsetRef</code> and may take <code>status</code>,
 <code>confidenceScore</code>, Dublin Core properties, an
 <code>example</code>.</p>
-<pre><code>          &quot;sense&quot;: [{
-              &quot;@id&quot;: &quot;example-en-10161911-n-1&quot;,
-              &quot;synsetRef&quot;: &quot;example-en-10161911-n&quot;
-          }]
-      }, {
-          &quot;@id&quot; : &quot;w2&quot;,
-          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;paternal grandfather&quot; }, 
-          &quot;partOfSpeech&quot;: &quot;noun&quot;,
-          &quot;sense&quot;: [{
-              &quot;@id&quot;: &quot;example-en-1-n-1&quot;,
-              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,</code></pre>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;sense&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10161911-n-1&quot;</span><span class="fu">,</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;synsetRef&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10161911-n&quot;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>      <span class="er">},</span> <span class="fu">{</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span> <span class="fu">:</span> <span class="st">&quot;w2&quot;</span><span class="fu">,</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;lemma&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;writtenForm&quot;</span><span class="fu">:</span> <span class="st">&quot;paternal grandfather&quot;</span> <span class="fu">},</span> </span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;noun&quot;</span><span class="fu">,</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;sense&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-1-n-1&quot;</span><span class="fu">,</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;synsetRef&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-1-n&quot;</span><span class="fu">,</span></span></code></pre></div>
 <p>A sense may also have any number of <code>relations</code> which have
 a <code>relType</code> from the list below and a <code>target</code> and
 may have Dublin Core properties</p>
 <ul>
-<li><p><code>antonym</code>: An opposite and inherently incompatible
-word</p></li>
-<li><p><code>also</code>: See also, a reference of weak meaning</p></li>
-<li><p><code>participle</code>: An adjective that is a participle form a
-verb</p></li>
-<li><p><code>pertainym</code>: A relational adjective. Adjectives that
-are pertainyms are usually defined by such phrases as “of or pertaining
-to” and do not have antonyms. A pertainym can point to a noun or another
-pertainym</p></li>
-<li><p><code>derivation</code>: A word that is derived from some other
-word</p></li>
-<li><p><code>domain_topic</code>: Indicates the category of this
-word</p></li>
-<li><p><code>domain_member_topic</code>: Indicates a word involved in
-this category described by this word</p></li>
-<li><p><code>domain_region</code>: Indicates the region of this
-word</p></li>
-<li><p><code>domain_member_region</code>: Indicates a word involved in
-the region described by this word</p></li>
-<li><p><code>exemplifies</code>: Indicates the usage of this
-word</p></li>
-<li><p><code>is_exemplified_by</code>: Indicates a word involved in the
-usage described by this word</p>
-<pre><code>            &quot;relations&quot;: [{
-                &quot;relType&quot;: &quot;derivation&quot;,
-                &quot;target&quot;: &quot;example-en-10161911-n-1&quot;,
-                &quot;creator&quot;: &quot;John McCrae&quot;
-            }]
-        }]
-    }, {
-        &quot;@id&quot;: &quot;w3&quot;,
-        &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;pay&quot; },
-        &quot;partOfSpeech&quot;: &quot;verb&quot;,</code></pre></li>
+<li><code>antonym</code>: An opposite and inherently incompatible
+word</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>participle</code>: An adjective that is a participle form a
+verb</li>
+<li><code>pertainym</code>: A relational adjective. Adjectives that are
+pertainyms are usually defined by such phrases as “of or pertaining to”
+and do not have antonyms. A pertainym can point to a noun or another
+pertainym</li>
+<li><code>derivation</code>: A word that is derived from some other
+word</li>
+<li><code>domain_topic</code>: Indicates the category of this word</li>
+<li><code>domain_member_topic</code>: Indicates a word involved in this
+category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the
+region described by this word</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><code>is_exemplified_by</code>: Indicates a word involved in the
+usage described by this word</li>
 </ul>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;relations&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                  <span class="dt">&quot;relType&quot;</span><span class="fu">:</span> <span class="st">&quot;derivation&quot;</span><span class="fu">,</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                  <span class="dt">&quot;target&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10161911-n-1&quot;</span><span class="fu">,</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                  <span class="dt">&quot;creator&quot;</span><span class="fu">:</span> <span class="st">&quot;John McCrae&quot;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>              <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>          <span class="er">}]</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>      <span class="er">},</span> <span class="fu">{</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;w3&quot;</span><span class="fu">,</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;lemma&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;writtenForm&quot;</span><span class="fu">:</span> <span class="st">&quot;pay&quot;</span> <span class="fu">},</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;verb&quot;</span><span class="fu">,</span></span></code></pre></div>
 <p>The syntactic behavior is given here as follows:</p>
-<pre><code>          &quot;synBehavior&quot;: [
-             {&quot;label&quot;: &quot;Somebody ----s&quot;, &quot;@id&quot;: &quot;intransitive&quot;}, 
-             {&quot;label&quot;: &quot;Somebody ----s somebody&quot;, &quot;@id&quot;: &quot;transitive&quot;}
-           ]
-      }],</code></pre>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;synBehavior&quot;</span><span class="er">:</span> <span class="ot">[</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">{</span><span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Somebody ----s&quot;</span><span class="fu">,</span> <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;intransitive&quot;</span><span class="fu">}</span><span class="ot">,</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">{</span><span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Somebody ----s somebody&quot;</span><span class="fu">,</span> <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;transitive&quot;</span><span class="fu">}</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>           <span class="ot">]</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      <span class="er">}],</span></span></code></pre></div>
 <p>Synsets are listed under the <code>synset</code> property. A synset
 requires only an <code>@id</code>. It may take an <code>ili</code> which
 is a code from the CILI (starting with <code>ili:i</code>), a
@@ -761,107 +853,109 @@ given in English), <code>status</code>, <code>confidenceScore</code>,
 <p>In contrast to the XML form the <code>ili</code> is optional. If
 there is no match omit this tag, if you wish to propose a new synset add
 only a <code>iliDefinition</code>.</p>
-<pre><code>      &quot;synset&quot;: [{
-          &quot;@id&quot;: &quot;example-en-10161911-n&quot;,
-          &quot;partOfSpeech&quot;: &quot;noun&quot;,
-          &quot;ili&quot;: &quot;ili:i90287&quot;,</code></pre>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;synset&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10161911-n&quot;</span><span class="fu">,</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;noun&quot;</span><span class="fu">,</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;ili&quot;</span><span class="fu">:</span> <span class="st">&quot;ili:i90287&quot;</span><span class="fu">,</span></span></code></pre></div>
 <p>Definitions must have a <code>gloss</code> and may be have a
 <code>language</code>, in addition, <code>status</code>,
 <code>confidenceScore</code> and Dublin Core properties may be added. An
 <code>iliDefinition</code> is the same but may not have a language.</p>
-<pre><code>          &quot;definition&quot;: [{
-            &quot;gloss&quot;: &quot;that which is perceived or known or inferred to have its own distinct existence (living or nonliving)&quot;
-           }],</code></pre>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;definition&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;gloss&quot;</span><span class="fu">:</span> <span class="st">&quot;that which is perceived or known or inferred to have its own distinct existence (living or nonliving)&quot;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">}</span><span class="ot">]</span><span class="er">,</span></span></code></pre></div>
 <p>Synset relations are given as for sense relations except the
 <code>target</code> must be the <code>@id</code> of another synset not a
 sense. The following properties can be used:</p>
 <ul>
-<li><p><code>hypernym</code>: A concept with a broader meaning</p></li>
-<li><p><code>hyponym</code>: A concept with a narrower meaning</p></li>
-<li><p><code>instance_hypernym</code>: The class of objects to which
-this instance belongs</p></li>
-<li><p><code>instance_hyponym</code>: An individual instance of this
-class</p></li>
-<li><p><code>part_holonym</code>: A larger whole that this concept is
-part of</p></li>
-<li><p><code>part_meronym</code>: A part of this concept</p></li>
-<li><p><code>member_holonym</code>: A group that this concept is a
-member of</p></li>
-<li><p><code>member_meronym</code>: A member of this concept</p></li>
-<li><p><code>substance_holonym</code>: Something where a constituent
-material is this concept</p></li>
-<li><p><code>substance_meronym</code>: A constituent material of this
-concept</p></li>
-<li><p><code>entail</code>: A verb X entails Y if X cannot be done
-unless Y is, or has been, done.</p></li>
-<li><p><code>cause</code>: A verb that causes another</p></li>
-<li><p><code>similar</code>: Similar, though not necessarily
-interchangeable</p></li>
-<li><p><code>also</code>: See also, a reference of weak meaning</p></li>
-<li><p><code>attribute</code>: A noun for which adjectives express
-values. The noun weight is an attribute, for which the adjectives light
-and heavy express values.</p></li>
-<li><p><code>domain_topic</code>: Indicates the category of this
-word</p></li>
-<li><p><code>domain_member_topic</code>: Indicates a word involved in
-this category described by this word</p></li>
-<li><p><code>domain_region</code>: Indicates the region of this
-word</p></li>
-<li><p><code>domain_member_region</code>: Indicates a word involved in
-the region described by this word</p></li>
-<li><p><code>exemplifies</code>: Indicates the usage of this
-word</p></li>
-<li><p><code>is_exemplified_by</code>: Indicates a word involved in the
-usage described by this word</p>
-<pre><code>        &quot;relations&quot;: [{
-            &quot;relType&quot;: &quot;hypernym&quot;, &quot;target&quot;: &quot;example-en-10162692-n&quot;
-        }],</code></pre></li>
+<li><code>hypernym</code>: A concept with a broader meaning</li>
+<li><code>hyponym</code>: A concept with a narrower meaning</li>
+<li><code>instance_hypernym</code>: The class of objects to which this
+instance belongs</li>
+<li><code>instance_hyponym</code>: An individual instance of this
+class</li>
+<li><code>part_holonym</code>: A larger whole that this concept is part
+of</li>
+<li><code>part_meronym</code>: A part of this concept</li>
+<li><code>member_holonym</code>: A group that this concept is a member
+of</li>
+<li><code>member_meronym</code>: A member of this concept</li>
+<li><code>substance_holonym</code>: Something where a constituent
+material is this concept</li>
+<li><code>substance_meronym</code>: A constituent material of this
+concept</li>
+<li><code>entail</code>: A verb X entails Y if X cannot be done unless Y
+is, or has been, done.</li>
+<li><code>cause</code>: A verb that causes another</li>
+<li><code>similar</code>: Similar, though not necessarily
+interchangeable</li>
+<li><code>also</code>: See also, a reference of weak meaning</li>
+<li><code>attribute</code>: A noun for which adjectives express values.
+The noun weight is an attribute, for which the adjectives light and
+heavy express values.</li>
+<li><code>domain_topic</code>: Indicates the category of this word</li>
+<li><code>domain_member_topic</code>: Indicates a word involved in this
+category described by this word</li>
+<li><code>domain_region</code>: Indicates the region of this word</li>
+<li><code>domain_member_region</code>: Indicates a word involved in the
+region described by this word</li>
+<li><code>exemplifies</code>: Indicates the usage of this word</li>
+<li><code>is_exemplified_by</code>: Indicates a word involved in the
+usage described by this word</li>
 </ul>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;relations&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;relType&quot;</span><span class="fu">:</span> <span class="st">&quot;hypernym&quot;</span><span class="fu">,</span> <span class="dt">&quot;target&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10162692-n&quot;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">]</span><span class="er">,</span></span></code></pre></div>
 <p>Indicate the members and the order they occur in:</p>
-<pre><code>          &quot;members&quot;: [&quot;example-en-10161911-n-1&quot;, &quot;example-en-1-n-1&quot;]
-      }, {
-          &quot;@id&quot;: &quot;example-en-1-n&quot;,
-          &quot;partOfSpeech&quot;: &quot;noun&quot;,
-          &quot;definition&quot;: [{
-              &quot;gloss&quot;: &quot;the father of your father or mother&quot;
-          }],
-          &quot;iliDefinition&quot;: {
-              &quot;gloss&quot;: &quot;the father of your father or mother&quot;,
-              &quot;source&quot;: &quot;https://en.wiktionary.org/wiki/farfar&quot;
-          },
-          &quot;relations&quot;: [
-            { &quot;relType&quot;: &quot;hypernym&quot;, &quot;target&quot;: &quot;example-en-10162692-n&quot; }
-          ]
-      }]
-    }, {
-      &quot;@context&quot;: { &quot;@language&quot;: &quot;sv&quot; },
-      &quot;@id&quot;: &quot;example-sv&quot;,
-      &quot;@type&quot;: &quot;lime:Lexicon&quot;, 
-      &quot;label&quot;: &quot;Example wordnet (Swedish)&quot;,
-      &quot;language&quot;: &quot;sv&quot;,
-      &quot;email&quot;: &quot;john@mccr.ae&quot;,
-      &quot;license&quot;: &quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;,
-      &quot;version&quot;: &quot;1.0&quot;,
-      &quot;citation&quot;: &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;,
-      &quot;url&quot;: &quot;http://globalwordnet.github.io/schemas&quot;,
-      &quot;publisher&quot;: &quot;Global Wordnet Association&quot;,
-      &quot;entry&quot;: [{
-          &quot;@id&quot; : &quot;w4&quot;,
-          &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;farfar&quot; }, 
-          &quot;form&quot;: [{ &quot;writtenForm&quot;: &quot;farfäder&quot;, &quot;tag&quot;: [{ &quot;category&quot;: &quot;penn&quot;, &quot;value&quot;: &quot;NNS&quot; }] }],
-          &quot;partOfSpeech&quot;: &quot;noun&quot;,</code></pre>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;members&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="st">&quot;example-en-10161911-n-1&quot;</span><span class="ot">,</span> <span class="st">&quot;example-en-1-n-1&quot;</span><span class="ot">]</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>      <span class="er">},</span> <span class="fu">{</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-1-n&quot;</span><span class="fu">,</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;noun&quot;</span><span class="fu">,</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;definition&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;gloss&quot;</span><span class="fu">:</span> <span class="st">&quot;the father of your father or mother&quot;</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;iliDefinition&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;gloss&quot;</span><span class="fu">:</span> <span class="st">&quot;the father of your father or mother&quot;</span><span class="fu">,</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;source&quot;</span><span class="fu">:</span> <span class="st">&quot;https://en.wiktionary.org/wiki/farfar&quot;</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>          <span class="fu">},</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;relations&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">{</span> <span class="dt">&quot;relType&quot;</span><span class="fu">:</span> <span class="st">&quot;hypernym&quot;</span><span class="fu">,</span> <span class="dt">&quot;target&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-10162692-n&quot;</span> <span class="fu">}</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>          <span class="ot">]</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="er">]</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="er">},</span> <span class="fu">{</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@context&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;@language&quot;</span><span class="fu">:</span> <span class="st">&quot;sv&quot;</span> <span class="fu">},</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-sv&quot;</span><span class="fu">,</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;@type&quot;</span><span class="fu">:</span> <span class="st">&quot;lime:Lexicon&quot;</span><span class="fu">,</span> </span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;label&quot;</span><span class="fu">:</span> <span class="st">&quot;Example wordnet (Swedish)&quot;</span><span class="fu">,</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;language&quot;</span><span class="fu">:</span> <span class="st">&quot;sv&quot;</span><span class="fu">,</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;email&quot;</span><span class="fu">:</span> <span class="st">&quot;john@mccr.ae&quot;</span><span class="fu">,</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;license&quot;</span><span class="fu">:</span> <span class="st">&quot;https://creativecommons.org/publicdomain/zero/1.0/&quot;</span><span class="fu">,</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;1.0&quot;</span><span class="fu">,</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;citation&quot;</span><span class="fu">:</span> <span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span><span class="fu">,</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://globalwordnet.github.io/schemas&quot;</span><span class="fu">,</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;publisher&quot;</span><span class="fu">:</span> <span class="st">&quot;Global Wordnet Association&quot;</span><span class="fu">,</span></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;entry&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;@id&quot;</span> <span class="fu">:</span> <span class="st">&quot;w4&quot;</span><span class="fu">,</span></span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;lemma&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;writtenForm&quot;</span><span class="fu">:</span> <span class="st">&quot;farfar&quot;</span> <span class="fu">},</span> </span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;form&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">&quot;writtenForm&quot;</span><span class="fu">:</span> <span class="st">&quot;farfäder&quot;</span><span class="fu">,</span> <span class="dt">&quot;tag&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">&quot;category&quot;</span><span class="fu">:</span> <span class="st">&quot;penn&quot;</span><span class="fu">,</span> <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;NNS&quot;</span> <span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;partOfSpeech&quot;</span><span class="fu">:</span> <span class="st">&quot;noun&quot;</span><span class="fu">,</span></span></code></pre></div>
 <p>Any examples should be given on the sense as follows:</p>
-<pre><code>          &quot;sense&quot;: [{
-              &quot;@id&quot;: &quot;example-sv-2-n-1&quot;,
-              &quot;synsetRef&quot;: &quot;example-en-1-n&quot;,
-              &quot;example&quot;: [{
-                  &quot;value&quot;: &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;,
-                  &quot;source&quot;: &quot;Europarl Corpus&quot;
-              }]
-          }]
-      }]
-  }]
-}</code></pre>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;sense&quot;</span><span class="er">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;@id&quot;</span><span class="fu">:</span> <span class="st">&quot;example-sv-2-n-1&quot;</span><span class="fu">,</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;synsetRef&quot;</span><span class="fu">:</span> <span class="st">&quot;example-en-1-n&quot;</span><span class="fu">,</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&quot;example&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                  <span class="dt">&quot;value&quot;</span><span class="fu">:</span> <span class="st">&quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;</span><span class="fu">,</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                  <span class="dt">&quot;source&quot;</span><span class="fu">:</span> <span class="st">&quot;Europarl Corpus&quot;</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>              <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span><span class="ot">]</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>      <span class="er">}]</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="er">}]</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div>
 <p>The JSON format can be validated by the <a
 href="http://json-schema.org">JSON Schema</a> provided at
 https://github.com/globalwordnet/schemas/blob/master/wn-json-schema.json</p>
@@ -880,17 +974,18 @@ built on those of the JSON-LD model. We include a separate tutorial here
 for the benefit of those who wish to create their resource natively in
 RDF.</p>
 <p>The standard namespaces are</p>
-<pre><code>@prefix dc: &lt;http://purl.org/dc/terms/&gt; .
-@prefix ili: &lt;http://ili.globalwordnet.org/ili/&gt; .
-@prefix lime: &lt;http://www.w3.org/ns/lemon/lime#&gt; .
-@prefix ontolex: &lt;http://www.w3.org/ns/lemon/ontolex#&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix schema: &lt;http://schema.org/&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-@prefix synsem: &lt;http://www.w3.org/ns/lemon/synsem#&gt; .
-@prefix wn: &lt;https://globalwordnet.github.io/schemas/wn#&gt; .
-@prefix wordnetlicense: &lt;http://wordnet.princeton.edu/wordnet/license/&gt; .</code></pre>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode sparql"><code class="sourceCode sparql"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>@prefix dc: <span class="st">&lt;http://purl.org/dc/terms/&gt;</span> <span class="op">.</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>@prefix ili: <span class="st">&lt;http://ili.globalwordnet.org/ili/&gt;</span> <span class="op">.</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>@prefix lime: <span class="st">&lt;http://www.w3.org/ns/lemon/lime#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>@prefix ontolex: <span class="st">&lt;http://www.w3.org/ns/lemon/ontolex#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>@prefix owl: <span class="st">&lt;http://www.w3.org/2002/07/owl#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>@prefix rdfs: <span class="st">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>@prefix schema: <span class="st">&lt;http://schema.org/&gt;</span> <span class="op">.</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>@prefix skos: <span class="st">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>@prefix synsem: <span class="st">&lt;http://www.w3.org/ns/lemon/synsem#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>@prefix wn: <span class="st">&lt;https://globalwordnet.github.io/schemas/wn#&gt;</span> <span class="op">.</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>@prefix wordnetlicense: <span class="st">&lt;http://wordnet.princeton.edu/wordnet/license/&gt;</span> <span class="op">.</span></span></code></pre></div>
 <p>Each wordnet is an instance of the class <code>lime:Lexicon</code>
 and must have the following properties</p>
 <ul>
@@ -916,113 +1011,114 @@ and <code>skos:example</code> optionally with a
 <code>rdf:value</code>.</li>
 </ul>
 <p>A more extended example is given here:</p>
-<pre><code>&lt;#example-en&gt; a lime:Lexicon ;
-  rdfs:label &quot;Example wordnet (English)&quot;@en ;
-  dc:language &quot;en&quot; ;
-  schema:email &quot;john@mccr.ae&quot; ;
-  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
-  owl:versionInfo &quot;1.0&quot; ;
-  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
-  schema:url &quot;http://globalwordnet.github.io/schemas/&quot; ;
-  dc:publisher &quot;Global Wordnet Association&quot; ;
-  lime:entry &lt;#w1&gt;, &lt;#w2&gt;, &lt;#w3&gt; .
-
-&lt;#w1&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [
-    ontolex:writtenRep &quot;grandfather&quot;@en 
-  ] ;
-  wn:partOfSpeech wn:noun ;
-  ontolex:sense &lt;#example-en-10161911-n-1&gt; .
-
-&lt;#example-en-10161911-n-1&gt;  a ontolex:LexicalSense ;
-  ontolex:reference &lt;#example-en-10161911-n&gt; .
-
-&lt;#w2&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [
-    ontolex:writtenRep &quot;paternal grandfather&quot;@en 
-  ] ;
-  wn:partOfSpeech wn:noun ;
-  ontolex:sense &lt;#example-en-1-n-1&gt; .
-
-&lt;#example-en-1-n-1&gt; a ontolex:LexicalSense ;
-  ontolex:reference &lt;#example-en-1-n&gt; .
-
-[] a ontolex:SenseRelation ;
-  vartrans:source &lt;#example-en-1-n-1&gt; ;
-  vartrans:category wn:derivation ;
-  vartrans:target &lt;#example-en-10161911-n-1&gt; ;
-  dc:creator &quot;John McCrae&quot;@en .
-          
-&lt;#w3&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [
-    ontolex:writtenRep &quot;pay&quot;@en
-  ] ;
-  wn:partOfSpeech wn:verb ;
-  synsem:synBehavior &lt;#transitive&gt;, &lt;#intransitive&gt; .
-
-&lt;#intransitive&gt; rdfs:label &quot;Somebody ----s&quot;@en .
-&lt;#transitive&gt; rdfs:label &quot;Somebody ----s somebody&quot;@en .
-
-&lt;#example-en-10161911-n&gt; a ontolex:LexicalConcept ;
-  wn:partOfSpeech wn:noun ;
-  skos:inScheme &lt;#example-en&gt; ;
-  wn:ili ili:i90287 ;
-  wn:definition [
-    rdf:value &quot;the father of your father or mother&quot;@en
-  ] ;
-  wn:memberList ( &lt;#example-en-1016911-n-1&gt; &lt;#example-en-1-n-1&gt; ) .
-
-[] 
-  vartrans:source &lt;#example-en-10161911-n&gt; ;
-  vartrans:category wn:hypernym ; 
-  vartrans:target &lt;#example-en-10162692-n&gt; .
-          
-&lt;#example-en-1-n&gt; a ontolex:LexicalConcept ;
-  wn:partOfSpeech wn:noun ;
-  skos:inScheme &lt;#example-en&gt; ;
-  wn:definition [
-    rdf:value &quot;the father of your father or mother&quot;@en 
-  ] ;
-  wn:iliDefinition [
-    rdf:value &quot;the father of your father or mother&quot;@en ;
-    dc:source &quot;https://en.wiktionary.org/wiki/farfar&quot;
-  ] .
-
-[]
-  vartrans:source &lt;#example-en-1-n&gt; ;
-  vartrans:category wn:hypernym ;
-  vartrans:target &lt;#example-en-10162692-n&gt; .
-
-&lt;#example-sv&gt; a lime:Lexicon ;
-  rdfs:label &quot;Example wordnet (Swedish)&quot;@sv ;
-  dc:language &quot;sv&quot; ;
-  schema:email &quot;john@mccr.ae&quot; ;
-  cc:license &lt;https://creativecommons.org/publicdomain/zero/1.0/&gt; ;
-  owl:versionInfo &quot;1.0&quot; ;
-  schema:citation &quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot; ;
-  schema:url &quot;http://globalwordnet.github.io/schemas&quot; ;
-  dc:publisher &quot;Global Wordnet Association&quot; ;
-  lime:entry &lt;#w4&gt; .
-
-&lt;#w4&gt; a ontolex:LexicalEntry ;
-  ontolex:canonicalForm [
-    ontolex:writtenRep &quot;farfar&quot;@sv 
-  ] ;
-  ontolex:otherForm [
-    ontolex:writtenRep &quot;farfäder&quot;@sv ;
-    wn:tag [
-        wn:category &quot;penn&quot; ;
-        rdf:value &quot;NNS&quot; 
-    ]
-  ] ;
-  wn:partOfSpeech wn:noun ;
-  wn:sense &lt;#example-sv-2-n-1&gt; .
-
-&lt;#example-sv-2-n-1&gt; a ontolex:LexicalSense ;
-  ontolex:reference &lt;#example-en-1-n&gt; ;
-  wn:example [
-    rdf:value &quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;@sv ;
-    dc:source &quot;Europarl Corpus&quot;
-  ] .</code></pre>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode sparql"><code class="sourceCode sparql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-en&gt;</span> a lime:Lexicon <span class="op">;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  rdfs:label <span class="st">&quot;Example wordnet (English)&quot;</span>@en <span class="op">;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  dc:language <span class="st">&quot;en&quot;</span> <span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  schema:email <span class="st">&quot;john@mccr.ae&quot;</span> <span class="op">;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  cc:license <span class="st">&lt;https://creativecommons.org/publicdomain/zero/1.0/&gt;</span> <span class="op">;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  owl:versionInfo <span class="st">&quot;1.0&quot;</span> <span class="op">;</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  schema:citation <span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span> <span class="op">;</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  schema:url <span class="st">&quot;http://globalwordnet.github.io/schemas/&quot;</span> <span class="op">;</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  dc:publisher <span class="st">&quot;Global Wordnet Association&quot;</span> <span class="op">;</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  lime:entry <span class="st">&lt;#w1&gt;</span><span class="op">,</span> <span class="st">&lt;#w2&gt;</span><span class="op">,</span> <span class="st">&lt;#w3&gt;</span> <span class="op">.</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#w1&gt;</span> a ontolex:LexicalEntry <span class="op">;</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  ontolex:canonicalForm <span class="op">[</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    ontolex:writtenRep <span class="st">&quot;grandfather&quot;</span>@en </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:noun <span class="op">;</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>  ontolex:sense <span class="st">&lt;#example-en-10161911-n-1&gt;</span> <span class="op">.</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-en-10161911-n-1&gt;</span>  a ontolex:LexicalSense <span class="op">;</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>  ontolex:reference <span class="st">&lt;#example-en-10161911-n&gt;</span> <span class="op">.</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#w2&gt;</span> a ontolex:LexicalEntry <span class="op">;</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>  ontolex:canonicalForm <span class="op">[</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    ontolex:writtenRep <span class="st">&quot;paternal grandfather&quot;</span>@en </span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:noun <span class="op">;</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>  ontolex:sense <span class="st">&lt;#example-en-1-n-1&gt;</span> <span class="op">.</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-en-1-n-1&gt;</span> a ontolex:LexicalSense <span class="op">;</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>  ontolex:reference <span class="st">&lt;#example-en-1-n&gt;</span> <span class="op">.</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a><span class="op">[]</span> a ontolex:SenseRelation <span class="op">;</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>  vartrans:source <span class="st">&lt;#example-en-1-n-1&gt;</span> <span class="op">;</span></span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  vartrans:category wn:derivation <span class="op">;</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  vartrans:target <span class="st">&lt;#example-en-10161911-n-1&gt;</span> <span class="op">;</span></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>  dc:creator <span class="st">&quot;John McCrae&quot;</span>@en <span class="op">.</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#w3&gt;</span> a ontolex:LexicalEntry <span class="op">;</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>  ontolex:canonicalForm <span class="op">[</span></span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>    ontolex:writtenRep <span class="st">&quot;pay&quot;</span>@en</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:verb <span class="op">;</span></span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>  synsem:synBehavior <span class="st">&lt;#transitive&gt;</span><span class="op">,</span> <span class="st">&lt;#intransitive&gt;</span> <span class="op">.</span></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#intransitive&gt;</span> rdfs:label <span class="st">&quot;Somebody ----s&quot;</span>@en <span class="op">.</span></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#transitive&gt;</span> rdfs:label <span class="st">&quot;Somebody ----s somebody&quot;</span>@en <span class="op">.</span></span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-en-10161911-n&gt;</span> a ontolex:LexicalConcept <span class="op">;</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:noun <span class="op">;</span></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>  skos:inScheme <span class="st">&lt;#example-en&gt;</span> <span class="op">;</span></span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>  wn:ili ili:i90287 <span class="op">;</span></span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a>  wn:definition <span class="op">[</span></span>
+<span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a>    rdf:value <span class="st">&quot;the father of your father or mother&quot;</span>@en</span>
+<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a>  wn:memberList <span class="op">(</span> <span class="st">&lt;#example-en-1016911-n-1&gt;</span> <span class="st">&lt;#example-en-1-n-1&gt;</span> <span class="op">)</span> <span class="op">.</span></span>
+<span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a><span class="op">[]</span> </span>
+<span id="cb35-58"><a href="#cb35-58" aria-hidden="true" tabindex="-1"></a>  vartrans:source <span class="st">&lt;#example-en-10161911-n&gt;</span> <span class="op">;</span></span>
+<span id="cb35-59"><a href="#cb35-59" aria-hidden="true" tabindex="-1"></a>  vartrans:category wn:hypernym <span class="op">;</span> </span>
+<span id="cb35-60"><a href="#cb35-60" aria-hidden="true" tabindex="-1"></a>  vartrans:target <span class="st">&lt;#example-en-10162692-n&gt;</span> <span class="op">.</span></span>
+<span id="cb35-61"><a href="#cb35-61" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb35-62"><a href="#cb35-62" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-en-1-n&gt;</span> a ontolex:LexicalConcept <span class="op">;</span></span>
+<span id="cb35-63"><a href="#cb35-63" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:noun <span class="op">;</span></span>
+<span id="cb35-64"><a href="#cb35-64" aria-hidden="true" tabindex="-1"></a>  skos:inScheme <span class="st">&lt;#example-en&gt;</span> <span class="op">;</span></span>
+<span id="cb35-65"><a href="#cb35-65" aria-hidden="true" tabindex="-1"></a>  wn:definition <span class="op">[</span></span>
+<span id="cb35-66"><a href="#cb35-66" aria-hidden="true" tabindex="-1"></a>    rdf:value <span class="st">&quot;the father of your father or mother&quot;</span>@en </span>
+<span id="cb35-67"><a href="#cb35-67" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-68"><a href="#cb35-68" aria-hidden="true" tabindex="-1"></a>  wn:iliDefinition <span class="op">[</span></span>
+<span id="cb35-69"><a href="#cb35-69" aria-hidden="true" tabindex="-1"></a>    rdf:value <span class="st">&quot;the father of your father or mother&quot;</span>@en <span class="op">;</span></span>
+<span id="cb35-70"><a href="#cb35-70" aria-hidden="true" tabindex="-1"></a>    dc:source <span class="st">&quot;https://en.wiktionary.org/wiki/farfar&quot;</span></span>
+<span id="cb35-71"><a href="#cb35-71" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">.</span></span>
+<span id="cb35-72"><a href="#cb35-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-73"><a href="#cb35-73" aria-hidden="true" tabindex="-1"></a><span class="op">[]</span></span>
+<span id="cb35-74"><a href="#cb35-74" aria-hidden="true" tabindex="-1"></a>  vartrans:source <span class="st">&lt;#example-en-1-n&gt;</span> <span class="op">;</span></span>
+<span id="cb35-75"><a href="#cb35-75" aria-hidden="true" tabindex="-1"></a>  vartrans:category wn:hypernym <span class="op">;</span></span>
+<span id="cb35-76"><a href="#cb35-76" aria-hidden="true" tabindex="-1"></a>  vartrans:target <span class="st">&lt;#example-en-10162692-n&gt;</span> <span class="op">.</span></span>
+<span id="cb35-77"><a href="#cb35-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-78"><a href="#cb35-78" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-sv&gt;</span> a lime:Lexicon <span class="op">;</span></span>
+<span id="cb35-79"><a href="#cb35-79" aria-hidden="true" tabindex="-1"></a>  rdfs:label <span class="st">&quot;Example wordnet (Swedish)&quot;</span>@sv <span class="op">;</span></span>
+<span id="cb35-80"><a href="#cb35-80" aria-hidden="true" tabindex="-1"></a>  dc:language <span class="st">&quot;sv&quot;</span> <span class="op">;</span></span>
+<span id="cb35-81"><a href="#cb35-81" aria-hidden="true" tabindex="-1"></a>  schema:email <span class="st">&quot;john@mccr.ae&quot;</span> <span class="op">;</span></span>
+<span id="cb35-82"><a href="#cb35-82" aria-hidden="true" tabindex="-1"></a>  cc:license <span class="st">&lt;https://creativecommons.org/publicdomain/zero/1.0/&gt;</span> <span class="op">;</span></span>
+<span id="cb35-83"><a href="#cb35-83" aria-hidden="true" tabindex="-1"></a>  owl:versionInfo <span class="st">&quot;1.0&quot;</span> <span class="op">;</span></span>
+<span id="cb35-84"><a href="#cb35-84" aria-hidden="true" tabindex="-1"></a>  schema:citation <span class="st">&quot;CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).&quot;</span> <span class="op">;</span></span>
+<span id="cb35-85"><a href="#cb35-85" aria-hidden="true" tabindex="-1"></a>  schema:url <span class="st">&quot;http://globalwordnet.github.io/schemas&quot;</span> <span class="op">;</span></span>
+<span id="cb35-86"><a href="#cb35-86" aria-hidden="true" tabindex="-1"></a>  dc:publisher <span class="st">&quot;Global Wordnet Association&quot;</span> <span class="op">;</span></span>
+<span id="cb35-87"><a href="#cb35-87" aria-hidden="true" tabindex="-1"></a>  lime:entry <span class="st">&lt;#w4&gt;</span> <span class="op">.</span></span>
+<span id="cb35-88"><a href="#cb35-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-89"><a href="#cb35-89" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#w4&gt;</span> a ontolex:LexicalEntry <span class="op">;</span></span>
+<span id="cb35-90"><a href="#cb35-90" aria-hidden="true" tabindex="-1"></a>  ontolex:canonicalForm <span class="op">[</span></span>
+<span id="cb35-91"><a href="#cb35-91" aria-hidden="true" tabindex="-1"></a>    ontolex:writtenRep <span class="st">&quot;farfar&quot;</span>@sv </span>
+<span id="cb35-92"><a href="#cb35-92" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-93"><a href="#cb35-93" aria-hidden="true" tabindex="-1"></a>  ontolex:otherForm <span class="op">[</span></span>
+<span id="cb35-94"><a href="#cb35-94" aria-hidden="true" tabindex="-1"></a>    ontolex:writtenRep <span class="st">&quot;farfäder&quot;</span>@sv <span class="op">;</span></span>
+<span id="cb35-95"><a href="#cb35-95" aria-hidden="true" tabindex="-1"></a>    wn:tag <span class="op">[</span></span>
+<span id="cb35-96"><a href="#cb35-96" aria-hidden="true" tabindex="-1"></a>        wn:category <span class="st">&quot;penn&quot;</span> <span class="op">;</span></span>
+<span id="cb35-97"><a href="#cb35-97" aria-hidden="true" tabindex="-1"></a>        rdf:value <span class="st">&quot;NNS&quot;</span> </span>
+<span id="cb35-98"><a href="#cb35-98" aria-hidden="true" tabindex="-1"></a>    <span class="op">]</span></span>
+<span id="cb35-99"><a href="#cb35-99" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">;</span></span>
+<span id="cb35-100"><a href="#cb35-100" aria-hidden="true" tabindex="-1"></a>  wn:partOfSpeech wn:noun <span class="op">;</span></span>
+<span id="cb35-101"><a href="#cb35-101" aria-hidden="true" tabindex="-1"></a>  wn:sense <span class="st">&lt;#example-sv-2-n-1&gt;</span> <span class="op">.</span></span>
+<span id="cb35-102"><a href="#cb35-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-103"><a href="#cb35-103" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;#example-sv-2-n-1&gt;</span> a ontolex:LexicalSense <span class="op">;</span></span>
+<span id="cb35-104"><a href="#cb35-104" aria-hidden="true" tabindex="-1"></a>  ontolex:reference <span class="st">&lt;#example-en-1-n&gt;</span> <span class="op">;</span></span>
+<span id="cb35-105"><a href="#cb35-105" aria-hidden="true" tabindex="-1"></a>  wn:example <span class="op">[</span></span>
+<span id="cb35-106"><a href="#cb35-106" aria-hidden="true" tabindex="-1"></a>    rdf:value <span class="st">&quot;Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför&quot;</span>@sv <span class="op">;</span></span>
+<span id="cb35-107"><a href="#cb35-107" aria-hidden="true" tabindex="-1"></a>    dc:source <span class="st">&quot;Europarl Corpus&quot;</span></span>
+<span id="cb35-108"><a href="#cb35-108" aria-hidden="true" tabindex="-1"></a>  <span class="op">]</span> <span class="op">.</span></span></code></pre></div>
 </body>
 </html>

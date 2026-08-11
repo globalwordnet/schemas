@@ -24,9 +24,11 @@ given [here](https://github.com/globalwordnet/schemas/blob/master/example.xml):
 
 The first three lines must always be as follows:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
-    <LexicalResource xmlns:dc="https://globalwordnet.github.io/schemas/dc/">
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE LexicalResource SYSTEM "http://globalwordnet.github.io/schemas/WN-LMF-1.4.dtd">
+<LexicalResource xmlns:dc="https://globalwordnet.github.io/schemas/dc/">
+```
     
 A file may contain multiple WordNets in different languages:
 
@@ -50,19 +52,23 @@ Extra properties may be included from Dublin core and in addition
 * confidenceScore: A default numeric value between 0 and 1 giving the 
                     confidence in the correctness of elements in this resource.
 
-        <Lexicon id="example-en"
-                 label="Example wordnet (English)"
-                 language="en" 
-                 email="john@mccr.ae"
-                 license="https://creativecommons.org/publicdomain/zero/1.0/"
-                 version="1.0"
-                 citation="CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."
-                 url="http://globalwordnet.github.io/schemas/"
-                 dc:publisher="Global Wordnet Association">
+```xml
+   <Lexicon id="example-en"
+            label="Example wordnet (English)"
+            language="en" 
+            email="john@mccr.ae"
+            license="https://creativecommons.org/publicdomain/zero/1.0/"
+            version="1.0"
+            citation="CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."
+            url="http://globalwordnet.github.io/schemas/"
+            dc:publisher="Global Wordnet Association">
+```
                  
 Each word (lexical entry) must have a unique id:
 
-            <LexicalEntry id="w1">
+```xml
+        <LexicalEntry id="w1">
+```
 
 The part of speech values are as follows:
 
@@ -82,82 +88,88 @@ The following properties may also be specified on the entry:
 * note: A string giving a note about this entry
 * confidenceScore: A numeric value between 0 and 1 giving the confidence in the correctness of this entry. If this is omitted it is assumed to be the value given on the lexicon, or 1.0 if the lexicon has no value. Confidence scores may also be stated on senses, synsets, definitions, examples, relations and counts. In all cases, if the value is omitted it is assumed to be the lexicon value not any parent element's value.
 
-                <Lemma writtenForm="grandfather" partOfSpeech="n"/>
-                <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n"/>
-            </LexicalEntry>
-            <LexicalEntry id="w2">
-                <Lemma writtenForm="paternal grandfather" partOfSpeech="n"/>
-                <Sense id="example-en-1-n-1" synset="example-en-1-n">
+```xml
+            <Lemma writtenForm="grandfather" partOfSpeech="n"/>
+            <Sense id="example-en-10161911-n-1" synset="example-en-10161911-n"/>
+        </LexicalEntry>
+        <LexicalEntry id="w2">
+            <Lemma writtenForm="paternal grandfather" partOfSpeech="n"/>
+            <Sense id="example-en-1-n-1" synset="example-en-1-n">
+```
 
 The set of relations between senses is limited to the following
 
 **Princeton WordNet Relations**
 
-* antonym: An opposite and inherently incompatible word
-* also: See also, a reference of weak meaning
-* participle: An adjective that is a participle form a verb
-* pertainym: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
-* derivation: A word that is derived from some other word
-* domain_topic: Indicates the category of this word
-* domain_member_topic: Indicates a word involved in this category described by this word
-* domain_region: Indicates the region of this word
-* domain_member_region: Indicates a word involved in the region described by this word
-* exemplifies: Indicates the usage of this word
-* is_exemplified_by: Indicates a word involved in the usage described by this word
-* similar: Similar, though not necessarily interchangeable
+* `antonym`: An opposite and inherently incompatible word
+* `also`: See also, a reference of weak meaning
+* `participle`: An adjective that is a participle form a verb
+* `pertainym`: A relational adjective. Adjectives that are pertainyms are usually defined by such phrases as "of or pertaining to" and do not have antonyms. A pertainym can point to a noun or another pertainym
+* `derivation`: A word that is derived from some other word
+* `domain_topic`: Indicates the category of this word
+* `domain_member_topic`: Indicates a word involved in this category described by this word
+* `domain_region`: Indicates the region of this word
+* `domain_member_region`: Indicates a word involved in the region described by this word
+* `exemplifies`: Indicates the usage of this word
+* `is_exemplified_by`: Indicates a word involved in the usage described by this word
+* `similar`: Similar, though not necessarily interchangeable
 
 **Morphosemantic relations**
 
-* agent: A word which is typically the one/that who/which does the action denoted by a given word (e.g. "to eat" - "eater")
-* material: A word which is typically the material of a given word (e.g. "wood")
-* event: An noun representing the event of a verb (e.g., "(a) meet" - "(to) meet")
-* instrument: An instrument for doing a task (e.g., "photocopier" - "photocopy")
-* location: A verb derived from the action performed at a place (e.g., "(a) forge" - "(to) forge")
-* by_means_of: A word which is typically the means by which something is done (e.g.,g "deceive" - "deception")
-* undergoer: A word which is typically the undergoer of a given word (e.g. "honor" - "honoree")
-* property: Cause something to have a particular property (e.g., "magnetize" - "magnetization")
-* result: A word which is typically the result of a given word (e.g. "nitrify" - "nitrate")
-* state: A state caused by the verb (e.g., "sensitize" - "sensitization")
-* uses: A verb that uses a noun (e.g., "(to) talc" - "talc")
-* destination: The noun indicates the destination of a verb (e.g., "retire" - "retiree")
-* body_part: A word which is typically a body part of a given word (e.g. "finger")
-* vehicle: A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")
+* `agent`: A word which is typically the one/that who/which does the action denoted by a given word (e.g. "to eat" - "eater")
+* `material`: A word which is typically the material of a given word (e.g. "wood")
+* `event`: An noun representing the event of a verb (e.g., "(a) meet" - "(to) meet")
+* `instrument`: An instrument for doing a task (e.g., "photocopier" - "photocopy")
+* `location`: A verb derived from the action performed at a place (e.g., "(a) forge" - "(to) forge")
+* `by_means_of`: A word which is typically the means by which something is done (e.g.,g "deceive" - "deception")
+* `undergoer`: A word which is typically the undergoer of a given word (e.g. "honor" - "honoree")
+* `property`: Cause something to have a particular property (e.g., "magnetize" - "magnetization")
+* `result`: A word which is typically the result of a given word (e.g. "nitrify" - "nitrate")
+* `state`: A state caused by the verb (e.g., "sensitize" - "sensitization")
+* `uses`: A verb that uses a noun (e.g., "(to) talc" - "talc")
+* `destination`: The noun indicates the destination of a verb (e.g., "retire" - "retiree")
+* `body_part`: A word which is typically a body part of a given word (e.g. "finger")
+* `vehicle`: A verb indicating movement with a particular vehicle (e.g., "(to) ship" - "ship")
 
 **Non-Princeton WordNet Relations**
 
-* simple_aspect_ip: A word which is linked to another through a change from imperfective to perfective aspect
-* secondary_aspect_ip: A word which is linked to another through a change in aspect (ip)
-* simple_aspect_pi: A word which is linked to another through a change from perfective to imperfective aspect
-* secondary_aspect_pi: A word which is linked to another through a change in aspect (pi)
-* feminine: A feminine form of a word
-* has_feminine: Indicates the base form of a word with a feminine derivation
-* masculine: A masculine form of a word
-* has_masculine: Indicates the base form of a word with a masculine derivation
-* young: A form of a word with a derivation indicating the young of a species
-* has_young: Indicates the base form of a word with a young derivation
-* diminutive: A diminutive form of a word
-* has_diminutive: Indicates the base form of a word with a diminutive derivation
-* augmentative: An augmentative form of a word
-* has_augmentative: Indicates the base form of a word with an augmentative derivation
-* anto_gradable: A word pair whose meanings are opposite and which lie on a continuous spectrum
-* anto_simple: A word pair whose meanings are opposite but whose meanings do not lie on a continuous spectrum
-* anto_converse: A word pair that name or describe a single relationship from opposite perspectives
-* metaphor: A relation between two senses, where the first sense is a metaphorical extension of the second sense
-* has_metaphor: A relation between two senses, where the first sense can be metaphorically extended to the second sense
-* metonym: A relation between two senses, where the first sense is a metonymic extension of the second sense
-* has_metonym: A relation between two senses, where the first sense can be metonymically extended to the second sense
+* `simple_aspect_ip`: A word which is linked to another through a change from imperfective to perfective aspect
+* `secondary_aspect_ip`: A word which is linked to another through a change in aspect (ip)
+* `simple_aspect_pi`: A word which is linked to another through a change from perfective to imperfective aspect
+* `secondary_aspect_pi`: A word which is linked to another through a change in aspect (pi)
+* `feminine`: A feminine form of a word
+* `has_feminine`: Indicates the base form of a word with a feminine derivation
+* `masculine`: A masculine form of a word
+* `has_masculine`: Indicates the base form of a word with a masculine derivation
+* `young`: A form of a word with a derivation indicating the young of a species
+* `has_young`: Indicates the base form of a word with a young derivation
+* `diminutive`: A diminutive form of a word
+* `has_diminutive`: Indicates the base form of a word with a diminutive derivation
+* `augmentative`: An augmentative form of a word
+* `has_augmentative`: Indicates the base form of a word with an augmentative derivation
+* `anto_gradable`: A word pair whose meanings are opposite and which lie on a continuous spectrum
+* `anto_simple`: A word pair whose meanings are opposite but whose meanings do not lie on a continuous spectrum
+* `anto_converse`: A word pair that name or describe a single relationship from opposite perspectives
+* `metaphor`: A relation between two senses, where the first sense is a metaphorical extension of the second sense
+* `has_metaphor`: A relation between two senses, where the first sense can be metaphorically extended to the second sense
+* `metonym`: A relation between two senses, where the first sense is a metonymic extension of the second sense
+* `has_metonym`: A relation between two senses, where the first sense can be metonymically extended to the second sense
 
-                    <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
-                </Sense>
-            </LexicalEntry>
-            <LexicalEntry id="w3">
-                <Lemma writtenForm="pay" partOfSpeech="v"/>
+```xml
+                <SenseRelation relType="derivation" target="example-en-10161911-n-1"/>
+            </Sense>
+        </LexicalEntry>
+        <LexicalEntry id="w3">
+            <Lemma writtenForm="pay" partOfSpeech="v"/>
+```
               
 Syntactic behaviour is given as in Princeton WordNet
 
-                <SyntacticBehaviour subcategorizationFrame="Somebody ----s" id="intransitive"/>
-                <SyntacticBehaviour subcategorizationFrame="Somebody ----s somebody" id="transitive"/>
-            </LexicalEntry>
+```xml
+            <SyntacticBehaviour subcategorizationFrame="Somebody ----s" id="intransitive"/>
+            <SyntacticBehaviour subcategorizationFrame="Somebody ----s somebody" id="transitive"/>
+        </LexicalEntry>
+```
 
 Syntactic behaviour can also be given as part of the lexicon and referred to 
 with the `subcat` property.
@@ -165,12 +177,13 @@ with the `subcat` property.
 If a synset is already mapped to the ILI please give the ID here. __All synsets must
 have an ID that starts with ID of the lexicon followed by a dash, e.g., `example-en` + `-` + `local_synset_id`__.
 
-            <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n"
-                members="example-en-10161911-n-1 example-en-1-n-1">
-                <Definition>
-                    the father of your father or mother
-                </Definition>
-
+```xml
+        <Synset id="example-en-10161911-n" ili="i90287" partOfSpeech="n"
+            members="example-en-10161911-n-1 example-en-1-n-1">
+            <Definition>
+                the father of your father or mother
+            </Definition>
+```
 
 The `members` property gives the list of senses in order.
 
@@ -284,52 +297,64 @@ The set of relations between synsets is limited to the following:
 * `target_direction`: a concept which is the place where the action or event expressed by a given concept leads to.
 * `young`: a concept used to refer to young members of a class
 
-                <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
-            </Synset>
+```xml
+            <SynsetRelation relType="hypernym" target="example-en-10162692-n"/>
+        </Synset>
+```
 
 If you wish to define a new concept call the concept "in" (ILI New). If there is
 no mapping to the ILI leave this field empty (it is required).
 
-            <Synset id="example-en-1-n" ili="in" partOfSpeech="n">
-                <Definition>A father's father; a paternal grandfather</Definition>
+```xml
+        <Synset id="example-en-1-n" ili="in" partOfSpeech="n">
+            <Definition>A father's father; a paternal grandfather</Definition>
+```
 
 You can include metadata (such as source) at many points
 The ILI Definition must be at least 20 characters or five words
 
-                <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">
-                    A father's father; a paternal grandfather
-                </ILIDefinition>
-            </Synset>
+```xml
+            <ILIDefinition dc:source="https://en.wiktionary.org/wiki/farfar">
+                A father's father; a paternal grandfather
+            </ILIDefinition>
+        </Synset>
+```
 
 You must include all targets of relations
 
-            <Synset id="example-en-10162692-n" ili="i90292" partOfSpeech="n"/>
-        </Lexicon>
-        <Lexicon id="example-sv"
-                 label="Example wordnet (Swedish)"
-                 language="sv" 
-                 email="john@mccr.ae"
-                 license="https://creativecommons.org/publicdomain/zero/1.0/"
-                 version="1.0"
-                 citation="CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."
-                 url="http://globalwordnet.github.io/schemas/"
-                 dc:publisher="Global Wordnet Association">
+```xml
+        <Synset id="example-en-10162692-n" ili="i90292" partOfSpeech="n"/>
+    </Lexicon>
+    <Lexicon id="example-sv"
+             label="Example wordnet (Swedish)"
+             language="sv" 
+             email="john@mccr.ae"
+             license="https://creativecommons.org/publicdomain/zero/1.0/"
+             version="1.0"
+             citation="CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)."
+             url="http://globalwordnet.github.io/schemas/"
+             dc:publisher="Global Wordnet Association">
+```
 
 The list of lexical entries (words) in your wordnet
 
-            <LexicalEntry id="w4">
-                <Lemma writtenForm="farfar" partOfSpeech="n"/>
+```xml
+        <LexicalEntry id="w4">
+            <Lemma writtenForm="farfar" partOfSpeech="n"/>
+```
 
 Synsets need not be language-specific but senses must be
 
-                <Sense id="example-sv-2-n-1" synset="example-en-1-n">
-                    <SenseExample dc:source="Europarl Corpus">
-                        Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
-                    </SenseExample>
-                </Sense>
-            </LexicalEntry>
-        </Lexicon>
-    </LexicalResource>
+```xml
+            <Sense id="example-sv-2-n-1" synset="example-en-1-n">
+                <SenseExample dc:source="Europarl Corpus">
+                    Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför
+                </SenseExample>
+            </Sense>
+        </LexicalEntry>
+    </Lexicon>
+</LexicalResource>
+```
 
 ***Pronunciation***
 
@@ -343,14 +368,16 @@ This is in the `<Pronunciation>` element, which gives the IPA text.   It has the
 
 An example of encoding is given below:
 
-        <LexicalEntry id="ex-rabbit-n">
-            <Lemma writtenForm="rabbit" partOfSpeech="n"/>
-                <Pronunciation variety="en-GB-fonxsamp en-US-fonxsamp" 
-		            audio ="https://path/rabbit.flac">'r\{bIt</Pronunciation>
-	        <Pronunciation variety="en-AU-fonxsamp" notation="weak vowel merger" 
-		            audio ="https://path/rabbit1.flac">'r\{b@t</Pronunciation>
-             </Lemma>
-         </LexicalEntry>
+```xml
+<LexicalEntry id="ex-rabbit-n">
+    <Lemma writtenForm="rabbit" partOfSpeech="n"/>
+        <Pronunciation variety="en-GB-fonxsamp en-US-fonxsamp" 
+            audio ="https://path/rabbit.flac">'r\{bIt</Pronunciation>
+    <Pronunciation variety="en-AU-fonxsamp" notation="weak vowel merger" 
+            audio ="https://path/rabbit1.flac">'r\{b@t</Pronunciation>
+     </Lemma>
+</LexicalEntry>
+```
 
 
 **Wordnet Extensions**
@@ -358,32 +385,38 @@ An example of encoding is given below:
 A file may contain a lexicon extension which serves to augment an existing lexicon with new lexical entries, synsets, senses, relations, etc.
 They are defined much like regular lexicons, but the `<Extends>` element specifies the ID and version of the base lexicon:
 
-        <LexiconExtension id="ewn-cs-example"
-                          label="English WordNet Computer Science Terms (example)"
-                          language="en"
-                          email="goodmami@uw.edu"
-                          license="https://creativecommons.org/publicdomain/zero/1.0/"
-                          version="1.0">
-            <Extends ref="ewn" version="2020" />
+```xml
+<LexiconExtension id="ewn-cs-example"
+                  label="English WordNet Computer Science Terms (example)"
+                  language="en"
+                  email="goodmami@uw.edu"
+                  license="https://creativecommons.org/publicdomain/zero/1.0/"
+                  version="1.0">
+    <Extends ref="ewn" version="2020" />
+```
 
 The contents of the lexicon extension are the same as a regular lexicon with the addition of elements for external lexical entries, synsets, and senses.
 There are two uses of external elements.
 First, they allow one to add additional information to the corresponding element in the base lexicon, such as adding a new sense to an existing lexical entry:
 
-            <ExternalLexicalEntry id="ewn-process-n">
-                <Sense id="ewn-process-n-20000123" synset="ewn-20000123-n" />
-            </ExternalLexicalEntry>
+```xml
+<ExternalLexicalEntry id="ewn-process-n">
+    <Sense id="ewn-process-n-20000123" synset="ewn-20000123-n" />
+</ExternalLexicalEntry>
+```
 
 In the above example, the `ewn-process-n` ID is not used to create a new lexical entry, but rather it must already exist in the base lexicon.
 The external lexical entry (as well as other external senses or synsets) may only add information; therefore it may not specify metadata or elements required on lexical entries, such as for the lemma.
 
 Second, they introduce an ID which may be referenced by new structures, such as the target of synset relation:
 
-            <ExternalSynset id="ewn-06581154-n" />
-            <Synset id="ewn-20000123-n" ili="" partOfSpeech="n">
-                <Definition>a running instance of a computer program</Definition>
-                <SynsetRelation relType="hypernym" target="ewn-06581154-n" />
-            </Synset>
+```xml
+<ExternalSynset id="ewn-06581154-n" />
+<Synset id="ewn-20000123-n" ili="" partOfSpeech="n">
+    <Definition>a running instance of a computer program</Definition>
+    <SynsetRelation relType="hypernym" target="ewn-06581154-n" />
+</Synset>
+```
 
 Due to the way external IDs are used, a lexicon extension may not exist in the same file as the base lexicon.
 
@@ -392,15 +425,17 @@ Due to the way external IDs are used, a lexicon extension may not exist in the s
 Some wordnets depend upon others, such as those in the [Open Multilingual Wordnet](https://compling.upol.cz/omw/omw) which depend upon the Princeton WordNet for synset structure.
 With the `<Requires>` element, it is possible to explicitly codify those dependencies:
 
-        <Lexicon id="omw-es"
-                 label="Multilingual Central Repository (Spanish)"
-                 language="es"
-                 email="bond@ieee.org"
-                 license="https://creativecommons.org/licenses/by/3.0/"
-                 version="2.0"
-                 url="https://adimen.si.ehu.es/web/MCR/"
-                 citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.">
-          <Requires ref="omw-en" version="2.0" />
+```xml
+<Lexicon id="omw-es"
+         label="Multilingual Central Repository (Spanish)"
+         language="es"
+         email="bond@ieee.org"
+         license="https://creativecommons.org/licenses/by/3.0/"
+         version="2.0"
+         url="https://adimen.si.ehu.es/web/MCR/"
+         citation="Aitor Gonzalez-Agirre, Egoitz Laparra and German Rigau. 2012. `Multilingual Central Repository version 3.0: upgrading a very large lexical knowledge base &lt;http://adimen.si.ehu.es/web/sites/all/modules/pubdlcnt/pubdlcnt.php?file=http://adimen.si.ehu.es/~rigau/publications/gwc12-glr.pdf&amp;nid=18&gt;`_. In *Proceedings of the 6th Global WordNet Conference (GWC 2012)*. Matsue, Japan.">
+  <Requires ref="omw-en" version="2.0" />
+```
 
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
@@ -413,15 +448,17 @@ lexical entries; this is typically the case when there are entries in lowercase,
 uppercase and/or titlecase. The `index` property indicates the normalized form
 of the entry and the `n` property indicates the order of the senses. For example:
 
-     <LexicalEntry id="w1" index="god">
-        <Lemma writtenForm="god" partOfSpeech="n"/>
-        <Sense id="example-en-09528550-n" synset="example-en-09528550-n" n="1"/>
-        <Sense id="example-en-10152827-n" synset="example-en-10152827-n" n="3"/>
-    </LexicalEntry>
-    <LexicalEntry id="w2" index="god">
-        <Lemma writtenForm="God" partOfSpeech="n"/>
-        <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="2"/>
-    </LexicalEntry>
+```xml
+<LexicalEntry id="w1" index="god">
+    <Lemma writtenForm="god" partOfSpeech="n"/>
+    <Sense id="example-en-09528550-n" synset="example-en-09528550-n" n="1"/>
+    <Sense id="example-en-10152827-n" synset="example-en-10152827-n" n="3"/>
+</LexicalEntry>
+<LexicalEntry id="w2" index="god">
+    <Lemma writtenForm="God" partOfSpeech="n"/>
+    <Sense id="example-en-09559169-n" synset="example-en-09559169-n" n="2"/>
+</LexicalEntry>
+```
 
 The following rules should be followed:
 
@@ -445,14 +482,16 @@ This format does not directly support sense-level definitions as definitions in
 a wordnet are typically given on the synset level. You may indicate that definition
 belongs to a particular sense with the `sourceSense` attribute.
 
-    <Synset id="synset1">
-        <Definition sourceSense="sense1">
-            the father of your father or mother
-        </Definition>
-        <Definition sourceSense="sense2">
-            A father's father; a paternal grandfather
-        </Definition>
-    </Synset>
+```xml
+<Synset id="synset1">
+    <Definition sourceSense="sense1">
+        the father of your father or mother
+    </Definition>
+    <Definition sourceSense="sense2">
+        A father's father; a paternal grandfather
+    </Definition>
+</Synset>
+```
 
 **Grammatical Properties**
 
@@ -460,14 +499,16 @@ Grammatical properties such as gender, number, case, and tense can be represente
 
 The `<Tag>` element has a `category` attribute which indicates the type of grammatical property, and the value is the text of the tag
 
-    <LexicalEntry id="ex-gato-n">
-        <Lemma writtenForm="gato" partOfSpeech="n">
-          <Tag category="gender">masculine</Tag>
-        </Lemma>
-        <Form writtenForm="gatos">
-            <Tag category="number">plural</Tag>
-        </Form>
-    </LexicalEntry>
+```xml
+<LexicalEntry id="ex-gato-n">
+    <Lemma writtenForm="gato" partOfSpeech="n">
+      <Tag category="gender">masculine</Tag>
+    </Lemma>
+    <Form writtenForm="gatos">
+        <Tag category="number">plural</Tag>
+    </Form>
+</LexicalEntry>
+```
 
 A universal tagging scheme is not prescribed and wordnet project owners are free to choose a scheme that works for their data.
 
@@ -484,30 +525,36 @@ giving the lexicon format. This structure is required for submission to the
 Collaborative Interlingual Index, but web services may of course return shorter
 fragments of the structure.
 
-    { 
-      "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.4.json",
-      "@graph": [{
+```json
+{ 
+  "@context": "http://globalwordnet.github.io/schemas/wn-json-context-1.4.json",
+  "@graph": [{
+```
 
 The following are required properties of every WordNet (note the language
 must be given twice). `@id` gives the identifier of this wordnet (should be
 unique in this document) and `@type` must be `lime:Lexicon`.
 
-          "@context": { "@language": "en" },
-          "@id": "example-en",
-          "@type": "lime:Lexicon", 
-          "label": "Example wordnet (English)",
-          "language": "en",
-          "email": "john@mccr.ae",
-          "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "version": "1.0",
+```json
+      "@context": { "@language": "en" },
+      "@id": "example-en",
+      "@type": "lime:Lexicon", 
+      "label": "Example wordnet (English)",
+      "language": "en",
+      "email": "john@mccr.ae",
+      "rights": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "version": "1.0",
+```
 
 In addition the properties `citation`, `url`, `logo`, `status`, `confidenceScore` and any 
 property from [Dublin Core Elements 1.1](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=elements)
 May be used
 
-          "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
-          "url": "http://globalwordnet.github.io/schemas",
-          "publisher": "Global Wordnet Association",
+```json
+      "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
+      "url": "http://globalwordnet.github.io/schemas",
+      "publisher": "Global Wordnet Association",
+```
 
 The entries are given as a list under the `entry` property it requires an `@id`
 `partOfSpeech` and `lemma` and may have `sense`, `synBehavior`, `status`, 
@@ -516,26 +563,29 @@ The entries are given as a list under the `entry` property it requires an `@id`
 [ `noun`, `verb`, `adjective`, `adverb`, `adjective_satellite`, `phrase`, `conjunction`, `adposition`, `other`, `unknown` ]. The `@id` must be unique in the
 document, it is not the same as the `@id` of the wordnet or any other entry.
 
-          "entry": [{
-              "@id" : "w1",
-              "lemma": { "writtenForm": "father" }, 
-              "partOfSpeech": "noun",
+```json
+      "entry": [{
+          "@id" : "w1",
+          "lemma": { "writtenForm": "father" }, 
+          "partOfSpeech": "noun",
+```
 
 The Sense requires only an `@id` and a `synsetRef` and may take `status`, 
 `confidenceScore`, Dublin Core properties, an `example`.
 
-
-              "sense": [{
-                  "@id": "example-en-10161911-n-1",
-                  "synsetRef": "example-en-10161911-n"
-              }]
-          }, {
-              "@id" : "w2",
-              "lemma": { "writtenForm": "paternal grandfather" }, 
-              "partOfSpeech": "noun",
-              "sense": [{
-                  "@id": "example-en-1-n-1",
-                  "synsetRef": "example-en-1-n",
+```json
+          "sense": [{
+              "@id": "example-en-10161911-n-1",
+              "synsetRef": "example-en-10161911-n"
+          }]
+      }, {
+          "@id" : "w2",
+          "lemma": { "writtenForm": "paternal grandfather" }, 
+          "partOfSpeech": "noun",
+          "sense": [{
+              "@id": "example-en-1-n-1",
+              "synsetRef": "example-en-1-n",
+```
 
 A sense may also have any number of `relations` which have a `relType` from the
 list below and a `target` and may have Dublin Core properties
@@ -552,24 +602,28 @@ list below and a `target` and may have Dublin Core properties
 * `exemplifies`: Indicates the usage of this word
 * `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
-                  "relations": [{
-                      "relType": "derivation",
-                      "target": "example-en-10161911-n-1",
-                      "creator": "John McCrae"
-                  }]
+```json
+              "relations": [{
+                  "relType": "derivation",
+                  "target": "example-en-10161911-n-1",
+                  "creator": "John McCrae"
               }]
-          }, {
-              "@id": "w3",
-              "lemma": { "writtenForm": "pay" },
-              "partOfSpeech": "verb",
+          }]
+      }, {
+          "@id": "w3",
+          "lemma": { "writtenForm": "pay" },
+          "partOfSpeech": "verb",
+```
 
 The syntactic behavior is given here as follows:
 
-              "synBehavior": [
-                 {"label": "Somebody ----s", "@id": "intransitive"}, 
-                 {"label": "Somebody ----s somebody", "@id": "transitive"}
-               ]
-          }],
+```json
+          "synBehavior": [
+             {"label": "Somebody ----s", "@id": "intransitive"}, 
+             {"label": "Somebody ----s somebody", "@id": "transitive"}
+           ]
+      }],
+```
  
 Synsets are listed under the `synset` property.
 A synset requires only an `@id`. It may take an `ili` which is a code from the 
@@ -579,18 +633,22 @@ be given in English), `status`, `confidenceScore`, `relations` and Dublin Core p
 In contrast to the XML form the `ili` is optional. If there is no match omit this
 tag, if you wish to propose a new synset add only a `iliDefinition`.
 
-          "synset": [{
-              "@id": "example-en-10161911-n",
-              "partOfSpeech": "noun",
-              "ili": "ili:i90287",
+```json
+      "synset": [{
+          "@id": "example-en-10161911-n",
+          "partOfSpeech": "noun",
+          "ili": "ili:i90287",
+```
 
 Definitions must have a `gloss` and may be have a `language`, in addition, 
 `status`, `confidenceScore` and Dublin Core properties may be added. An 
 `iliDefinition` is the same but may not have a language.
 
-              "definition": [{
-                "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
-               }],
+```json
+          "definition": [{
+            "gloss": "that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"
+           }],
+```
 
 Synset relations are given as for sense relations except the `target` must be the
 `@id` of another synset not a sense. The following properties can be used:
@@ -617,58 +675,64 @@ Synset relations are given as for sense relations except the `target` must be th
 * `exemplifies`: Indicates the usage of this word
 * `is_exemplified_by`: Indicates a word involved in the usage described by this word
 
-              "relations": [{
-                  "relType": "hypernym", "target": "example-en-10162692-n"
-              }],
+```json
+          "relations": [{
+              "relType": "hypernym", "target": "example-en-10162692-n"
+          }],
+```
 
 Indicate the members and the order they occur in:
 
-              "members": ["example-en-10161911-n-1", "example-en-1-n-1"]
-          }, {
-              "@id": "example-en-1-n",
-              "partOfSpeech": "noun",
-              "definition": [{
-                  "gloss": "the father of your father or mother"
-              }],
-              "iliDefinition": {
-                  "gloss": "the father of your father or mother",
-                  "source": "https://en.wiktionary.org/wiki/farfar"
-              },
-              "relations": [
-                { "relType": "hypernym", "target": "example-en-10162692-n" }
-              ]
-          }]
-        }, {
-          "@context": { "@language": "sv" },
-          "@id": "example-sv",
-          "@type": "lime:Lexicon", 
-          "label": "Example wordnet (Swedish)",
-          "language": "sv",
-          "email": "john@mccr.ae",
-          "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-          "version": "1.0",
-          "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
-          "url": "http://globalwordnet.github.io/schemas",
-          "publisher": "Global Wordnet Association",
-          "entry": [{
-              "@id" : "w4",
-              "lemma": { "writtenForm": "farfar" }, 
-              "form": [{ "writtenForm": "farfäder", "tag": [{ "category": "penn", "value": "NNS" }] }],
-              "partOfSpeech": "noun",
+```json
+          "members": ["example-en-10161911-n-1", "example-en-1-n-1"]
+      }, {
+          "@id": "example-en-1-n",
+          "partOfSpeech": "noun",
+          "definition": [{
+              "gloss": "the father of your father or mother"
+          }],
+          "iliDefinition": {
+              "gloss": "the father of your father or mother",
+              "source": "https://en.wiktionary.org/wiki/farfar"
+          },
+          "relations": [
+            { "relType": "hypernym", "target": "example-en-10162692-n" }
+          ]
+      }]
+    }, {
+      "@context": { "@language": "sv" },
+      "@id": "example-sv",
+      "@type": "lime:Lexicon", 
+      "label": "Example wordnet (Swedish)",
+      "language": "sv",
+      "email": "john@mccr.ae",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "version": "1.0",
+      "citation": "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016).",
+      "url": "http://globalwordnet.github.io/schemas",
+      "publisher": "Global Wordnet Association",
+      "entry": [{
+          "@id" : "w4",
+          "lemma": { "writtenForm": "farfar" }, 
+          "form": [{ "writtenForm": "farfäder", "tag": [{ "category": "penn", "value": "NNS" }] }],
+          "partOfSpeech": "noun",
+```
 
 Any examples should be given on the sense as follows:
 
-              "sense": [{
-                  "@id": "example-sv-2-n-1",
-                  "synsetRef": "example-en-1-n",
-                  "example": [{
-                      "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
-                      "source": "Europarl Corpus"
-                  }]
+```json
+          "sense": [{
+              "@id": "example-sv-2-n-1",
+              "synsetRef": "example-en-1-n",
+              "example": [{
+                  "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
+                  "source": "Europarl Corpus"
               }]
           }]
       }]
-    }
+  }]
+}
+```
 
 
 The JSON format can be validated by the [JSON Schema](http://json-schema.org)
@@ -694,17 +758,19 @@ those who wish to create their resource natively in RDF.
 
 The standard namespaces are
 
-    @prefix dc: <http://purl.org/dc/terms/> .
-    @prefix ili: <http://ili.globalwordnet.org/ili/> .
-    @prefix lime: <http://www.w3.org/ns/lemon/lime#> .
-    @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-    @prefix owl: <http://www.w3.org/2002/07/owl#> .
-    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-    @prefix schema: <http://schema.org/> .
-    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-    @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
-    @prefix wn: <https://globalwordnet.github.io/schemas/wn#> .
-    @prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
+```sparql
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ili: <http://ili.globalwordnet.org/ili/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix wn: <https://globalwordnet.github.io/schemas/wn#> .
+@prefix wordnetlicense: <http://wordnet.princeton.edu/wordnet/license/> .
+```
 
 Each wordnet is an instance of the class `lime:Lexicon` and must have the
 following properties
@@ -726,111 +792,113 @@ The mapping to the Lemon-OntoLex model is as follows:
 
 A more extended example is given here:
 
-    <#example-en> a lime:Lexicon ;
-      rdfs:label "Example wordnet (English)"@en ;
-      dc:language "en" ;
-      schema:email "john@mccr.ae" ;
-      cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-      owl:versionInfo "1.0" ;
-      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
-      schema:url "http://globalwordnet.github.io/schemas/" ;
-      dc:publisher "Global Wordnet Association" ;
-      lime:entry <#w1>, <#w2>, <#w3> .
-    
-    <#w1> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [
-        ontolex:writtenRep "grandfather"@en 
-      ] ;
-      wn:partOfSpeech wn:noun ;
-      ontolex:sense <#example-en-10161911-n-1> .
-    
-    <#example-en-10161911-n-1>  a ontolex:LexicalSense ;
-      ontolex:reference <#example-en-10161911-n> .
-    
-    <#w2> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [
-        ontolex:writtenRep "paternal grandfather"@en 
-      ] ;
-      wn:partOfSpeech wn:noun ;
-      ontolex:sense <#example-en-1-n-1> .
-    
-    <#example-en-1-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <#example-en-1-n> .
-    
-    [] a ontolex:SenseRelation ;
-      vartrans:source <#example-en-1-n-1> ;
-      vartrans:category wn:derivation ;
-      vartrans:target <#example-en-10161911-n-1> ;
-      dc:creator "John McCrae"@en .
-              
-    <#w3> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [
-        ontolex:writtenRep "pay"@en
-      ] ;
-      wn:partOfSpeech wn:verb ;
-      synsem:synBehavior <#transitive>, <#intransitive> .
+```sparql
+<#example-en> a lime:Lexicon ;
+  rdfs:label "Example wordnet (English)"@en ;
+  dc:language "en" ;
+  schema:email "john@mccr.ae" ;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  owl:versionInfo "1.0" ;
+  schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
+  schema:url "http://globalwordnet.github.io/schemas/" ;
+  dc:publisher "Global Wordnet Association" ;
+  lime:entry <#w1>, <#w2>, <#w3> .
 
-    <#intransitive> rdfs:label "Somebody ----s"@en .
-    <#transitive> rdfs:label "Somebody ----s somebody"@en .
-    
-    <#example-en-10161911-n> a ontolex:LexicalConcept ;
-      wn:partOfSpeech wn:noun ;
-      skos:inScheme <#example-en> ;
-      wn:ili ili:i90287 ;
-      wn:definition [
-        rdf:value "the father of your father or mother"@en
-      ] ;
-      wn:memberList ( <#example-en-1016911-n-1> <#example-en-1-n-1> ) .
-    
-    [] 
-      vartrans:source <#example-en-10161911-n> ;
-      vartrans:category wn:hypernym ; 
-      vartrans:target <#example-en-10162692-n> .
-              
-    <#example-en-1-n> a ontolex:LexicalConcept ;
-      wn:partOfSpeech wn:noun ;
-      skos:inScheme <#example-en> ;
-      wn:definition [
-        rdf:value "the father of your father or mother"@en 
-      ] ;
-      wn:iliDefinition [
-        rdf:value "the father of your father or mother"@en ;
-        dc:source "https://en.wiktionary.org/wiki/farfar"
-      ] .
-    
-    []
-      vartrans:source <#example-en-1-n> ;
-      vartrans:category wn:hypernym ;
-      vartrans:target <#example-en-10162692-n> .
-    
-    <#example-sv> a lime:Lexicon ;
-      rdfs:label "Example wordnet (Swedish)"@sv ;
-      dc:language "sv" ;
-      schema:email "john@mccr.ae" ;
-      cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-      owl:versionInfo "1.0" ;
-      schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
-      schema:url "http://globalwordnet.github.io/schemas" ;
-      dc:publisher "Global Wordnet Association" ;
-      lime:entry <#w4> .
-    
-    <#w4> a ontolex:LexicalEntry ;
-      ontolex:canonicalForm [
-        ontolex:writtenRep "farfar"@sv 
-      ] ;
-      ontolex:otherForm [
-        ontolex:writtenRep "farfäder"@sv ;
-        wn:tag [
-            wn:category "penn" ;
-            rdf:value "NNS" 
-        ]
-      ] ;
-      wn:partOfSpeech wn:noun ;
-      wn:sense <#example-sv-2-n-1> .
-    
-    <#example-sv-2-n-1> a ontolex:LexicalSense ;
-      ontolex:reference <#example-en-1-n> ;
-      wn:example [
-        rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
-        dc:source "Europarl Corpus"
-      ] .
+<#w1> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep "grandfather"@en 
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense <#example-en-10161911-n-1> .
+
+<#example-en-10161911-n-1>  a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-10161911-n> .
+
+<#w2> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep "paternal grandfather"@en 
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  ontolex:sense <#example-en-1-n-1> .
+
+<#example-en-1-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-1-n> .
+
+[] a ontolex:SenseRelation ;
+  vartrans:source <#example-en-1-n-1> ;
+  vartrans:category wn:derivation ;
+  vartrans:target <#example-en-10161911-n-1> ;
+  dc:creator "John McCrae"@en .
+          
+<#w3> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep "pay"@en
+  ] ;
+  wn:partOfSpeech wn:verb ;
+  synsem:synBehavior <#transitive>, <#intransitive> .
+
+<#intransitive> rdfs:label "Somebody ----s"@en .
+<#transitive> rdfs:label "Somebody ----s somebody"@en .
+
+<#example-en-10161911-n> a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme <#example-en> ;
+  wn:ili ili:i90287 ;
+  wn:definition [
+    rdf:value "the father of your father or mother"@en
+  ] ;
+  wn:memberList ( <#example-en-1016911-n-1> <#example-en-1-n-1> ) .
+
+[] 
+  vartrans:source <#example-en-10161911-n> ;
+  vartrans:category wn:hypernym ; 
+  vartrans:target <#example-en-10162692-n> .
+          
+<#example-en-1-n> a ontolex:LexicalConcept ;
+  wn:partOfSpeech wn:noun ;
+  skos:inScheme <#example-en> ;
+  wn:definition [
+    rdf:value "the father of your father or mother"@en 
+  ] ;
+  wn:iliDefinition [
+    rdf:value "the father of your father or mother"@en ;
+    dc:source "https://en.wiktionary.org/wiki/farfar"
+  ] .
+
+[]
+  vartrans:source <#example-en-1-n> ;
+  vartrans:category wn:hypernym ;
+  vartrans:target <#example-en-10162692-n> .
+
+<#example-sv> a lime:Lexicon ;
+  rdfs:label "Example wordnet (Swedish)"@sv ;
+  dc:language "sv" ;
+  schema:email "john@mccr.ae" ;
+  cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  owl:versionInfo "1.0" ;
+  schema:citation "CILI: the Collaborative Interlingual Index. Francis Bond, Piek Vossen, John P. McCrae and Christiane Fellbaum, Proceedings of the Global WordNet Conference 2016, (2016)." ;
+  schema:url "http://globalwordnet.github.io/schemas" ;
+  dc:publisher "Global Wordnet Association" ;
+  lime:entry <#w4> .
+
+<#w4> a ontolex:LexicalEntry ;
+  ontolex:canonicalForm [
+    ontolex:writtenRep "farfar"@sv 
+  ] ;
+  ontolex:otherForm [
+    ontolex:writtenRep "farfäder"@sv ;
+    wn:tag [
+        wn:category "penn" ;
+        rdf:value "NNS" 
+    ]
+  ] ;
+  wn:partOfSpeech wn:noun ;
+  wn:sense <#example-sv-2-n-1> .
+
+<#example-sv-2-n-1> a ontolex:LexicalSense ;
+  ontolex:reference <#example-en-1-n> ;
+  wn:example [
+    rdf:value "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför"@sv ;
+    dc:source "Europarl Corpus"
+  ] .
+```
