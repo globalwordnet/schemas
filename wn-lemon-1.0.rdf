@@ -27,7 +27,7 @@
     <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
   </voaf:Vocabulary>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Count">
-    <rdf:label xml:lang="en">count</rdf:label>
+    <rdfs:label xml:lang="en">count</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Definition">
     <rdfs:label xml:lang="en">definition</rdfs:label>
@@ -429,11 +429,11 @@
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#named_entity">
     <rdfs:label xml:lang="en">named entity</rdfs:label>
   </PartOfSpeech>
-  <owl:AnnotationPropety rdf:about="https://globalwordnet.github.io/schemas/wn#note">
+  <owl:AnnotationProperty rdf:about="https://globalwordnet.github.io/schemas/wn#note">
     <rdfs:comment xml:lang="en">Any extra notes made by a WordNet creator</rdfs:comment>
     <rdfs:label xml:lang="en">note</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:AnnotationPropety>
+  </owl:AnnotationProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#noun">
     <rdfs:label xml:lang="en">noun</rdfs:label>
   </PartOfSpeech>

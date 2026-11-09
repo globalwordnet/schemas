@@ -105,7 +105,7 @@
   rdfs:label "count"@en .
 
 :Count a owl:Class ;
-  rdf:label "count"@en .
+  rdfs:label "count"@en .
 
 :definition a owl:ObjectProperty ;
   rdfs:domain ontolex:LexicalConcept ;
@@ -137,7 +137,7 @@
   rdfs:label "script"@en ;
   rdfs:comment "The script as a 4 letter ISO 15924 code"@en .
 
-:note a owl:AnnotationPropety ;
+:note a owl:AnnotationProperty ;
   rdfs:range xsd:string ;
   rdfs:label "note"@en ;
   rdfs:comment "Any extra notes made by a WordNet creator"@en .
