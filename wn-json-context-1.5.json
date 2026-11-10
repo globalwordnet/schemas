@@ -51,6 +51,7 @@
         "notation": { "@id": "wn:notation", "@type": "xsd:string" },
         "phonemic": { "@id": "wn:phonemic", "@type": "xsd:boolean" },
         "offsets": { "@id": "wn:offsets", "@type": "xsd:string" },
+        "reconstructed": { "@id": "wn:reconstructed", "@type": "xsd:boolean" },
         "index": { "@id": "wn:index", "@type": "xsd:string" },
         "n": { "@id": "wn:n", "@type": "xsd:integer" },
         "audio": { "@id": "wn:audio", "@type": "xsd:string" },

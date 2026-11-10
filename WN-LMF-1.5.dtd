@@ -55,6 +55,7 @@
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
+    reconstructed (true|false) "false"
     partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
 <!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
