@@ -54,7 +54,8 @@
   rdfs:comment "The syntactic class of the entry, e.g., noun, verb"@en ;
   owl:oneOf (
     :noun :verb :adjective :adverb :adjective_satellite :phrase
-    :conjunction :adposition :other_pos :unknown_pos ) .
+    :conjunction :adposition :determiner :number :particle :pronoun :proper_noun :punctuation :symbol :subordinating_conjunction :auxiliary
+    :other_pos :unknown_pos ) .
 
 
 :noun a :PartOfSpeech ;
@@ -73,13 +74,40 @@
   rdfs:label "adjective satellite"@en .
 :phrase a :PartOfSpeech ;
   rdfs:label "phrase"@en ;
-  rdfs:comment "A multiword expression, e.g. a phrase or idiom"@en .
+  rdfs:comment "A frozen phrase that does not fit another part of speech, e.g. a proverb (PoS z; the deprecated PoS t maps here too)"@en .
 :conjunction a :PartOfSpeech ;
   owl:sameAs lexinfo:conjunction ;
   rdfs:label "conjunction"@en .
 :adposition a :PartOfSpeech ;
   owl:sameAs lexinfo:adposition ;
   rdfs:label "adposition"@en .
+:determiner a :PartOfSpeech ;
+  rdfs:label "determiner"@en ;
+  rdfs:comment "A determiner, e.g. article or demonstrative"@en .
+:number a :PartOfSpeech ;
+  rdfs:label "number"@en ;
+  rdfs:comment "A numeral"@en .
+:particle a :PartOfSpeech ;
+  rdfs:label "particle"@en ;
+  rdfs:comment "A particle"@en .
+:pronoun a :PartOfSpeech ;
+  rdfs:label "pronoun"@en ;
+  rdfs:comment "A pronoun"@en .
+:proper_noun a :PartOfSpeech ;
+  rdfs:label "proper noun"@en ;
+  rdfs:comment "A proper noun, i.e. a named entity"@en .
+:punctuation a :PartOfSpeech ;
+  rdfs:label "punctuation"@en ;
+  rdfs:comment "A punctuation mark"@en .
+:symbol a :PartOfSpeech ;
+  rdfs:label "symbol"@en ;
+  rdfs:comment "A symbol"@en .
+:subordinating_conjunction a :PartOfSpeech ;
+  rdfs:label "subordinating conjunction"@en ;
+  rdfs:comment "A subordinating conjunction"@en .
+:auxiliary a :PartOfSpeech ;
+  rdfs:label "auxiliary"@en ;
+  rdfs:comment "An auxiliary (helping) verb"@en .
 :other_pos a :PartOfSpeech ;
   rdfs:label "other pos"@en .
 :unknown_pos a :PartOfSpeech ;
