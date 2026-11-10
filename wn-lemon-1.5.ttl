@@ -111,6 +111,12 @@
 :Example a owl:Class ;
   rdfs:label "example"@en .
 
+:offsets a owl:DatatypeProperty ;
+  rdfs:domain :Example ;
+  rdfs:range xsd:string ;
+  rdfs:label "offsets"@en ;
+  rdfs:comment "Marks the lemma in the text of an example as a space-separated list of start:end pairs of zero-indexed Unicode code point offsets, where the end offset is exclusive"@en .
+
 :count a owl:ObjectProperty ;
   rdfs:domain ontolex:LexicalSense ;
   rdfs:range :Count ;

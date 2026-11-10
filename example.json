@@ -89,6 +89,7 @@
               "synsetRef": "example-en-1-n",
               "example": [{
                   "value": "Jag vill berätta för er att min farfar var svensk beredskapssoldat vid norska gränsen under andra världskriget, ett krig som Sverige stod utanför",
+                  "offsets": "32:38",
                   "source": "Europarl Corpus"
               }]
           }]

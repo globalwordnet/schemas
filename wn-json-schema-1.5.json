@@ -291,7 +291,8 @@
                                                     "required": ["value"],
                                                     "additionalProperties": false,
                                                     "properties": {
-                                                        "value": { "type": "string" }, 
+                                                        "value": { "type": "string" },
+                                                        "offsets": { "type": "string", "pattern": "^[0-9]+:[0-9]+( [0-9]+:[0-9]+)*$" },
                                                         "status": { "type": "string" }, 
                                                         "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
                                                         "contributor": { "type": "string" },
@@ -526,6 +527,7 @@
                                                     "additionalProperties": false,
                                                     "properties": {
                                                         "value": { "type": "string" },
+                                                        "offsets": { "type": "string", "pattern": "^[0-9]+:[0-9]+( [0-9]+:[0-9]+)*$" },
                                                         "status": { "type": "string" },
                                                         "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
                                                         "contributor": { "type": "string" },
@@ -657,7 +659,8 @@
                                         "required": ["value"],
                                         "additionalProperties": false,
                                         "properties": {
-                                            "value": { "type": "string" }, 
+                                            "value": { "type": "string" },
+                                            "offsets": { "type": "string", "pattern": "^[0-9]+:[0-9]+( [0-9]+:[0-9]+)*$" },
                                             "status": { "type": "string" }, 
                                             "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
                                             "contributor": { "type": "string" },
@@ -855,6 +858,7 @@
                                         "additionalProperties": false,
                                         "properties": {
                                             "value": { "type": "string" },
+                                            "offsets": { "type": "string", "pattern": "^[0-9]+:[0-9]+( [0-9]+:[0-9]+)*$" },
                                             "status": { "type": "string" },
                                             "confidenceScore": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
                                             "contributor": { "type": "string" },
