@@ -411,6 +411,35 @@ With the `<Requires>` element, it is possible to explicitly codify those depende
 This element signifies to an application processing the wordnet that the required wordnet should be loaded as well.
 The `<Requires>` element may also be used on a `<LexiconExtension>` for cases where the lexicon extends one wordnet but requires another.
 
+**Lexicographer files**
+
+The `lexfile` attribute of a `<Synset>` (`lexfile` in JSON) gives the name of the lexicographer file in which the synset is placed. It is an open string and its value is not validated, so a wordnet may use any name. It is, however, useful if different wordnets use the same names, so the commonly used names are listed here.
+
+The Princeton WordNet uses 45 names, which remain valid: `adj.all`, `adj.pert`, `adj.ppl`, `adv.all`, `noun.Tops`, `noun.act`, `noun.animal`, `noun.artifact`, `noun.attribute`, `noun.body`, `noun.cognition`, `noun.communication`, `noun.event`, `noun.feeling`, `noun.food`, `noun.group`, `noun.location`, `noun.motive`, `noun.object`, `noun.person`, `noun.phenomenon`, `noun.plant`, `noun.possession`, `noun.process`, `noun.quantity`, `noun.relation`, `noun.shape`, `noun.state`, `noun.substance`, `noun.time`, `verb.body`, `verb.change`, `verb.cognition`, `verb.communication`, `verb.competition`, `verb.consumption`, `verb.contact`, `verb.creation`, `verb.emotion`, `verb.motion`, `verb.perception`, `verb.possession`, `verb.social`, `verb.stative`, `verb.weather`.
+
+The following additional names are in use or proposed:
+
+| Name | Example | Covers |
+|---|---|---|
+| `name.animal` | *Canis familiaris* | scientific names |
+| `name.place` | *London* | place names |
+| `noun.pronoun` | *we* | nominal pronouns |
+| `adj.pronoun` | *our* | determinatives |
+| `adp.pronoun` | *thither* | adpositional pronouns |
+| `adv.pronoun` | *thus* | adverbial pronouns |
+| `noun.kin` | *aunt* | kinship terms |
+| `adv.contrast` | *however* | contrast |
+| `adv.degree` | *very* | degree, intensity |
+| `adv.domain` | *politically* | domain, scope |
+| `adv.focus` | *only* | focus |
+| `adv.frequency` | *frequently* | frequency |
+| `adv.manner` | *stupidly* | manner |
+| `adv.spatial` | *outside* | space, location |
+| `adv.speaker_oriented` | *unfortunately* | speaker's stance |
+| `adv.temporal` | *yesterday* | time, date |
+
+These are not an exhaustive or closed list; for example, further `name.*` files may be used for other kinds of named entities. The `adv.*` types follow the supersense typology for adverbs of Lee et al. (2026). The `*.pronoun` files follow Seah and Bond (2014) and split pronouns by whether they refer to an entity (`noun.pronoun`), modify a noun (`adj.pronoun`), relate an event to a place or time (`adp.pronoun`) or modify a verb in other ways (`adv.pronoun`). `noun.kin` splits kinship terms out of `noun.person`, following Khishigsuren et al. (2022).
+
 **Sense orders**
 
 Sense orders are typically captured by the order of the senses in the XML file.

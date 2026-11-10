@@ -727,6 +727,138 @@ the required wordnet should be loaded as well. The
 <code>&lt;Requires&gt;</code> element may also be used on a
 <code>&lt;LexiconExtension&gt;</code> for cases where the lexicon
 extends one wordnet but requires another.</p>
+<p><strong>Lexicographer files</strong></p>
+<p>The <code>lexfile</code> attribute of a <code>&lt;Synset&gt;</code>
+(<code>lexfile</code> in JSON) gives the name of the lexicographer file
+in which the synset is placed. It is an open string and its value is not
+validated, so a wordnet may use any name. It is, however, useful if
+different wordnets use the same names, so the commonly used names are
+listed here.</p>
+<p>The Princeton WordNet uses 45 names, which remain valid:
+<code>adj.all</code>, <code>adj.pert</code>, <code>adj.ppl</code>,
+<code>adv.all</code>, <code>noun.Tops</code>, <code>noun.act</code>,
+<code>noun.animal</code>, <code>noun.artifact</code>,
+<code>noun.attribute</code>, <code>noun.body</code>,
+<code>noun.cognition</code>, <code>noun.communication</code>,
+<code>noun.event</code>, <code>noun.feeling</code>,
+<code>noun.food</code>, <code>noun.group</code>,
+<code>noun.location</code>, <code>noun.motive</code>,
+<code>noun.object</code>, <code>noun.person</code>,
+<code>noun.phenomenon</code>, <code>noun.plant</code>,
+<code>noun.possession</code>, <code>noun.process</code>,
+<code>noun.quantity</code>, <code>noun.relation</code>,
+<code>noun.shape</code>, <code>noun.state</code>,
+<code>noun.substance</code>, <code>noun.time</code>,
+<code>verb.body</code>, <code>verb.change</code>,
+<code>verb.cognition</code>, <code>verb.communication</code>,
+<code>verb.competition</code>, <code>verb.consumption</code>,
+<code>verb.contact</code>, <code>verb.creation</code>,
+<code>verb.emotion</code>, <code>verb.motion</code>,
+<code>verb.perception</code>, <code>verb.possession</code>,
+<code>verb.social</code>, <code>verb.stative</code>,
+<code>verb.weather</code>.</p>
+<p>The following additional names are in use or proposed:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Example</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name.animal</code></td>
+<td><em>Canis familiaris</em></td>
+<td>scientific names</td>
+</tr>
+<tr>
+<td><code>name.place</code></td>
+<td><em>London</em></td>
+<td>place names</td>
+</tr>
+<tr>
+<td><code>noun.pronoun</code></td>
+<td><em>we</em></td>
+<td>nominal pronouns</td>
+</tr>
+<tr>
+<td><code>adj.pronoun</code></td>
+<td><em>our</em></td>
+<td>determinatives</td>
+</tr>
+<tr>
+<td><code>adp.pronoun</code></td>
+<td><em>thither</em></td>
+<td>adpositional pronouns</td>
+</tr>
+<tr>
+<td><code>adv.pronoun</code></td>
+<td><em>thus</em></td>
+<td>adverbial pronouns</td>
+</tr>
+<tr>
+<td><code>noun.kin</code></td>
+<td><em>aunt</em></td>
+<td>kinship terms</td>
+</tr>
+<tr>
+<td><code>adv.contrast</code></td>
+<td><em>however</em></td>
+<td>contrast</td>
+</tr>
+<tr>
+<td><code>adv.degree</code></td>
+<td><em>very</em></td>
+<td>degree, intensity</td>
+</tr>
+<tr>
+<td><code>adv.domain</code></td>
+<td><em>politically</em></td>
+<td>domain, scope</td>
+</tr>
+<tr>
+<td><code>adv.focus</code></td>
+<td><em>only</em></td>
+<td>focus</td>
+</tr>
+<tr>
+<td><code>adv.frequency</code></td>
+<td><em>frequently</em></td>
+<td>frequency</td>
+</tr>
+<tr>
+<td><code>adv.manner</code></td>
+<td><em>stupidly</em></td>
+<td>manner</td>
+</tr>
+<tr>
+<td><code>adv.spatial</code></td>
+<td><em>outside</em></td>
+<td>space, location</td>
+</tr>
+<tr>
+<td><code>adv.speaker_oriented</code></td>
+<td><em>unfortunately</em></td>
+<td>speaker’s stance</td>
+</tr>
+<tr>
+<td><code>adv.temporal</code></td>
+<td><em>yesterday</em></td>
+<td>time, date</td>
+</tr>
+</tbody>
+</table>
+<p>These are not an exhaustive or closed list; for example, further
+<code>name.*</code> files may be used for other kinds of named entities.
+The <code>adv.*</code> types follow the supersense typology for adverbs
+of Lee et al. (2026). The <code>*.pronoun</code> files follow Seah and
+Bond (2014) and split pronouns by whether they refer to an entity
+(<code>noun.pronoun</code>), modify a noun (<code>adj.pronoun</code>),
+relate an event to a place or time (<code>adp.pronoun</code>) or modify
+a verb in other ways (<code>adv.pronoun</code>). <code>noun.kin</code>
+splits kinship terms out of <code>noun.person</code>, following
+Khishigsuren et al. (2022).</p>
 <p><strong>Sense orders</strong></p>
 <p>Sense orders are typically captured by the order of the senses in the
 XML file. In some cases, wordnets may wish to specify the order of
