@@ -438,7 +438,7 @@ The following additional names are in use or proposed:
 | `adv.speaker_oriented` | *unfortunately* | speaker's stance |
 | `adv.temporal` | *yesterday* | time, date |
 
-These are not an exhaustive or closed list; for example, further `name.*` files may be used for other kinds of named entities. The `adv.*` types follow the supersense typology for adverbs of Lee et al. (2026). The `*.pronoun` files follow Seah and Bond (2014) and split pronouns by whether they refer to an entity (`noun.pronoun`), modify a noun (`adj.pronoun`), relate an event to a place or time (`adp.pronoun`) or modify a verb in other ways (`adv.pronoun`). `noun.kin` splits kinship terms out of `noun.person`, following Khishigsuren et al. (2022).
+These are not an exhaustive or closed list; for example, further `name.*` files may be used for other kinds of named entities. The `adv.*` types follow the supersense typology for adverbs of [Lee et al. (2026)](https://aclanthology.org/2026.lrec-1.382/). The `*.pronoun` files follow [Seah and Bond (2014)](https://www.semanticscholar.org/paper/Annotation-of-Pronouns-in-a-Multilingual-Corpus-of-Seah-Bond/cc285202976fdb1b04c4f683303394715c8ba873) and split pronouns by whether they refer to an entity (`noun.pronoun`), modify a noun (`adj.pronoun`), relate an event to a place or time (`adp.pronoun`) or modify a verb in other ways (`adv.pronoun`). `noun.kin` splits kinship terms out of `noun.person`, following [Khishigsuren et al. (2022)](https://aclanthology.org/2022.lrec-1.299/).
 
 **Sense orders**
 
