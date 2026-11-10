@@ -37,7 +37,7 @@
                  a: Adjective
                  r: Adverb
                  s: Adjective Satellite
-                 z: Multiword expression (inc. phrase, idiom)
+                 t: Phrase
                  c: Conjunction
                  p: Adposition (Preposition, postposition, etc.)
                  x: Other (inc. particle, classifier, bound morpheme, determiner)
