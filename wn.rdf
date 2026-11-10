@@ -829,6 +829,12 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:comment xml:lang="en">A punctuation mark</rdfs:comment>
     <rdfs:label xml:lang="en">punctuation</rdfs:label>
   </PartOfSpeech>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#reconstructed">
+    <rdfs:comment xml:lang="en">Indicates that the form is reconstructed or unattested, as is common in historical wordnets</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>
+    <rdfs:label xml:lang="en">reconstructed</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#ref">
     <rdfs:comment xml:lang="en">The identifier of the lexicon referred to by an extends or requires statement</rdfs:comment>
     <rdfs:domain>

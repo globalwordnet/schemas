@@ -347,6 +347,14 @@ Synsets need not be language-specific but senses must be
         </Lexicon>
     </LexicalResource>
 
+***Reconstructed forms***
+
+For historical wordnets, a lemma can be marked as a reconstructed or unattested form by setting the `reconstructed` attribute on the `<Lemma>` element to `true`. It defaults to `false`.
+
+        <Lemma writtenForm="bríathar bríghe" partOfSpeech="n" reconstructed="true"/>
+
+In JSON, the same is expressed as `"lemma": { "writtenForm": "bríathar bríghe", "reconstructed": true }`.
+
 ***Pronunciation***
 
 Since 2021, the schema has the ability to represent the pronunciation of lemmas.

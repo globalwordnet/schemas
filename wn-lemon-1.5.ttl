@@ -181,6 +181,12 @@
   rdfs:label "script"@en ;
   rdfs:comment "The script as a 4 letter ISO 15924 code"@en .
 
+:reconstructed a owl:DatatypeProperty ;
+  rdfs:domain ontolex:Form ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "reconstructed"@en ;
+  rdfs:comment "Indicates that the form is reconstructed or unattested, as is common in historical wordnets"@en .
+
 :note a owl:AnnotationProperty ;
   rdfs:range xsd:string ;
   rdfs:label "note"@en ;
