@@ -74,10 +74,20 @@ The part of speech values are as follows:
 * a: Adjective
 * r: Adverb
 * s: Adjective Satellite
-* t: Phrase
-* c: Conjunction
+* t: Phrase (deprecated, use `z`)
+* z: Frozen phrase that fits no other part of speech, e.g. a proverb (not for multiwords such as *hot dog* or *at once*, which are `n` or `r`)
+* c: Conjunction (coordinating)
+* o: Subordinating conjunction
 * p: Adposition (Preposition, postposition, etc.)
-* x: Other (inc. particle, classifier, bound morphemes, determiners)
+* d: Determiner
+* b: Number (numeral)
+* l: Particle
+* i: Pronoun
+* e: Proper noun (named entity)
+* h: Auxiliary (helping verb)
+* m: Punctuation mark
+* y: Symbol
+* x: Other (inc. interjection, classifier, bound morpheme)
 * u: Unknown
 
 The following properties may also be specified on the entry:
@@ -519,7 +529,7 @@ The entries are given as a list under the `entry` property it requires an `@id`
 `partOfSpeech` and `lemma` and may have `sense`, `synBehavior`, `status`, 
 `confidence` and Dublin Core properties. The lemma has only a single value 
 `writtenForm` and the `partOfSpeech` must be one of the following:
-[ `noun`, `verb`, `adjective`, `adverb`, `adjective_satellite`, `phrase`, `conjunction`, `adposition`, `other`, `unknown` ]. The `@id` must be unique in the
+[ `noun`, `verb`, `adjective`, `adverb`, `adjective_satellite`, `phrase`, `conjunction`, `adposition`, `determiner`, `number`, `particle`, `pronoun`, `proper_noun`, `punctuation`, `symbol`, `subordinating_conjunction`, `auxiliary`, `other`, `unknown` ]. `phrase` corresponds to both `z` and the deprecated `t` in XML. The `@id` must be unique in the
 document, it is not the same as the `@id` of the wordnet or any other entry.
 
           "entry": [{

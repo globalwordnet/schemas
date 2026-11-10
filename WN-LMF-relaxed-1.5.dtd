@@ -55,7 +55,7 @@
 <!ATTLIST Lemma
     writtenForm CDATA #REQUIRED
     script CDATA #IMPLIED
-    partOfSpeech (n|v|a|r|s|t|c|p|x|u) #REQUIRED>
+    partOfSpeech (n|v|a|r|s|t|c|p|x|u|b|d|e|h|i|l|m|o|y|z) #REQUIRED>
 <!ELEMENT Form (Pronunciation*, Tag*)>
 <!ATTLIST Form
     id ID #IMPLIED
@@ -101,7 +101,7 @@
 <!ATTLIST Synset
     id ID #REQUIRED
     ili CDATA #REQUIRED
-    partOfSpeech (n|v|a|r|s|t|c|p|x|u) #IMPLIED
+    partOfSpeech (n|v|a|r|s|t|c|p|x|u|b|d|e|h|i|l|m|o|y|z) #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

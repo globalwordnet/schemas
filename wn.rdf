@@ -30,7 +30,7 @@
     <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
   </voaf:Vocabulary>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Count">
-    <rdf:label xml:lang="en">count</rdf:label>
+    <rdfs:label xml:lang="en">count</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Definition">
     <rdfs:label xml:lang="en">definition</rdfs:label>
@@ -80,11 +80,56 @@
                                     <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#adposition"/>
                                     <rdf:rest>
                                       <rdf:Description>
-                                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#other_pos"/>
+                                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#determiner"/>
                                         <rdf:rest>
                                           <rdf:Description>
-                                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#unknown_pos"/>
-                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#number"/>
+                                            <rdf:rest>
+                                              <rdf:Description>
+                                                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#particle"/>
+                                                <rdf:rest>
+                                                  <rdf:Description>
+                                                    <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#pronoun"/>
+                                                    <rdf:rest>
+                                                      <rdf:Description>
+                                                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#proper_noun"/>
+                                                        <rdf:rest>
+                                                          <rdf:Description>
+                                                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#punctuation"/>
+                                                            <rdf:rest>
+                                                              <rdf:Description>
+                                                                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#symbol"/>
+                                                                <rdf:rest>
+                                                                  <rdf:Description>
+                                                                    <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#subordinating_conjunction"/>
+                                                                    <rdf:rest>
+                                                                      <rdf:Description>
+                                                                        <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#auxiliary"/>
+                                                                        <rdf:rest>
+                                                                          <rdf:Description>
+                                                                            <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#other_pos"/>
+                                                                            <rdf:rest>
+                                                                              <rdf:Description>
+                                                                                <rdf:first rdf:resource="https://globalwordnet.github.io/schemas/wn#unknown_pos"/>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                              </rdf:Description>
+                                                                            </rdf:rest>
+                                                                          </rdf:Description>
+                                                                        </rdf:rest>
+                                                                      </rdf:Description>
+                                                                    </rdf:rest>
+                                                                  </rdf:Description>
+                                                                </rdf:rest>
+                                                              </rdf:Description>
+                                                            </rdf:rest>
+                                                          </rdf:Description>
+                                                        </rdf:rest>
+                                                      </rdf:Description>
+                                                    </rdf:rest>
+                                                  </rdf:Description>
+                                                </rdf:rest>
+                                              </rdf:Description>
+                                            </rdf:rest>
                                           </rdf:Description>
                                         </rdf:rest>
                                       </rdf:Description>
@@ -105,6 +150,9 @@
         </rdf:rest>
       </rdf:Description>
     </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Pronunciation">
+    <rdfs:label xml:lang="en">Pronunciation</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Requires">
     <rdfs:comment xml:lang="en">A reference, by identifier and version, to a lexicon required by this lexicon or lexicon extension</rdfs:comment>
@@ -187,6 +235,10 @@
     <rdfs:label xml:lang="en">augmentative</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#has_augmentative"/>
   </SynsetRelType>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#auxiliary">
+    <rdfs:comment xml:lang="en">An auxiliary (helping) verb</rdfs:comment>
+    <rdfs:label xml:lang="en">auxiliary</rdfs:label>
+  </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#be_in_state">
     <rdfs:comment xml:lang="en">X is qualified by Y</rdfs:comment>
     <rdfs:label xml:lang="en">be in state</rdfs:label>
@@ -312,6 +364,10 @@ results of Concept B.</rdfs:comment>
     <rdfs:comment xml:lang="en">The noun indicates the destination of a verb (e.g., "retire" - "retiree")</rdfs:comment>
     <rdfs:label xml:lang="en">destination</rdfs:label>
   </SynsetRelType>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#determiner">
+    <rdfs:comment xml:lang="en">A determiner, e.g. article or demonstrative</rdfs:comment>
+    <rdfs:label xml:lang="en">determiner</rdfs:label>
+  </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#diminutive">
     <rdfs:comment xml:lang="en">A concept used to refer to generally smaller members of a class</rdfs:comment>
     <rdfs:label xml:lang="en">diminutive</rdfs:label>
@@ -601,7 +657,7 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#subevent"/>
   </SynsetRelType>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#lexfile">
-    <rdfs:comments xml:lang="en">Indicates the lexicographer file that this synset is derived from</rdfs:comments>
+    <rdfs:comment xml:lang="en">Indicates the lexicographer file that this synset is derived from</rdfs:comment>
     <rdfs:label xml:lang="en">lexicographer file</rdfs:label>
   </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#location">
@@ -683,14 +739,18 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
     <rdfs:label xml:lang="en">notation</rdfs:label>
   </owl:DatatypeProperty>
-  <owl:AnnotationPropety rdf:about="https://globalwordnet.github.io/schemas/wn#note">
+  <owl:AnnotationProperty rdf:about="https://globalwordnet.github.io/schemas/wn#note">
     <rdfs:comment xml:lang="en">Any extra notes made by a WordNet creator</rdfs:comment>
     <rdfs:label xml:lang="en">note</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:AnnotationPropety>
+  </owl:AnnotationProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#noun">
     <rdfs:label xml:lang="en">noun</rdfs:label>
     <owl:sameAs rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
+  </PartOfSpeech>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#number">
+    <rdfs:comment xml:lang="en">A numeral</rdfs:comment>
+    <rdfs:label xml:lang="en">number</rdfs:label>
   </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#other">
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
@@ -725,6 +785,10 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:comment xml:lang="en">A concept which is a participial adjective derived from a verb expressed by a given concept.</rdfs:comment>
     <rdfs:label xml:lang="en">participle</rdfs:label>
   </SenseRelType>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#particle">
+    <rdfs:comment xml:lang="en">A particle</rdfs:comment>
+    <rdfs:label xml:lang="en">particle</rdfs:label>
+  </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#patient">
     <rdfs:comment xml:lang="en">A concept which is the one/that who/which undergoes a given concept.</rdfs:comment>
     <rdfs:label xml:lang="en">patient</rdfs:label>
@@ -740,8 +804,12 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">phonemic</rdfs:label>
   </owl:DatatypeProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#phrase">
-    <rdfs:comment xml:lang="en">A multiword expression, e.g. a phrase or idiom</rdfs:comment>
+    <rdfs:comment xml:lang="en">A frozen phrase that does not fit another part of speech, e.g. a proverb (PoS z; the deprecated PoS t maps here too)</rdfs:comment>
     <rdfs:label xml:lang="en">phrase</rdfs:label>
+  </PartOfSpeech>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#pronoun">
+    <rdfs:comment xml:lang="en">A pronoun</rdfs:comment>
+    <rdfs:label xml:lang="en">pronoun</rdfs:label>
   </PartOfSpeech>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#pronunciation">
     <rdfs:comment xml:lang="en">Indicates the pronunciation of a form</rdfs:comment>
@@ -749,10 +817,18 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">pronunciation</rdfs:label>
     <rdfs:range rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
   </owl:ObjectProperty>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#proper_noun">
+    <rdfs:comment xml:lang="en">A proper noun, i.e. a named entity</rdfs:comment>
+    <rdfs:label xml:lang="en">proper noun</rdfs:label>
+  </PartOfSpeech>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#property">
     <rdfs:comment xml:lang="en">Cause something to have a particular property (e.g., "magnetize" - "magnetization")</rdfs:comment>
     <rdfs:label xml:lang="en">property</rdfs:label>
   </SynsetRelType>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#punctuation">
+    <rdfs:comment xml:lang="en">A punctuation mark</rdfs:comment>
+    <rdfs:label xml:lang="en">punctuation</rdfs:label>
+  </PartOfSpeech>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#ref">
     <rdfs:comment xml:lang="en">The identifier of the lexicon referred to by an extends or requires statement</rdfs:comment>
     <rdfs:domain>
@@ -884,6 +960,14 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:label xml:lang="en">subevent</rdfs:label>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#is_subevent_of"/>
   </SynsetRelType>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#subordinating_conjunction">
+    <rdfs:comment xml:lang="en">A subordinating conjunction</rdfs:comment>
+    <rdfs:label xml:lang="en">subordinating conjunction</rdfs:label>
+  </PartOfSpeech>
+  <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#symbol">
+    <rdfs:comment xml:lang="en">A symbol</rdfs:comment>
+    <rdfs:label xml:lang="en">symbol</rdfs:label>
+  </PartOfSpeech>
   <owl:ObjectProperty rdf:about="https://globalwordnet.github.io/schemas/wn#tag">
     <rdfs:comment xml:lang="en">A tag describing an inflected form. There are no specific guidelines about the form of this element</rdfs:comment>
     <rdfs:domain rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>

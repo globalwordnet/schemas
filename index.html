@@ -267,11 +267,22 @@ the confidence in the correctness of elements in this resource.</p>
 <li>a: Adjective</li>
 <li>r: Adverb</li>
 <li>s: Adjective Satellite</li>
-<li>t: Phrase</li>
-<li>c: Conjunction</li>
+<li>t: Phrase (deprecated, use <code>z</code>)</li>
+<li>z: Frozen phrase that fits no other part of speech, e.g. a proverb
+(not for multiwords such as <em>hot dog</em> or <em>at once</em>, which
+are <code>n</code> or <code>r</code>)</li>
+<li>c: Conjunction (coordinating)</li>
+<li>o: Subordinating conjunction</li>
 <li>p: Adposition (Preposition, postposition, etc.)</li>
-<li>x: Other (inc. particle, classifier, bound morphemes,
-determiners)</li>
+<li>d: Determiner</li>
+<li>b: Number (numeral)</li>
+<li>l: Particle</li>
+<li>i: Pronoun</li>
+<li>e: Proper noun (named entity)</li>
+<li>h: Auxiliary (helping verb)</li>
+<li>m: Punctuation mark</li>
+<li>y: Symbol</li>
+<li>x: Other (inc. interjection, classifier, bound morpheme)</li>
 <li>u: Unknown</li>
 </ul>
 <p>The following properties may also be specified on the entry:</p>
@@ -851,10 +862,15 @@ and Dublin Core properties. The lemma has only a single value
 of the following: [ <code>noun</code>, <code>verb</code>,
 <code>adjective</code>, <code>adverb</code>,
 <code>adjective_satellite</code>, <code>phrase</code>,
-<code>conjunction</code>, <code>adposition</code>, <code>other</code>,
-<code>unknown</code> ]. The <code>@id</code> must be unique in the
-document, it is not the same as the <code>@id</code> of the wordnet or
-any other entry.</p>
+<code>conjunction</code>, <code>adposition</code>,
+<code>determiner</code>, <code>number</code>, <code>particle</code>,
+<code>pronoun</code>, <code>proper_noun</code>,
+<code>punctuation</code>, <code>symbol</code>,
+<code>subordinating_conjunction</code>, <code>auxiliary</code>,
+<code>other</code>, <code>unknown</code> ]. <code>phrase</code>
+corresponds to both <code>z</code> and the deprecated <code>t</code> in
+XML. The <code>@id</code> must be unique in the document, it is not the
+same as the <code>@id</code> of the wordnet or any other entry.</p>
 <pre><code>      &quot;entry&quot;: [{
           &quot;@id&quot; : &quot;w1&quot;,
           &quot;lemma&quot;: { &quot;writtenForm&quot;: &quot;father&quot; }, 
