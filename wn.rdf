@@ -30,7 +30,7 @@
     <owl:versionInfo xml:lang="en">Development</owl:versionInfo>
   </voaf:Vocabulary>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Count">
-    <rdf:label xml:lang="en">count</rdf:label>
+    <rdfs:label xml:lang="en">count</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Definition">
     <rdfs:label xml:lang="en">definition</rdfs:label>
@@ -105,6 +105,9 @@
         </rdf:rest>
       </rdf:Description>
     </owl:oneOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Pronunciation">
+    <rdfs:label xml:lang="en">Pronunciation</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="https://globalwordnet.github.io/schemas/wn#Requires">
     <rdfs:comment xml:lang="en">A reference, by identifier and version, to a lexicon required by this lexicon or lexicon extension</rdfs:comment>
@@ -601,7 +604,7 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <owl:inverseOf rdf:resource="https://globalwordnet.github.io/schemas/wn#subevent"/>
   </SynsetRelType>
   <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#lexfile">
-    <rdfs:comments xml:lang="en">Indicates the lexicographer file that this synset is derived from</rdfs:comments>
+    <rdfs:comment xml:lang="en">Indicates the lexicographer file that this synset is derived from</rdfs:comment>
     <rdfs:label xml:lang="en">lexicographer file</rdfs:label>
   </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#location">
@@ -683,15 +686,21 @@ należącym do tej samej części mowy, co ono</rdfs:comment>
     <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Pronunciation"/>
     <rdfs:label xml:lang="en">notation</rdfs:label>
   </owl:DatatypeProperty>
-  <owl:AnnotationPropety rdf:about="https://globalwordnet.github.io/schemas/wn#note">
+  <owl:AnnotationProperty rdf:about="https://globalwordnet.github.io/schemas/wn#note">
     <rdfs:comment xml:lang="en">Any extra notes made by a WordNet creator</rdfs:comment>
     <rdfs:label xml:lang="en">note</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </owl:AnnotationPropety>
+  </owl:AnnotationProperty>
   <PartOfSpeech rdf:about="https://globalwordnet.github.io/schemas/wn#noun">
     <rdfs:label xml:lang="en">noun</rdfs:label>
     <owl:sameAs rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#noun"/>
   </PartOfSpeech>
+  <owl:DatatypeProperty rdf:about="https://globalwordnet.github.io/schemas/wn#offsets">
+    <rdfs:comment xml:lang="en">Marks the lemma in the text of an example as a space-separated list of start:end pairs of zero-indexed Unicode code point offsets, where the end offset is exclusive</rdfs:comment>
+    <rdfs:domain rdf:resource="https://globalwordnet.github.io/schemas/wn#Example"/>
+    <rdfs:label xml:lang="en">offsets</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
   <SynsetRelType rdf:about="https://globalwordnet.github.io/schemas/wn#other">
     <rdf:type rdf:resource="https://globalwordnet.github.io/schemas/wn#SenseRelType"/>
     <rdfs:comment xml:lang="en">Any relation not otherwise specified</rdfs:comment>

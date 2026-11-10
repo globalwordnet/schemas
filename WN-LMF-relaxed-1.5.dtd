@@ -168,6 +168,7 @@
 <!ATTLIST Example
     xml:space (default|preserve) "default"
     language CDATA #IMPLIED
+    offsets CDATA #IMPLIED
     dc:contributor CDATA #IMPLIED
     dc:coverage CDATA #IMPLIED
     dc:creator CDATA #IMPLIED

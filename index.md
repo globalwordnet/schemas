@@ -359,6 +359,17 @@ An example of encoding is given below:
          </LexicalEntry>
 
 
+***Example offsets***
+
+An `<Example>` may have an `offsets` attribute marking where the lemma (or lemmas, for discontinuous entries such as *do justice*) occurs in the text of the example. The value is a space-separated list of `start:end` pairs of zero-indexed character offsets. The end offset is exclusive, like a Python slice, and offsets count Unicode code points, not bytes or UTF-16 code units:
+
+        <Sense id="ex-do-justice-v-1" synset="do-justice-1-v">
+            <Example offsets="11:14 33:40">The diners did the food and wine justice</Example>
+        </Sense>
+
+The offsets index the text content of the `<Example>` element exactly, so the text must not be indented or wrapped inside the element. The attribute may also be used on examples of synsets, where it marks the lemma in the same way. In JSON and RDF it is given as the string-valued property `offsets`, with the same format.
+
+
 **Wordnet Extensions**
 
 A file may contain a lexicon extension which serves to augment an existing lexicon with new lexical entries, synsets, senses, relations, etc.

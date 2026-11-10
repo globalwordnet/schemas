@@ -670,6 +670,23 @@ pronuncation</p>
                 audio =&quot;https://path/rabbit1.flac&quot;&gt;&#39;r\{b@t&lt;/Pronunciation&gt;
          &lt;/Lemma&gt;
      &lt;/LexicalEntry&gt;</code></pre>
+<p><strong><em>Example offsets</em></strong></p>
+<p>An <code>&lt;Example&gt;</code> may have an <code>offsets</code>
+attribute marking where the lemma (or lemmas, for discontinuous entries
+such as <em>do justice</em>) occurs in the text of the example. The
+value is a space-separated list of <code>start:end</code> pairs of
+zero-indexed character offsets. The end offset is exclusive, like a
+Python slice, and offsets count Unicode code points, not bytes or UTF-16
+code units:</p>
+<pre><code>    &lt;Sense id=&quot;ex-do-justice-v-1&quot; synset=&quot;do-justice-1-v&quot;&gt;
+        &lt;Example offsets=&quot;11:14 33:40&quot;&gt;The diners did the food and wine justice&lt;/Example&gt;
+    &lt;/Sense&gt;</code></pre>
+<p>The offsets index the text content of the
+<code>&lt;Example&gt;</code> element exactly, so the text must not be
+indented or wrapped inside the element. The attribute may also be used
+on examples of synsets, where it marks the lemma in the same way. In
+JSON and RDF it is given as the string-valued property
+<code>offsets</code>, with the same format.</p>
 <p><strong>Wordnet Extensions</strong></p>
 <p>A file may contain a lexicon extension which serves to augment an
 existing lexicon with new lexical entries, synsets, senses, relations,
