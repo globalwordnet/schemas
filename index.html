@@ -648,6 +648,14 @@ Definition must be at least 20 characters or five words</p>
         &lt;/LexicalEntry&gt;
     &lt;/Lexicon&gt;
 &lt;/LexicalResource&gt;</code></pre>
+<p><strong><em>Reconstructed forms</em></strong></p>
+<p>For historical wordnets, a lemma can be marked as a reconstructed or
+unattested form by setting the <code>reconstructed</code> attribute on
+the <code>&lt;Lemma&gt;</code> element to <code>true</code>. It defaults
+to <code>false</code>.</p>
+<pre><code>    &lt;Lemma writtenForm=&quot;bríathar bríghe&quot; partOfSpeech=&quot;n&quot; reconstructed=&quot;true&quot;/&gt;</code></pre>
+<p>In JSON, the same is expressed as
+<code>"lemma": { "writtenForm": "bríathar bríghe", "reconstructed": true }</code>.</p>
 <p><strong><em>Pronunciation</em></strong></p>
 <p>Since 2021, the schema has the ability to represent the pronunciation
 of lemmas.</p>

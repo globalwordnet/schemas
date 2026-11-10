@@ -87,6 +87,7 @@
                                    "additionalProperties": false,
                                    "properties": {
                                       "writtenForm": { "type": "string" },
+                                      "reconstructed": { "type": "boolean" },
                                       "tag": {
                                           "type": "array",
                                           "minItems": 1,
